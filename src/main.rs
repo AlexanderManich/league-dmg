@@ -4,23 +4,33 @@ use std::{
     path::{Path, PathBuf},
 };
 
+use clap::{Arg, ArgAction, Command};
+
 fn main() -> io::Result<()> {
-    let patch_dir = Path::new("./patches");
+    let matches = Command::new("League Damage")
+        .version("1.0")
+        .author("Lennonnn")
+        .arg(
+            Arg::new("update")
+                .short('u')
+                .long("update")
+                .num_args(0)
+                .action(ArgAction::SetTrue),
+        )
+        .get_matches();
 
-    let latest_patch_version = get_latest_patch_version();
+    if matches.get_flag("update") {
+        let latest_patch_version = get_latest_patch_version();
 
-    if patch_dir.is_dir() {
-        let is_empty = patch_dir.read_dir()?.next().is_none();
-        if is_empty {
-            get_patch(patch_dir, latest_patch_version)
-        }
-    } else {
-        get_patch(patch_dir, latest_patch_version);
+        get_patch(latest_patch_version);
     }
+
     Ok(())
 }
 
-fn get_patch(patch_dir: &Path, patch_version: String) {
+fn get_patch(patch_version: String) {
+    let patch_dir = Path::new("./patches");
+
     if !patch_dir.is_dir() {
         if let Err(err) = fs::create_dir(patch_dir) {
             println!("Error occured while creating directory: {err}");
