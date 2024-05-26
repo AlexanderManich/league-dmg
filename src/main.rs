@@ -1,6 +1,6 @@
 use std::{
-    fs::{self, File},
-    io::{self, Cursor, Read},
+    fs::{self, DirEntry, File},
+    io::{self, Cursor, Error, Read},
     path::{Path, PathBuf},
 };
 
@@ -22,21 +22,33 @@ fn main() -> io::Result<()> {
     if matches.get_flag("update") {
         let latest_patch_version = get_latest_patch_version();
 
-        get_patch(latest_patch_version);
+        let patch_dir = Path::new("./patches/");
+
+        if !patch_dir.is_dir() {
+            if let Err(err) = fs::create_dir(patch_dir) {
+                println!("Error occured while creating directory: {err}");
+            };
+        }
+
+        let mut patch_path = PathBuf::new();
+
+        match fs::read_dir(patch_dir) {
+            Ok(entries) => {
+                entries
+                    .map(|res| res.map(|entry| entry.path()))
+                    .collect::<Result<Vec<_>, io::Error>>()
+                    .unwrap();
+            }
+            Err(err) => println!("Error occured while reading directory: {err}"),
+        }
+
+        //get_patch(patch_dir, latest_patch_version);
     }
 
     Ok(())
 }
 
-fn get_patch(patch_version: String) {
-    let patch_dir = Path::new("./patches");
-
-    if !patch_dir.is_dir() {
-        if let Err(err) = fs::create_dir(patch_dir) {
-            println!("Error occured while creating directory: {err}");
-        };
-    }
-
+fn get_patch(patch_dir: &Path, patch_version: String) {
     let mut target = String::from("https://ddragon.leagueoflegends.com/cdn/");
 
     let patch = format!("dragontail-{patch_version}.tgz");
