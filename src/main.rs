@@ -1,12 +1,14 @@
 use std::{
-    fs::{self, DirEntry, File},
-    io::{self, Cursor, Error, Read},
+    fs::{self, File},
+    io::{self, Cursor, Read},
     path::{Path, PathBuf},
 };
 
 use clap::{Arg, ArgAction, Command};
 
-fn main() -> io::Result<()> {
+type Result<T> = std::result::Result<T, Box<dyn std::error::Error + Send + Sync>>;
+
+fn main() -> Result<()> {
     let matches = Command::new("League Damage")
         .version("1.0")
         .author("Lennonnn")
@@ -20,86 +22,89 @@ fn main() -> io::Result<()> {
         .get_matches();
 
     if matches.get_flag("update") {
-        let latest_patch_version = get_latest_patch_version();
+        let latest_patch_version = &get_latest_patch_version()?;
 
-        let patch_dir = Path::new("./patches/");
+        let patch_dir = Path::new("./patch/");
 
         if !patch_dir.is_dir() {
-            if let Err(err) = fs::create_dir(patch_dir) {
-                println!("Error occured while creating directory: {err}");
-            };
+            fs::create_dir(patch_dir)?
         }
 
-        let mut patch_path = PathBuf::new();
+        let entries = fs::read_dir(patch_dir)?
+            .map(|res| res.map(|entry| entry.path()))
+            .collect::<io::Result<Vec<_>>>()?;
 
-        match fs::read_dir(patch_dir) {
-            Ok(entries) => {
-                entries
-                    .map(|res| res.map(|entry| entry.path()))
-                    .collect::<Result<Vec<_>, io::Error>>()
-                    .unwrap();
+        let latest_patch = format!("dragontail-{latest_patch_version}.tgz");
+        let latest_patch_path: PathBuf = [patch_dir, Path::new(&latest_patch)].iter().collect();
+
+        if !entries.is_empty() {
+            for entry in entries {
+                match entry.extension() {
+                    Some(extension) => {
+                        if extension == "tgz" && entry != latest_patch_path {
+                            fs::remove_dir_all(patch_dir)?;
+                            get_patch(patch_dir, latest_patch_version.to_owned())?;
+                        } else {
+                            println!("Patch is up to date");
+                            break;
+                        }
+                    }
+                    None => continue,
+                }
             }
-            Err(err) => println!("Error occured while reading directory: {err}"),
+        } else {
+            get_patch(patch_dir, latest_patch_version.to_owned())?;
         }
-
-        //get_patch(patch_dir, latest_patch_version);
     }
 
     Ok(())
 }
 
-fn get_patch(patch_dir: &Path, patch_version: String) {
+fn get_patch(patch_dir: &Path, patch_version: String) -> Result<()> {
     let mut target = String::from("https://ddragon.leagueoflegends.com/cdn/");
 
     let patch = format!("dragontail-{patch_version}.tgz");
 
     target.push_str(&patch);
 
-    println!("Downloading patch {patch_version}");
+    println!("Fetching patch {patch_version}");
 
-    let res = reqwest::blocking::get(target);
+    let client = reqwest::blocking::Client::builder().timeout(None).build()?;
 
-    match res {
-        Ok(res) => {
-            let path: PathBuf = [patch_dir, Path::new(&patch)].iter().collect();
+    let res = client.get(target).send()?;
+    let path: PathBuf = [patch_dir, Path::new(&patch)].iter().collect();
 
-            if let Ok(mut latest_patch) = File::create(path) {
-                match res.bytes() {
-                    Ok(bytes) => {
-                        let mut content = Cursor::new(bytes);
-                        if let Err(err) = io::copy(&mut content, &mut latest_patch) {
-                            println!("Error occured while writing file: {err}")
-                        }
-                    }
-                    Err(err) => println!("Error occured while decoding response to bytes: {err}"),
-                }
-            };
-        }
-        Err(err) => println!("Error occured while getting latest patch: {err}"),
-    }
+    let mut file = File::create(path)?;
+    let mut content = Cursor::new(res.bytes()?);
+    io::copy(&mut content, &mut file)?;
+
+    println!("Finished fetching patch");
+    Ok(())
 }
 
-fn get_latest_patch_version() -> String {
-    let res = reqwest::blocking::get("https://ddragon.leagueoflegends.com/api/versions.json");
+fn get_latest_patch_version() -> Result<String> {
+    println!("Fetching latest patch version");
+
+    let client = reqwest::blocking::Client::builder().timeout(None).build()?;
+
+    let mut res = client
+        .get("https://ddragon.leagueoflegends.com/api/versions.json")
+        .send()?;
+
     let mut latest_patch = String::new();
 
-    match res {
-        Ok(mut res) => {
-            let mut body = String::new();
-            if let Err(err) = res.read_to_string(&mut body) {
-                println!("Error occured while reading response to string: {err}");
-            }
+    let mut body = String::new();
+    res.read_to_string(&mut body)?;
 
-            for c in body.chars() {
-                if c == ',' {
-                    break;
-                } else if c != '[' && c != '"' {
-                    latest_patch.push(c)
-                }
-            }
+    for c in body.chars() {
+        if c == ',' {
+            break;
+        } else if c != '[' && c != '"' {
+            latest_patch.push(c)
         }
-        Err(err) => print!("Error occured while getting latest patch version: {err}"),
     }
 
-    latest_patch
+    println!("Latest patch is: {latest_patch}");
+
+    Ok(latest_patch)
 }
