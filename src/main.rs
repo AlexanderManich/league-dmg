@@ -5,6 +5,8 @@ use std::{
 };
 
 use clap::{Arg, ArgAction, Command};
+use flate2::read::GzDecoder;
+use tar::Archive;
 
 type Result<T> = std::result::Result<T, Box<dyn std::error::Error + Send + Sync>>;
 
@@ -21,40 +23,35 @@ fn main() -> Result<()> {
         )
         .get_matches();
 
+    let patch_dir = Path::new("./patch/");
+
     if matches.get_flag("update") {
         let latest_patch_version = &get_latest_patch_version()?;
-
-        let patch_dir = Path::new("./patch/");
 
         if !patch_dir.is_dir() {
             fs::create_dir(patch_dir)?
         }
 
-        let entries = fs::read_dir(patch_dir)?
-            .map(|res| res.map(|entry| entry.path()))
-            .collect::<io::Result<Vec<_>>>()?;
-
         let latest_patch = format!("dragontail-{latest_patch_version}.tgz");
         let latest_patch_path: PathBuf = [patch_dir, Path::new(&latest_patch)].iter().collect();
 
-        if !entries.is_empty() {
-            for entry in entries {
-                match entry.extension() {
-                    Some(extension) => {
-                        if extension == "tgz" && entry != latest_patch_path {
-                            fs::remove_dir_all(patch_dir)?;
-                            get_patch(patch_dir, latest_patch_version.to_owned())?;
-                        } else {
-                            println!("Patch is up to date");
-                            break;
-                        }
-                    }
-                    None => continue,
-                }
-            }
-        } else {
+        let patch_path = get_patch_tar_path(patch_dir.to_path_buf())?;
+
+        if patch_path != Some(latest_patch_path) {
+            fs::remove_dir_all(patch_dir)?;
+            println!("Fetching latest patch");
             get_patch(patch_dir, latest_patch_version.to_owned())?;
+            println!("Unpacking patch");
+            unpack_patch(patch_path.unwrap(), patch_dir.to_path_buf())?;
+        } else {
+            println!("Patch is up to date");
+            println!("Unpacking patch");
+            unpack_patch(patch_path.unwrap(), patch_dir.to_path_buf())?;
         }
+    }
+
+    if !patch_dir.is_dir() || directory_is_empty(patch_dir.to_path_buf())? {
+        panic!("Please update and try again");
     }
 
     Ok(())
@@ -107,4 +104,36 @@ fn get_latest_patch_version() -> Result<String> {
     println!("Latest patch is: {latest_patch}");
 
     Ok(latest_patch)
+}
+
+fn unpack_patch(path: PathBuf, dest: PathBuf) -> Result<()> {
+    let tar_gz = File::open(path)?;
+    let tar = GzDecoder::new(tar_gz);
+    let mut archive = Archive::new(tar);
+    archive.unpack(dest)?;
+
+    Ok(())
+}
+
+fn get_patch_tar_path(patch_dir: PathBuf) -> Result<Option<PathBuf>> {
+    let entries = fs::read_dir(patch_dir)?
+        .map(|res| res.map(|entry| entry.path()))
+        .collect::<io::Result<Vec<_>>>()?;
+
+    let mut tar: Option<PathBuf> = None;
+
+    for entry in entries {
+        if let Some(extension) = entry.extension() {
+            if extension == "tgz" {
+                tar = Some(entry);
+                break;
+            }
+        }
+    }
+
+    Ok(tar)
+}
+
+fn directory_is_empty(dir: PathBuf) -> Result<bool> {
+    Ok(fs::read_dir(dir)?.next().is_none())
 }
