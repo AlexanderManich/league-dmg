@@ -1,5 +1,180 @@
-use serde::{Deserialize, Serialize};
+use serde::de::Error;
+use serde::{Deserialize, Deserializer, Serialize};
 use serde_json::Value;
+use strum_macros::EnumIter;
+
+#[derive(Debug, EnumIter)]
+pub enum ChampionKind {
+    Aatrox,
+    Ahri,
+    Akali,
+    Akshan,
+    Alistar,
+    Ambessa,
+    Amumu,
+    Anivia,
+    Annie,
+    // Aphelios,
+    // Ashe,
+    AurelionSol,
+    Aurora,
+    Azir,
+    Bard,
+    Belveth,
+    Blitzcrank,
+    Brand,
+    Braum,
+    Briar,
+    Caitlyn,
+    // Camille,
+    Cassiopeia,
+    Chogath,
+    Corki,
+    Darius,
+    Diana,
+    DrMundo,
+    Draven,
+    Ekko,
+    Elise,
+    Evelynn,
+    Ezreal,
+    Fiddlesticks,
+    Fiora,
+    Fizz,
+    Galio,
+    Gangplank,
+    Garen,
+    Gnar,
+    Gragas,
+    Graves,
+    Gwen,
+    Hecarim,
+    // Heimerdinger,
+    // Hwei,
+    Illaoi,
+    Irelia,
+    Ivern,
+    Janna,
+    JarvanIV,
+    Jax,
+    Jayce,
+    Jhin,
+    Jinx,
+    Kaisa,
+    Kalista,
+    Karma,
+    Karthus,
+    Kassadin,
+    Katarina,
+    Kayle,
+    Kayn,
+    Kennen,
+    Khazix,
+    Kindred,
+    Kled,
+    KogMaw,
+    KSante,
+    Leblanc,
+    LeeSin,
+    Leona,
+    Lillia,
+    Lissandra,
+    Lucian,
+    Lulu,
+    Lux,
+    Malphite,
+    Malzahar,
+    Maokai,
+    MasterYi,
+    Milio,
+    MissFortune,
+    Mordekaiser,
+    Morgana,
+    Naafiri,
+    Nami,
+    Nasus,
+    Nautilus,
+    Neeko,
+    Nidalee,
+    Nilah,
+    Nocturne,
+    Nunu,
+    Olaf,
+    Orianna,
+    Ornn,
+    Pantheon,
+    Poppy,
+    Pyke,
+    Qiyana,
+    Quinn,
+    Rakan,
+    Rammus,
+    RekSai,
+    Rell,
+    Renata,
+    Renekton,
+    Rengar,
+    Riven,
+    Rumble,
+    Ryze,
+    Samira,
+    Sejuani,
+    Senna,
+    Seraphine,
+    Sett,
+    Shaco,
+    Shen,
+    Shyvana,
+    Singed,
+    Sion,
+    Sivir,
+    Skarner,
+    Smolder,
+    Sona,
+    Soraka,
+    Swain,
+    Sylas,
+    Syndra,
+    TahmKench,
+    Taliyah,
+    Talon,
+    Taric,
+    Teemo,
+    Thresh,
+    Tristana,
+    Trundle,
+    Tryndamere,
+    TwistedFate,
+    Twitch,
+    Udyr,
+    Urgot,
+    Varus,
+    Vayne,
+    Veigar,
+    Velkoz,
+    Vex,
+    Vi,
+    Viego,
+    Viktor,
+    Vladimir,
+    Volibear,
+    Warwick,
+    MonkeyKing,
+    Xayah,
+    Xerath,
+    XinZhao,
+    Yasuo,
+    Yone,
+    Yorick,
+    Yuumi,
+    Zac,
+    Zed,
+    Zeri,
+    Ziggs,
+    Zilean,
+    Zoe,
+    Zyra,
+}
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
@@ -22,361 +197,83 @@ pub struct Champion {
     pub release_patch: String,
     pub patch_last_changed: String,
     pub price: Price,
-    pub lore: String,
+    pub lore: Option<String>,
     pub faction: String,
     pub skins: Vec<Skin>,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
+pub struct Stat {
+    pub flat: f64,
+    pub percent: f64,
+    pub per_level: f64,
+    pub percent_per_level: f64,
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct Stats {
-    pub health: Health,
-    pub health_regen: HealthRegen,
-    pub mana: Mana,
-    pub mana_regen: ManaRegen,
-    pub armor: Armor,
-    pub magic_resistance: MagicResistance,
-    pub attack_damage: AttackDamage,
-    pub movespeed: Movespeed,
-    pub acquisition_radius: AcquisitionRadius,
-    pub selection_radius: SelectionRadius,
-    pub pathing_radius: PathingRadius,
-    pub gameplay_radius: GameplayRadius,
-    pub critical_strike_damage: CriticalStrikeDamage,
-    pub critical_strike_damage_modifier: CriticalStrikeDamageModifier,
-    pub attack_speed: AttackSpeed,
-    pub attack_speed_ratio: AttackSpeedRatio,
-    pub attack_cast_time: AttackCastTime,
-    pub attack_total_time: AttackTotalTime,
-    pub attack_delay_offset: AttackDelayOffset,
-    pub attack_range: AttackRange,
-    pub aram_damage_taken: AramDamageTaken,
-    pub aram_damage_dealt: AramDamageDealt,
-    pub aram_healing: AramHealing,
-    pub aram_shielding: AramShielding,
-    pub aram_tenacity: AramTenacity,
-    pub aram_ability_haste: AramAbilityHaste,
-    pub aram_attack_speed: AramAttackSpeed,
-    pub aram_energy_regen: AramEnergyRegen,
-    pub urf_damage_taken: UrfDamageTaken,
-    pub urf_damage_dealt: UrfDamageDealt,
-    pub urf_healing: UrfHealing,
-    pub urf_shielding: UrfShielding,
+    pub health: Stat,
+    pub health_regen: Stat,
+    pub mana: Stat,
+    pub mana_regen: Stat,
+    pub armor: Stat,
+    pub magic_resistance: Stat,
+    pub attack_damage: Stat,
+    pub movespeed: Stat,
+    pub acquisition_radius: Stat,
+    pub selection_radius: Stat,
+    pub pathing_radius: Stat,
+    pub gameplay_radius: Stat,
+    pub critical_strike_damage: Stat,
+    pub critical_strike_damage_modifier: Stat,
+    pub attack_speed: Stat,
+    pub attack_speed_ratio: Stat,
+    pub attack_cast_time: Stat,
+    pub attack_total_time: Stat,
+    pub attack_delay_offset: Stat,
+    pub attack_range: Stat,
+    pub aram_damage_taken: Stat,
+    pub aram_damage_dealt: Stat,
+    pub aram_healing: Stat,
+    pub aram_shielding: Stat,
+    pub aram_tenacity: Stat,
+    pub aram_ability_haste: Stat,
+    pub aram_attack_speed: Stat,
+    pub aram_energy_regen: Stat,
+    pub urf_damage_taken: Stat,
+    pub urf_damage_dealt: Stat,
+    pub urf_healing: Stat,
+    pub urf_shielding: Stat,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Health {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct HealthRegen {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Mana {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct ManaRegen {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Armor {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct MagicResistance {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AttackDamage {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct Movespeed {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AcquisitionRadius {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct SelectionRadius {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct PathingRadius {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct GameplayRadius {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct CriticalStrikeDamage {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct CriticalStrikeDamageModifier {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AttackSpeed {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AttackSpeedRatio {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AttackCastTime {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AttackTotalTime {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AttackDelayOffset {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AttackRange {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AramDamageTaken {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AramDamageDealt {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AramHealing {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AramShielding {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AramTenacity {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AramAbilityHaste {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AramAttackSpeed {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AramEnergyRegen {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct UrfDamageTaken {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct UrfDamageDealt {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct UrfHealing {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct UrfShielding {
-    pub flat: f64,
-    pub percent: f64,
-    pub per_level: f64,
-    pub percent_per_level: f64,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
-pub struct AttributeRatings {
-    pub damage: i64,
-    pub toughness: i64,
-    pub control: i64,
-    pub mobility: i64,
-    pub utility: i64,
-    pub ability_reliance: i64,
-    pub difficulty: i64,
+fn first_in_vec<'de, D, T>(deserializer: D) -> Result<T, D::Error>
+where
+    D: Deserializer<'de>,
+    T: Deserialize<'de>,
+{
+    let v: Vec<T> = Vec::deserialize(deserializer)?;
+    v.into_iter()
+        .next()
+        .ok_or_else(|| D::Error::custom("Expected at least one ability"))
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Abilities {
-    #[serde(rename = "P")]
-    pub p: Vec<Ability>,
-    #[serde(rename = "Q")]
-    pub q: Vec<Ability>,
-    #[serde(rename = "W")]
-    pub w: Vec<Ability>,
-    #[serde(rename = "E")]
-    pub e: Vec<Ability>,
-    #[serde(rename = "R")]
-    pub r: Vec<Ability>,
+    // I assume there's never going to be more than one ability, so we deserialize "abiities": { "P": [...]}
+    // directly to the ability instead of Vec<Ability> forexample. THIS MIGHT BE WRONG IDK
+    #[serde(rename = "P", deserialize_with = "first_in_vec")]
+    pub p: Ability,
+    #[serde(rename = "Q", deserialize_with = "first_in_vec")]
+    pub q: Ability,
+    #[serde(rename = "W", deserialize_with = "first_in_vec")]
+    pub w: Ability,
+    #[serde(rename = "E", deserialize_with = "first_in_vec")]
+    pub e: Ability,
+    #[serde(rename = "R", deserialize_with = "first_in_vec")]
+    pub r: Ability,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -384,7 +281,7 @@ pub struct Abilities {
 pub struct Ability {
     pub name: Option<String>,
     pub icon: Option<String>,
-    pub effects: Option<Vec<Effect>>,
+    pub effects: Vec<Effect>,
     pub cost: Option<Value>,
     pub cooldown: Option<Cooldown>,
     pub targeting: Option<String>,
@@ -410,6 +307,18 @@ pub struct Ability {
     pub cast_time: Option<Value>,
     pub effect_radius: Option<Value>,
     pub target_range: Option<Value>,
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct AttributeRatings {
+    damage: i64,
+    toughness: i64,
+    control: i64,
+    mobility: i64,
+    utility: i64,
+    ability_reliance: i64,
+    difficulty: i64,
 }
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
@@ -461,8 +370,8 @@ pub struct Skin {
     pub sale: i64,
     pub distribution: Option<String>,
     pub rarity: String,
-    pub chromas: Vec<Chroma>,
-    pub lore: String,
+    pub chromas: Vec<Option<Chroma>>,
+    pub lore: Option<String>,
     pub release: String,
     pub set: Vec<String>,
     pub splash_path: String,
