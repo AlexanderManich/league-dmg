@@ -51,7 +51,7 @@ fn ability_damage_by_rank(
     let mut push_ability_damage = |levelings: &[Leveling]| {
         for leveling in levelings {
             let modifiers = &leveling.modifiers;
-            println!("{}", leveling.attribute);
+            dbg!(&leveling.attribute);
             let ability_damage = modifiers
                 .first()
                 .and_then(|m| m.values.get(ability_rank as usize))
@@ -156,6 +156,7 @@ fn main() {
                 continue;
             }
         };
+        dbg!(&champion.abilities.q);
         let damage = ability_damage_by_rank(AbilityKind::Q, AbilityRank::One, &champion);
         println!("{:?}: {:?}", champion_kind, damage);
         println!();
