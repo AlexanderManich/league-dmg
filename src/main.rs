@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use std::fs;
+use std::{default, fs};
 use std::{path::Path, process::Command};
 mod champions_t;
 use strum::IntoEnumIterator;
@@ -43,10 +43,13 @@ enum Stat {
     BonusAD,
     AP,
     MaxHealth,
+    CurrentHealth,
     BonusHealth,
     MissingHealth,
     Armor,
+    BonusArmor,
     MagicResist,
+    BonusMagicResist,
     BonusMana,
     BonusMoveSpeed,
 }
@@ -87,7 +90,7 @@ impl AbilityScaling {
             "% per 100 bonus AD" => AbilityScaling {
                 stat: Stat::AD,
                 ratio: value,
-                kind: ScalingKind::Per100Stat
+                kind: ScalingKind::Per100Stat,
             },
 
             // AP Scalings
@@ -106,6 +109,11 @@ impl AbilityScaling {
                 ratio: value,
                 kind: ScalingKind::PercentStat,
             },
+            "% of Sona's AP" => AbilityScaling {
+                stat: Stat::AP,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
 
             // Health Scalings
             "% of her maximum health" => AbilityScaling {
@@ -118,8 +126,38 @@ impl AbilityScaling {
                 ratio: value,
                 kind: ScalingKind::PercentStat,
             },
+            "% of Braum's maximum health" => AbilityScaling {
+                stat: Stat::MaxHealth,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
+            "% of Zac's maximum health" => AbilityScaling {
+                stat: Stat::MaxHealth,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
+            "% of target's current health" => AbilityScaling {
+                stat: Stat::CurrentHealth,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
+            "%  of target's current health" => AbilityScaling {
+                stat: Stat::CurrentHealth,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
             "% of target's missing health" => AbilityScaling {
                 stat: Stat::MissingHealth,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
+            "% bonus health" => AbilityScaling {
+                stat: Stat::BonusHealth,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
+            "% of his bonus health" => AbilityScaling {
+                stat: Stat::BonusHealth,
                 ratio: value,
                 kind: ScalingKind::PercentStat,
             },
@@ -132,6 +170,18 @@ impl AbilityScaling {
             // Armor Scalings
             "% armor" => AbilityScaling {
                 stat: Stat::Armor,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
+            "% bonus armor" => AbilityScaling {
+                stat: Stat::BonusArmor,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
+
+            // Magic Restistance Scalings
+            "% bonus magic resistance" => AbilityScaling {
+                stat: Stat::BonusMagicResist,
                 ratio: value,
                 kind: ScalingKind::PercentStat,
             },
@@ -165,26 +215,34 @@ enum BaseDamage {
     Flat(f32),
     PercentTargetMaxHealth(f32),
     PercentTargetMissingHealth(f32),
+    PercentResource(f32),
+}
+
+#[derive(Default, Debug)]
+struct DamageInstance {
+    components: Vec<DamageComponent>,
 }
 
 #[derive(Default, Debug)]
 struct DamageComponent {
-    base_damage: Vec<BaseDamage>,
+    kind: DamageKind,
+    base: BaseDamage,
     scalings: Vec<AbilityScaling>,
 }
 
-#[derive(Debug, PartialEq, Eq, Hash)]
+#[derive(Default, Copy, Clone, Debug)]
 enum DamageKind {
+    #[default]
+    None,
+    True,
     Physcial,
     Magic,
-    True,
     Mixed,
 }
 
 #[derive(Debug)]
 struct AbilityDamage {
-    kind: DamageKind,
-    damage: Vec<DamageComponent>,
+    damage: Vec<DamageInstance>,
 }
 
 fn leveling_contains_damage_effect(leveling: &Leveling) -> bool {
@@ -197,50 +255,93 @@ fn leveling_contains_damage_effect(leveling: &Leveling) -> bool {
     result
 }
 
-fn push_ability_damage(
+fn ability_damage(
     levelings: &[Leveling],
     ability: &Ability,
     ability_rank: AbilityRank,
-    map: &mut HashMap<DamageKind, Vec<DamageComponent>>,
-) {
+) -> AbilityDamage {
+    let mut result = Vec::new();
+
     for leveling in levelings {
         if !leveling_contains_damage_effect(leveling) {
             continue;
         }
 
-        let mut component = DamageComponent::default();
+        let mut instance = DamageInstance::default();
+
+        let damage_kind = match try_get_damage_kind(leveling) {
+            DamageKind::None => {
+                if let Some(kind) = &ability.damage_type {
+                    match kind.as_str() {
+                        "PHYSICAL_DAMAGE" => DamageKind::Physcial,
+                        "MAGIC_DAMAGE" => DamageKind::Magic,
+                        "TRUE_DAMAGE" => DamageKind::True,
+                        "MIXED_DAMAGE" => DamageKind::Mixed,
+                        "OTHER_DAMAGE" => DamageKind::Magic,
+                        _ => {
+                            eprintln!("Unknown damage type: {}", kind);
+                            DamageKind::None
+                        }
+                    }
+                } else {
+                    DamageKind::None
+                }
+            },
+            kind => kind,
+        };
+
         for modifier in &leveling.modifiers {
             if let Some(unit_str) = modifier.units.first() {
                 if let Some(value) = modifier.values.get(ability_rank as usize) {
                     if is_flat_damage(unit_str) {
-                        component.base_damage.push(BaseDamage::Flat(*value));
+                        instance.components.push(DamageComponent {
+                            kind: damage_kind,
+                            base: BaseDamage::Flat(*value),
+                            scalings: vec![],
+                        });
                     } else if is_percent_target_max_health(unit_str) {
-                        component
-                            .base_damage
-                            .push(BaseDamage::PercentTargetMaxHealth(*value));
+                        instance.components.push(DamageComponent {
+                            kind: damage_kind,
+                            base: BaseDamage::PercentTargetMaxHealth(*value),
+                            scalings: vec![],
+                        });
                     } else {
-                        component
-                            .scalings
-                            .push(AbilityScaling::from_parts(unit_str, *value));
+                        let scaling = AbilityScaling::from_parts(unit_str, *value);
+                        if let Some(last_part) = instance.components.last_mut() {
+                            last_part.scalings.push(scaling);
+                        } else {
+                            instance.components.push(DamageComponent {
+                                kind: damage_kind,
+                                base: BaseDamage::None,
+                                scalings: vec![scaling],
+                            });
+                        }
                     }
                 }
             }
         }
 
-        if let Some(kind) = &ability.damage_type {
-            let damage_kind = match kind.as_str() {
-                "PHYSICAL_DAMAGE" => DamageKind::Physcial,
-                "MAGIC_DAMAGE" => DamageKind::Magic,
-                "TRUE_DAMAGE" => DamageKind::True,
-                "MIXED_DAMAGE" => DamageKind::Mixed,
-                _ => {
-                    eprintln!("Unknown damage type: {}", kind);
-                    continue;
-                }
-            };
-            map.entry(damage_kind).or_default().push(component);
-        }
+        result.push(instance);
     }
+
+    AbilityDamage { damage: result }
+}
+
+fn try_get_damage_kind(leveling: &Leveling) -> DamageKind {
+        // Try to determine damage type based on attribute
+        if leveling.attribute.to_lowercase().contains("bonus") && leveling.attribute.to_lowercase().contains("true") {
+            DamageKind::True
+        } else if leveling.attribute.to_lowercase().contains("bonus") {
+            DamageKind::True
+        } else if leveling.attribute.to_lowercase().contains("mixed") {
+            DamageKind::Mixed
+        } else if leveling.attribute.to_lowercase().contains("magic") {
+            DamageKind::Magic
+        } else if leveling.attribute.to_lowercase().contains("physical") {
+            DamageKind::Physcial
+        } else {
+            DamageKind::None
+        }
 }
 
 fn ability_damage_by_rank(
@@ -251,8 +352,6 @@ fn ability_damage_by_rank(
     let ability = champion.get_ability(ability_kind);
     // Check if ability is damaging ability
     ability.damage_type.as_ref()?;
-
-    let mut map: HashMap<DamageKind, Vec<DamageComponent>> = HashMap::new();
 
     // TODO: Resistances Reduction is a valid thing, that i should take into account
     // TODO: Somehow handle abilties that buff auto attacks
@@ -270,6 +369,7 @@ fn ability_damage_by_rank(
         "heal",
         "damage reduction",
         "structure",
+        "non-champion",
     ];
 
     let filtered_effects: Vec<_> = ability
@@ -279,11 +379,7 @@ fn ability_damage_by_rank(
             let filtered_levelings: Vec<_> = effect
                 .leveling
                 .iter()
-                .filter(|leveling| {
-                    !exclude_patterns
-                        .iter()
-                        .any(|pat| leveling.attribute.to_lowercase().contains(pat))
-                })
+                .filter(|leveling| !should_exclude_attribute(&leveling.attribute, &exclude_patterns))
                 .cloned()
                 .collect();
             if !filtered_levelings.is_empty() {
@@ -297,6 +393,9 @@ fn ability_damage_by_rank(
         .collect();
 
     let max_patterns = ["Maximum", "Total"];
+
+    let mut result = Vec::new();
+
     if let Some(effect) = filtered_effects.iter().find(|effect| {
         effect.leveling.iter().any(|leveling| {
             max_patterns
@@ -314,30 +413,31 @@ fn ability_damage_by_rank(
             })
             .cloned()
             .collect();
-        push_ability_damage(
-            &max_levelings,
-            ability,
-            ability_rank,
-            &mut map,
-        );
+
+        let is_mixed_damage = max_levelings
+            .iter()
+            .any(|leveling| leveling.attribute.to_lowercase().contains("mixed"));
+        if is_mixed_damage {
+            let damage_components: Vec<Leveling> = effect
+                .leveling
+                .iter()
+                .filter(|leveling| {
+                    !max_patterns
+                        .iter()
+                        .any(|pat| leveling.attribute.contains(pat))
+                })
+                .cloned()
+                .collect();
+            result.push(ability_damage(&damage_components, ability, ability_rank));
+        } else {
+            result.push(ability_damage(&max_levelings, ability, ability_rank));
+        }
     } else {
         for effect in &filtered_effects {
-            push_ability_damage(
-                &effect.leveling,
-                ability,
-                ability_rank,
-                &mut map,
-            );
+            result.push(ability_damage(&effect.leveling, ability, ability_rank));
         }
     }
-    let result: Vec<AbilityDamage> = map
-        .into_iter()
-        .map(|(kind, components)| AbilityDamage {
-            kind,
-            damage: components,
-        })
-        .collect();
-    
+
     dbg!(&champion.name);
     dbg!(&result);
 
@@ -383,7 +483,7 @@ fn main() {
                 continue;
             }
         };
-        let damage = ability_damage_by_rank(AbilityKind::W, AbilityRank::One, &champion);
+        let damage = ability_damage_by_rank(AbilityKind::Q, AbilityRank::One, &champion);
         // println!("{:?}: {:?}", champion_kind, damage);
         // println!();
     }
@@ -394,6 +494,21 @@ fn read_champion_data(champion: &ChampionKind) -> Result<Champion, Box<dyn std::
     let data = fs::read_to_string(path)?;
     let champion = serde_json::from_str(&data)?;
     Ok(champion)
+}
+
+fn should_exclude_attribute(attr: &str, exclude_patterns: &[&str]) -> bool {
+    let attr = attr.to_lowercase();
+    for pat in exclude_patterns {
+        if *pat == "minion" {
+            // Exclude only if "minion" is present and "non-minion" is NOT present
+            if attr.contains("minion") && !attr.contains("non-minion") {
+                return true;
+            }
+        } else if attr.contains(pat) {
+            return true;
+        }
+    }
+    false
 }
 
 #[cfg(test)]
