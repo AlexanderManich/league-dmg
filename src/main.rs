@@ -36,76 +36,65 @@ impl Champion {
     }
 }
 
-#[derive(Debug, Default)]
-enum AbilityScaling {
+#[derive(Default, Debug)]
+enum Stat {
     #[default]
     None,
-    PercentAD {
-        base: f32,
-        bonus_per_100_ad: Option<f32>,
-    },
-    PercentBonusAD(f32),
+    AD,
+    BonusAD,
+    AP,
+    MaxHealth,
+    BonusHealth,
+    MissingHealth,
+    Armor,
+    MagicResist,
+    BonusMana,
+    BonusMoveSpeed,
+}
 
-    PercentAP {
-        base: f32,
-        bonus_per_100_ap: Option<f32>,
-        bonus_per_100_bonus_health: Option<f32>,
-    },
-    PercentPer100AP(f32),
+#[derive(Default, Debug)]
+enum ScalingKind {
+    #[default]
+    PercentStat,
+    Per100Stat,
+}
 
-    PercentMaxHealth {
-        base: f32,
-        bonus_per_100_ap: Option<f32>,
-    },
-    PercentBonusHealth(f32),
-    PercentTargetMaxHealth {
-        base: f32,
-        bonus_per_100_bonus_ad: Option<f32>,
-        bonus_per_100_ap: Option<f32>,
-        bonus_per_100_bonus_armor: Option<f32>,
-        bonus_per_100_bonus_mr: Option<f32>,
-    },
-    PercentTargetCurrentHealth(f32),
-    PercentTargetMissingHealth(f32),
-
-    PercentArmor(f32),
-    PercentBonusArmor(f32),
-    PercentTargetArmor(f32),
-
-    PercentMR(f32),
-    PercentBonusMR(f32),
-
-    PercentBonusMana(f32),
-
-    PercentBonusMoveSpeed(f32),
-    // Created this for Nasus Q scaling, but im not sure if there are other champions that scale of off stacks.
-    // Might have to specialize this...
-    PercentStacks(f32),
+#[derive(Debug, Default)]
+struct AbilityScaling {
+    stat: Stat,
+    ratio: f32,
+    kind: ScalingKind,
 }
 
 impl AbilityScaling {
     fn from_parts(kind: &str, value: f32) -> Self {
         match kind {
-            "% AD" => AbilityScaling::PercentAD {
-                base: value,
-                bonus_per_100_ad: None,
+            "% AD" => AbilityScaling {
+                stat: Stat::AD,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
             },
-            "% bonus AD" => AbilityScaling::PercentBonusAD(value),
-            "% per 100 AD" => AbilityScaling::PercentAD {
-                base: 0.0,
-                bonus_per_100_ad: Some(value),
+            "% bonus AD" => AbilityScaling {
+                stat: Stat::BonusAD,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
+            "% per 100 AD" => AbilityScaling {
+                stat: Stat::AD,
+                ratio: value,
+                kind: ScalingKind::Per100Stat,
             },
 
             //         "% per 100 bonus AD" => AbilityScaling::PercentPer100BonusAD(value),
-            "% AP" => AbilityScaling::PercentAP {
-                base: value,
-                bonus_per_100_ap: None,
-                bonus_per_100_bonus_health: None,
+            "% AP" => AbilityScaling {
+                stat: Stat::AP,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
             },
-            "% per 100 AP" => AbilityScaling::PercentAP {
-                base: 0.0,
-                bonus_per_100_ap: Some(value),
-                bonus_per_100_bonus_health: None,
+            "% per 100 AP" => AbilityScaling {
+                stat: Stat::AP,
+                ratio: value,
+                kind: ScalingKind::Per100Stat,
             },
             //         "% AP per 100 bonus health" => AbilityScaling::PercentAPPer100BonusHealth(value),
             //         "% of Sona's AP" => AbilityScaling::PercentAP {
@@ -113,10 +102,10 @@ impl AbilityScaling {
             //             bonus_per_100_ap: None,
             //             bonus_per_100_bonus_health: None,
             //         },
-            "% of Ivern's AP" => AbilityScaling::PercentAP {
-                base: value,
-                bonus_per_100_ap: None,
-                bonus_per_100_bonus_health: None,
+            "% of Ivern's AP" => AbilityScaling {
+                stat: Stat::AP,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
             },
 
             //         "% maximum health" => AbilityScaling::PercentMaxHealth {
@@ -127,25 +116,28 @@ impl AbilityScaling {
             //             base: value,
             //             bonus_per_100_ap: None,
             //         },
-            "% of her maximum health" => AbilityScaling::PercentMaxHealth {
-                base: value,
-                bonus_per_100_ap: None,
+            "% of her maximum health" => AbilityScaling {
+                stat: Stat::MaxHealth,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
             },
             //         "% bonus health" => AbilityScaling::PercentBonusHealth(value),
             //         "% of his bonus health" => AbilityScaling::PercentBonusHealth(value),
-            "% of target's maximum health" => AbilityScaling::PercentTargetMaxHealth {
-                base: value,
-                bonus_per_100_ap: None,
-                bonus_per_100_bonus_ad: None,
-                bonus_per_100_bonus_armor: None,
-                bonus_per_100_bonus_mr: None
+            "% of target's maximum health" => AbilityScaling {
+                stat: Stat::MaxHealth,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
             },
             //         "%  of target's maximum health" => AbilityScaling::PercentTargetMaxHealth(value),
             //         "% of the target's maximum health" => AbilityScaling::PercentTargetMaxHealth(value),
             //         "%  of the target's maximum health" => AbilityScaling::PercentTargetMaxHealth(value),
             //         "% of target's current health" => AbilityScaling::PercentTargetCurrentHealth(value),
             //         "%  of target's current health" => AbilityScaling::PercentTargetCurrentHealth(value),
-            "% of target's missing health" => AbilityScaling::PercentTargetMissingHealth(value),
+            "% of target's missing health" => AbilityScaling {
+                stat: Stat::MissingHealth,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
             //         "% of Braum's maximum health" => AbilityScaling::PercentMaxHealth {
             //             base: value,
             //             bonus_per_100_ap: None,
@@ -154,88 +146,68 @@ impl AbilityScaling {
             //             base: value,
             //             bonus_per_100_ap: None,
             //         },
-            "% per 100 Pantheon's bonus health" => AbilityScaling::PercentBonusHealth(value),
-            "% (+ 0.25% per 100 AP) of target's maximum health" => {
-                AbilityScaling::PercentTargetMaxHealth {
-                    base: value,
-                    bonus_per_100_bonus_ad: None,
-                    bonus_per_100_ap: Some(0.25),
-                    bonus_per_100_bonus_armor: None,
-                    bonus_per_100_bonus_mr: None,
-                }
-            }
-            "% (+ 5% per 100 bonus AD) of target's maximum health" => {
-                AbilityScaling::PercentTargetMaxHealth {
-                    base: value,
-                    bonus_per_100_bonus_ad: Some(5.0),
-                    bonus_per_100_ap: None,
-                    bonus_per_100_bonus_armor: None,
-                    bonus_per_100_bonus_mr: None,
-                }
-            }
-            "% (+ 1.6% per 100 bonus armor) (+ 1.6% per 100 bonus magic resistance) of target's maximum health" => {
-                AbilityScaling::PercentTargetMaxHealth {
-                    base: value,
-                    bonus_per_100_bonus_ad: None,
-                    bonus_per_100_ap: None,
-                    bonus_per_100_bonus_armor: Some(1.6),
-                    bonus_per_100_bonus_mr: Some(1.6),
-                }
+            "% per 100 Pantheon's bonus health" => AbilityScaling {
+                stat: Stat::BonusHealth,
+                ratio: value,
+                kind: ScalingKind::Per100Stat,
             },
-            "% (+ 3.6% per 100 bonus armor) (+ 3.6% per 100 bonus magic resistance) of target's maximum health" => {
-                AbilityScaling::PercentTargetMaxHealth {
-                    base: value,
-                    bonus_per_100_bonus_ad: None,
-                    bonus_per_100_ap: None,
-                    bonus_per_100_bonus_armor: Some(3.6),
-                    bonus_per_100_bonus_mr: Some(3.6),
-                }
+            "% armor" => AbilityScaling {
+                stat: Stat::Armor,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
             },
-            "% armor" => AbilityScaling::PercentArmor(value),
             //         "% total armor" => AbilityScaling::PercentArmor(value),
             //         "% bonus armor" => AbilityScaling::PercentBonusArmor(value),
             //         "% of target's armor" => AbilityScaling::PercentTargetArmor(value),
 
             //         "% total magic resistance" => AbilityScaling::PercentMR(value),
             //         "% bonus magic resistance" => AbilityScaling::PercentBonusMR(value),
-            "% bonus mana" => AbilityScaling::PercentBonusMana(value),
+            "% bonus mana" => AbilityScaling {
+                stat: Stat::BonusMana,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
 
-            "% bonus movement speed" => AbilityScaling::PercentBonusMoveSpeed(value),
+            "% bonus movement speed" => AbilityScaling {
+                stat: Stat::BonusMoveSpeed,
+                ratio: value,
+                kind: ScalingKind::PercentStat,
+            },
 
             //         "% of Siphoning Strike stacks" => AbilityScaling::PercentStacks(value),
             _ => {
                 eprintln!("No ability scaling for kind: {kind}");
-                AbilityScaling::None
+                AbilityScaling::default()
             }
         }
     }
 }
 
 #[derive(Default, Debug)]
-struct BaseDamage {
-    flat: Option<DamageKind>,
-    percent_max_health: Option<DamageKind>,
-    percent_missing_health: Option<DamageKind>,
-}
-
-#[derive(Debug)]
-enum DamageKind {
-    AD(f32),
-    AP(f32),
-    TD(f32),
-    Mixed(f32),
-}
-
-impl Default for DamageKind {
-    fn default() -> Self {
-        DamageKind::AD(0.0)
-    }
+enum BaseDamage {
+    #[default]
+    None,
+    Flat(f32),
+    PercentTargetMaxHealth(f32),
+    PercentTargetMissingHealth(f32),
 }
 
 #[derive(Default, Debug)]
-struct AbilityDamage {
+struct DamageComponent {
     base_damage: BaseDamage,
     scalings: Vec<AbilityScaling>,
+}
+
+enum DamageKind {
+    Physcial,
+    Magic,
+    True,
+    Mixed,
+}
+
+struct AbilityDamage {
+    kind: DamageKind,
+    damage: Vec<DamageComponent>,
 }
 
 fn leveling_contains_damage_effect(leveling: &Leveling) -> bool {
@@ -260,34 +232,22 @@ fn try_infer_base_damage_breakdown(
     let mut result = None;
 
     let attribute = &leveling.attribute;
-    let damage_kind = match damage_kind_str {
-        "PHYSICAL_DAMAGE" => DamageKind::AD(value),
-        "MAGIC_DAMAGE" => DamageKind::AP(value),
-        "TRUE_DAMAGE" => DamageKind::TD(value),
-        "MIXED_DAMAGE" => DamageKind::Mixed(value),
-        // Skarner W is classified as other damage for some reason???
-        "OTHER_DAMAGE" => DamageKind::AP(value),
-        _ => panic!("Unexpected damage kind"),
-    };
+    // let damage_kind = match damage_kind_str {
+    //     "PHYSICAL_DAMAGE" => DamageKind::Physcial,
+    //     "MAGIC_DAMAGE" => DamageKind::Magic,
+    //     "TRUE_DAMAGE" => DamageKind::True,
+    //     "MIXED_DAMAGE" => DamageKind::Mixed,
+    //     // Skarner W is classified as other damage for some reason???
+    //     "OTHER_DAMAGE" => DamageKind::Magic,
+    //     _ => panic!("Unexpected damage kind"),
+    // };
 
     if attribute.contains("maximum health") {
-        result = Some(BaseDamage {
-            flat: None,
-            percent_max_health: Some(damage_kind),
-            percent_missing_health: None,
-        })
+        result = Some(BaseDamage::PercentTargetMaxHealth(value));
     } else if attribute.contains("missing health") {
-        result = Some(BaseDamage {
-            flat: None,
-            percent_max_health: None,
-            percent_missing_health: Some(damage_kind),
-        })
+        result = Some(BaseDamage::PercentTargetMissingHealth(value));
     } else {
-        result = Some(BaseDamage {
-            flat: Some(damage_kind),
-            percent_max_health: None,
-            percent_missing_health: None,
-        });
+        result = Some(BaseDamage::Flat(value));
     }
 
     result
@@ -297,7 +257,7 @@ fn ability_damage_by_rank(
     ability_kind: AbilityKind,
     ability_rank: AbilityRank,
     champion: &Champion,
-) -> Option<Vec<AbilityDamage>> {
+) -> Option<Vec<DamageComponent>> {
     let ability = champion.get_ability(ability_kind);
     // Check if ability is damaging ability
     ability.damage_type.as_ref()?;
@@ -312,7 +272,7 @@ fn ability_damage_by_rank(
                 continue;
             }
 
-            let mut ability_damage = AbilityDamage::default();
+            let mut ability_damage = DamageComponent::default();
             for (i, modifier) in modifiers.iter().enumerate() {
                 if let Some(modifier_str) = modifier.units.first() {
                     if modifier_is_base_damage(i) {
@@ -326,13 +286,14 @@ fn ability_damage_by_rank(
                             }
                         };
                     } else if let Some(v) = modifier.values.get(ability_rank as usize) {
-                        dbg!(&champion.name);
-                        dbg!(&leveling.attribute);
                         let scaling = AbilityScaling::from_parts(modifier_str, *v);
                         ability_damage.scalings.push(scaling);
                     }
                 }
             }
+            dbg!(&champion.name);
+            dbg!(&leveling.attribute);
+            dbg!(&ability_damage);
             result.push(ability_damage);
         }
     };
