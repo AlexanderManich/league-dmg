@@ -176,7 +176,7 @@ pub enum ChampionKind {
     Zyra,
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Champion {
     pub id: i64,
@@ -259,11 +259,9 @@ where
         .ok_or_else(|| D::Error::custom("Expected at least one ability"))
 }
 
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Abilities {
-    // I assume there's never going to be more than one ability, so we deserialize "abiities": { "P": [...]}
-    // directly to the ability instead of Vec<Ability> forexample. THIS MIGHT BE WRONG IDK
     #[serde(rename = "P", deserialize_with = "first_in_vec")]
     pub p: Ability,
     #[serde(rename = "Q", deserialize_with = "first_in_vec")]
@@ -338,7 +336,7 @@ pub struct Cooldown {
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct Modifier {
-    pub values: Vec<f64>,
+    pub values: Vec<f32>,
     pub units: Vec<String>,
 }
 
