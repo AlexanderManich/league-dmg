@@ -1,5 +1,5 @@
-use std::collections::HashMap;
-use std::{default, fs};
+use std::fs;
+use std::io::Write;
 use std::{path::Path, process::Command};
 mod champions_t;
 use strum::IntoEnumIterator;
@@ -178,6 +178,11 @@ impl AbilityScaling {
                 ratio: value,
                 kind: ScalingKind::PercentStat,
             },
+            "% per 100 bonus armor" => AbilityScaling {
+                stat: Stat::BonusArmor,
+                ratio: value,
+                kind: ScalingKind::Per100Stat,
+            },
 
             // Magic Restistance Scalings
             "% bonus magic resistance" => AbilityScaling {
@@ -219,11 +224,6 @@ enum BaseDamage {
 }
 
 #[derive(Default, Debug)]
-struct DamageInstance {
-    components: Vec<DamageComponent>,
-}
-
-#[derive(Default, Debug)]
 struct DamageComponent {
     kind: DamageKind,
     base: BaseDamage,
@@ -242,7 +242,7 @@ enum DamageKind {
 
 #[derive(Debug)]
 struct AbilityDamage {
-    damage: Vec<DamageInstance>,
+    damage: Vec<DamageComponent>,
 }
 
 fn leveling_contains_damage_effect(leveling: &Leveling) -> bool {
@@ -267,10 +267,8 @@ fn ability_damage(
             continue;
         }
 
-        let mut instance = DamageInstance::default();
-
         let damage_kind = match try_get_damage_kind(leveling) {
-            DamageKind::None => {
+            None => {
                 if let Some(kind) = &ability.damage_type {
                     match kind.as_str() {
                         "PHYSICAL_DAMAGE" => DamageKind::Physcial,
@@ -286,31 +284,41 @@ fn ability_damage(
                 } else {
                     DamageKind::None
                 }
-            },
-            kind => kind,
+            }
+            Some(kind) => kind,
         };
 
         for modifier in &leveling.modifiers {
             if let Some(unit_str) = modifier.units.first() {
                 if let Some(value) = modifier.values.get(ability_rank as usize) {
                     if is_flat_damage(unit_str) {
-                        instance.components.push(DamageComponent {
+                        result.push(DamageComponent {
                             kind: damage_kind,
                             base: BaseDamage::Flat(*value),
                             scalings: vec![],
                         });
+                    } else if is_percent_damage_with_scaling(unit_str) {
+                        dbg!(&ability.name);
+                        let scaling = parse_percent_damage_with_scaling(unit_str);
+                        if is_percent_target_max_health(unit_str) {
+                            result.push(DamageComponent {
+                                kind: damage_kind,
+                                base: BaseDamage::PercentTargetMaxHealth(*value),
+                                scalings: vec![scaling],
+                            });
+                        }
                     } else if is_percent_target_max_health(unit_str) {
-                        instance.components.push(DamageComponent {
+                        result.push(DamageComponent {
                             kind: damage_kind,
                             base: BaseDamage::PercentTargetMaxHealth(*value),
                             scalings: vec![],
                         });
                     } else {
                         let scaling = AbilityScaling::from_parts(unit_str, *value);
-                        if let Some(last_part) = instance.components.last_mut() {
+                        if let Some(last_part) = result.last_mut() {
                             last_part.scalings.push(scaling);
                         } else {
-                            instance.components.push(DamageComponent {
+                            result.push(DamageComponent {
                                 kind: damage_kind,
                                 base: BaseDamage::None,
                                 scalings: vec![scaling],
@@ -320,28 +328,52 @@ fn ability_damage(
                 }
             }
         }
-
-        result.push(instance);
     }
 
-    AbilityDamage { damage: result }
+    AbilityDamage { damage: result}
 }
 
-fn try_get_damage_kind(leveling: &Leveling) -> DamageKind {
-        // Try to determine damage type based on attribute
-        if leveling.attribute.to_lowercase().contains("bonus") && leveling.attribute.to_lowercase().contains("true") {
-            DamageKind::True
-        } else if leveling.attribute.to_lowercase().contains("bonus") {
-            DamageKind::True
-        } else if leveling.attribute.to_lowercase().contains("mixed") {
-            DamageKind::Mixed
-        } else if leveling.attribute.to_lowercase().contains("magic") {
-            DamageKind::Magic
-        } else if leveling.attribute.to_lowercase().contains("physical") {
-            DamageKind::Physcial
-        } else {
-            DamageKind::None
+fn is_percent_damage_with_scaling(unit_str: &str) -> bool {
+    unit_str.contains("(+") && unit_str.contains("per 100")
+}
+
+fn parse_percent_damage_with_scaling(unit_str: &str) -> AbilityScaling {
+    let mut scaling_value = 0.0;
+    let mut scaling_unit_str = "";
+
+    if let Some(start) = unit_str.find("(+") {
+        if let Some(end) = unit_str[start..].find(")") {
+            let scaling_str = &unit_str[start + 3..start + end];
+            dbg!(scaling_str);
+            if let Some(percent_idx) = scaling_str.find("%") {
+                scaling_unit_str = &scaling_str[percent_idx..];
+                let value_str = &scaling_str[..percent_idx].trim();
+                if let Ok(value) = value_str.parse::<f32>() {
+                    dbg!(value);
+                    scaling_value = value;
+                }
+            }
         }
+    }
+
+    AbilityScaling::from_parts(scaling_unit_str, scaling_value)
+}
+
+fn try_get_damage_kind(leveling: &Leveling) -> Option<DamageKind> {
+    // Try to determine damage type based on attribute
+    if leveling.attribute.to_lowercase().contains("bonus")
+        && leveling.attribute.to_lowercase().contains("true")
+    {
+        Some(DamageKind::True)
+    } else if leveling.attribute.to_lowercase().contains("mixed") {
+        Some(DamageKind::Mixed)
+    } else if leveling.attribute.to_lowercase().contains("magic") {
+        Some(DamageKind::Magic)
+    } else if leveling.attribute.to_lowercase().contains("physical") {
+        Some(DamageKind::Physcial)
+    } else {
+        None
+    }
 }
 
 fn ability_damage_by_rank(
@@ -379,7 +411,9 @@ fn ability_damage_by_rank(
             let filtered_levelings: Vec<_> = effect
                 .leveling
                 .iter()
-                .filter(|leveling| !should_exclude_attribute(&leveling.attribute, &exclude_patterns))
+                .filter(|leveling| {
+                    !should_exclude_attribute(&leveling.attribute, &exclude_patterns)
+                })
                 .cloned()
                 .collect();
             if !filtered_levelings.is_empty() {
@@ -417,6 +451,7 @@ fn ability_damage_by_rank(
         let is_mixed_damage = max_levelings
             .iter()
             .any(|leveling| leveling.attribute.to_lowercase().contains("mixed"));
+
         if is_mixed_damage {
             let damage_components: Vec<Leveling> = effect
                 .leveling
@@ -437,9 +472,6 @@ fn ability_damage_by_rank(
             result.push(ability_damage(&effect.leveling, ability, ability_rank));
         }
     }
-
-    dbg!(&champion.name);
-    dbg!(&result);
 
     Some(result)
 }
@@ -475,6 +507,13 @@ fn main() {
         }
     }
 
+    fs::OpenOptions::new()
+        .create(true)
+        .write(true)
+        .truncate(true)
+        .open("file.txt")
+        .expect("Failed to truncate file");
+
     for champion_kind in ChampionKind::iter() {
         let champion = match read_champion_data(&champion_kind) {
             Ok(champ) => champ,
@@ -483,9 +522,15 @@ fn main() {
                 continue;
             }
         };
-        let damage = ability_damage_by_rank(AbilityKind::Q, AbilityRank::One, &champion);
-        // println!("{:?}: {:?}", champion_kind, damage);
-        // println!();
+        if let Some(damage) = ability_damage_by_rank(AbilityKind::Q, AbilityRank::One, &champion) {
+            let out = format!("{:#?}\n{:#?}\r\n", champion.name, damage);
+            let mut file = fs::OpenOptions::new()
+                .create(true)
+                .append(true)
+                .open("file.txt")
+                .unwrap();
+            file.write_all(out.as_bytes()).unwrap();
+        }
     }
 }
 
