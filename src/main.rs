@@ -10,7 +10,7 @@ use crate::champions_t::{
 };
 
 #[derive(Copy, Clone)]
-enum AbilityRank {
+enum AbilityLevel {
     One,
     Two,
     Three,
@@ -18,7 +18,7 @@ enum AbilityRank {
     Five,
 }
 
-enum AbilityKind {
+enum AbilitySlot {
     P,
     Q,
     W,
@@ -27,24 +27,27 @@ enum AbilityKind {
 }
 
 impl ChampionRaw {
-    fn get_ability(&self, ability_kind: AbilityKind) -> &AbilityRaw {
+    fn get_ability(&self, ability_kind: AbilitySlot) -> &AbilityRaw {
         match ability_kind {
-            AbilityKind::P => &self.abilities.p,
-            AbilityKind::Q => &self.abilities.q,
-            AbilityKind::W => &self.abilities.w,
-            AbilityKind::E => &self.abilities.e,
-            AbilityKind::R => &self.abilities.r,
+            AbilitySlot::P => &self.abilities.p,
+            AbilitySlot::Q => &self.abilities.q,
+            AbilitySlot::W => &self.abilities.w,
+            AbilitySlot::E => &self.abilities.e,
+            AbilitySlot::R => &self.abilities.r,
         }
     }
 }
 
-#[derive(Default, Debug)]
-enum StatKind {
+#[derive(Default, Debug, Copy, Clone)]
+enum StatType {
     #[default]
-    None,
     AD,
     BonusAD,
+    FlatArmorPen,
+    PercentArmorPen,
     AP,
+    FlatMagicPen,
+    PercentMagicPen,
     MaxHealth,
     CurrentHealth,
     BonusHealth,
@@ -58,193 +61,191 @@ enum StatKind {
 }
 
 #[derive(Default, Debug, Copy, Clone)]
-enum ScalingKind {
+enum ScalingType {
     #[default]
     PercentStat,
     Per100Stat,
 }
 
-impl ScalingKind {
-    fn apply(self, ratio: f32, value: f32) -> f32 {
-        match self {
-            ScalingKind::PercentStat => (ratio / 100.0) * value,
-            ScalingKind::Per100Stat => (ratio / 100.0) * (value / 100.0),
-        }
-    }
-}
-
 #[derive(Debug, Default)]
 struct AbilityScaling {
-    stat: StatKind,
+    stat_type: StatType,
     ratio: f32,
-    kind: ScalingKind,
-    per_stat: Option<StatKind>,
+    kind: ScalingType,
+    per_stat: Option<StatType>,
 }
 
 impl AbilityScaling {
+    fn scaled_value(&self, stat_value: f32) -> f32 {
+        match self.kind {
+            ScalingType::PercentStat => (self.ratio / 100.0) * stat_value,
+            ScalingType::Per100Stat => (self.ratio / 100.0) * (stat_value / 100.0),
+        }
+    }
+
     fn from_parts(kind: &str, value: f32) -> Self {
         match kind {
             // AD Scalings
             "% AD" => AbilityScaling {
-                stat: StatKind::AD,
+                stat_type: StatType::AD,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% bonus AD" => AbilityScaling {
-                stat: StatKind::BonusAD,
+                stat_type: StatType::BonusAD,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% per 100 AD" => AbilityScaling {
-                stat: StatKind::AD,
+                stat_type: StatType::AD,
                 ratio: value,
-                kind: ScalingKind::Per100Stat,
+                kind: ScalingType::Per100Stat,
                 per_stat: None,
             },
             "% per 100 bonus AD" => AbilityScaling {
-                stat: StatKind::BonusAD,
+                stat_type: StatType::BonusAD,
                 ratio: value,
-                kind: ScalingKind::Per100Stat,
+                kind: ScalingType::Per100Stat,
                 per_stat: None,
             },
 
             // AP Scalings
             "% AP" => AbilityScaling {
-                stat: StatKind::AP,
+                stat_type: StatType::AP,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% per 100 AP" => AbilityScaling {
-                stat: StatKind::AP,
+                stat_type: StatType::AP,
                 ratio: value,
-                kind: ScalingKind::Per100Stat,
+                kind: ScalingType::Per100Stat,
                 per_stat: None,
             },
             "% of Ivern's AP" => AbilityScaling {
-                stat: StatKind::AP,
+                stat_type: StatType::AP,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% of Sona's AP" => AbilityScaling {
-                stat: StatKind::AP,
+                stat_type: StatType::AP,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% AP per 100 bonus health" => AbilityScaling {
-                stat: StatKind::AP,
+                stat_type: StatType::AP,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
-                per_stat: Some(StatKind::BonusHealth),
+                kind: ScalingType::PercentStat,
+                per_stat: Some(StatType::BonusHealth),
             },
 
             // Health Scalings
             "% of her maximum health" => AbilityScaling {
-                stat: StatKind::MaxHealth,
+                stat_type: StatType::MaxHealth,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% of target's maximum health" => AbilityScaling {
-                stat: StatKind::MaxHealth,
+                stat_type: StatType::MaxHealth,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% of Braum's maximum health" => AbilityScaling {
-                stat: StatKind::MaxHealth,
+                stat_type: StatType::MaxHealth,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% of Zac's maximum health" => AbilityScaling {
-                stat: StatKind::MaxHealth,
+                stat_type: StatType::MaxHealth,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% of target's current health" => AbilityScaling {
-                stat: StatKind::CurrentHealth,
+                stat_type: StatType::CurrentHealth,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "%  of target's current health" => AbilityScaling {
-                stat: StatKind::CurrentHealth,
+                stat_type: StatType::CurrentHealth,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% of target's missing health" => AbilityScaling {
-                stat: StatKind::MissingHealth,
+                stat_type: StatType::MissingHealth,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% bonus health" => AbilityScaling {
-                stat: StatKind::BonusHealth,
+                stat_type: StatType::BonusHealth,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% of his bonus health" => AbilityScaling {
-                stat: StatKind::BonusHealth,
+                stat_type: StatType::BonusHealth,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% per 100 Pantheon's bonus health" => AbilityScaling {
-                stat: StatKind::BonusHealth,
+                stat_type: StatType::BonusHealth,
                 ratio: value,
-                kind: ScalingKind::Per100Stat,
+                kind: ScalingType::Per100Stat,
                 per_stat: None,
             },
 
             // Armor Scalings
             "% armor" => AbilityScaling {
-                stat: StatKind::Armor,
+                stat_type: StatType::Armor,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% bonus armor" => AbilityScaling {
-                stat: StatKind::BonusArmor,
+                stat_type: StatType::BonusArmor,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
             "% per 100 bonus armor" => AbilityScaling {
-                stat: StatKind::BonusArmor,
+                stat_type: StatType::BonusArmor,
                 ratio: value,
-                kind: ScalingKind::Per100Stat,
+                kind: ScalingType::Per100Stat,
                 per_stat: None,
             },
 
             // Magic Restistance Scalings
             "% bonus magic resistance" => AbilityScaling {
-                stat: StatKind::BonusMagicResist,
+                stat_type: StatType::BonusMagicResist,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
 
             // Mana Scaling
             "% bonus mana" => AbilityScaling {
-                stat: StatKind::BonusMana,
+                stat_type: StatType::BonusMana,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
 
             // Movement Speed Scalings
             "% bonus movement speed" => AbilityScaling {
-                stat: StatKind::BonusMoveSpeed,
+                stat_type: StatType::BonusMoveSpeed,
                 ratio: value,
-                kind: ScalingKind::PercentStat,
+                kind: ScalingType::PercentStat,
                 per_stat: None,
             },
 
@@ -268,13 +269,43 @@ enum BaseDamage {
 
 #[derive(Default, Debug)]
 struct DamageComponent {
-    damage_kind: DamageKind,
+    damage_type: DamageType,
     base: BaseDamage,
     scalings: Vec<AbilityScaling>,
 }
 
+impl DamageComponent {
+    fn base_damage(&self, source_champion: &Champion, target_champion: &Champion) -> f32 {
+        match self.base {
+            BaseDamage::Flat(value) => value,
+            BaseDamage::PercentTargetMaxHealth(value) => {
+                target_champion
+                    .stats
+                    .stat_at_level(StatType::MaxHealth, target_champion.level)
+                    * (value / 100.0)
+            }
+            BaseDamage::PercentTargetMissingHealth(_) => todo!(),
+            BaseDamage::PercentResource(_) => todo!(),
+            BaseDamage::None => todo!(),
+        }
+    }
+
+    fn total_scaled_bonus(&self, source_champion: &Champion) -> f32 {
+        self.scalings
+            .iter()
+            .map(|scaling| {
+                scaling.scaled_value(
+                    source_champion
+                        .stats
+                        .stat_at_level(scaling.stat_type, source_champion.level),
+                )
+            })
+            .sum()
+    }
+}
+
 #[derive(Default, Copy, Clone, Debug)]
-enum DamageKind {
+enum DamageType {
     #[default]
     None,
     True,
@@ -283,16 +314,16 @@ enum DamageKind {
     Mixed,
 }
 
-impl DamageKind {
+impl DamageType {
     fn from_str(s: &str) -> Self {
         match s.to_ascii_uppercase().as_str() {
-            "PHYSICAL_DAMAGE" => DamageKind::Physical,
-            "MAGIC_DAMAGE" => DamageKind::Magic,
-            "TRUE_DAMAGE" => DamageKind::True,
-            "MIXED_DAMAGE" => DamageKind::Mixed,
+            "PHYSICAL_DAMAGE" => DamageType::Physical,
+            "MAGIC_DAMAGE" => DamageType::Magic,
+            "TRUE_DAMAGE" => DamageType::True,
+            "MIXED_DAMAGE" => DamageType::Mixed,
             // Skarner W deals magic damage but is classified as OTHER for some reason...
-            "OTHER_DAMAGE" => DamageKind::Magic,
-            _ => DamageKind::None,
+            "OTHER_DAMAGE" => DamageType::Magic,
+            _ => DamageType::None,
         }
     }
 }
@@ -315,7 +346,7 @@ fn leveling_contains_damage_effect(leveling: &Leveling) -> bool {
 fn ability_damage(
     levelings: &[Leveling],
     ability: &AbilityRaw,
-    ability_rank: AbilityRank,
+    ability_rank: AbilityLevel,
 ) -> AbilityDamage {
     let mut result = Vec::new();
 
@@ -324,12 +355,12 @@ fn ability_damage(
             continue;
         }
 
-        let damage_kind = match try_get_damage_kind(leveling) {
+        let damage_type = match try_get_damage_type(leveling) {
             None => {
                 if let Some(kind) = &ability.damage_type {
-                    DamageKind::from_str(kind)
+                    DamageType::from_str(kind)
                 } else {
-                    DamageKind::None
+                    DamageType::None
                 }
             }
             Some(kind) => kind,
@@ -340,7 +371,7 @@ fn ability_damage(
                 if let Some(value) = modifier.values.get(ability_rank as usize) {
                     if is_flat_damage(unit_str) {
                         result.push(DamageComponent {
-                            damage_kind,
+                            damage_type,
                             base: BaseDamage::Flat(*value),
                             scalings: vec![],
                         });
@@ -348,14 +379,14 @@ fn ability_damage(
                         let scaling = parse_percent_damage_with_scaling(unit_str);
                         if is_percent_target_max_health(unit_str) {
                             result.push(DamageComponent {
-                                damage_kind,
+                                damage_type,
                                 base: BaseDamage::PercentTargetMaxHealth(*value),
                                 scalings: vec![scaling],
                             });
                         }
                     } else if is_percent_target_max_health(unit_str) {
                         result.push(DamageComponent {
-                            damage_kind,
+                            damage_type,
                             base: BaseDamage::PercentTargetMaxHealth(*value),
                             scalings: vec![],
                         });
@@ -365,7 +396,7 @@ fn ability_damage(
                             last_part.scalings.push(scaling);
                         } else {
                             result.push(DamageComponent {
-                                damage_kind,
+                                damage_type,
                                 base: BaseDamage::None,
                                 scalings: vec![scaling],
                             });
@@ -403,27 +434,27 @@ fn parse_percent_damage_with_scaling(unit_str: &str) -> AbilityScaling {
     AbilityScaling::from_parts(scaling_unit_str, scaling_value)
 }
 
-fn try_get_damage_kind(leveling: &Leveling) -> Option<DamageKind> {
+fn try_get_damage_type(leveling: &Leveling) -> Option<DamageType> {
     // Try to determine damage type based on attribute
     if leveling.attribute.to_lowercase().contains("true") {
-        Some(DamageKind::True)
+        Some(DamageType::True)
     } else if leveling.attribute.to_lowercase().contains("mixed") {
-        Some(DamageKind::Mixed)
+        Some(DamageType::Mixed)
     } else if leveling.attribute.to_lowercase().contains("magic") {
-        Some(DamageKind::Magic)
+        Some(DamageType::Magic)
     } else if leveling.attribute.to_lowercase().contains("physical") {
-        Some(DamageKind::Physical)
+        Some(DamageType::Physical)
     } else {
         None
     }
 }
 
-fn ability_damage_by_rank(
-    ability_kind: AbilityKind,
-    ability_rank: AbilityRank,
+fn ability_damage_by_level(
+    ability_slot: AbilitySlot,
+    ability_level: AbilityLevel,
     champion: &Champion,
 ) -> Option<Vec<AbilityDamage>> {
-    let ability = champion.get_ability(ability_kind);
+    let ability = champion.get_ability(ability_slot);
     // Check if ability is damaging ability
     ability.damage_type.as_ref()?;
 
@@ -508,7 +539,7 @@ fn ability_damage_by_rank(
                     .cloned()
                     .collect();
 
-                result.push(ability_damage(&damage_components, ability, ability_rank));
+                result.push(ability_damage(&damage_components, ability, ability_level));
             }
         } else {
             // Here we pass levelings individually, instead of passing the max_levelings vec, because we might have
@@ -516,13 +547,13 @@ fn ability_damage_by_rank(
             // (Sweetspot / Non-Sweetspot) where we want an individual AbilityDamage for each variant.
             // NOTE: We assume/assert that an ability variant only ever has one "max_pattern" leveling.
             for leveling in max_levelings {
-                result.push(ability_damage(&[leveling], ability, ability_rank));
+                result.push(ability_damage(&[leveling], ability, ability_level));
             }
         }
     } else {
         // No leveling had a "max_pattern" so we just pass all levelings in all effects
         for effect in &filtered_effects {
-            result.push(ability_damage(&effect.leveling, ability, ability_rank));
+            result.push(ability_damage(&effect.leveling, ability, ability_level));
         }
     }
 
@@ -668,11 +699,11 @@ struct Stats {
     armor: Stat,
     magic_resistance: Stat,
     attack_damage: Stat,
-    flat_armor_pen: f32,
-    percent_armor_pen: f32,
-    ability_power: f32,
-    flat_magic_pen: f32,
-    percent_magic_pen: f32,
+    flat_armor_pen: Stat,
+    percent_armor_pen: Stat,
+    ability_power: Stat,
+    flat_magic_pen: Stat,
+    percent_magic_pen: Stat,
     movespeed: Stat,
     critical_strike_damage: Stat,
     critical_strike_damage_modifier: Stat,
@@ -680,6 +711,33 @@ struct Stats {
     attack_speed_ratio: Stat,
     attack_cast_time: Stat,
     attack_total_time: Stat,
+}
+
+impl Stats {
+    fn stat_at_level(&self, stat_type: StatType, level: i32) -> f32 {
+        match stat_type {
+            StatType::AD => self.attack_damage.total(level),
+            StatType::AP => self.ability_power.total(level),
+            StatType::FlatArmorPen => self.flat_armor_pen.total(level),
+            StatType::PercentArmorPen => self.percent_armor_pen.total(level),
+            StatType::FlatMagicPen => self.flat_magic_pen.total(level),
+            StatType::PercentMagicPen => self.percent_magic_pen.total(level),
+            StatType::BonusAD => self.attack_damage.bonus,
+            StatType::MaxHealth => self.health.total(level),
+            StatType::CurrentHealth => self.health.total(level), // Placeholder: needs actual current health tracking
+            StatType::BonusHealth => self.health.bonus,
+            StatType::MissingHealth => {
+                // Placeholder: assumes missing health is zero (full health)
+                0.0
+            }
+            StatType::Armor => self.armor.total(level),
+            StatType::BonusArmor => self.armor.bonus,
+            StatType::MagicResist => self.magic_resistance.total(level),
+            StatType::BonusMagicResist => self.magic_resistance.bonus,
+            StatType::BonusMana => self.mana.bonus,
+            StatType::BonusMoveSpeed => self.movespeed.bonus,
+        }
+    }
 }
 
 impl From<StatsRaw> for Stats {
@@ -692,11 +750,11 @@ impl From<StatsRaw> for Stats {
             armor: raw.armor.into(),
             magic_resistance: raw.magic_resistance.into(),
             attack_damage: raw.attack_damage.into(),
-            flat_armor_pen: 0.0,
-            percent_armor_pen: 0.0,
-            ability_power: 0.0,
-            flat_magic_pen: 0.0,
-            percent_magic_pen: 0.0,
+            flat_armor_pen: Stat::default(),
+            percent_armor_pen: Stat::default(),
+            ability_power: Stat::default(),
+            flat_magic_pen: Stat::default(),
+            percent_magic_pen: Stat::default(),
             movespeed: raw.movespeed.into(),
             critical_strike_damage: raw.critical_strike_damage.into(),
             critical_strike_damage_modifier: raw.critical_strike_damage_modifier.into(),
@@ -716,13 +774,13 @@ struct Champion {
 }
 
 impl Champion {
-    fn get_ability(&self, ability_kind: AbilityKind) -> &AbilityRaw {
+    fn get_ability(&self, ability_kind: AbilitySlot) -> &AbilityRaw {
         match ability_kind {
-            AbilityKind::P => &self.abilities.p,
-            AbilityKind::Q => &self.abilities.q,
-            AbilityKind::W => &self.abilities.w,
-            AbilityKind::E => &self.abilities.e,
-            AbilityKind::R => &self.abilities.r,
+            AbilitySlot::P => &self.abilities.p,
+            AbilitySlot::Q => &self.abilities.q,
+            AbilitySlot::W => &self.abilities.w,
+            AbilitySlot::E => &self.abilities.e,
+            AbilitySlot::R => &self.abilities.r,
         }
     }
 }
@@ -746,29 +804,13 @@ fn calculate_damage(
     dmg.components
         .iter()
         .map(|comp| {
-            let base_damage = match comp.base {
-                BaseDamage::Flat(value) => value,
-                BaseDamage::PercentTargetMaxHealth(value) => {
-                    target_champion.stats.health.total(target_champion.level) * (value / 100.0)
-                }
-                _ => 0.0,
-            };
-
-            let scaling_damage: f32 = comp
-                .scalings
-                .iter()
-                .map(|scaling| match &scaling.stat {
-                    StatKind::AP => scaling
-                        .kind
-                        .apply(scaling.ratio, source_champion.stats.ability_power),
-                    _ => 0.0,
-                })
-                .sum();
+            let base_damage = comp.base_damage(source_champion, target_champion);
+            let scaling_damage: f32 = comp.total_scaled_bonus(source_champion);
 
             let pre_mitigation_damage = base_damage + scaling_damage;
 
-            match comp.damage_kind {
-                DamageKind::Magic => {
+            match comp.damage_type {
+                DamageType::Magic => {
                     let magic_resistance = apply_penetration(
                         target_champion
                             .stats
@@ -776,19 +818,22 @@ fn calculate_damage(
                             .total(target_champion.level),
                         0.0,
                         0.0,
-                        source_champion.stats.flat_magic_pen,
-                        source_champion.stats.percent_magic_pen,
+                        source_champion
+                            .stats
+                            .flat_magic_pen
+                            .total(source_champion.level),
+                        source_champion
+                            .stats
+                            .percent_magic_pen
+                            .total(source_champion.level),
                     );
-                    apply_mitigation(
-                        pre_mitigation_damage,
-                        magic_resistance
-                    )
+                    apply_mitigation(pre_mitigation_damage, magic_resistance)
                 }
-                DamageKind::Physical => apply_mitigation(
+                DamageType::Physical => apply_mitigation(
                     pre_mitigation_damage,
                     target_champion.stats.armor.total(target_champion.level),
                 ),
-                DamageKind::True => pre_mitigation_damage,
+                DamageType::True => pre_mitigation_damage,
                 _ => -1.0,
             }
         })
@@ -841,7 +886,7 @@ fn main() {
         .expect("Failed to truncate file");
 
     let write_ability_damage = |champion: &Champion| {
-        if let Some(damage) = ability_damage_by_rank(AbilityKind::Q, AbilityRank::One, champion) {
+        if let Some(damage) = ability_damage_by_level(AbilitySlot::Q, AbilityLevel::One, champion) {
             let out = format!("{:#?}\n{:#?}\r\n", champion.kind, damage);
             let mut file = fs::OpenOptions::new()
                 .create(true)
@@ -855,9 +900,16 @@ fn main() {
     if let Ok(champion) = read_champion_data(&ChampionKind::Syndra) {
         // write_ability_damage(&champion);
         let mut champion = Champion::from(champion);
-        champion.stats.ability_power = 100.0;
-        champion.stats.flat_magic_pen = 10.0;
-        if let Some(q_damage) = ability_damage_by_rank(AbilityKind::Q, AbilityRank::One, &champion)
+        champion.stats.ability_power = Stat {
+            base: BaseStat::default(),
+            bonus: 100.0,
+        };
+        champion.stats.flat_magic_pen = Stat {
+            base: BaseStat::default(),
+            bonus: 10.0,
+        };
+        if let Some(q_damage) =
+            ability_damage_by_level(AbilitySlot::Q, AbilityLevel::One, &champion)
         {
             let before = &q_damage;
             let q_damage: Vec<f32> = q_damage
@@ -872,7 +924,7 @@ fn main() {
         }
     }
 
-    // for champion_kind in ChampionKind::iter() {
+    // for champion_kind in ChampionType::iter() {
     //     let champion = match read_champion_data(&champion_kind) {
     //         Ok(champ) => Champion::from(champ),
     //         Err(e) => {
@@ -881,7 +933,7 @@ fn main() {
     //         }
     //     };
     // write_ability_damage(&champion);
-    // if champion_kind == ChampionKind::Aatrox {
+    // if champion_kind == ChampionType::Aatrox {
     //     let champion_level = 2;
     //     dbg!(&champion.stats.health);
     //     dbg!(champion.stats.clone().health.total(champion_level));
@@ -929,7 +981,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn all_champions_q_damage_by_rank() {
+    fn all_champions_q_damage_by_level() {
         for champion_kind in ChampionKind::iter() {
             let champion = match read_champion_data(&champion_kind) {
                 Ok(champ) => Champion::from(champ),
@@ -939,7 +991,7 @@ mod tests {
                 ),
             };
             dbg!("Testing Champion: {:?}", &champion_kind);
-            let ability = champion.get_ability(AbilityKind::Q);
+            let ability = champion.get_ability(AbilitySlot::Q);
             if ability.damage_type.is_none() {
                 println!(
                     "Skipping {:?} because Q is not a damage ability",
@@ -947,7 +999,8 @@ mod tests {
                 );
                 continue;
             }
-            let rank1_damage = ability_damage_by_rank(AbilityKind::Q, AbilityRank::One, &champion);
+            let rank1_damage =
+                ability_damage_by_level(AbilitySlot::Q, AbilityLevel::One, &champion);
             dbg!(&rank1_damage);
             assert!(rank1_damage.is_some(), "No damage for {:?}", champion_kind);
             assert!(
