@@ -1,9 +1,14 @@
-use serde::de::Error;
+use std::io::Error;
+
+// use serde::de::Error;
+use serde::de::Error as SerdeError;
 use serde::{Deserialize, Deserializer, Serialize};
 use serde_json::Value;
 use strum_macros::EnumIter;
 
-#[derive(Debug, PartialEq, EnumIter)]
+use crate::StatBlock;
+
+#[derive(Debug, Default, PartialEq, EnumIter)]
 pub enum ChampionKind {
     Aatrox,
     Ahri,
@@ -174,10 +179,12 @@ pub enum ChampionKind {
     Zilean,
     Zoe,
     Zyra,
+    #[default]
+    Custom,
 }
 
 impl std::str::FromStr for ChampionKind {
-    type Err = ();
+    type Err = Error;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
         match s {
@@ -350,7 +357,10 @@ impl std::str::FromStr for ChampionKind {
             "Zilean" => Ok(ChampionKind::Zilean),
             "Zoe" => Ok(ChampionKind::Zoe),
             "Zyra" => Ok(ChampionKind::Zyra),
-            _ => Err(()),
+            _ => Err(std::io::Error::new(
+                std::io::ErrorKind::InvalidInput,
+                format!("Unknown champion: {s}"),
+            )),
         }
     }
 }
@@ -383,48 +393,39 @@ pub struct ChampionRaw {
 
 #[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
-pub struct StatRaw {
-    pub flat: f32,
-    pub percent: f32,
-    pub per_level: f32,
-    pub percent_per_level: f32,
-}
-
-#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
-#[serde(rename_all = "camelCase")]
 pub struct StatsRaw {
-    pub health: StatRaw,
-    pub health_regen: StatRaw,
-    pub mana: StatRaw,
-    pub mana_regen: StatRaw,
-    pub armor: StatRaw,
-    pub magic_resistance: StatRaw,
-    pub attack_damage: StatRaw,
-    pub movespeed: StatRaw,
-    pub acquisition_radius: StatRaw,
-    pub selection_radius: StatRaw,
-    pub pathing_radius: StatRaw,
-    pub gameplay_radius: StatRaw,
-    pub critical_strike_damage: StatRaw,
-    pub critical_strike_damage_modifier: StatRaw,
-    pub attack_speed: StatRaw,
-    pub attack_speed_ratio: StatRaw,
-    pub attack_cast_time: StatRaw,
-    pub attack_total_time: StatRaw,
-    pub attack_delay_offset: StatRaw,
-    pub attack_range: StatRaw,
-    pub aram_damage_taken: StatRaw,
-    pub aram_damage_dealt: StatRaw,
-    pub aram_healing: StatRaw,
-    pub aram_shielding: StatRaw,
-    pub aram_tenacity: StatRaw,
-    pub aram_ability_haste: StatRaw,
-    pub aram_attack_speed: StatRaw,
-    pub aram_energy_regen: StatRaw,
-    pub urf_damage_taken: StatRaw,
-    pub urf_damage_dealt: StatRaw,
-    pub urf_healing: StatRaw,
-    pub urf_shielding: StatRaw,
+    pub health: StatBlock,
+    pub health_regen: StatBlock,
+    pub mana: StatBlock,
+    pub mana_regen: StatBlock,
+    pub armor: StatBlock,
+    pub magic_resistance: StatBlock,
+    pub attack_damage: StatBlock,
+    pub movespeed: StatBlock,
+    pub acquisition_radius: StatBlock,
+    pub selection_radius: StatBlock,
+    pub pathing_radius: StatBlock,
+    pub gameplay_radius: StatBlock,
+    pub critical_strike_damage: StatBlock,
+    pub critical_strike_damage_modifier: StatBlock,
+    pub attack_speed: StatBlock,
+    pub attack_speed_ratio: StatBlock,
+    pub attack_cast_time: StatBlock,
+    pub attack_total_time: StatBlock,
+    pub attack_delay_offset: StatBlock,
+    pub attack_range: StatBlock,
+    pub aram_damage_taken: StatBlock,
+    pub aram_damage_dealt: StatBlock,
+    pub aram_healing: StatBlock,
+    pub aram_shielding: StatBlock,
+    pub aram_tenacity: StatBlock,
+    pub aram_ability_haste: StatBlock,
+    pub aram_attack_speed: StatBlock,
+    pub aram_energy_regen: StatBlock,
+    pub urf_damage_taken: StatBlock,
+    pub urf_damage_dealt: StatBlock,
+    pub urf_healing: StatBlock,
+    pub urf_shielding: StatBlock,
 }
 
 fn first_in_vec<'de, D, T>(deserializer: D) -> Result<T, D::Error>
@@ -435,10 +436,10 @@ where
     let v: Vec<T> = Vec::deserialize(deserializer)?;
     v.into_iter()
         .next()
-        .ok_or_else(|| D::Error::custom("Expected at least one ability"))
+        .ok_or_else(|| SerdeError::custom("Expected at least one ability"))
 }
 
-#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase")]
 pub struct AbilitiesRaw {
     #[serde(rename = "P", deserialize_with = "first_in_vec")]

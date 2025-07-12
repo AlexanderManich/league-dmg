@@ -1,21 +1,23 @@
-use std::fs;
+use std::fs::{self};
 use std::io::Write;
 use std::str::FromStr;
 use std::{path::Path, process::Command};
 mod champions_t;
-use strum::IntoEnumIterator;
+mod items;
+use strum_macros::EnumIter;
 
-use crate::champions_t::{
-    AbilitiesRaw, AbilityRaw, ChampionKind, ChampionRaw, Leveling, StatRaw, StatsRaw,
-};
+use crate::champions_t::{AbilitiesRaw, AbilityRaw, ChampionKind, ChampionRaw, Leveling, StatsRaw};
+use crate::items::{read_item_data, ItemKind};
+
+use serde::{Deserialize, Serialize};
 
 #[derive(Copy, Clone)]
 enum AbilityLevel {
-    One,
-    Two,
-    Three,
-    Four,
-    Five,
+    One = 1,
+    Two = 2,
+    Three = 3,
+    Four = 4,
+    Five = 5,
 }
 
 enum AbilitySlot {
@@ -38,16 +40,18 @@ impl ChampionRaw {
     }
 }
 
-#[derive(Default, Debug, Copy, Clone)]
+#[derive(Default, Debug, Copy, Clone, EnumIter)]
 enum StatType {
     #[default]
     AD,
     BonusAD,
     FlatArmorPen,
     PercentArmorPen,
+    // ArmorPenetration,
     AP,
     FlatMagicPen,
     PercentMagicPen,
+    // MagicPenetration,
     MaxHealth,
     CurrentHealth,
     BonusHealth,
@@ -279,10 +283,7 @@ impl DamageComponent {
         match self.base {
             BaseDamage::Flat(value) => value,
             BaseDamage::PercentTargetMaxHealth(value) => {
-                target_champion
-                    .stats
-                    .stat_at_level(StatType::MaxHealth, target_champion.level)
-                    * (value / 100.0)
+                target_champion.stat_at_level(StatType::MaxHealth) * (value / 100.0)
             }
             BaseDamage::PercentTargetMissingHealth(_) => todo!(),
             BaseDamage::PercentResource(_) => todo!(),
@@ -290,16 +291,10 @@ impl DamageComponent {
         }
     }
 
-    fn total_scaled_bonus(&self, source_champion: &Champion) -> f32 {
+    fn total_scaling_bonus(&self, source_champion: &Champion) -> f32 {
         self.scalings
             .iter()
-            .map(|scaling| {
-                scaling.scaled_value(
-                    source_champion
-                        .stats
-                        .stat_at_level(scaling.stat_type, source_champion.level),
-                )
-            })
+            .map(|scaling| scaling.scaled_value(source_champion.stat_at_level(scaling.stat_type)))
             .sum()
     }
 }
@@ -346,7 +341,7 @@ fn leveling_contains_damage_effect(leveling: &Leveling) -> bool {
 fn ability_damage(
     levelings: &[Leveling],
     ability: &AbilityRaw,
-    ability_rank: AbilityLevel,
+    ability_level: AbilityLevel,
 ) -> AbilityDamage {
     let mut result = Vec::new();
 
@@ -368,7 +363,7 @@ fn ability_damage(
 
         for modifier in &leveling.modifiers {
             if let Some(unit_str) = modifier.units.first() {
-                if let Some(value) = modifier.values.get(ability_rank as usize) {
+                if let Some(value) = modifier.values.get(ability_level as usize) {
                     if is_flat_damage(unit_str) {
                         result.push(DamageComponent {
                             damage_type,
@@ -584,6 +579,7 @@ fn patch_champion(champion: &mut ChampionRaw) {
         match champion_kind {
             ChampionKind::Aatrox => patch_aatrox(champion),
             ChampionKind::Ahri => patch_ahri(champion),
+            ChampionKind::Syndra => patch_syndra(champion),
             _ => {}
         }
     }
@@ -621,19 +617,30 @@ fn patch_ahri(champion: &mut ChampionRaw) {
     }
 }
 
-#[derive(Default, Clone, Debug)]
-struct BaseStat {
+fn patch_syndra(champion: &mut ChampionRaw) {
+    let w = &mut champion.abilities.w;
+    if let Some(effect) = w.effects.get_mut(3) {
+        if let Some(leveling) = effect.leveling.first_mut() {
+            leveling.attribute = String::from("True Damage");
+        }
+    }
+}
+
+#[derive(Default, Debug, Clone, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "camelCase")]
+pub struct StatBlock {
     flat: f32,
     percent: f32,
     per_level: f32,
     percent_per_level: f32,
 }
 
-impl BaseStat {
+impl StatBlock {
     fn total(&self, champion_level: i32) -> f32 {
         let mut result = 0.0;
         result += self.flat;
 
+        // TODO: I dont know if this applies to all per level scalings!!! (I only considered health when writing it)
         if self.per_level != 0.0 {
             let level = champion_level - 1;
             if level > 0 {
@@ -651,47 +658,50 @@ impl BaseStat {
 
         result
     }
+
+    fn with_flat(value: f32) -> Self {
+        Self {
+            flat: value,
+            ..Default::default()
+        }
+    }
 }
 
-impl From<StatRaw> for BaseStat {
-    fn from(value: StatRaw) -> Self {
-        Self {
-            flat: value.flat,
-            percent: value.percent,
-            per_level: value.per_level,
-            percent_per_level: value.percent_per_level,
-        }
+impl std::ops::AddAssign<StatBlock> for StatBlock {
+    fn add_assign(&mut self, rhs: StatBlock) {
+        self.flat += rhs.flat;
+        self.per_level += rhs.per_level;
+        self.percent += rhs.percent;
+        self.percent_per_level += rhs.percent_per_level;
     }
 }
 
 #[derive(Default, Clone, Debug)]
 struct Stat {
-    base: BaseStat,
-    bonus: f32,
+    base: StatBlock,
+    bonus: StatBlock,
 }
 
 impl Stat {
-    fn total(&self, champion_level: i32) -> f32 {
-        let mut result = 0.0;
-
-        result += self.base.total(champion_level);
-        result += self.bonus;
-
-        result
+    fn with_total(value: f32) -> Self {
+        Self {
+            base: Default::default(),
+            bonus: StatBlock::with_flat(value),
+        }
     }
 }
 
-impl From<StatRaw> for Stat {
-    fn from(value: StatRaw) -> Self {
+impl From<StatBlock> for Stat {
+    fn from(value: StatBlock) -> Self {
         Self {
-            base: value.into(),
-            bonus: 0.0,
+            base: value,
+            bonus: Default::default(),
         }
     }
 }
 
 #[derive(Default, Clone, Debug)]
-struct Stats {
+pub struct Stats {
     health: Stat,
     health_regen: Stat,
     mana: Stat,
@@ -699,45 +709,24 @@ struct Stats {
     armor: Stat,
     magic_resistance: Stat,
     attack_damage: Stat,
-    flat_armor_pen: Stat,
-    percent_armor_pen: Stat,
+    armor_penetration: Stat,
     ability_power: Stat,
-    flat_magic_pen: Stat,
-    percent_magic_pen: Stat,
+    magic_penetration: Stat,
     movespeed: Stat,
+    ability_haste: Stat,
+    cooldown_reduction: Stat,
+    critical_strike_chance: Stat,
     critical_strike_damage: Stat,
     critical_strike_damage_modifier: Stat,
     attack_speed: Stat,
     attack_speed_ratio: Stat,
     attack_cast_time: Stat,
     attack_total_time: Stat,
-}
-
-impl Stats {
-    fn stat_at_level(&self, stat_type: StatType, level: i32) -> f32 {
-        match stat_type {
-            StatType::AD => self.attack_damage.total(level),
-            StatType::AP => self.ability_power.total(level),
-            StatType::FlatArmorPen => self.flat_armor_pen.total(level),
-            StatType::PercentArmorPen => self.percent_armor_pen.total(level),
-            StatType::FlatMagicPen => self.flat_magic_pen.total(level),
-            StatType::PercentMagicPen => self.percent_magic_pen.total(level),
-            StatType::BonusAD => self.attack_damage.bonus,
-            StatType::MaxHealth => self.health.total(level),
-            StatType::CurrentHealth => self.health.total(level), // Placeholder: needs actual current health tracking
-            StatType::BonusHealth => self.health.bonus,
-            StatType::MissingHealth => {
-                // Placeholder: assumes missing health is zero (full health)
-                0.0
-            }
-            StatType::Armor => self.armor.total(level),
-            StatType::BonusArmor => self.armor.bonus,
-            StatType::MagicResist => self.magic_resistance.total(level),
-            StatType::BonusMagicResist => self.magic_resistance.bonus,
-            StatType::BonusMana => self.mana.bonus,
-            StatType::BonusMoveSpeed => self.movespeed.bonus,
-        }
-    }
+    gold_per10: Stat,
+    heal_and_shield_power: Stat,
+    lifesteal: Stat,
+    omnivamp: Stat,
+    tenacity: Stat,
 }
 
 impl From<StatsRaw> for Stats {
@@ -750,11 +739,9 @@ impl From<StatsRaw> for Stats {
             armor: raw.armor.into(),
             magic_resistance: raw.magic_resistance.into(),
             attack_damage: raw.attack_damage.into(),
-            flat_armor_pen: Stat::default(),
-            percent_armor_pen: Stat::default(),
+            armor_penetration: Stat::default(),
             ability_power: Stat::default(),
-            flat_magic_pen: Stat::default(),
-            percent_magic_pen: Stat::default(),
+            magic_penetration: Stat::default(),
             movespeed: raw.movespeed.into(),
             critical_strike_damage: raw.critical_strike_damage.into(),
             critical_strike_damage_modifier: raw.critical_strike_damage_modifier.into(),
@@ -762,10 +749,19 @@ impl From<StatsRaw> for Stats {
             attack_speed_ratio: raw.attack_speed_ratio.into(),
             attack_cast_time: raw.attack_cast_time.into(),
             attack_total_time: raw.attack_total_time.into(),
+            ability_haste: Stat::default(),
+            cooldown_reduction: Stat::default(),
+            critical_strike_chance: Stat::default(),
+            gold_per10: Stat::default(),
+            heal_and_shield_power: Stat::default(),
+            lifesteal: Stat::default(),
+            omnivamp: Stat::default(),
+            tenacity: Stat::default(),
         }
     }
 }
 
+#[derive(Debug, Default)]
 struct Champion {
     kind: ChampionKind,
     stats: Stats,
@@ -783,12 +779,121 @@ impl Champion {
             AbilitySlot::R => &self.abilities.r,
         }
     }
+
+    fn custom_with_stats(stats: Stats) -> Self {
+        Self {
+            kind: ChampionKind::Custom,
+            stats,
+            abilities: AbilitiesRaw::default(),
+            level: 1,
+        }
+    }
+
+    fn stat_at_level(&self, stat_type: StatType) -> f32 {
+        match stat_type {
+            StatType::AD => {
+                self.stats.attack_damage.base.total(self.level)
+                    + self.stats.attack_damage.bonus.total(self.level)
+            }
+            StatType::AP => {
+                self.stats.ability_power.base.total(self.level)
+                    + self.stats.ability_power.bonus.total(self.level)
+            }
+            // TODO: Should we even differentiate between flat and percent, or should we just use armor pen, and use the statblock
+            // TODO: Also as it is now we dont consider per level stuff for penetration
+            StatType::FlatArmorPen => {
+                self.stats.armor_penetration.base.flat + self.stats.armor_penetration.bonus.flat
+            }
+            StatType::PercentArmorPen => {
+                let base = self.stats.armor_penetration.base.percent;
+                let bonus = self.stats.armor_penetration.bonus.percent;
+                multiplicative_percent_pen(base, bonus)
+            }
+            StatType::FlatMagicPen => {
+                self.stats.magic_penetration.base.flat + self.stats.magic_penetration.bonus.flat
+            }
+            StatType::PercentMagicPen => {
+                let base = self.stats.magic_penetration.base.percent;
+                let bonus = self.stats.magic_penetration.bonus.percent;
+                multiplicative_percent_pen(base, bonus)
+            }
+            StatType::BonusAD => self.stats.attack_damage.bonus.total(self.level),
+            StatType::MaxHealth => {
+                self.stats.health.base.total(self.level) + self.stats.health.bonus.total(self.level)
+            }
+            StatType::CurrentHealth => self.stats.health.base.total(self.level), // TODO: fix
+            StatType::BonusHealth => self.stats.health.bonus.total(self.level),
+            StatType::MissingHealth => {
+                // TODO: fix
+                0.0
+            }
+            StatType::Armor => {
+                self.stats.armor.base.total(self.level) + self.stats.armor.bonus.total(self.level)
+            }
+            StatType::BonusArmor => self.stats.armor.bonus.total(self.level),
+            StatType::MagicResist => {
+                self.stats.magic_resistance.base.total(self.level)
+                    + self.stats.magic_resistance.bonus.total(self.level)
+            }
+            StatType::BonusMagicResist => self.stats.magic_resistance.bonus.total(self.level),
+            StatType::BonusMana => self.stats.mana.bonus.total(self.level),
+            StatType::BonusMoveSpeed => self.stats.movespeed.bonus.total(self.level),
+        }
+    }
+
+    fn apply_items_stats(&mut self, item_kinds: Vec<ItemKind>) {
+        assert!(item_kinds.len() <= 6, "You can't have more than 6 items");
+
+        let mut items = Vec::new();
+
+        for item_kind in item_kinds {
+            let item = read_item_data(item_kind).unwrap();
+            items.push(item);
+        }
+
+        // TODO: Percentage stats should be multiplicative!!!
+        for item in items {
+            dbg!(&item.stats.ability_power);
+            self.stats.health.bonus += item.stats.health;
+            self.stats.health_regen.bonus += item.stats.health_regen;
+            self.stats.ability_power.bonus += item.stats.ability_power;
+            self.stats.armor.bonus += item.stats.armor;
+            self.stats.attack_damage.bonus += item.stats.attack_damage;
+            self.stats.attack_speed.bonus += item.stats.attack_speed;
+            self.stats.critical_strike_chance.bonus += item.stats.critical_strike_chance;
+            self.stats.critical_strike_damage.bonus += item.stats.critical_strike_damage;
+            // League of legends is dumb and has a seperate stat Lethality which is literally just flat armor pen
+            self.stats.armor_penetration.bonus.flat += item.stats.lethality.flat;
+            self.stats.armor_penetration.bonus.percent += item.stats.armor_penetration.percent;
+            self.stats.magic_penetration.bonus += item.stats.magic_penetration;
+            self.stats.magic_resistance.bonus += item.stats.magic_resistance;
+            self.stats.mana.bonus += item.stats.mana;
+            self.stats.mana_regen.bonus += item.stats.mana_regen;
+            self.stats.movespeed.bonus += item.stats.movespeed;
+            self.stats.cooldown_reduction.bonus += item.stats.cooldown_reduction;
+            self.stats.ability_haste.bonus += item.stats.ability_haste;
+            self.stats.gold_per10.bonus += item.stats.gold_per10;
+            self.stats.heal_and_shield_power.bonus += item.stats.heal_and_shield_power;
+            self.stats.lifesteal.bonus += item.stats.lifesteal;
+            self.stats.omnivamp.bonus += item.stats.omnivamp;
+            self.stats.tenacity.bonus += item.stats.tenacity;
+        }
+    }
+}
+
+fn multiplicative_percent_pen(base: f32, bonus: f32) -> f32 {
+    match (base != 0.0, bonus != 0.0) {
+        (true, true) => ((100.0 - base) * (100.0 - bonus)) / 100.0,
+        (true, false) => base,
+        (false, true) => bonus,
+        (false, false) => 0.0,
+    }
 }
 
 impl From<ChampionRaw> for Champion {
     fn from(value: ChampionRaw) -> Self {
         Self {
-            kind: ChampionKind::from_str(&value.name).expect("yikes"),
+            kind: ChampionKind::from_str(&value.key).expect("yikes"),
             stats: value.stats.into(),
             abilities: value.abilities,
             level: 1,
@@ -805,65 +910,56 @@ fn calculate_damage(
         .iter()
         .map(|comp| {
             let base_damage = comp.base_damage(source_champion, target_champion);
-            let scaling_damage: f32 = comp.total_scaled_bonus(source_champion);
+            let scaling_damage: f32 = comp.total_scaling_bonus(source_champion);
 
             let pre_mitigation_damage = base_damage + scaling_damage;
 
-            match comp.damage_type {
-                DamageType::Magic => {
-                    let magic_resistance = apply_penetration(
-                        target_champion
-                            .stats
-                            .magic_resistance
-                            .total(target_champion.level),
-                        0.0,
-                        0.0,
-                        source_champion
-                            .stats
-                            .flat_magic_pen
-                            .total(source_champion.level),
-                        source_champion
-                            .stats
-                            .percent_magic_pen
-                            .total(source_champion.level),
-                    );
-                    apply_mitigation(pre_mitigation_damage, magic_resistance)
-                }
-                DamageType::Physical => apply_mitigation(
-                    pre_mitigation_damage,
-                    target_champion.stats.armor.total(target_champion.level),
-                ),
-                DamageType::True => pre_mitigation_damage,
-                _ => -1.0,
-            }
+            let effective_res =
+                effective_resistance(comp.damage_type, source_champion, target_champion);
+
+            apply_damage_mitigation(pre_mitigation_damage, effective_res)
         })
         .sum()
 }
 
-fn apply_penetration(
-    raw_resistance: f32,
-    resistance_flat_reduction: f32,
-    resistance_percent_reduction: f32,
-    flat_pen: f32,
-    percent_pen: f32,
+fn effective_resistance(
+    damage_type: DamageType,
+    source_champion: &Champion,
+    target_champion: &Champion,
 ) -> f32 {
-    let mut result = raw_resistance;
+    // TODO: Also apply resistance reduction
+    let (raw_res, flat_pen, percent_pen) = match damage_type {
+        DamageType::Magic => (
+            target_champion.stat_at_level(StatType::MagicResist),
+            source_champion.stat_at_level(StatType::FlatMagicPen),
+            source_champion.stat_at_level(StatType::PercentMagicPen),
+        ),
+        DamageType::Physical => (
+            target_champion.stat_at_level(StatType::Armor),
+            source_champion.stat_at_level(StatType::FlatArmorPen),
+            source_champion.stat_at_level(StatType::PercentArmorPen),
+        ),
+        DamageType::True => (0.0, 0.0, 0.0),
+        DamageType::Mixed => todo!(),
+        DamageType::None => todo!(),
+    };
 
-    result -= resistance_flat_reduction;
-    result *= 1.0 - (resistance_percent_reduction / 100.0);
+    let mut result = raw_res;
+    // result -= resistance_flat_reduction;
+    // result *= 1.0 - (resistance_percent_reduction / 100.0);
     result *= 1.0 - (percent_pen / 100.0);
     result -= flat_pen;
     result
 }
 
-fn apply_mitigation(value: f32, resistance_value: f32) -> f32 {
-    let modifier = if value >= 0.0 {
+fn apply_damage_mitigation(damage_value: f32, resistance_value: f32) -> f32 {
+    let modifier = if damage_value >= 0.0 {
         100.0 / (100.0 + resistance_value)
     } else {
         2.0 - 100.0 / (100.0 + resistance_value)
     };
 
-    value * modifier
+    damage_value * modifier
 }
 
 fn main() {
@@ -874,6 +970,17 @@ fn main() {
             .output()
             .expect("Failed to copy champions folder");
         if !copy_champions.status.success() {
+            eprintln!("Champions cp failed");
+        }
+    }
+
+    if !fs::exists("items").expect("Couldn't find items folder") {
+        let items_path = "../lolstaticdata/items";
+        let copy_items = Command::new("cp")
+            .args(["-r", items_path, "."])
+            .output()
+            .expect("Failed to copy items folder");
+        if !copy_items.status.success() {
             eprintln!("Champions cp failed");
         }
     }
@@ -900,59 +1007,45 @@ fn main() {
     if let Ok(champion) = read_champion_data(&ChampionKind::Syndra) {
         // write_ability_damage(&champion);
         let mut champion = Champion::from(champion);
-        champion.stats.ability_power = Stat {
-            base: BaseStat::default(),
-            bonus: 100.0,
-        };
-        champion.stats.flat_magic_pen = Stat {
-            base: BaseStat::default(),
-            bonus: 10.0,
-        };
+
+        let items = vec![
+            ItemKind::RabadonsDeathcap,
+            ItemKind::LudensCompanion,
+            ItemKind::VoidStaff,
+        ];
+
+        champion.apply_items_stats(items);
+
         if let Some(q_damage) =
             ability_damage_by_level(AbilitySlot::Q, AbilityLevel::One, &champion)
         {
             let before = &q_damage;
-            let q_damage: Vec<f32> = q_damage
-                .iter()
-                .map(|dmg| calculate_damage(dmg, &champion, &champion))
-                .collect();
+            println!("{before:#?}");
 
-            for dmg in q_damage {
-                println!("{:#?}", before);
-                dbg!(dmg);
+            let mut targets = Vec::new();
+            for i in 0..10 {
+                targets.push(Champion::custom_with_stats(Stats {
+                    magic_resistance: Stat::with_total(i as f32 * 25.0),
+                    ..Default::default()
+                }));
+            }
+            for target in &targets {
+                let q_damage: Vec<f32> = q_damage
+                    .iter()
+                    .map(|dmg| calculate_damage(dmg, &champion, target))
+                    .collect();
+
+                for dmg in q_damage {
+                    println!("MR: {:?}", target.stat_at_level(StatType::MagicResist),);
+                    dbg!(dmg);
+                }
             }
         }
     }
-
-    // for champion_kind in ChampionType::iter() {
-    //     let champion = match read_champion_data(&champion_kind) {
-    //         Ok(champ) => Champion::from(champ),
-    //         Err(e) => {
-    //             eprintln!("Failed to read data for {:?}: {}", champion_kind, e);
-    //             continue;
-    //         }
-    //     };
-    // write_ability_damage(&champion);
-    // if champion_kind == ChampionType::Aatrox {
-    //     let champion_level = 2;
-    //     dbg!(&champion.stats.health);
-    //     dbg!(champion.stats.clone().health.total(champion_level));
-
-    //     for champion_level in 1..=18 {
-    //         dbg!(champion_level);
-    // let linear_scale = champion.stats.health.flat + champion.stats.health.per_level * (champion_level - 1) as f32;
-    //             let prev= champion.stats.clone().health.total(champion_level-1);
-    //             let current = champion.stats.clone().health.total(champion_level);
-    //             let diff = current - prev;
-    //             let ratio = diff / champion.stats.health.base.per_level;
-    //             dbg!(ratio);
-    //         }
-    //     }
-    // }
 }
 
 fn read_champion_data(champion: &ChampionKind) -> Result<ChampionRaw, Box<dyn std::error::Error>> {
-    let path = Path::new("champions").join(format!("{:?}.json", champion));
+    let path = Path::new("champions").join(format!("{champion:?}.json"));
     let data = fs::read_to_string(path)?;
     let mut champion = serde_json::from_str(&data)?;
     patch_champion(&mut champion);
@@ -983,30 +1076,28 @@ mod tests {
     #[test]
     fn all_champions_q_damage_by_level() {
         for champion_kind in ChampionKind::iter() {
+            if champion_kind == ChampionKind::Custom {
+                continue;
+            };
             let champion = match read_champion_data(&champion_kind) {
                 Ok(champ) => Champion::from(champ),
                 Err(e) => panic!(
-                    "Failed to read data for {:?}: {} (file: champions/{:?}.json)",
-                    champion_kind, e, champion_kind
+                    "Failed to read data for {champion_kind:?}: {e} (file: champions/{champion_kind:?}.json)"
                 ),
             };
-            dbg!("Testing Champion: {:?}", &champion_kind);
+            println!("Testing Champion: {:?}", &champion_kind);
             let ability = champion.get_ability(AbilitySlot::Q);
             if ability.damage_type.is_none() {
-                println!(
-                    "Skipping {:?} because Q is not a damage ability",
-                    champion_kind
-                );
+                println!("Skipping {champion_kind:?} because Q is not a damage ability");
                 continue;
             }
             let rank1_damage =
                 ability_damage_by_level(AbilitySlot::Q, AbilityLevel::One, &champion);
-            dbg!(&rank1_damage);
-            assert!(rank1_damage.is_some(), "No damage for {:?}", champion_kind);
+            println!("{:?}", &rank1_damage);
+            assert!(rank1_damage.is_some(), "No damage for {champion_kind:?}");
             assert!(
                 !rank1_damage.unwrap().is_empty(),
-                "Empty damage for {:?}",
-                champion_kind
+                "Empty damage for {champion_kind:?}"
             );
         }
     }
