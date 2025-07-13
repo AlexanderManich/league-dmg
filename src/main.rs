@@ -6,18 +6,20 @@ mod champions_t;
 mod items;
 use strum_macros::EnumIter;
 
-use crate::champions_t::{AbilitiesRaw, AbilityRaw, ChampionKind, ChampionRaw, Leveling, StatsRaw};
+use crate::champions_t::{
+    AbilitiesRaw, AbilityRaw, ChampionKind, ChampionRaw, Effect, Leveling, StatsRaw,
+};
 use crate::items::{read_item_data, ItemKind};
 
 use serde::{Deserialize, Serialize};
 
 #[derive(Copy, Clone)]
 enum AbilityLevel {
-    One = 1,
-    Two = 2,
-    Three = 3,
-    Four = 4,
-    Five = 5,
+    One = 0,
+    Two = 1,
+    Three = 2,
+    Four = 3,
+    Five = 4,
 }
 
 enum AbilitySlot {
@@ -71,7 +73,7 @@ enum ScalingType {
     Per100Stat,
 }
 
-#[derive(Debug, Default)]
+#[derive(Debug, Default, Clone)]
 struct AbilityScaling {
     stat_type: StatType,
     ratio: f32,
@@ -261,7 +263,7 @@ impl AbilityScaling {
     }
 }
 
-#[derive(Default, Debug)]
+#[derive(Default, Debug, Clone)]
 enum BaseDamage {
     #[default]
     None,
@@ -271,7 +273,7 @@ enum BaseDamage {
     PercentResource(f32),
 }
 
-#[derive(Default, Debug)]
+#[derive(Default, Debug, Clone)]
 struct DamageComponent {
     damage_type: DamageType,
     base: BaseDamage,
@@ -323,9 +325,218 @@ impl DamageType {
     }
 }
 
-#[derive(Debug)]
-struct AbilityDamage {
+#[derive(Debug, Clone)]
+struct Ability {
     components: Vec<DamageComponent>,
+    variants: Option<Vec<Ability>>,
+}
+
+impl Ability {
+    fn from_raw(
+        ability: &AbilityRaw,
+        ability_level: AbilityLevel,
+        levelings: &[Leveling],
+    ) -> Ability {
+        let mut result = Vec::new();
+
+        for leveling in levelings {
+            if !leveling_contains_damage_effect(leveling) {
+                continue;
+            }
+
+            let damage_type = match try_get_damage_type(leveling) {
+                None => {
+                    if let Some(kind) = &ability.damage_type {
+                        DamageType::from_str(kind)
+                    } else {
+                        DamageType::None
+                    }
+                }
+                Some(kind) => kind,
+            };
+
+            for modifier in &leveling.modifiers {
+                if let Some(unit_str) = modifier.units.first() {
+                    if let Some(value) = modifier.values.get(ability_level as usize) {
+                        if is_flat_damage(unit_str) {
+                            result.push(DamageComponent {
+                                damage_type,
+                                base: BaseDamage::Flat(*value),
+                                scalings: vec![],
+                            });
+                        } else if is_percent_damage_with_scaling(unit_str) {
+                            let scaling = parse_percent_damage_with_scaling(unit_str);
+                            if is_percent_target_max_health(unit_str) {
+                                result.push(DamageComponent {
+                                    damage_type,
+                                    base: BaseDamage::PercentTargetMaxHealth(*value),
+                                    scalings: vec![scaling],
+                                });
+                            }
+                        } else if is_percent_target_max_health(unit_str) {
+                            result.push(DamageComponent {
+                                damage_type,
+                                base: BaseDamage::PercentTargetMaxHealth(*value),
+                                scalings: vec![],
+                            });
+                        } else {
+                            let scaling = AbilityScaling::from_parts(unit_str, *value);
+                            if let Some(last_part) = result.last_mut() {
+                                last_part.scalings.push(scaling);
+                            } else {
+                                result.push(DamageComponent {
+                                    damage_type,
+                                    base: BaseDamage::None,
+                                    scalings: vec![scaling],
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Ability {
+            components: result,
+            variants: None,
+        }
+    }
+
+    fn new(
+        ability_slot: AbilitySlot,
+        ability_level: AbilityLevel,
+        champion: &Champion,
+    ) -> Option<Ability> {
+        let mut variants= Vec::new();
+
+        let ability_raw = champion.get_ability_raw(ability_slot);
+        // Check if ability is damaging ability
+        ability_raw.damage_type.as_ref()?;
+
+        // TODO: Resistances Reduction is a valid thing, that i should take into account
+        // TODO: Somehow handle abilties that buff auto attacks
+        // TODO: We cannot exclude entire levelings based on this, since other modifiers might hold damage
+        let exclude_patterns = [
+            "monster",
+            "duration",
+            "minion",
+            "movement",
+            "slow",
+            "range",
+            "refunded",
+            "healing",
+            "restored",
+            "heal",
+            "damage reduction",
+            "structure",
+            "non-champion",
+        ];
+
+        let filtered_effects = filter_effects(&ability_raw.effects, &exclude_patterns);
+
+        let mut max_levelings = Vec::new();
+
+        let max_patterns = ["Maximum", "Total"];
+        // Collect all levelings that contain "max_patterns" in their attribute
+        for effect in &filtered_effects {
+            for leveling in &effect.leveling {
+                if max_patterns
+                    .iter()
+                    .any(|pat| leveling.attribute.contains(pat))
+                {
+                    max_levelings.push(leveling.clone());
+                }
+            }
+        }
+
+        if !max_levelings.is_empty() {
+            // If we have levelings that contain "max_patterns", we need to check if the damage type is mixed.
+            // If so we exclude the "max_pattern" leveling, and construct the ability damage from the individual levelings
+            // that make up the maximum. We do this because we need to know the actual damage type of every damage component,
+            // such that we can apply damage mitigation later.
+            let is_mixed_damage = max_levelings
+                .iter()
+                .any(|leveling| leveling.attribute.to_lowercase().contains("mixed"));
+
+            if is_mixed_damage {
+                for effect in &filtered_effects {
+                    let damage_components: Vec<Leveling> = effect
+                        .leveling
+                        .iter()
+                        .filter(|leveling| {
+                            !max_patterns
+                                .iter()
+                                .any(|pat| leveling.attribute.contains(pat))
+                        })
+                        .cloned()
+                        .collect();
+
+                    variants.push(Ability::from_raw(
+                        ability_raw,
+                        ability_level,
+                        &damage_components,
+                    ));
+                }
+            } else {
+                // Here we pass levelings individually, instead of passing the max_levelings vec, because we might have
+                // abilities with multiple effects containing a "max_pattern" such as Aatrox Q that has different variants
+                // (Sweetspot / Non-Sweetspot) where we want an individual AbilityDamage for each variant.
+                // NOTE: We assume that an ability variant only ever has one "max_pattern" leveling.
+                for leveling in max_levelings {
+                    variants.push(Ability::from_raw(
+                    ability_raw,
+                    ability_level,
+                    &[leveling]));
+                }
+            }
+        } else {
+            // No leveling had a "max_pattern" so we just pass all levelings in all effects
+            dbg!(&filtered_effects.len());
+            for effect in &filtered_effects {
+                variants.push(Ability::from_raw(
+                    ability_raw,
+                    ability_level,
+                    &effect.leveling,
+                ));
+            }
+        }
+
+        match variants.len() {
+            0 => None,
+            1 => Some(variants.remove(0)),
+            _ => {
+                let mut all_variants = variants;
+                let base = all_variants.remove(0);
+                let base_components = base.components.clone();
+                Some(Ability {
+                    components: base_components,
+                    variants: Some(all_variants),
+                })
+            },
+        }
+    }
+}
+
+fn filter_effects(effects: &[Effect], exclude_patterns: &[&str]) -> Vec<Effect> {
+    effects
+        .iter()
+        .filter_map(|effect| {
+            let filtered_levelings: Vec<Leveling> = effect
+                .leveling
+                .iter()
+                .filter(|leveling| !should_exclude_attribute(&leveling.attribute, exclude_patterns))
+                .cloned()
+                .collect();
+
+            if !filtered_levelings.is_empty() {
+                let mut effect = effect.clone();
+                effect.leveling = filtered_levelings;
+                Some(effect)
+            } else {
+                None
+            }
+        })
+        .collect()
 }
 
 fn leveling_contains_damage_effect(leveling: &Leveling) -> bool {
@@ -336,73 +547,6 @@ fn leveling_contains_damage_effect(leveling: &Leveling) -> bool {
     }
 
     result
-}
-
-fn ability_damage(
-    levelings: &[Leveling],
-    ability: &AbilityRaw,
-    ability_level: AbilityLevel,
-) -> AbilityDamage {
-    let mut result = Vec::new();
-
-    for leveling in levelings {
-        if !leveling_contains_damage_effect(leveling) {
-            continue;
-        }
-
-        let damage_type = match try_get_damage_type(leveling) {
-            None => {
-                if let Some(kind) = &ability.damage_type {
-                    DamageType::from_str(kind)
-                } else {
-                    DamageType::None
-                }
-            }
-            Some(kind) => kind,
-        };
-
-        for modifier in &leveling.modifiers {
-            if let Some(unit_str) = modifier.units.first() {
-                if let Some(value) = modifier.values.get(ability_level as usize) {
-                    if is_flat_damage(unit_str) {
-                        result.push(DamageComponent {
-                            damage_type,
-                            base: BaseDamage::Flat(*value),
-                            scalings: vec![],
-                        });
-                    } else if is_percent_damage_with_scaling(unit_str) {
-                        let scaling = parse_percent_damage_with_scaling(unit_str);
-                        if is_percent_target_max_health(unit_str) {
-                            result.push(DamageComponent {
-                                damage_type,
-                                base: BaseDamage::PercentTargetMaxHealth(*value),
-                                scalings: vec![scaling],
-                            });
-                        }
-                    } else if is_percent_target_max_health(unit_str) {
-                        result.push(DamageComponent {
-                            damage_type,
-                            base: BaseDamage::PercentTargetMaxHealth(*value),
-                            scalings: vec![],
-                        });
-                    } else {
-                        let scaling = AbilityScaling::from_parts(unit_str, *value);
-                        if let Some(last_part) = result.last_mut() {
-                            last_part.scalings.push(scaling);
-                        } else {
-                            result.push(DamageComponent {
-                                damage_type,
-                                base: BaseDamage::None,
-                                scalings: vec![scaling],
-                            });
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    AbilityDamage { components: result }
 }
 
 fn is_percent_damage_with_scaling(unit_str: &str) -> bool {
@@ -442,117 +586,6 @@ fn try_get_damage_type(leveling: &Leveling) -> Option<DamageType> {
     } else {
         None
     }
-}
-
-fn ability_damage_by_level(
-    ability_slot: AbilitySlot,
-    ability_level: AbilityLevel,
-    champion: &Champion,
-) -> Option<Vec<AbilityDamage>> {
-    let ability = champion.get_ability(ability_slot);
-    // Check if ability is damaging ability
-    ability.damage_type.as_ref()?;
-
-    // TODO: Resistances Reduction is a valid thing, that i should take into account
-    // TODO: Somehow handle abilties that buff auto attacks
-    // TODO: We cannot exclude entire levelings based on this, since other modifiers might hold damage
-    let exclude_patterns = [
-        "monster",
-        "duration",
-        "minion",
-        "movement",
-        "slow",
-        "range",
-        "refunded",
-        "healing",
-        "restored",
-        "heal",
-        "damage reduction",
-        "structure",
-        "non-champion",
-    ];
-
-    let filtered_effects: Vec<_> = ability
-        .effects
-        .iter()
-        .filter_map(|effect| {
-            let filtered_levelings: Vec<_> = effect
-                .leveling
-                .iter()
-                .filter(|leveling| {
-                    !should_exclude_attribute(&leveling.attribute, &exclude_patterns)
-                })
-                .cloned()
-                .collect();
-            if !filtered_levelings.is_empty() {
-                let mut effect = effect.clone();
-                effect.leveling = filtered_levelings;
-                Some(effect)
-            } else {
-                None
-            }
-        })
-        .collect();
-
-    let max_patterns = ["Maximum", "Total"];
-
-    let mut result = Vec::new();
-
-    let mut max_levelings = Vec::new();
-
-    // Collect all levelings that contain "max_patterns" in their attribute
-    for effect in &filtered_effects {
-        for leveling in &effect.leveling {
-            if max_patterns
-                .iter()
-                .any(|pat| leveling.attribute.contains(pat))
-            {
-                max_levelings.push(leveling.clone());
-            }
-        }
-    }
-
-    if !max_levelings.is_empty() {
-        // If we have levelings that contain "max_patterns", we need to check if the damage type is mixed.
-        // If so we exclude the "max_pattern" leveling, and construct the ability damage from the individual levelings
-        // that make up the maximum. We do this because we need to know the actual damage type of every damage component,
-        // such that we can apply damage mitigation later.
-        let is_mixed_damage = max_levelings
-            .iter()
-            .any(|leveling| leveling.attribute.to_lowercase().contains("mixed"));
-
-        if is_mixed_damage {
-            for effect in &filtered_effects {
-                let damage_components: Vec<Leveling> = effect
-                    .leveling
-                    .iter()
-                    .filter(|leveling| {
-                        !max_patterns
-                            .iter()
-                            .any(|pat| leveling.attribute.contains(pat))
-                    })
-                    .cloned()
-                    .collect();
-
-                result.push(ability_damage(&damage_components, ability, ability_level));
-            }
-        } else {
-            // Here we pass levelings individually, instead of passing the max_levelings vec, because we might have
-            // abilities with multiple effects containing a "max_pattern" such as Aatrox Q that has different variants
-            // (Sweetspot / Non-Sweetspot) where we want an individual AbilityDamage for each variant.
-            // NOTE: We assume/assert that an ability variant only ever has one "max_pattern" leveling.
-            for leveling in max_levelings {
-                result.push(ability_damage(&[leveling], ability, ability_level));
-            }
-        }
-    } else {
-        // No leveling had a "max_pattern" so we just pass all levelings in all effects
-        for effect in &filtered_effects {
-            result.push(ability_damage(&effect.leveling, ability, ability_level));
-        }
-    }
-
-    Some(result)
 }
 
 fn is_percent_target_max_health(unit_str: &str) -> bool {
@@ -770,7 +803,7 @@ struct Champion {
 }
 
 impl Champion {
-    fn get_ability(&self, ability_kind: AbilitySlot) -> &AbilityRaw {
+    fn get_ability_raw(&self, ability_kind: AbilitySlot) -> &AbilityRaw {
         match ability_kind {
             AbilitySlot::P => &self.abilities.p,
             AbilitySlot::Q => &self.abilities.q,
@@ -853,7 +886,6 @@ impl Champion {
 
         // TODO: Percentage stats should be multiplicative!!!
         for item in items {
-            dbg!(&item.stats.ability_power);
             self.stats.health.bonus += item.stats.health;
             self.stats.health_regen.bonus += item.stats.health_regen;
             self.stats.ability_power.bonus += item.stats.ability_power;
@@ -901,11 +933,7 @@ impl From<ChampionRaw> for Champion {
     }
 }
 
-fn calculate_damage(
-    dmg: &AbilityDamage,
-    source_champion: &Champion,
-    target_champion: &Champion,
-) -> f32 {
+fn calculate_damage(dmg: &Ability, source_champion: &Champion, target_champion: &Champion) -> f32 {
     dmg.components
         .iter()
         .map(|comp| {
@@ -940,8 +968,12 @@ fn effective_resistance(
             source_champion.stat_at_level(StatType::PercentArmorPen),
         ),
         DamageType::True => (0.0, 0.0, 0.0),
-        DamageType::Mixed => todo!(),
-        DamageType::None => todo!(),
+        DamageType::Mixed => {
+            panic!("We should never get DamageType::Mixed, when calculating effective resistance")
+        }
+        DamageType::None => {
+            panic!("We should never get DamageType::None, when calculating effective resistance")
+        }
     };
 
     let mut result = raw_res;
@@ -962,7 +994,7 @@ fn apply_damage_mitigation(damage_value: f32, resistance_value: f32) -> f32 {
     damage_value * modifier
 }
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     if !fs::exists("champions").expect("Couldn't find champions folder") {
         let champions_path = "../lolstaticdata/champions";
         let copy_champions = Command::new("cp")
@@ -993,7 +1025,7 @@ fn main() {
         .expect("Failed to truncate file");
 
     let write_ability_damage = |champion: &Champion| {
-        if let Some(damage) = ability_damage_by_level(AbilitySlot::Q, AbilityLevel::One, champion) {
+        if let Some(damage) = Ability::new(AbilitySlot::Q, AbilityLevel::One, champion) {
             let out = format!("{:#?}\n{:#?}\r\n", champion.kind, damage);
             let mut file = fs::OpenOptions::new()
                 .create(true)
@@ -1004,44 +1036,40 @@ fn main() {
         }
     };
 
-    if let Ok(champion) = read_champion_data(&ChampionKind::Syndra) {
-        // write_ability_damage(&champion);
-        let mut champion = Champion::from(champion);
+    let champion_data = read_champion_data(&ChampionKind::Syndra)?;
 
-        let items = vec![
-            ItemKind::RabadonsDeathcap,
-            ItemKind::LudensCompanion,
-            ItemKind::VoidStaff,
-        ];
+    // write_ability_damage(&champion);
 
-        champion.apply_items_stats(items);
+    let mut champion = Champion::from(champion_data);
 
-        if let Some(q_damage) =
-            ability_damage_by_level(AbilitySlot::Q, AbilityLevel::One, &champion)
-        {
-            let before = &q_damage;
-            println!("{before:#?}");
+    let items = vec![
+        // ItemKind::RabadonsDeathcap,
+        // ItemKind::LudensCompanion,
+        // ItemKind::VoidStaff,
+    ];
 
-            let mut targets = Vec::new();
-            for i in 0..10 {
-                targets.push(Champion::custom_with_stats(Stats {
-                    magic_resistance: Stat::with_total(i as f32 * 25.0),
-                    ..Default::default()
-                }));
-            }
-            for target in &targets {
-                let q_damage: Vec<f32> = q_damage
-                    .iter()
-                    .map(|dmg| calculate_damage(dmg, &champion, target))
-                    .collect();
+    champion.apply_items_stats(items);
+    
+    let q_ability = Ability::new(AbilitySlot::W, AbilityLevel::One, &champion).unwrap();
 
-                for dmg in q_damage {
-                    println!("MR: {:?}", target.stat_at_level(StatType::MagicResist),);
-                    dbg!(dmg);
-                }
-            }
-        }
+    let before = &q_ability;
+    println!("{before:#?}");
+
+    let mut targets = Vec::new();
+    for i in 0..10 {
+        targets.push(Champion::custom_with_stats(Stats {
+            magic_resistance: Stat::with_total(i as f32 * 25.0),
+            ..Default::default()
+        }));
     }
+    for target in &targets {
+        let q_damage = calculate_damage(&q_ability, &champion, target);
+
+        println!("MR: {:?}", target.stat_at_level(StatType::MagicResist),);
+        dbg!(q_damage);
+    }
+
+    Ok(())
 }
 
 fn read_champion_data(champion: &ChampionKind) -> Result<ChampionRaw, Box<dyn std::error::Error>> {
@@ -1086,19 +1114,14 @@ mod tests {
                 ),
             };
             println!("Testing Champion: {:?}", &champion_kind);
-            let ability = champion.get_ability(AbilitySlot::Q);
+            let ability = champion.get_ability_raw(AbilitySlot::Q);
             if ability.damage_type.is_none() {
                 println!("Skipping {champion_kind:?} because Q is not a damage ability");
                 continue;
             }
-            let rank1_damage =
-                ability_damage_by_level(AbilitySlot::Q, AbilityLevel::One, &champion);
+            let rank1_damage = Ability::new(AbilitySlot::Q, AbilityLevel::One, &champion);
             println!("{:?}", &rank1_damage);
             assert!(rank1_damage.is_some(), "No damage for {champion_kind:?}");
-            assert!(
-                !rank1_damage.unwrap().is_empty(),
-                "Empty damage for {champion_kind:?}"
-            );
         }
     }
 }
