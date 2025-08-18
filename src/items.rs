@@ -1,7 +1,6 @@
-use std::{error::Error, fs, io::Write, path::Path};
+use std::{error::Error, fs, path::Path};
 
 use serde::{Deserialize, Serialize};
-use strum::IntoEnumIterator;
 use strum_macros::EnumIter;
 
 use crate::StatBlock;
@@ -737,8 +736,10 @@ impl ItemKind {
             ItemKind::JuiceofPower => 2142,
         }
     }
+}
 
-    pub fn to_string(&self) -> String {
-        format!("{self:?}")
+impl std::fmt::Display for ItemKind {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{:?}", self)
     }
 }

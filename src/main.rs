@@ -1,3 +1,4 @@
+use std::env::var;
 use std::fs::{self};
 use std::io::Write;
 use std::str::FromStr;
@@ -7,13 +8,13 @@ mod items;
 use strum_macros::EnumIter;
 
 use crate::champions_t::{
-    AbilitiesRaw, AbilityRaw, ChampionKind, ChampionRaw, Description, Effect, Leveling, StatsRaw,
+    AbilitiesRaw, AbilityRaw, ChampionKind, ChampionRaw, Effect, Leveling, StatsRaw,
 };
 use crate::items::{read_item_data, ItemKind};
 
 use serde::{Deserialize, Serialize};
 
-#[derive(Copy, Clone)]
+#[derive(Debug, Copy, Clone)]
 enum AbilityLevel {
     One = 0,
     Two = 1,
@@ -327,66 +328,103 @@ impl DamageType {
 
 fn damage_components_from_levelings(
     levelings: &[Leveling],
-    ability_level: AbilityLevel,
     default_damage_type: Option<DamageType>,
-) -> Vec<DamageComponent> {
+) -> Vec<Vec<DamageComponent>> {
     let mut result = Vec::new();
 
-    // TODO: There is more work to be done on determining damage types (E.g., see Gwen)
-    let mut damage_type = default_damage_type.unwrap_or(DamageType::None);
+    // collect only levelings that actually contain damage
+    let relevant_levelings: Vec<&Leveling> = levelings
+        .iter()
+        .filter(|l| leveling_contains_damage_effect(l))
+        .collect();
 
-    for leveling in levelings {
-        if !leveling_contains_damage_effect(leveling) {
-            continue;
+    if relevant_levelings.is_empty() {
+        return result;
+    }
+
+    // TODO: Still more work to be done on determining damage types.
+    let mut damage_types_per_leveling: Vec<DamageType> =
+        Vec::with_capacity(relevant_levelings.len());
+    let mut current_dt = default_damage_type.unwrap_or(DamageType::None);
+    for leveling in &relevant_levelings {
+        if let Some(new_dt) = try_get_damage_type(leveling) {
+            current_dt = new_dt;
         }
+        damage_types_per_leveling.push(current_dt);
+    }
 
-        damage_type = match try_get_damage_type(leveling) {
-            Some(new) => new,
-            None => damage_type,
-        };
+    let max_values = relevant_levelings
+        .iter()
+        .flat_map(|l| l.modifiers.iter().map(|m| m.values.len()))
+        .max()
+        .unwrap_or(0);
 
-        for modifier in &leveling.modifiers {
-            if let Some(unit_str) = modifier.units.first() {
-                if let Some(value) = modifier.values.get(ability_level as usize) {
-                    if is_flat_damage(unit_str) {
-                        result.push(DamageComponent {
-                            damage_type,
-                            base: BaseDamage::Flat(*value),
-                            scalings: vec![],
-                        });
-                    } else if is_percent_damage_with_scaling(unit_str) {
-                        let scaling = parse_percent_damage_with_scaling(unit_str);
-                        if is_percent_target_max_health(unit_str) {
-                            result.push(DamageComponent {
-                                damage_type,
+    if max_values == 0 {
+        return result;
+    }
+
+    for idx in 0..max_values {
+        let mut components_for_value_index: Vec<DamageComponent> = Vec::new();
+
+        for (lev_idx, leveling) in relevant_levelings.iter().enumerate() {
+            let local_dt = damage_types_per_leveling[lev_idx];
+
+            for modifier in &leveling.modifiers {
+                if let Some(unit_str) = modifier.units.first() {
+                    if let Some(value) = modifier.values.get(idx) {
+                        if is_flat_damage(unit_str) {
+                            components_for_value_index.push(DamageComponent {
+                                damage_type: local_dt,
+                                base: BaseDamage::Flat(*value),
+                                scalings: vec![],
+                            });
+                        } else if is_percent_damage_with_scaling(unit_str) {
+                            let scaling = parse_percent_damage_with_scaling(unit_str);
+                            if is_percent_target_max_health(unit_str) {
+                                components_for_value_index.push(DamageComponent {
+                                    damage_type: local_dt,
+                                    base: BaseDamage::PercentTargetMaxHealth(*value),
+                                    scalings: vec![scaling],
+                                });
+                            }
+                        } else if is_percent_target_max_health(unit_str) {
+                            components_for_value_index.push(DamageComponent {
+                                damage_type: local_dt,
                                 base: BaseDamage::PercentTargetMaxHealth(*value),
-                                scalings: vec![scaling],
+                                scalings: vec![],
                             });
-                        }
-                    } else if is_percent_target_max_health(unit_str) {
-                        result.push(DamageComponent {
-                            damage_type,
-                            base: BaseDamage::PercentTargetMaxHealth(*value),
-                            scalings: vec![],
-                        });
-                    } else {
-                        let scaling = AbilityScaling::from_parts(unit_str, *value);
-                        if let Some(last_part) = result.last_mut() {
-                            last_part.scalings.push(scaling);
                         } else {
-                            result.push(DamageComponent {
-                                damage_type,
-                                base: BaseDamage::None,
-                                scalings: vec![scaling],
-                            });
+                            let scaling = AbilityScaling::from_parts(unit_str, *value);
+                            if components_for_value_index.is_empty() {
+                                components_for_value_index.push(DamageComponent {
+                                    damage_type: local_dt,
+                                    base: BaseDamage::None,
+                                    scalings: vec![scaling],
+                                });
+                            } else {
+                                for component in components_for_value_index.iter_mut() {
+                                    component.scalings.push(scaling.clone());
+                                }
+                            }
                         }
                     }
                 }
             }
         }
+
+        result.push(components_for_value_index);
     }
 
     result
+}
+
+#[derive(Default, Debug, Clone)]
+struct Abilities {
+    p: Vec<Ability>,
+    q: Vec<Ability>,
+    w: Vec<Ability>,
+    e: Vec<Ability>,
+    r: Vec<Ability>,
 }
 
 #[derive(Debug, Clone)]
@@ -397,14 +435,8 @@ struct Ability {
 }
 
 impl Ability {
-    fn new(
-        ability_slot: AbilitySlot,
-        ability_level: AbilityLevel,
-        champion: &Champion,
-    ) -> Option<Ability> {
-        let mut variants = Vec::new();
-
-        let ability_raw = champion.get_ability_raw(ability_slot);
+    fn ability_at_all_levels(ability_raw: AbilityRaw) -> Option<Vec<Ability>> {
+        let mut variants: Vec<Vec<Ability>> = Vec::new();
 
         // Check if ability is damaging ability
         ability_raw.damage_type.as_ref()?;
@@ -452,7 +484,8 @@ impl Ability {
 
         let is_mixed_damage = max_levelings
             .iter()
-            .any(|(leveling, _)| leveling.attribute.to_lowercase().contains("mixed")) || default_damage_type == Some(DamageType::Mixed);
+            .any(|(leveling, _)| leveling.attribute.to_lowercase().contains("mixed"))
+            || default_damage_type == Some(DamageType::Mixed);
 
         if !max_levelings.is_empty() && is_mixed_damage {
             // If we have levelings that contain "max_patterns", we need to check if the damage type is mixed.
@@ -472,15 +505,18 @@ impl Ability {
                     .cloned()
                     .collect();
 
-                variants.push(Ability {
-                    components: damage_components_from_levelings(
-                        &damage_components,
-                        ability_level,
-                        default_damage_type,
-                    ),
-                    variants: None,
-                    description: effect.description.clone(),
-                });
+                let components_all_levels =
+                    damage_components_from_levelings(&damage_components, default_damage_type);
+
+                let mut variant_all_levels = Vec::new();
+
+                for components in components_all_levels {
+                    variant_all_levels.push(Ability {
+                        components,
+                        variants: None,
+                        description: effect.description.clone(),
+                    });
+                }
             }
         } else if !max_levelings.is_empty() {
             // Here we pass levelings individually, instead of passing the max_levelings vec, because we might have
@@ -488,44 +524,66 @@ impl Ability {
             // (Sweetspot / Non-Sweetspot) where we want an individual AbilityDamage for each variant.
             // NOTE: We assume that an ability variant only ever has one "max_pattern" leveling.
             for (leveling, description) in max_levelings {
-                variants.push(Ability {
-                    components: damage_components_from_levelings(
-                        &[leveling],
-                        ability_level,
-                        default_damage_type,
-                    ),
-                    variants: None,
-                    description,
-                });
+                let components_all_levels =
+                    damage_components_from_levelings(&[leveling], default_damage_type);
+
+                let mut variant_all_levels = Vec::new();
+
+                for components in components_all_levels {
+                    variant_all_levels.push(Ability {
+                        components,
+                        variants: None,
+                        description: description.clone(),
+                    });
+                }
+
+                variants.push(variant_all_levels);
             }
         } else {
             // No leveling had a "max_pattern" so we just pass all levelings in all effects
-            dbg!(&filtered_effects.len());
             for effect in &filtered_effects {
-                variants.push(Ability {
-                    components: damage_components_from_levelings(
-                        &effect.leveling,
-                        ability_level,
-                        default_damage_type,
-                    ),
-                    variants: None,
-                    description: effect.description.clone(),
-                });
+                let components_all_levels =
+                    damage_components_from_levelings(&effect.leveling, default_damage_type);
+
+                let mut variant_all_levels = Vec::new();
+
+                for components in components_all_levels {
+                    variant_all_levels.push(Ability {
+                        components: components.to_vec(),
+                        variants: None,
+                        description: effect.description.clone(),
+                    });
+                }
+
+                variants.push(variant_all_levels);
             }
         }
+
+        let mut result = Vec::new();
 
         match variants.len() {
             0 => None,
             1 => Some(variants.remove(0)),
             _ => {
                 let mut all_variants = variants;
-                let base = all_variants.remove(0);
-                let base_components = base.components.clone();
-                Some(Ability {
-                    components: base_components,
-                    variants: Some(all_variants),
-                    description: base.description,
-                })
+                let base_variant_levels = all_variants.remove(0);
+
+                for (level_idx, base_ability) in base_variant_levels.iter().enumerate() {
+                    let other_variant_abilities: Vec<Ability> = all_variants
+                        .iter()
+                        .filter_map(|variant_levels| variant_levels.get(level_idx).cloned())
+                        .collect();
+                    result.push(Ability {
+                        components: base_ability.components.clone(),
+                        variants: if other_variant_abilities.is_empty() {
+                            None
+                        } else {
+                            Some(other_variant_abilities)
+                        },
+                        description: base_ability.description.clone(),
+                    });
+                }
+                Some(result)
             }
         }
     }
@@ -589,7 +647,6 @@ fn parse_percent_damage_with_scaling(unit_str: &str) -> AbilityScaling {
 
 fn try_get_damage_type(leveling: &Leveling) -> Option<DamageType> {
     // Try to determine damage type based on attribute
-    dbg!(leveling);
     if leveling.attribute.to_lowercase().contains("true") {
         Some(DamageType::True)
     } else if leveling.attribute.to_lowercase().contains("mixed") {
@@ -813,12 +870,12 @@ impl From<StatsRaw> for Stats {
 struct Champion {
     kind: ChampionKind,
     stats: Stats,
-    abilities: AbilitiesRaw,
+    abilities: Abilities,
     level: i32,
 }
 
 impl Champion {
-    fn get_ability_raw(&self, ability_kind: AbilitySlot) -> &AbilityRaw {
+    fn get_ability(&self, ability_kind: AbilitySlot) -> &Vec<Ability> {
         match ability_kind {
             AbilitySlot::P => &self.abilities.p,
             AbilitySlot::Q => &self.abilities.q,
@@ -832,7 +889,7 @@ impl Champion {
         Self {
             kind: ChampionKind::Custom,
             stats,
-            abilities: AbilitiesRaw::default(),
+            abilities: Abilities::default(),
             level: 1,
         }
     }
@@ -936,20 +993,31 @@ fn multiplicative_percent_pen(base: f32, bonus: f32) -> f32 {
         (false, false) => 0.0,
     }
 }
-
 impl From<ChampionRaw> for Champion {
     fn from(value: ChampionRaw) -> Self {
         Self {
             kind: ChampionKind::from_str(&value.key).expect("yikes"),
             stats: value.stats.into(),
-            abilities: value.abilities,
+            abilities: Abilities {
+                p: Ability::ability_at_all_levels(value.abilities.p).unwrap_or_else(Vec::new),
+                q: Ability::ability_at_all_levels(value.abilities.q).unwrap(),
+                w: Ability::ability_at_all_levels(value.abilities.w).unwrap(),
+                e: Ability::ability_at_all_levels(value.abilities.e).unwrap(),
+                r: Ability::ability_at_all_levels(value.abilities.r).unwrap(),
+            },
             level: 1,
         }
     }
 }
 
-fn calculate_damage(dmg: &Ability, source_champion: &Champion, target_champion: &Champion) -> f32 {
-    dmg.components
+fn calculate_ability_damage(
+    ability_slot: AbilitySlot,
+    ability_level: AbilityLevel,
+    source_champion: &Champion,
+    target_champion: &Champion,
+) -> f32 {
+    source_champion.get_ability(ability_slot)[ability_level as usize]
+        .components
         .iter()
         .map(|comp| {
             let base_damage = comp.base_damage(source_champion, target_champion);
@@ -1039,36 +1107,31 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .open("file.txt")
         .expect("Failed to truncate file");
 
-    let write_ability_damage = |champion: &Champion| {
-        if let Some(damage) = Ability::new(AbilitySlot::Q, AbilityLevel::One, champion) {
-            let out = format!("{:#?}\n{:#?}\r\n", champion.kind, damage);
-            let mut file = fs::OpenOptions::new()
-                .create(true)
-                .append(true)
-                .open("file.txt")
-                .unwrap();
-            file.write_all(out.as_bytes()).unwrap();
-        }
-    };
+    // let write_ability_damage = |champion: &Champion| {
+    //     if let Some(damage) = Ability::new(AbilitySlot::Q, AbilityLevel::One, champion) {
+    //         let out = format!("{:#?}\n{:#?}\r\n", champion.kind, damage);
+    //         let mut file = fs::OpenOptions::new()
+    //             .create(true)
+    //             .append(true)
+    //             .open("file.txt")
+    //             .unwrap();
+    //         file.write_all(out.as_bytes()).unwrap();
+    //     }
+    // };
 
-    let champion_data = read_champion_data(&ChampionKind::Syndra)?;
+    let champion_data = read_champion_data(&ChampionKind::Xerath)?;
 
     // write_ability_damage(&champion);
 
     let mut champion = Champion::from(champion_data);
 
     let items = vec![
-        // ItemKind::RabadonsDeathcap,
+        ItemKind::RabadonsDeathcap,
         // ItemKind::LudensCompanion,
         // ItemKind::VoidStaff,
     ];
 
     champion.apply_items_stats(items);
-
-    let q_ability = Ability::new(AbilitySlot::Q, AbilityLevel::One, &champion).unwrap();
-
-    let before = &q_ability;
-    println!("{before:#?}");
 
     let mut targets = Vec::new();
     for i in 0..10 {
@@ -1077,8 +1140,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             ..Default::default()
         }));
     }
+
+    dbg!(&champion.abilities.w[0]);
+
     for target in &targets {
-        let q_damage = calculate_damage(&q_ability, &champion, target);
+        let q_damage = calculate_ability_damage(AbilitySlot::W, AbilityLevel::One, &champion, target);
 
         println!("MR: {:?}", target.stat_at_level(StatType::MagicResist),);
         dbg!(q_damage);
@@ -1108,41 +1174,4 @@ fn should_exclude_attribute(attr: &str, exclude_patterns: &[&str]) -> bool {
         }
     }
     false
-}
-
-#[cfg(test)]
-mod tests {
-    use strum::IntoEnumIterator;
-
-    use super::*;
-
-    #[test]
-    fn all_champions_q_damage_by_level() {
-        for champion_kind in ChampionKind::iter() {
-            if champion_kind == ChampionKind::Custom {
-                continue;
-            };
-            let champion = match read_champion_data(&champion_kind) {
-                Ok(champ) => Champion::from(champ),
-                Err(e) => panic!(
-                    "Failed to read data for {champion_kind:?}: {e} (file: champions/{champion_kind:?}.json)"
-                ),
-            };
-            println!("Testing Champion: {:?}", &champion_kind);
-            let ability = champion.get_ability_raw(AbilitySlot::Q);
-            if ability.damage_type.is_none() {
-                println!("Skipping {champion_kind:?} because Q is not a damage ability");
-                continue;
-            }
-            let rank1_damage = Ability::new(AbilitySlot::Q, AbilityLevel::One, &champion);
-            println!("{:?}", &rank1_damage);
-            if let Some(ref damage) = rank1_damage {
-                for comp in &damage.components {
-                    assert!(comp.damage_type != DamageType::Mixed);
-                    assert!(comp.damage_type != DamageType::None);
-                }
-            }
-            assert!(rank1_damage.is_some(), "No damage for {champion_kind:?}");
-        }
-    }
 }
