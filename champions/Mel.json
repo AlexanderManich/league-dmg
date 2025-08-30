@@ -4,7 +4,7 @@
   "name": "Mel",
   "title": "the Soul's Reflection",
   "fullName": "Mel Medarda",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Mel.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Mel.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -160,7 +160,7 @@
       "percentPerLevel": 0.0
     },
     "aramAbilityHaste": {
-      "flat": 1.0,
+      "flat": -10,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -251,7 +251,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "The first stack also benefits from the per-stack bonus stored damage.\nA threshold indicator for the currently stored damage is placed on a target's health bar, as well as a mark above their head, while any Overwhelm stacks are active. These are visible to Mel and her target(s).\nWhenever  Golden Eclipse's damage would put them below Overwhelm's threshold, the mark will darken and glow more prominently.\nJust before Overwhelm stacks are consumed, targets have 5 additional stacks applied to them.(bug)\nThese stacks are consumed immediately.\nOverwhelm stacks will not be consumed against  Tryndamere's  Undying Rage.",
-        "blurb": "Innate - Overwhelm:  Mel's damaging basic attacks and abilities apply a stack of Overwhelm to enemies hit for a few seconds, stacking infinitely. Each stack stores magic damage; if the total stored damage would kill the target, the next stack will consume them all to detonate the damage.",
+        "blurb": "Innate - Overwhelm:  Mel's damaging  basic attacks and  abilities apply a  stack of Overwhelm to enemies hit for a few seconds, stacking infinitely. Each stack stores magic damage; if the total stored damage would kill the target, the next stack will consume them all to detonate the damage.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -317,10 +317,10 @@
                   {
                     "values": [
                       9.75,
-                      12,
-                      14.25,
-                      16.5,
-                      18.75
+                      11.625,
+                      13.5,
+                      15.375,
+                      17.25
                     ],
                     "units": [
                       "",
@@ -522,7 +522,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Mel/ability-icon/w",
         "effects": [
           {
-            "description": "Active: Mel forms a protective barrier around herself for 0.75 seconds, becoming invulnerable to non- turret damage and gaining 30% decaying bonus movement speed. All hostile non-turret projectiles that collide with the barrier will be destroyed instantly before Mel fires the same projectiles as her own, either toward or in the direction of the original sources, or toward herself.",
+            "description": "Active: Mel forms a protective barrier around herself for 0.75 seconds, becoming invulnerable to non- turret damage and gaining 30% decaying bonus movement speed. All hostile projectiles sourced from enemy champions that collide with the barrier will be destroyed instantly before Mel fires the same projectiles as her own, either toward or in the direction of the original sources, or toward herself.",
             "leveling": []
           },
           {
@@ -618,7 +618,7 @@
         "projectile": "SPECIAL",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Rebuttal's barrier will also instantly destroy missiles that are already within its radius when the ability is cast.\nThe replicated missile will mimic all of the original missile's properties, which includes its range, width, speed, acceleration, angle (if a cone), height, and sight radius.\nSpell effects, as well as interactions with  spell shield and  projectile-interception effects, all vary based on the original missile that was replicated.\nThe only exception to this is the copied missile's path, or trajectory, which is based on the targeting paradigm that the original missile used when fired by its source. The replicated missile acquires the original missile source as the target.\nIf the original missile was fired by a unit or auto-targeted effect, the replicated missile will be fired as a homing missile with the target being the original missile source.\nHealing projectiles, such as  Soraka's  Rejuvenation and  Sona's  Aria of Perseverance, will instead target Mel.\nIf the original missile was fired via any other targeting paradigm, the replicated missile will by default fire in the direction of the original missile source at the time of replication. This includes vector-targeted projectiles (currently only  Viktor's  Hextech Ray), for which the origin will always be Mel's center (since she cannot control the cast point).\nThe replicated missile will mimic all of the functions of and copy the behavior of the original missile, unless otherwise stated. This includes every aspect and effect of the missile conforming to the attack or spell from which the missile originated.\nThe scaling of the effects of the copied missile is calculated using the original missile source's attributes (namely their stats). The damage of the missile only benefits from Mel's damage modifiers and magic penetration, and not the original source's.\nThe following missiles are destroyed, but not replicated:\n Draven's  Whirling Death on its way back to him.\n Gnar's  Boomerang Throw on its way back to him.\n Illaoi's  Test of Spirit\n Sivir's  Boomerang Blade on its way back to her.\n Sylas'  Hijack\n Xayah's  Bladecaller and  Featherstorm\n Zac's  Stretching Strikes\n Azir's  Emperor's Divide Soldiers will end their charge prematurely upon colliding with Rebuttal.\n Syndra's  Spheres thrown with  Syndra's  Scatter the Weak will only stop upon colliding with Mel.\nMel may occasionally fail to attribute  Echoes of Helia's Soul Siphon's damage projectile to herself.(bug)\nThis can cause the enemy to be able to kill their own allies, and gain all the kill's rewards.",
+        "notes": "Rebuttal's barrier will also instantly destroy missiles that are already within its radius when the ability is cast.\nThe replicated missile will mimic all of the original missile's properties, which includes its range, width, speed, acceleration, angle (if a cone), height, and sight radius.\nSpell effects, as well as interactions with  spell shield and  projectile-interception effects, all vary based on the original missile that was replicated.\nThe only exception to this is the copied missile's path, or trajectory, which is based on the targeting paradigm that the original missile used when fired by its source. The replicated missile acquires the original missile source as the target.\nIf the original missile was fired by a unit or auto-targeted effect, the replicated missile will be fired as a homing missile with the target being the original missile source.\nHealing projectiles, such as  Soraka's  Rejuvenation and  Sona's  Aria of Perseverance, will instead target Mel.\nIf the original missile was fired via any other targeting paradigm, the replicated missile will by default fire in the direction of the original missile source at the time of replication. This includes vector-targeted projectiles (currently only  Viktor's  Hextech Ray), for which the origin will always be Mel's center (since she cannot control the cast point).\nThe replicated missile will mimic all of the functions of and copy the behavior of the original missile, unless otherwise stated. This includes every aspect and effect of the missile conforming to the attack or spell from which the missile originated.\nThe scaling of the effects of the copied missile is calculated using the original missile source's attributes (namely their stats). The damage of the missile only benefits from Mel's damage modifiers and magic penetration, and not the original source's.\nThe following missiles are destroyed, but not replicated:\n Draven's  Whirling Death on its way back to him.\n Gnar's  Boomerang Throw on its way back to him.\n Illaoi's  Test of Spirit\n Sivir's  Boomerang Blade on its way back to her.\n Sylas'  Hijack\n Xayah's  Bladecaller and  Featherstorm\n Zac's  Stretching Strikes\nThe following abilities will be stopped short of their trajectory without replication:\n Azir's  Emperor's Divide\n Syndra's  Spheres thrown with her  Scatter the Weak\nMel may occasionally fail to attribute  Echoes of Helia's Soul Siphon's damage projectile to herself.(bug)\nThis can cause the enemy to be able to kill their own allies, and gain all the kill's rewards.",
         "blurb": "Active:  Mel forms a protective barrier around herself for 0.75 seconds, becoming  invulnerable to non- turret damage and gaining decaying  bonus move speed.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1101,7 +1101,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Golden Eclipse can be cast even if all affected targets are  untargetable.(note)\nGolden Eclipse does not deal damage to enemies that are  untargetable by the time the cast time completes.\nWhenever Golden Eclipse's damage would put a target below  Overwhelm's threshold, it will use a  different icon.\nGolden Eclipse will display the number of total stacks affecting all enemy champions in the HUD.\nGolden Eclipse sets the duration of  Overwhelm stacks to 0.5 seconds if they would run out during the cast time.",
+        "notes": "Golden Eclipse can be cast even if all affected targets are  untargetable.(note)\nGolden Eclipse does not deal damage to enemies that are  untargetable by the time the cast time completes.\nGolden Eclipse will not damage targets that aren't in the same realm as Mel.\nGolden Eclipse can't be casted if the affected targets aren't in the same realm as Mel.\nWhenever Golden Eclipse's damage would put a target below  Overwhelm's threshold, it will use a  different icon.\nGolden Eclipse will display the number of total stacks affecting all enemy champions in the HUD.\nGolden Eclipse sets the duration of  Overwhelm stacks to 0.75 seconds if they would run out during the cast time.",
         "blurb": "Passive:  Overwhelm stores more damage.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1120,7 +1120,7 @@
   },
   "releaseDate": "2025-01-23",
   "releasePatch": "25.02",
-  "patchLastChanged": "25.10",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 3150,
     "rp": 975,

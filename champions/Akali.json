@@ -4,7 +4,7 @@
   "name": "Akali",
   "title": "the Rogue Assassin",
   "fullName": "Akali Jhomen Tethi",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Akali.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Akali.png",
   "resource": "ENERGY",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -130,13 +130,13 @@
       "percentPerLevel": 0.0
     },
     "aramDamageTaken": {
-      "flat": 0.9,
+      "flat": 0.95,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
     },
     "aramDamageDealt": {
-      "flat": 1.05,
+      "flat": 1,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -216,7 +216,7 @@
     "mobility": 3,
     "utility": 1,
     "abilityReliance": 65,
-    "difficulty": 2
+    "difficulty": 3
   },
   "abilities": {
     "P": [
@@ -225,7 +225,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Akali/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: When Akali damages an enemy champion with an ability, she creates a ring around them for 4 seconds, refreshing on subsequent damaging abilities against champions. For 2 seconds, she gains 30 / 40 / 50 / 60% (based on level) bonus movement speed while moving away from the center of the ring. Only one ring may be active at a time.",
+            "description": "Innate: When Akali damages an enemy champion with an ability, she creates a ring around them for 4 seconds, refreshing on subsequent damaging abilities against champions. For 2 seconds, she gains 30% / 40% / 50% / 60% (based on level) bonus movement speed while moving away from the center of the ring. Only one ring may be active at a time.",
             "leveling": []
           },
           {
@@ -743,7 +743,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Akali will track the target if they change locations.\nShe will not stop tracking the target until she reaches them, as there is no maximum tracking distance.\nBoth casts count as ability activations for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nShuriken Flip does not interrupt Akali's previous move or attack orders.\nThe recast does.\nShuriken Flip cannot be recast if the target is not  visible or is  untargetable.\nAkali will be ordered to basic attack the target after the recast's dash ends.\nAkali will dash backwards up-to 400 units in a straight line. This dash can cross terrain if the end point is beyond it. If she would end the dash inside terrain, she will instead look for a location  in either direction left or right that is outside of terrain and dash there. If there is no such location, she will dash only up to the wall at her normal speed, ending the dash early.\nThis ability will cast from wherever the caster is at the end of the cast time.\nThe shuriken missile will fire from wherever Akali is at the end of the cast time (usually mid-dash), but always towards and reaching the location that was 825 units in front of her at the start of cast. The only exception is if she moves via  Flash, in which case the range of the missile is decreased relative to the distance she blinked.\nKilling an enemy with the shuriken will still mark the last area of the  shroud hit.\nAttempting to cast  Five Point Strike during either dash will buffer it to cast as soon as the dash ends.\nThis ability's damage is calculated based on the caster's stats at the time of its application.\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\n Twilight Shroud is usable.  Shuriken Flip is disabled for 10 seconds and then interrupts. Both dashes of  Perfect Execution interrupt.\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\nAll the other item-actives are usable\n\n\nDisabled\n\nN/A\n\n\nInterrupted by\n\n Hextech Rocketbelt\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite  Teleport  Recall\n\n\nDisabled\n\n Hexflash\n\n\nInterrupted by\n\n Flash\n\n\nInterrupted by\n\nDeath Cast-inhibiting effects",
+        "notes": "Akali will track the target if they change locations.\nShe will not stop tracking the target until she reaches them, as there is no maximum tracking distance.\nBoth casts count as ability activations for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nShuriken Flip does not interrupt Akali's previous move or attack orders.\nThe recast does.\nShuriken Flip cannot be recast if the target is  untargetable or is in another realm.\nAkali will be ordered to basic attack the target after the recast's dash ends.\nAkali will dash backwards up-to 400 units in a straight line. This dash can cross terrain if the end point is beyond it. If she would end the dash inside terrain, she will instead look for a location  in either direction left or right that is outside of terrain and dash there. If there is no such location, she will dash only up to the wall at her normal speed, ending the dash early.\nThis ability will cast from wherever the caster is at the end of the cast time.\nThe shuriken missile will fire from wherever Akali is at the end of the cast time (usually mid-dash), but always towards and reaching the location that was 825 units in front of her at the start of cast. The only exception is if she moves via  Flash, in which case the range of the missile is decreased relative to the distance she blinked.\nKilling an enemy with the shuriken will still mark the last area of the  shroud hit.\nAttempting to cast  Five Point Strike during either dash will buffer it to cast as soon as the dash ends.\nThis ability's damage is calculated based on the caster's stats at the time of its application.\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\n Twilight Shroud is usable.  Shuriken Flip is disabled for 10 seconds and then interrupts. Both dashes of  Perfect Execution interrupt.\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\nAll the other item-actives are usable\n\n\nDisabled\n\nN/A\n\n\nInterrupted by\n\n Hextech Rocketbelt\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite  Teleport  Recall\n\n\nDisabled\n\n Hexflash\n\n\nInterrupted by\n\n Flash\n\n\nInterrupted by\n\nDeath Cast-inhibiting effects",
         "blurb": "Active:  Akali  dashes backward and throws a shuriken forward that deals magic damage and marks the first enemy or  smoke cloud hit for a short time.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -905,7 +905,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Both casts count as ability activations for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nWith the first cast, Akali can dash up to a maximum of 900 units if the first enemy she hit was at the maximum dash range.\nCasting  Flash during either dashes will interrupt them, but Akali will deal damage to any enemies she comes in contact with at the new location.\nEnemies already hit by either of Perfect Execution's casts cannot be affected more than once by the same cast.\n Shuriken Flip can be used during the initial dash if it is cast after Perfect Execution's cast time finishes.\nThis ability's damage is calculated based on the caster's stats at the start of cast and does not change dynamically.",
+        "notes": "Both casts count as ability activations for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nWith the first cast, Akali can dash up to a maximum of 900 units if the first enemy she hit was at the maximum dash range.\nCasting  Flash during either dashes will interrupt them, but Akali will deal damage to any enemies she comes in contact with at the new location.\nEnemies already hit by either of Perfect Execution's casts cannot be affected more than once by the same cast.\n Shuriken Flip can be used during the initial dash if it is cast after Perfect Execution's cast time finishes.\nThis ability's damage is calculated based on the caster's stats at the start of cast and does not change dynamically.\nAkali is  unable to cast her other abilities for 0.25 seconds after starting the initial cast's dash.",
         "blurb": "Active:  Akali  dashes in the direction of the target enemy champion, dealing physical damage to enemies she passes through.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -916,7 +916,7 @@
         "speed": "1500 / 3000",
         "width": null,
         "angle": null,
-        "castTime": "None (0.25) / None",
+        "castTime": "None",
         "effectRadius": null,
         "targetRange": "675"
       }
@@ -2644,8 +2644,8 @@
           "id": 84076,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/84/84076.png",
           "colors": [
-            "#54209B",
-            "#54209B"
+            "#9C68D7",
+            "#9C68D7"
           ],
           "descriptions": [
             {
@@ -2812,8 +2812,8 @@
           "id": 84077,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/84/84077.png",
           "colors": [
-            "#9C68D7",
-            "#9C68D7"
+            "#54209B",
+            "#54209B"
           ],
           "descriptions": [
             {
@@ -3137,7 +3137,7 @@
       "name": "Spirit Blossom",
       "id": 84092,
       "isBase": false,
-      "availability": "Upcoming",
+      "availability": "Available",
       "formatName": "Spirit Blossom",
       "lootEligible": true,
       "cost": 1350,
@@ -3336,7 +3336,7 @@
         }
       ],
       "lore": "A young warrior's master warned her of the world's cruelty and the dispassion it required, then told her to cut out her heart. But when she raised the blade, she could not do it. She would face the world, heart intact. She ran, seeking a new path, and found the Burning Shade—a master who did not demand her heart, but destroyed it all the same.",
-      "release": "0000-00-00",
+      "release": "2025-06-25",
       "set": [
         "Spirit Blossom"
       ],

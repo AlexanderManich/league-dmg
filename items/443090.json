@@ -12,7 +12,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/443090_reaperstoll.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/443090_reaperstoll.png",
   "simpleDescription": null,
   "nicknames": [],
   "passives": [
@@ -206,7 +206,7 @@
       "unique": true,
       "mythic": false,
       "name": "Sow",
-      "effects": "Increases the {{as|attack speed}} gained from all sources by 25%.",
+      "effects": "Increases the {{as|attack speed}} gained from all sources by 15%.",
       "range": null,
       "cooldown": null,
       "stats": {
@@ -529,7 +529,7 @@
     },
     "movespeed": {
       "flat": 0.0,
-      "percent": 10.0,
+      "percent": 5.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0,
       "percentBase": 0.0,

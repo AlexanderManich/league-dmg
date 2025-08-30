@@ -4,7 +4,7 @@
   "name": "Riven",
   "title": "the Exile",
   "fullName": "Konte Riven",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Riven.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Riven.png",
   "resource": "NONE",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -217,7 +217,7 @@
     "mobility": 3,
     "utility": 1,
     "abilityReliance": 75,
-    "difficulty": 2
+    "difficulty": 3
   },
   "abilities": {
     "P": [
@@ -226,7 +226,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Riven/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Riven's ability casts generate a stack of Charge for 6 seconds, refreshing on subsequent casts and stacking up to 3 times. Riven's basic attacks are empowered to each consume a stack to deal bonus physical damage equal to 30% : 60% (based on level) AD, reduced to[ 50% ][ 15% : 30% (based on level) AD ]against structures.",
+            "description": "Innate: Riven's ability casts generate a stack of Charge for 6 seconds, refreshing on subsequent casts and stacking up to 3 times. Riven's basic attacks are empowered to each consume a stack to deal bonus physical damage equal to 30% : 50% (based on level) AD, reduced to[ 50% ][ 15% : 25% (based on level) AD ]against structures.",
             "leveling": []
           },
           {
@@ -245,8 +245,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Runic Blade's duration also refreshes when Riven consumes a stack.\nThe empowered attack will not trigger against wards.\nThe number of empowered attacks available is represented by a counter under her health bar, only visible to the player.",
-        "blurb": "Innate:  Riven's ability casts generate stacks of Charge, which stacks up to a cap. Riven's basic attacks consume a stack to deal bonus physical damage.",
+        "notes": "Runic Blade's duration also refreshes when Riven consumes a stack.\nThe empowered attack will not trigger against  wards.\nThe number of empowered attacks available is represented by a counter under her health bar, only visible to the player.",
+        "blurb": "Innate:  Riven's  ability casts generate  stacks of Charge, which stacks up to a cap. Riven's  basic attacks consume a stack to deal bonus physical damage.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -488,7 +488,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Riven is briefly unable to basic attack after the cast time.\n Broken Wings may be cast while basic attacking briefly after casting Ki Burst.(bug)",
+        "notes": "Riven is briefly unable to basic attack after the cast time.\n Broken Wings may be cast while  basic attacking briefly after casting Ki Burst.(bug)",
         "blurb": "Active:  Riven emits a flash of runic energy, dealing physical damage and briefly  stunning nearby enemies.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -641,7 +641,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "All bonuses are gained after 0.5 seconds of the ability starting its cast.\nThe bonus attack damage amount is factored upon cast, and does not change.\nIf Riven has a basic attack buffered before the end of Blade of the Exile's cast time, the buffered basic attack will start 0.33 seconds after the end of the cast time.\nThe delay will not apply to basic attack commands input after Blade of the Exile's cast time.",
-        "blurb": "Active:  Riven empowers her blade for some time, gaining  bonus attack damage and increased  range on her basic attacks,  Broken Wings and  Ki Burst.",
+        "blurb": "Active:  Riven empowers her blade for some time, gaining  bonus attack damage and increased  range on her  basic attacks,  Broken Wings and  Ki Burst.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -753,7 +753,7 @@
   },
   "releaseDate": "2011-09-14",
   "releasePatch": "1.0.0.125",
-  "patchLastChanged": "14.24",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 2400,
     "rp": 880,
@@ -1118,8 +1118,8 @@
           "id": 92017,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/92/92017.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {
@@ -1230,8 +1230,8 @@
           "id": 92019,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/92/92019.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {
@@ -1958,8 +1958,8 @@
           "id": 92054,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/92/92054.png",
           "colors": [
-            "#2B7CFF",
-            "#FF930E"
+            "#F6A630",
+            "#1C61B4"
           ],
           "descriptions": [
             {

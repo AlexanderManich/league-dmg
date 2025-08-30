@@ -15,7 +15,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6657_mage_t4_rodofages.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6657_mage_t4_rodofages.png",
   "simpleDescription": null,
   "nicknames": [],
   "passives": [
@@ -23,7 +23,7 @@
       "unique": true,
       "mythic": false,
       "name": "Timeless",
-      "effects": "This item gains {{as|10 '''bonus''' health}}, {{as|20 '''bonus''' mana}}, and {{as|3 ability power}} every minute, up to 10 times, for a maximum of {{as|100 '''bonus''' health}}, {{as|200 '''bonus''' mana}}, and {{as|30 ability power}}. Upon reaching maximum stacks, gain a level that preserves your current experience (cap remains at level 18).",
+      "effects": "This item gains {{as|10 '''bonus''' health}}, {{as|30 '''bonus''' mana}}, and {{as|3 ability power}} every minute, up to 10 times, for a maximum of {{as|100 '''bonus''' health}}, {{as|300 '''bonus''' mana}}, and {{as|30 ability power}}. Upon reaching maximum stacks, gain a level that preserves your current experience (cap remains at level 18).",
       "range": null,
       "cooldown": null,
       "stats": {
@@ -515,7 +515,7 @@
       "percentBonus": 0.0
     },
     "mana": {
-      "flat": 400.0,
+      "flat": 500.0,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0,

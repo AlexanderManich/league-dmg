@@ -4,7 +4,7 @@
   "name": "Kindred",
   "title": "The Eternal Hunters",
   "fullName": "Lamb and Wolf",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Kindred.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Kindred.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -413,7 +413,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Kindred/ability-icon/w",
         "effects": [
           {
-            "description": "Passive: As Kindred move and attack, they build up to 100 stacks of Hunter's Vigor. At maximum stacks, Lamb's next basic attack heals her for 0% : 100% (based on Kindred's missing health) of 47 : 81 (based on level). The heal is not triggered if Kindred is at full health.",
+            "description": "Passive: Lamb generates 1 stack of Hunter's Vigor for every 27 units she travels by any means and 5 stacks on-attack, up to a maximum of 100 stacks. At maximum stacks, her next basic attack heals her for 0% : 100% (based on Kindred's missing health) of 47 : 81 (based on level). The heal is not triggered if Kindred is at full health.",
             "leveling": []
           },
           {
@@ -421,7 +421,7 @@
             "leveling": []
           },
           {
-            "description": "Wolf's attacks deal magic damage and the rate at which he attacks scale with 25% of Kindred's bonus attack speed. Against monsters, his attacks deal 150% damage and slow the target by 50% for 2 seconds.",
+            "description": "Wolf's attacks deal magic damage and the rate at which he attacks scale with 25% of Kindred's bonus attack speed. Against monsters, his attacks deal 150% damage and slow the target by 50% for 2 seconds. The damage based on the target's health ratio is capped at 112.5 (+ 15 per mark) against monsters.",
             "leveling": [
               {
                 "attribute": "Magic Damage",
@@ -618,7 +618,7 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Wolf is  untargetable and  ghosted but he cannot move through terrain other than the initial dash on activation.\nWolf is not able to re-target  Rift Scuttler if he loses  sight of her while he's attacking it.\nWolf grants the same  vision as a  champion.\nWolf's Frenzy does not end if Lamb enters  resurrection.\nWolf's Frenzy applies ability haste to its cooldown post-effect.\nGiven a base cooldown of 14 seconds at rank 5 with 100 ability haste, casting the ability and then ending it after 4 seconds will result in a remaining cooldown of (14−4)×0.5=5 seconds, where 0.5 is derived from ability haste.\nBecause of this, there will always be some cooldown time remaining post-effect regardless of the amount of ability haste, unlike certain other abilities with cooldowns that start on-cast.\nPENDING FOR TEST:: Interaction with enemy vision and spectator mode.",
+        "notes": "Hunter's Vigor's heal is not triggered on attacks against structures and wards.\nWolf is  untargetable and  ghosted but he cannot move through terrain other than the initial dash on activation.\nWolf is not able to re-target  Rift Scuttler if he loses  sight of her while he's attacking it.\nWolf grants the same  vision as a  champion.\nWolf's Frenzy does not end if Lamb enters  resurrection.\nWolf's Frenzy applies ability haste to its cooldown post-effect.\nGiven a base cooldown of 14 seconds at rank 5 with 100 ability haste, casting the ability and then ending it after 4 seconds will result in a remaining cooldown of (14−4)×0.5=5 seconds, where 0.5 is derived from ability haste.\nBecause of this, there will always be some cooldown time remaining post-effect regardless of the amount of ability haste, unlike certain other abilities with cooldowns that start on-cast.\nPENDING FOR TEST:: Interaction with enemy vision and spectator mode.",
         "blurb": "Passive: As  Kindred move and attack, they build up stacks of Hunter's Vigor. At full stacks,  Lamb's next basic attack  heals her.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -743,11 +743,11 @@
                       7.5
                     ],
                     "units": [
-                      "% (+ [[Infinity Edge|]] 2%) (+ 0.75% (+ [[Infinity Edge|]] 0.2%) per Mark) of target's missing health",
-                      "% (+ [[Infinity Edge|]] 2%) (+ 0.75% (+ [[Infinity Edge|]] 0.2%) per Mark) of target's missing health",
-                      "% (+ [[Infinity Edge|]] 2%) (+ 0.75% (+ [[Infinity Edge|]] 0.2%) per Mark) of target's missing health",
-                      "% (+ [[Infinity Edge|]] 2%) (+ 0.75% (+ [[Infinity Edge|]] 0.2%) per Mark) of target's missing health",
-                      "% (+ [[Infinity Edge|]] 2%) (+ 0.75% (+ [[Infinity Edge|]] 0.2%) per Mark) of target's missing health"
+                      "% (+ 2%) (+ 0.75% (+ 0.2%) per Mark) of target's missing health",
+                      "% (+ 2%) (+ 0.75% (+ 0.2%) per Mark) of target's missing health",
+                      "% (+ 2%) (+ 0.75% (+ 0.2%) per Mark) of target's missing health",
+                      "% (+ 2%) (+ 0.75% (+ 0.2%) per Mark) of target's missing health",
+                      "% (+ 2%) (+ 0.75% (+ 0.2%) per Mark) of target's missing health"
                     ]
                   }
                 ]
@@ -810,7 +810,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "If the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel and not pay its cost but still go on  cooldown.(bug)\nThis ability cannot target a unit with Mounting Dread stacks.\nMounting Dread will prioritize casting on the closest champion within  100 radius of the cursor, even if other eligible targets are closer.\nAs a consequence of this mechanic, Mounting Dread can still be cast on champions with Mounting Dread stacks.(bug)\nReapplying Mounting Dread through this method will apply the slow, but will not reset the stack count.\nPENDING FOR TEST: Reapplying Mounting Dread against  disguised  Neeko will reset the stack count.(bug)",
-        "blurb": "Active:  Lamb fires a shot at the target enemy that briefly  slows them applies a stack of Mounting Dread. Lamb's basic attacks against this target stack Mounting Dread up to a cap.",
+        "blurb": "Active:  Lamb fires a shot at the target enemy that briefly  slows them applies a  stack of Mounting Dread. Lamb's  basic attacks against this target stack Mounting Dread up to a cap.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -877,8 +877,8 @@
           "modifiers": [
             {
               "values": [
-                180,
-                150,
+                160,
+                140,
                 120
               ],
               "units": [
@@ -918,7 +918,7 @@
   },
   "releaseDate": "2015-10-14",
   "releasePatch": "5.20",
-  "patchLastChanged": "25.03",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

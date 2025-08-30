@@ -4,7 +4,7 @@
   "name": "Darius",
   "title": "the Hand of Noxus",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Darius.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Darius.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -253,8 +253,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "If Hemorrhage's total post-mitigation damage is higher than the target's current health, a small area of  sight is granted around the target for the duration of Hemorrhage and for another 2 seconds after it ends.\nHemorrhage does not apply to structures nor  wards.\nDarius' attacks and abilities have to deal damage to apply Hemorrhage.\nHemorrhage cannot be applied to/refreshed against  invulnerable targets.\nHemorrhage can be applied to and refreshed against  shielded targets.\nHemorrhage can also be applied  on-hit, but will specifically not do so if the target is invulnerable.\n Spell shield prevents Hemorrhage's application from abilities only.",
-        "blurb": "Innate:  Darius' basic attacks and damaging abilities apply a stack of Hemorrhage, stacking up to a cap.",
+        "notes": "If Hemorrhage's total post-mitigation damage is higher than the target's current health, a small area of  sight is granted around the target for the duration of Hemorrhage and for another 2 seconds after it ends.\nHemorrhage does not apply to  structures nor  wards.\nDarius' attacks and abilities have to deal damage to apply Hemorrhage.\nHemorrhage cannot be applied to/refreshed against  invulnerable targets.\nHemorrhage can be applied to and refreshed against  shielded targets.\nHemorrhage can also be applied  on-hit, but will specifically not do so if the target is invulnerable.\n Spell shield prevents Hemorrhage's application from abilities only.",
+        "blurb": "Innate:  Darius'  basic attacks and damaging  abilities apply a  stack of Hemorrhage, stacking up to a cap.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -354,7 +354,7 @@
             ]
           },
           {
-            "description": "Against champions and large monsters hit, Darius heals for 15% : 45% (based on number of targets hit by the outer radius) of his missing health. Enemies hit by the inner radius do not refresh the duration of or gain a new stack of Hemorrhage.",
+            "description": "Against champions and large monsters hit, Darius heals for 17% : 51% (based on number of targets hit by the outer radius) of his missing health. Enemies hit by the inner radius do not refresh the duration of or gain a new stack of Hemorrhage.",
             "leveling": []
           },
           {
@@ -518,7 +518,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Crippling Strike deals  basic damage but also triggers spell effects by also being tagged as  spell damage.\nThis includes the basic attack itself.\n Spell shield will not block the damage.\nThe attack's animation can be cancelled by casting  Decimate, but the attack will still land.\nCrippling Strike will trigger  Manaflow Band,  Tear of the Goddess' Mana Charge and spell effects.\nDespite its name, Crippling Strike does not  cripple anymore.",
+        "notes": "Crippling Strike deals  basic damage but will also trigger spell effects by also being tagged as  spell damage.\nThis includes the basic attack itself.\n Spell shield will not block the damage.\nThe attack's animation can be cancelled by casting  Decimate, but the attack will still land.\nDespite its name, Crippling Strike does not  cripple anymore.",
         "blurb": "Active:  Darius' next basic attack within a few seconds deals increased physical damage and  slows the target.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -811,7 +811,7 @@
   },
   "releaseDate": "2012-05-23",
   "releasePatch": "1.0.0.140",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 225,
     "rp": 260,
@@ -979,7 +979,9 @@
       "voiceActor": [
         "Chuck Kourouklis"
       ],
-      "splashArtist": []
+      "splashArtist": [
+        "Concept Art House"
+      ]
     },
     {
       "name": "Woad King",

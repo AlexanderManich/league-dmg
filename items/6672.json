@@ -16,7 +16,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6672_marksman_t4_behemothslayer.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6672_marksman_t4_behemothslayer.png",
   "simpleDescription": null,
   "nicknames": [],
   "passives": [
@@ -24,7 +24,7 @@
       "unique": true,
       "mythic": false,
       "name": "Bring It Down",
-      "effects": "Basic attacks [[on-hit]] grant a stack for 3 seconds, up to 2 stacks. At 2 stacks, the next basic attack consumes all stacks to deal {{as|{{rd|150 to 200 for 11|150*0.8 to 200*0.8 for 11|levels=1;9 to 18|pp=true}} '''bonus''' physical damage|physical damage}} on-hit, increased by {{pp|0 to 50 by 5|0 to 100|key=%|color=health|type=target's '''missing''' health|key1=%}}, for up to {{as|{{rd|150*1.5 to 200*1.5 for 11|150*0.8*1.5 to 200*0.8*1.5 for 11|levels=1;9 to 18|pp=true}} '''bonus''' physical damage|physical damage}}.",
+      "effects": "Basic attacks [[on-hit]] grant a stack for 3 seconds, up to 2 stacks. At 2 stacks, the next basic attack consumes all stacks to deal {{as|{{rd|150 to 200 for 11|150*0.8 to 200*0.8 for 11|levels=1;9 to 18|pp=true}} '''bonus''' physical damage|physical damage}} on-hit, increased by {{pp|0 to 75 by 5|0 to 100|key=%|color=health|type=target's '''missing''' health|key1=%}}, for up to {{as|{{rd|150*1.75 to 200*1.75 for 11|150*0.8*1.75 to 200*0.8*1.75 for 11|levels=1;9 to 18|pp=true}} '''bonus''' physical damage|physical damage}}.",
       "range": null,
       "cooldown": null,
       "stats": {
@@ -388,9 +388,9 @@
   },
   "shop": {
     "prices": {
-      "total": 3100,
+      "total": 3000,
       "combined": 0,
-      "sell": 1240
+      "sell": 1200
     },
     "purchasable": true,
     "tags": [

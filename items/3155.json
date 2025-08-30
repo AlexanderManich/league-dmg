@@ -18,7 +18,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3155_fighter_t2_hexdrinker.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3155_fighter_t2_hexdrinker.png",
   "simpleDescription": "Increases Attack Damage and Magic Resist",
   "nicknames": [],
   "passives": [

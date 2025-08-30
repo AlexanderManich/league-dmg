@@ -4,7 +4,7 @@
   "name": "Irelia",
   "title": "the Blade Dancer",
   "fullName": "Xan Irelia",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Irelia.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Irelia.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -16,7 +16,7 @@
       "percentPerLevel": 0.0
     },
     "healthRegen": {
-      "flat": 6,
+      "flat": 3.5,
       "percent": 0.0,
       "perLevel": 0.85,
       "percentPerLevel": 0.0
@@ -231,7 +231,7 @@
             "leveling": []
           },
           {
-            "description": "Ionian Fervor: For each stack, Irelia gains 7.5% : 25% (based on level) bonus attack speed, up to a maximum of 30% : 100% (based on level). At maximum stacks, Irelia's basic attacks are empowered to deal 10 : 61 (based on level) (+ 20% bonus AD) bonus magic damage on-hit, reduced to[ 50% ][ 5 : 30.5 (based on level) (+ 10% bonus AD) ]against structures.",
+            "description": "Ionian Fervor: For each stack, Irelia gains 10% : 25% (based on level) bonus attack speed, up to a maximum of 40% : 100% (based on level). At maximum stacks, Irelia's basic attacks are empowered to deal 10 : 61 (based on level) (+ 20% bonus AD) bonus magic damage on-hit, reduced to[ 50% ][ 5 : 30.5 (based on level) (+ 10% bonus AD) ]against structures.",
             "leveling": []
           },
           {
@@ -251,7 +251,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "PENDING FOR TEST:: Parry interactions ( block,  dodge, and  blind).\nIonian Fervor stacks are represented by a counter under Irelia's health bar. It is highlighted while the ability is at its maximum effect.",
-        "blurb": "Innate:  Irelia's abilities generate a stack of Ionian Fervor for each enemy champion hit, as well as one stack if she hits at least one non-champion. Basic attacks against enemy  champions and large  monsters will also refresh the duration.",
+        "blurb": "Innate:  Irelia's  abilities generate a  stack of Ionian Fervor for each enemy champion hit, as well as one stack if she hits at least one non-champion.  Basic attacks against enemy  champions and large  monsters will also refresh the duration.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -725,7 +725,7 @@
         "speed": "2000",
         "width": "Convergence hit width",
         "angle": null,
-        "castTime": "none",
+        "castTime": "None / None",
         "effectRadius": "Global",
         "targetRange": "775"
       }
@@ -820,7 +820,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Enemies that cross the perimeter are not marked Unsteady.\nThis ability will cast from wherever the caster is at the end of the cast time.\nThe blades will still expand if the champion hit by the blades is protected by a  spell shield.\nThe  sight is granted in a 1350 unit radius at the location of the enemy champion at the time of being hit and can be blocked by terrain.",
+        "notes": "Enemies that cross the perimeter are not marked Unsteady.\nThis ability will cast from wherever the caster is at the end of the cast time.\nIn addition to its  projectile, Vanguard's Edge will check for enemy champions within a  90-unit radius area from the projectile's origin point.\nThe projectile interacts with projectile-blocking effects but the area check doesn't.\nThe blades will still expand if the champion hit by the blades is protected by a  spell shield.\nThe  sight is granted in a 1350 unit radius at the location of the enemy champion at the time of being hit and can be blocked by terrain.",
         "blurb": "Active:  Irelia launches a barrage of blades in the target direction that expand outward upon hitting an enemy champion, dealing magic damage to enemies hit.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -839,7 +839,7 @@
   },
   "releaseDate": "2010-11-16",
   "releasePatch": "1.0.0.105",
-  "patchLastChanged": "25.10",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 1575,
     "rp": 790,

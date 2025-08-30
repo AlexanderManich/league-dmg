@@ -4,7 +4,7 @@
   "name": "Veigar",
   "title": "the Tiny Master of Evil",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Veigar.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Veigar.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -246,7 +246,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "The two effects stack, granting 6 stacks for each enemy champion taken down by an ability, 7 with  Baleful Strike.\nVeigar's abilities do not have to deal damage nor affect their targets to grant a stack.",
-        "blurb": "Innate:  Veigar generates a stack of Phenomenal Evil for each enemy  champion hit by his abilities, and more stacks when he scores an enemy champion  takedown.",
+        "blurb": "Innate:  Veigar generates a  stack of Phenomenal Evil for each enemy  champion hit by his  abilities, and more stacks when he scores an enemy champion  takedown.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -583,7 +583,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The stun and the knockdown are applied to units that are within a certain distance interval from the center of the area of effect.\nAn enemy can be affected by Event Horizon only once every 4.5 seconds.\nUnits that negate the stun will still count as passing through the edges. They will become immune to the effects of Event Horizon for the period even after negating them.\n Displacement immune enemies will still be  stunned, but not  knocked down.\nAt the start of the cast time, all enemy  champions in a 390-radius become marked for Veigar to gain an  assist on them should they perish within the standard 10 seconds assist time.\nEvent Horizon may fail to catch enemies that move very quickly through the boundary distance.\nMore modern area checks such as  Thresh's  The Box or  Caitlyn's  Yordle Snap Trap do not have this issue.",
+        "notes": "The stun and the knockdown are applied to units that are within a certain distance interval from the center of the area of effect.\nAn enemy can be affected by Event Horizon only once every 4.5 seconds.\nUnits that negate the stun will still count as passing through the edges. They will become immune to the effects of Event Horizon for the period even after negating them.\n Displacement immune enemies will still be  stunned, but not  knocked down.\nVeigar marks enemy  champions in a 390-radius from the zone's center in order to gain kill/assist credit, lasting for the standard credit timer.\nEvent Horizon may fail to catch enemies that move very quickly through the boundary distance.\nMore modern area checks such as  Thresh's  The Box or  Caitlyn's  Yordle Snap Trap do not have this issue.",
         "blurb": "Active: After a brief delay,  Veigar erects a cage at the target location that lasts for a short time. Enemies that touch the cage edges are briefly  knocked down and  stunned.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -2229,10 +2229,6 @@
           "descriptions": [
             {
               "description": "This chroma was released as a Loot exclusive in the Worlds 2024 event.",
-              "region": ""
-            },
-            {
-              "description": "This chroma was released as a Loot exclusive in the Worlds 2024 event.",
               "region": "riot"
             }
           ],
@@ -2273,10 +2269,6 @@
             "#D33528"
           ],
           "descriptions": [
-            {
-              "description": "This chroma was released as a bundle exclusive in 2024.",
-              "region": ""
-            },
             {
               "description": "This chroma was released as a bundle exclusive in 2024.",
               "region": "riot"

@@ -4,7 +4,7 @@
   "name": "Corki",
   "title": "the Daring Bombardier",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Corki.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Corki.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -235,7 +235,7 @@
         "affects": "Self",
         "spellshieldable": null,
         "resource": null,
-        "damageType": "MIXED_DAMAGE",
+        "damageType": "OTHER_DAMAGE",
         "spellEffects": "basic",
         "projectile": null,
         "onHitEffects": null,
@@ -270,10 +270,10 @@
                   {
                     "values": [
                       70,
-                      120,
-                      170,
-                      220,
-                      270
+                      115,
+                      160,
+                      205,
+                      250
                     ],
                     "units": [
                       "",
@@ -285,11 +285,11 @@
                   },
                   {
                     "values": [
-                      120,
-                      120,
-                      120,
-                      120,
-                      120
+                      130,
+                      130,
+                      130,
+                      130,
+                      130
                     ],
                     "units": [
                       "% bonus AD",
@@ -759,7 +759,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "The maximum resistances reduction is applied after 4 ticks (1 second).\nThe direction of the gun firing changes depending on where Corki is facing.\nCorki will turn to face in the direction of the cursor upon casting Gatling Gun.\nGatling Gun's area of effect can hit close by enemies next to and behind him, due to hitting  enemy boundary edge.",
-        "blurb": "Active:  Corki's gatling gun rapidly fires in a cone in front of him, continually dealing physical damage to enemies hit and applying stacks of Gatling Gun.",
+        "blurb": "Active:  Corki's gatling gun rapidly fires in a cone in front of him, continually dealing physical damage to enemies hit and applying  stacks of Gatling Gun.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -803,9 +803,9 @@
                   },
                   {
                     "values": [
-                      80,
-                      80,
-                      80
+                      85,
+                      85,
+                      85
                     ],
                     "units": [
                       "% bonus AD",
@@ -841,9 +841,9 @@
                   },
                   {
                     "values": [
-                      160,
-                      160,
-                      160
+                      170,
+                      170,
+                      170
                     ],
                     "units": [
                       "% bonus AD",
@@ -921,7 +921,7 @@
   },
   "releaseDate": "2009-09-19",
   "releasePatch": "0.9.25.21",
-  "patchLastChanged": "25.06",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -1137,8 +1137,8 @@
           "id": 42017,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/42/42017.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {
@@ -1563,7 +1563,7 @@
           ],
           "rarities": [
             {
-              "rarity": -1,
+              "rarity": 7,
               "region": "TENCENT"
             }
           ]
@@ -1818,6 +1818,209 @@
       "splashArtist": [
         "Sora Kim",
         "West Studio"
+      ]
+    },
+    {
+      "name": "Brick Toy",
+      "id": 42036,
+      "isBase": false,
+      "availability": "Available",
+      "formatName": "Brick Toy",
+      "lootEligible": true,
+      "cost": 1350,
+      "sale": 0,
+      "distribution": null,
+      "rarity": "Epic",
+      "chromas": [
+        {
+          "name": "Amethyst",
+          "id": 42042,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/42/42042.png",
+          "colors": [
+            "#9C68D7",
+            "#9C68D7"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Emerald",
+          "id": 42038,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/42/42038.png",
+          "colors": [
+            "#2DA130",
+            "#2DA130"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Obsidian",
+          "id": 42044,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/42/42044.png",
+          "colors": [
+            "#27211C",
+            "#27211C"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Pearl",
+          "id": 42043,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/42/42043.png",
+          "colors": [
+            "#ECF9F8",
+            "#ECF9F8"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Rose Quartz",
+          "id": 42039,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/42/42039.png",
+          "colors": [
+            "#E58BA5",
+            "#E58BA5"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "TENCENT"
+            }
+          ]
+        },
+        {
+          "name": "Ruby",
+          "id": 42037,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/42/42037.png",
+          "colors": [
+            "#D33528",
+            "#D33528"
+          ],
+          "descriptions": [
+            {
+              "description": "This chroma was released as a bundle exclusive in 2025.",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Sapphire",
+          "id": 42040,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/42/42040.png",
+          "colors": [
+            "#2756CE",
+            "#2756CE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Turquoise",
+          "id": 42041,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/42/42041.png",
+          "colors": [
+            "#73BFBE",
+            "#73BFBE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        }
+      ],
+      "lore": "After Corki's breakout success in a new drama series about airplane pilots, executives wondered if he might appeal to younger audiences. When someone jokingly said “make him a chicken in a little chicken plane,” everybody laughed. The toy has now been sold out for 11 months, with a new TV show, video game, and theme park on the way.",
+      "release": "2025-08-13",
+      "set": [
+        "Toy Box"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/corki/skins/skin36/images/corki_splash_centered_36.skins_corki_skin36.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/corki/skins/skin36/images/corki_splash_uncentered_36.skins_corki_skin36.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/corki/skins/skin36/images/corki_splash_tile_36.skins_corki_skin36.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/corki/skins/skin36/corkiloadscreen_36.skins_corki_skin36.jpg",
+      "loadScreenVintagePath": null,
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": true,
+      "newQuotes": false,
+      "voiceActor": [
+        "'Ralph'"
+      ],
+      "splashArtist": [
+        "Mo Yan"
       ]
     }
   ]

@@ -4,7 +4,7 @@
   "name": "Renata Glasc",
   "title": "the Chem-Baroness",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Renata.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Renata.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -864,7 +864,7 @@
   },
   "releaseDate": "2022-02-17",
   "releasePatch": "12.4",
-  "patchLastChanged": "25.11",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 2400,
     "rp": 880,
@@ -1617,8 +1617,8 @@
       "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/renata/skins/skin31/renataloadscreen_31.skins_renata_care_skin31.jpg",
       "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/renata/skins/skin31/renataloadscreen_31_le.skins_renata_care_skin31.jpg",
       "newEffects": true,
-      "newAnimations": true,
-      "newRecall": true,
+      "newAnimations": false,
+      "newRecall": false,
       "newVoice": false,
       "newQuotes": false,
       "voiceActor": [

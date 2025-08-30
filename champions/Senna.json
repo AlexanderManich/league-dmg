@@ -4,7 +4,7 @@
   "name": "Senna",
   "title": "the Redeemer",
   "fullName": "Senna Abaru",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Senna.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Senna.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -136,7 +136,7 @@
       "percentPerLevel": 0.0
     },
     "aramDamageDealt": {
-      "flat": 0.97,
+      "flat": 0.92,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -184,7 +184,7 @@
       "percentPerLevel": 0.0
     },
     "urfDamageDealt": {
-      "flat": 1.0,
+      "flat": 1.1,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -239,7 +239,7 @@
             "leveling": []
           },
           {
-            "description": "Innate - Relic Cannon: Senna's basic attacks on-hit deal 20% AD bonus physical damage and grant her 10 / 15 / 20% (based on level) of the target's movement speed as bonus movement speed for 0.5 seconds. This damage applies life steal at 100% effectiveness.",
+            "description": "Innate - Relic Cannon: Senna's basic attacks on-hit deal 20% AD bonus physical damage and grant her 10% / 15% / 20% (based on level) of the target's movement speed as bonus movement speed for 0.5 seconds. This damage applies life steal at 100% effectiveness.",
             "leveling": []
           }
         ],
@@ -255,7 +255,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Despite Senna dealing 1 damage to Mist Wraiths, attacking them will calculate the attack's damage (including  critical strike modifiers) and any on-hit effects for the purposes of  life steal and  drain effects.\nRelic Cannon is only applied if the attack deals more than 0 damage.\nHence, it is not applied if the target is  invulnerable or Senna's basic attack's  attack damage is reduced to 0 or below.\nDealing 0 damage is valid for marking and collecting Mist from champions, but dealing no damage at all is not.\nHence, Senna can mark and collect from  invulnerable enemies.\n Dodge prevents marking and collecting a Mist via Senna's basic attacks and  Piercing Darkness.\nPENDING FOR TEST:: Mist interaction with  block and  blind.\n Nunu & Willump spawn a wraith each.\nEnemies will not see newly spawned wraiths while Senna is not visible.\nA wraith can be hit by  Cosmic Binding and it will interact with it the same way minions or monsters interact with Cosmic Binding but it will not take damage.\nMist Wraith has a spawn animation, but is targetable immediately.\nMist Wraith grants a small amount of  sight around itself.\n Runaan's Hurricane secondary bolts will ignore Mist Wraiths.\nAttacking a Mist Wraith will not consume Energized.\nExcluding the range increase and the bonus shielding on  Dawning Shadow, one stack of Mist is worth  46.25 ( +8 from Mist Wraith pickup ( 54.25 total)),  35.62125 if the critical chance is converted to life steal.\n 0.75 AD is worth  26.25.\n 0.5% critical strike chance is worth  20.\n 0.175% life steal is worth  9.37125.\nThe bonus on-hit damage applies an additional stack of  Black Cleaver's Carve to offset Senna's low attack speed.[citation needed]",
-        "blurb": "Innate - Weakened Soul:  Senna's basic attacks and abilities against enemy  champions apply a stack of Mist for a few seconds. Subsequent hits collect the Mist, dealing bonus physical damage based on the target's current health and rendering the target immune to further Mist applications for a few seconds.",
+        "blurb": "Innate - Weakened Soul:  Senna's  basic attacks  on-hit and  abilities against enemy  champions apply a  stack of Mist for a few seconds. Subsequent hits collect the Mist, dealing bonus physical damage based on the target's current health and rendering the target immune to further Mist applications for a few seconds.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -450,7 +450,7 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The ability's cast time respects the attack speed floor and cap.\nPiercing Darkness also applies most on-attack effects to one enemy champion struck, and ocassionally to two.(note)\n Hail of Blades will spend a stack on hitting a champion with Piercing Darkness but only if  Hail of Blades was activated first by an auto-attack.\nSenna can generally target anything that is not either explicitly  untargetable or herself.\nValid targets include anything that can be targeted by a basic attack from someone.\nPiercing Darkness will attempt to lead the target if it is moving but does not adjust further during cast time (enemies can dodge the laser if they change their position by a sufficient amount during the cast time).\nIt leads by (up-to?) 80 units.\nOn-hit effects are applied in order of struck units' spawn IDs. This matters for effects that are consumed on-hit (e.g.  Spellblade), which are applied to the target with the lowest Spawn ID.\n\"Spawn ID\" is an unofficial abbreviation to describe the spawn order for all units at the beginning of games, below are some examples.\nIf Senna targets an enemy champion but hits at least one more enemy champion simultaneously,  Press the Attack's first stack will be applied to that target. If no champion was targeted, it will default to the champion with the lowest Spawn ID out of the ones struck by the ability. Whether the effect stacks up on a champion or not when multiple enemy champions are stuck also depends on Spawn ID.\nIf Piercing Darkness struck an enemy champion and turret simultaneously, with  Rapid Firecannon fully charged, the passive effect will most likely proc on the turret since towers are often spawned before champions.\nFor on-attack effects, they are also applied in order of struck units' spawn IDs. However, there are some specific on-attack effects that will apply to both the target of Piercing Darkness and the target with the lowest Spawn ID if the two unit is not identical. (note) Confirmed cases:\nEnergized effects are stacked 2 stacks\nSpectral Waltz are granted 2 stacks\nPENDING FOR TEST:\n Spell shield will not prevent on-hit effects from being applied.\nPENDING FOR TEST:: Piercing Darkness interaction with  dodging,  blocking, and  blinding effects.",
+        "notes": "The ability's cast time respects the attack speed floor and cap.\nPiercing Darkness also applies most  on-attack effects to one enemy champion struck, and ocassionally to two.(note)\n Hail of Blades will spend a stack on hitting a champion with Piercing Darkness but only if  Hail of Blades was activated first by an auto-attack.\nSenna can generally target anything that is not either explicitly  untargetable or herself.\nValid targets include anything that can be targeted by a basic attack from someone.\nPiercing Darkness will attempt to lead the target if it is moving but does not adjust further during cast time (enemies can dodge the laser if they change their position by a sufficient amount during the cast time).\nIt leads by (up-to?) 80 units.\nOn-hit effects are applied in order of struck units' spawn IDs. This matters for effects that are consumed on-hit (e.g.  Spellblade), which are applied to the target with the lowest Spawn ID.\n\"Spawn ID\" is an unofficial abbreviation to describe the spawn order for all units at the beginning of games, below are some examples.\nIf Senna targets an enemy champion but hits at least one more enemy champion simultaneously,  Press the Attack's first stack will be applied to that target. If no champion was targeted, it will default to the champion with the lowest Spawn ID out of the ones struck by the ability. Whether the effect stacks up on a champion or not when multiple enemy champions are stuck also depends on Spawn ID.\nIf Piercing Darkness struck an enemy champion and turret simultaneously, with  Rapid Firecannon fully charged, the passive effect will most likely proc on the turret since towers are often spawned before champions.\nFor on-attack effects, they are also applied in order of struck units' spawn IDs. However, there are some specific on-attack effects that will apply to both the target of Piercing Darkness and the target with the lowest Spawn ID if the two unit is not identical. (note) Confirmed cases:\nEnergized effects are stacked 2 stacks\nSpectral Waltz are granted 2 stacks\nPENDING FOR TEST:\n Spell shield will not prevent on-hit effects from being applied.\nPENDING FOR TEST:: Piercing Darkness interaction with  dodging,  blocking, and  blinding effects.",
         "blurb": "Active:  Senna fires a spectral laser toward the target unit,  healing herself and allied  champions hit while dealing physical damage and  slowing enemies hit for a short time.",
         "missileSpeed": null,
         "rechargeRate": null,

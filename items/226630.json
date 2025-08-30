@@ -12,7 +12,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6630_fighter_t4_goredrinker.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/6630_fighter_t4_goredrinker.png",
   "simpleDescription": null,
   "nicknames": [
     "slurp"
@@ -182,7 +182,7 @@
     },
     "omnivamp": {
       "flat": 0.0,
-      "percent": 0.0,
+      "percent": 10.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0,
       "percentBase": 0.0,

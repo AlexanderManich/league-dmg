@@ -4,7 +4,7 @@
   "name": "Janna",
   "title": "the Storm's Fury",
   "fullName": "Janna Windforce",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Janna.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Janna.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -810,7 +810,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Eye of the Storm has a  forgiveness radius of 175 units.\n Attack speed slows applied to enemy champions by Janna (e.g.  Frozen Heart) also trigger the passive.(note)\nJanna receives kill credit on enemy champions that are killed by turrets shielded by Eye of the Storm.\nAllied turrets will benefit from the bonus attack damage when targeted by Eye of the Storm.",
+        "notes": "Eye of the Storm has a  forgiveness radius of 175 units.\nJanna receives kill credit on enemy champions that are killed by turrets shielded by Eye of the Storm.\nAllied turrets will benefit from the bonus attack damage when targeted by Eye of the Storm.",
         "blurb": "Passive: Whenever  Janna's abilities  slow or  knock up at least one enemy  champion, she  refunds a portion of  Eye of the Storm's cooldown.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -960,7 +960,7 @@
   },
   "releaseDate": "2009-09-02",
   "releasePatch": "0.9.22.16",
-  "patchLastChanged": "14.20",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 675,
     "rp": 585,
@@ -1405,8 +1405,8 @@
           "id": 40019,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/40/40019.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {
@@ -2603,7 +2603,7 @@
       "name": "Dawnbringer",
       "id": 40066,
       "isBase": false,
-      "availability": "Upcoming",
+      "availability": "Rare",
       "formatName": "Dawnbringer",
       "lootEligible": true,
       "cost": "Battle Pass",
@@ -2612,7 +2612,7 @@
       "rarity": "Epic",
       "chromas": [],
       "lore": "A prayer to Janna, The Winds of Peace: “May the gales of dawn protect the weak from war's harm, may they heal those choked with night's darkness, and may they keep us all until order reigns over creation once more. As long as Janna's gentle hand is felt on the breeze, may we be delivered from the hungry maw of chaos.”",
-      "release": "0000-00-00",
+      "release": "2025-06-25",
       "set": [
         "Nightbringer and Dawnbringer"
       ],
@@ -2622,8 +2622,8 @@
       "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/janna/skins/skin66/jannaloadscreen_66.skins_janna_skin66.jpg",
       "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/janna/skins/skin66/jannaloadscreen_66_le.skins_janna_skin66.jpg",
       "newEffects": true,
-      "newAnimations": true,
-      "newRecall": true,
+      "newAnimations": false,
+      "newRecall": false,
       "newVoice": false,
       "newQuotes": false,
       "voiceActor": [

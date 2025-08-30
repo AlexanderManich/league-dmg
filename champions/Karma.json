@@ -4,7 +4,7 @@
   "name": "Karma",
   "title": "the Enlightened One",
   "fullName": "Darha",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Karma.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Karma.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -935,7 +935,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Karma/ability-icon/e",
         "effects": [
           {
-            "description": "Mantra - Active: Inspire grants a bonus amount of shielding.Inspire spreads to surrounding allied champions, granting them a shield equal to 100% of Defiance's bonus shielding for 2.5 seconds and 15% bonus movement speed for 2 seconds.",
+            "description": "Mantra - Active: Inspire grants a bonus amount of shielding.Inspire spreads to surrounding allied champions, granting them a shield for 2.5 seconds and 15% bonus movement speed for 2 seconds.",
             "leveling": [
               {
                 "attribute": "Bonus Primary Target Shield",
@@ -1130,7 +1130,7 @@
   },
   "releaseDate": "2011-02-01",
   "releasePatch": "1.0.0.110",
-  "patchLastChanged": "25.06",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -2799,7 +2799,7 @@
       "name": "Spirit Blossom",
       "id": 43070,
       "isBase": false,
-      "availability": "Upcoming",
+      "availability": "Available",
       "formatName": "Spirit Blossom",
       "lootEligible": true,
       "cost": 1820,
@@ -2935,7 +2935,7 @@
         }
       ],
       "lore": "Long ago, the First Spirit of the Lands shaped two sisters—born together, yet bound by different fates. For a time, she watched over them, but when her gaze turned elsewhere, one strayed, creating twisted life in monstrous masks. Faced with the cost of her neglect, the First Spirit vowed never to turn away again, binding herself to endless rebirth.",
-      "release": "0000-00-00",
+      "release": "2025-06-25",
       "set": [
         "Spirit Blossom"
       ],

@@ -4,7 +4,7 @@
   "name": "Soraka",
   "title": "the Starchild",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Soraka.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Soraka.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -305,11 +305,11 @@
             ]
           },
           {
-            "description": "If this hits at least one enemy champion, the star dust returns to Soraka to grant her Rejuvenation for 2.5 seconds. While Soraka has Rejuvenation, Astral Infusion will also grant the effects of Rejuvenation to the target ally for the same duration.",
+            "description": "If this hits at least one enemy champion, star dust returns to Soraka, granting her Rejuvenation for 2.5 seconds. While Soraka has Rejuvenation, casting Astral Infusion will also grant Rejuvenation to the target for the same duration.",
             "leveling": []
           },
           {
-            "description": "Rejuvenation: The target heals every 0.5 seconds and gains bonus movement speed that decays over the duration.",
+            "description": "Rejuvenation: Heal every 0.5 seconds and gain bonus movement speed that decays over the duration.",
             "leveling": [
               {
                 "attribute": "Total Heal",

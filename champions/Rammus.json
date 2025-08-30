@@ -4,7 +4,7 @@
   "name": "Rammus",
   "title": "the Armordillo",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Rammus.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Rammus.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -12,7 +12,7 @@
     "health": {
       "flat": 675,
       "percent": 0.0,
-      "perLevel": 94,
+      "perLevel": 100,
       "percentPerLevel": 0.0
     },
     "healthRegen": {
@@ -414,10 +414,10 @@
                   {
                     "values": [
                       27,
-                      27,
-                      27,
-                      27,
-                      27
+                      32,
+                      37,
+                      42,
+                      47
                     ],
                     "units": [
                       "",
@@ -451,10 +451,10 @@
                   {
                     "values": [
                       27,
-                      27,
-                      27,
-                      27,
-                      27
+                      32,
+                      37,
+                      42,
+                      47
                     ],
                     "units": [
                       "",
@@ -824,7 +824,7 @@
   },
   "releaseDate": "2009-07-10",
   "releasePatch": "July 10, 2009 Patch",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 675,
     "rp": 585,

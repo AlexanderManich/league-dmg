@@ -4,7 +4,7 @@
   "name": "Shaco",
   "title": "the Demon Jester",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Shaco.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Shaco.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -216,7 +216,7 @@
     "mobility": 2,
     "utility": 2,
     "abilityReliance": 45,
-    "difficulty": 2
+    "difficulty": 3
   },
   "abilities": {
     "P": [
@@ -225,7 +225,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Shaco/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Shaco's basic attacks are empowered to deal 20 : 35 (based on level) (+ 30% bonus AD) bonus physical damage when hitting an enemy from behind. Backstab is affected by critical strike modifiers.",
+            "description": "Innate: Shaco's basic attacks are empowered to deal 20 : 35 (based on level) (+ 25% bonus AD) bonus physical damage when hitting an enemy from behind. Backstab is affected by critical strike modifiers.",
             "leveling": []
           },
           {
@@ -292,7 +292,7 @@
             ]
           },
           {
-            "description": "Deceive's invisibility breaks when Shaco uses a basic attack or casts Two-Shiv Poison or Recall, but not from casting Jack in the Box or Hallucinate.",
+            "description": "Deceive's invisibility breaks when Shaco uses a basic attack or casts Two-Shiv Poison, but not from casting Jack in the Box or Hallucinate.",
             "leveling": []
           },
           {
@@ -319,11 +319,11 @@
                   },
                   {
                     "values": [
-                      65,
-                      65,
-                      65,
-                      65,
-                      65
+                      60,
+                      60,
+                      60,
+                      60,
+                      60
                     ],
                     "units": [
                       "% bonus AD",
@@ -338,7 +338,7 @@
             ]
           },
           {
-            "description": "Backstab Bonus: The attack will critically strike for (155% + 40%) damage.",
+            "description": "Backstab Bonus: The attack will critically strike for (155% + 40%) damage, increased to (175% + 40%) if a critical strike was rolled.",
             "leveling": []
           }
         ],
@@ -366,11 +366,11 @@
           "modifiers": [
             {
               "values": [
+                13,
+                12.5,
                 12,
                 11.5,
-                11,
-                10.5,
-                10
+                11
               ],
               "units": [
                 "",
@@ -956,7 +956,7 @@
         "tetherRadius": null,
         "onTargetCdStatic": null,
         "innerRadius": null,
-        "speed": null,
+        "speed": "1500",
         "width": null,
         "angle": null,
         "castTime": "0.25",
@@ -1140,7 +1140,7 @@
   },
   "releaseDate": "2009-10-10",
   "releasePatch": "0.9.25.34",
-  "patchLastChanged": "25.07",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 1575,
     "rp": 790,

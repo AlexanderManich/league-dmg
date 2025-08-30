@@ -4,7 +4,7 @@
   "name": "Rumble",
   "title": "the Mechanized Menace",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Rumble.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Rumble.png",
   "resource": "HEAT",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -272,18 +272,18 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Rumble/ability-icon/q",
         "effects": [
           {
-            "description": "Active: Rumble generates 20 Heat to activate his flamethrower for 3 seconds, dealing magic damage every 0.25 seconds to enemies hit in a frontal cone, reduced to 70% against minions.",
+            "description": "Active: Rumble generates 20 Heat to activate his flamethrower for 3 seconds, spewing forth flames in a frontal cone. Enemies hit by the flame are scorched, taking magic damage upon being hit and then 0.25 seconds thereafter, refreshing on subsequent hits but not stacking between them.Flamespitter's damage is reduced to 70% against minions.",
             "leveling": [
               {
-                "attribute": "Total Magic Damage",
+                "attribute": "Minimum Magic Damage",
                 "modifiers": [
                   {
                     "values": [
-                      60,
-                      90,
-                      120,
-                      150,
-                      180
+                      10,
+                      15,
+                      20,
+                      25,
+                      30
                     ],
                     "units": [
                       "",
@@ -295,11 +295,11 @@
                   },
                   {
                     "values": [
-                      110,
-                      110,
-                      110,
-                      110,
-                      110
+                      16.67,
+                      16.67,
+                      16.67,
+                      16.67,
+                      16.67
                     ],
                     "units": [
                       "% AP",
@@ -311,11 +311,11 @@
                   },
                   {
                     "values": [
-                      6,
-                      6.8,
-                      7.6,
-                      8.4,
-                      9.2
+                      1,
+                      1.083,
+                      1.167,
+                      1.25,
+                      1.333
                     ],
                     "units": [
                       "% of target's maximum health",
@@ -328,7 +328,60 @@
                 ]
               },
               {
-                "attribute": "Magic Damage Per Tick",
+                "attribute": "Magic Damage per Second",
+                "modifiers": [
+                  {
+                    "values": [
+                      20,
+                      30,
+                      40,
+                      50,
+                      60
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      33.33,
+                      33.33,
+                      33.33,
+                      33.33,
+                      33.33
+                    ],
+                    "units": [
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP"
+                    ]
+                  },
+                  {
+                    "values": [
+                      2,
+                      2.167,
+                      2.333,
+                      2.5,
+                      2.667
+                    ],
+                    "units": [
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Magic Damage per Tick",
                 "modifiers": [
                   {
                     "values": [
@@ -348,11 +401,11 @@
                   },
                   {
                     "values": [
-                      9.17,
-                      9.17,
-                      9.17,
-                      9.17,
-                      9.17
+                      8.333,
+                      8.333,
+                      8.333,
+                      8.333,
+                      8.333
                     ],
                     "units": [
                       "% AP",
@@ -365,10 +418,10 @@
                   {
                     "values": [
                       0.5,
-                      0.567,
-                      0.633,
-                      0.7,
-                      0.767
+                      0.542,
+                      0.583,
+                      0.625,
+                      0.667
                     ],
                     "units": [
                       "% of target's maximum health",
@@ -381,15 +434,15 @@
                 ]
               },
               {
-                "attribute": "Total Minion Damage",
+                "attribute": "Maximum Magic Damage",
                 "modifiers": [
                   {
                     "values": [
-                      42,
-                      63,
-                      84,
+                      70,
                       105,
-                      126
+                      140,
+                      175,
+                      210
                     ],
                     "units": [
                       "",
@@ -401,11 +454,11 @@
                   },
                   {
                     "values": [
-                      77,
-                      77,
-                      77,
-                      77,
-                      77
+                      116.67,
+                      116.67,
+                      116.67,
+                      116.67,
+                      116.67
                     ],
                     "units": [
                       "% AP",
@@ -417,11 +470,11 @@
                   },
                   {
                     "values": [
-                      4.2,
-                      4.76,
-                      5.32,
-                      5.88,
-                      6.44
+                      7,
+                      7.58,
+                      8.17,
+                      8.75,
+                      9.33
                     ],
                     "units": [
                       "% of target's maximum health",
@@ -434,7 +487,113 @@
                 ]
               },
               {
-                "attribute": "Minion Damage Per Tick",
+                "attribute": "Minimum Minion Damage",
+                "modifiers": [
+                  {
+                    "values": [
+                      7,
+                      10.5,
+                      14,
+                      17.5,
+                      21
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      11.67,
+                      11.67,
+                      11.67,
+                      11.67,
+                      11.67
+                    ],
+                    "units": [
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP"
+                    ]
+                  },
+                  {
+                    "values": [
+                      0.7,
+                      0.76,
+                      0.82,
+                      0.88,
+                      0.93
+                    ],
+                    "units": [
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Minion Damage per Second",
+                "modifiers": [
+                  {
+                    "values": [
+                      14,
+                      21,
+                      28,
+                      35,
+                      42
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      23.33,
+                      23.33,
+                      23.33,
+                      23.33,
+                      23.33
+                    ],
+                    "units": [
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP"
+                    ]
+                  },
+                  {
+                    "values": [
+                      1.4,
+                      1.52,
+                      1.63,
+                      1.75,
+                      1.87
+                    ],
+                    "units": [
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Minion Damage per Tick",
                 "modifiers": [
                   {
                     "values": [
@@ -454,11 +613,11 @@
                   },
                   {
                     "values": [
-                      6.417,
-                      6.417,
-                      6.417,
-                      6.417,
-                      6.417
+                      5.833,
+                      5.833,
+                      5.833,
+                      5.833,
+                      5.833
                     ],
                     "units": [
                       "% AP",
@@ -471,10 +630,63 @@
                   {
                     "values": [
                       0.35,
-                      0.397,
-                      0.443,
-                      0.49,
-                      0.537
+                      0.379,
+                      0.408,
+                      0.438,
+                      0.467
+                    ],
+                    "units": [
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Maximum Minion Damage",
+                "modifiers": [
+                  {
+                    "values": [
+                      49,
+                      73.5,
+                      98,
+                      122.5,
+                      147
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      81.67,
+                      81.67,
+                      81.67,
+                      81.67,
+                      81.67
+                    ],
+                    "units": [
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP"
+                    ]
+                  },
+                  {
+                    "values": [
+                      4.9,
+                      5.31,
+                      5.72,
+                      6.13,
+                      6.53
                     ],
                     "units": [
                       "% of target's maximum health",
@@ -489,18 +701,18 @@
             ]
           },
           {
-            "description": "Danger Zone Bonus: Flamespitter's damage is increased by 50%.",
+            "description": "Danger Zone Bonus: Flamespitter's damage is increased by 50%.Flamespitter's total damage based on the target's health is capped at 65 : 300 (based on level) against monsters.",
             "leveling": [
               {
-                "attribute": "Total Enhanced Damage",
+                "attribute": "Minimum Enhanced Damage",
                 "modifiers": [
                   {
                     "values": [
-                      90,
-                      135,
-                      180,
-                      225,
-                      270
+                      15,
+                      22.5,
+                      30,
+                      37.5,
+                      45
                     ],
                     "units": [
                       "",
@@ -512,11 +724,11 @@
                   },
                   {
                     "values": [
-                      165,
-                      165,
-                      165,
-                      165,
-                      165
+                      25,
+                      25,
+                      25,
+                      25,
+                      25
                     ],
                     "units": [
                       "% AP",
@@ -528,11 +740,11 @@
                   },
                   {
                     "values": [
-                      9,
-                      10.2,
-                      11.4,
-                      12.6,
-                      13.8
+                      1.5,
+                      1.625,
+                      1.75,
+                      1.875,
+                      2
                     ],
                     "units": [
                       "% of target's maximum health",
@@ -545,7 +757,60 @@
                 ]
               },
               {
-                "attribute": "Enhanced Damage Per Tick",
+                "attribute": "Enhanced Damage per Second",
+                "modifiers": [
+                  {
+                    "values": [
+                      30,
+                      45,
+                      60,
+                      75,
+                      90
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      50,
+                      50,
+                      50,
+                      50,
+                      50
+                    ],
+                    "units": [
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP"
+                    ]
+                  },
+                  {
+                    "values": [
+                      3,
+                      3.25,
+                      3.5,
+                      3.75,
+                      4
+                    ],
+                    "units": [
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Enhanced Damage per Tick",
                 "modifiers": [
                   {
                     "values": [
@@ -565,11 +830,11 @@
                   },
                   {
                     "values": [
-                      13.75,
-                      13.75,
-                      13.75,
-                      13.75,
-                      13.75
+                      12.5,
+                      12.5,
+                      12.5,
+                      12.5,
+                      12.5
                     ],
                     "units": [
                       "% AP",
@@ -582,10 +847,10 @@
                   {
                     "values": [
                       0.75,
-                      0.85,
-                      0.95,
-                      1.05,
-                      1.15
+                      0.813,
+                      0.875,
+                      0.938,
+                      1
                     ],
                     "units": [
                       "% of target's maximum health",
@@ -598,15 +863,15 @@
                 ]
               },
               {
-                "attribute": "Total Enhanced Minion Damage",
+                "attribute": "Maximum Enhanced Damage",
                 "modifiers": [
                   {
                     "values": [
-                      63,
-                      94.5,
-                      126,
+                      105,
                       157.5,
-                      189
+                      210,
+                      262.5,
+                      315
                     ],
                     "units": [
                       "",
@@ -618,11 +883,11 @@
                   },
                   {
                     "values": [
-                      115.5,
-                      115.5,
-                      115.5,
-                      115.5,
-                      115.5
+                      175,
+                      175,
+                      175,
+                      175,
+                      175
                     ],
                     "units": [
                       "% AP",
@@ -634,11 +899,11 @@
                   },
                   {
                     "values": [
-                      6.3,
-                      7.14,
-                      7.98,
-                      8.82,
-                      9.66
+                      10.5,
+                      11.38,
+                      12.25,
+                      13.13,
+                      14
                     ],
                     "units": [
                       "% of target's maximum health",
@@ -651,7 +916,113 @@
                 ]
               },
               {
-                "attribute": "Enhanced Minion Damage Per Tick",
+                "attribute": "Minimum Enhanced Minion Damage",
+                "modifiers": [
+                  {
+                    "values": [
+                      10.5,
+                      15.75,
+                      21,
+                      26.25,
+                      31.5
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      17.5,
+                      17.5,
+                      17.5,
+                      17.5,
+                      17.5
+                    ],
+                    "units": [
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP"
+                    ]
+                  },
+                  {
+                    "values": [
+                      1.05,
+                      1.138,
+                      1.225,
+                      1.313,
+                      1.4
+                    ],
+                    "units": [
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Enhanced Minion Damage per Second",
+                "modifiers": [
+                  {
+                    "values": [
+                      21,
+                      31.5,
+                      42,
+                      52.5,
+                      63
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      35,
+                      35,
+                      35,
+                      35,
+                      35
+                    ],
+                    "units": [
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP"
+                    ]
+                  },
+                  {
+                    "values": [
+                      2.1,
+                      2.275,
+                      2.45,
+                      2.625,
+                      2.8
+                    ],
+                    "units": [
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Enhanced Minion Damage per Tick",
                 "modifiers": [
                   {
                     "values": [
@@ -671,11 +1042,11 @@
                   },
                   {
                     "values": [
-                      9.625,
-                      9.625,
-                      9.625,
-                      9.625,
-                      9.625
+                      8.75,
+                      8.75,
+                      8.75,
+                      8.75,
+                      8.75
                     ],
                     "units": [
                       "% AP",
@@ -688,10 +1059,63 @@
                   {
                     "values": [
                       0.525,
-                      0.595,
-                      0.665,
-                      0.735,
-                      0.805
+                      0.569,
+                      0.613,
+                      0.656,
+                      0.7
+                    ],
+                    "units": [
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health",
+                      "% of target's maximum health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Maximum Enhanced Minion Damage",
+                "modifiers": [
+                  {
+                    "values": [
+                      73.5,
+                      110.25,
+                      147,
+                      183.75,
+                      220.5
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      122.5,
+                      122.5,
+                      122.5,
+                      122.5,
+                      122.5
+                    ],
+                    "units": [
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP",
+                      "% AP"
+                    ]
+                  },
+                  {
+                    "values": [
+                      7.35,
+                      7.96,
+                      8.57,
+                      9.19,
+                      9.8
                     ],
                     "units": [
                       "% of target's maximum health",
@@ -704,10 +1128,6 @@
                 ]
               }
             ]
-          },
-          {
-            "description": "Flamespitter's damage based on the target's health ratio against monsters is capped at 65 : 300 (based on level).",
-            "leveling": []
           }
         ],
         "cost": null,
@@ -741,7 +1161,7 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Flamespitter will deal an additional tick of damage to a minion if it would die to its per-tick damage.\nRumble will instantly turn to face the cursor if he is not moving when Flamespitter is cast.",
+        "notes": "Flamespitter will deal an additional tick of damage to a minion if it would die to its per-tick damage.\nRumble will instantly turn to face the cursor if he is not moving when Flamespitter is cast.\nFlamespitter continuously checks for targets.\nIf the target is already affected by the debuff, its duration is refreshed to the maximum (0.5 seconds). The debuff being refreshed after the second instance in a sequence is incurred will always result in two additional instances.\nFlamespitter may inflict 14 instances of its effect at most to a given target, if their debuff is continuously refreshed.",
         "blurb": "Active:  Rumble activates a flamethrower for a short time that continually deals magic damage in a frontal cone.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1514,7 +1934,7 @@
   },
   "releaseDate": "2011-04-26",
   "releasePatch": "1.0.0.116",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

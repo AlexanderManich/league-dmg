@@ -4,7 +4,7 @@
   "name": "Nilah",
   "title": "the Joy Unbound",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Nilah.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Nilah.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -46,7 +46,7 @@
       "percentPerLevel": 0.0
     },
     "attackDamage": {
-      "flat": 58,
+      "flat": 60,
       "percent": 0.0,
       "perLevel": 2,
       "percentPerLevel": 0.0
@@ -96,7 +96,7 @@
     "attackSpeed": {
       "flat": 0.697,
       "percent": 0.0,
-      "perLevel": 3,
+      "perLevel": 2.25,
       "percentPerLevel": 0.0
     },
     "attackSpeedRatio": {
@@ -850,7 +850,7 @@
   },
   "releaseDate": "2022-07-13",
   "releasePatch": "12.13",
-  "patchLastChanged": "14.21",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

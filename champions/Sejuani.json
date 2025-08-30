@@ -4,7 +4,7 @@
   "name": "Sejuani",
   "title": "Fury of the North",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Sejuani.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Sejuani.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -367,11 +367,11 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Champions will slightly be  knocked back, while minions and monsters will instead be slightly  pulled for a fixed distance.\nArctic Assault cannot  knock enemies over terrain.\nCasting  Flash during Arctic Assault will end the dash and affect enemies at the new location.\nUpon colliding with an enemy  champion, Sejuani will attack them.",
+        "notes": "Champions will slightly be  knocked back, while minions and monsters will instead be slightly  pulled for a fixed distance.\nArctic Assault cannot  knock enemies over terrain.\nCasting  Flash during Arctic Assault will end the dash and affect enemies at the new location.\nUpon colliding with an enemy  champion, Sejuani will  attack them.",
         "blurb": "Active:  Sejuani  dashes to the target location, dealing magic damage and briefly  knocking up enemies she passes through. She will stop upon hitting an enemy  champion.",
         "missileSpeed": null,
         "rechargeRate": null,
-        "collisionRadius": null,
+        "collisionRadius": "75",
         "tetherRadius": null,
         "onTargetCdStatic": null,
         "innerRadius": null,
@@ -389,7 +389,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Sejuani/ability-icon/w",
         "effects": [
           {
-            "description": "Active: After 0.25 seconds into the cast time, Sejuani swings her flail in a cone in the target direction that deals physical damage to enemies hit and knocks back minions and monsters hit.",
+            "description": "Active: After 0.25 seconds into the cast time, Sejuani swings her flail in a cone in the target direction that deals physical damage to enemies hit and knocks back minions and monsters hit, though not through terrain.",
             "leveling": [
               {
                 "attribute": "Physical Damage",
@@ -621,8 +621,8 @@
         "onTargetCdStatic": null,
         "innerRadius": null,
         "speed": null,
-        "width": null,
-        "angle": null,
+        "width": "150",
+        "angle": "70°",
         "castTime": "1",
         "effectRadius": null,
         "targetRange": "600"
@@ -634,11 +634,11 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Sejuani/ability-icon/e",
         "effects": [
           {
-            "description": "Passive: Winter's Wrath and both Sejuani's and nearby allied melee champions' attacks on-hit apply stacks of Frost to enemy champions, medium or large monsters, and large minions for 5 seconds, refreshing on subsequent applications and stacking up to 4 times, though not applying if the target is Frozen. Enemies hit by Permafrost or Glacial Prison's bola have all of their Frost stacks consumed. Enemy champions cannot be affected by Frost for 8 seconds after having it consumed. Sejuani can cast Permafrost against an enemy with 4 stacks.",
+            "description": "Passive: Winter's Wrath and both Sejuani's and nearby allied melee champions' basic attacks on-hit apply stacks of Frost to enemy champions, medium or large monsters, and large minions for 5 seconds, refreshing on subsequent applications and stacking up to 4 times, though not applying if the target is Frozen. Enemies hit by Permafrost or Glacial Prison's bola have all of their Frost stacks consumed. Enemy champions cannot be affected by Frost for 8 seconds after having it consumed. Sejuani can cast Permafrost against an enemy with 4 stacks.",
             "leveling": []
           },
           {
-            "description": "Active: Sejuani hurls a trap at the visible enemy with 4 stacks of Frost closest to the cursor, which deals magic damage, displaces them slightly, and stuns them for 1 second.",
+            "description": "Active: Sejuani hurls a trap at the visible enemy with 4 stacks of Frost closest to the cursor, which deals magic damage, displaces slightly, and stuns them for 1 second.",
             "leveling": [
               {
                 "attribute": "Magic Damage",
@@ -735,7 +735,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Permafrost's targeting prioritizes champions within  50 units of the cursor's selection, then non-champions within  50 units of the cursor's selection, then champions within  350 units of the cursor's selection, then the closest unit to the cursor within  2500 units (the last case strictly applies if there is no target being selected).\nFrost stacks will not be applied if the basic attack is  blocked.\nPENDING FOR TEST:: Permafrost's stack application interaction with parrying effects ( dodge,  blind).\n Master Yi's  Alpha Strike does not interact with Permafrost.(note)\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but still go on  cooldown and pay its cost.(bug)",
-        "blurb": "Passive:  Winter's Wrath and both  Sejuani's and nearby allied  melee champions' attacks apply stacks of Frost against  champions, medium / large  monsters and large  minions, which lasts a few seconds and stacks up to a cap. Sejuani can cast Permafrost against an enemy with max stacks.",
+        "blurb": "Passive:  Winter's Wrath and both  Sejuani's and nearby allied  melee champions'  basic attacks  on-hit apply  stacks of Frost against  champions, medium / large  monsters and large  minions, which lasts a few seconds and stacks up to a cap. Sejuani can cast Permafrost against an enemy with max stacks.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -790,7 +790,7 @@
             ]
           },
           {
-            "description": "If the bola travels over 400 units, it becomes empowered to detonate upon reaching maximum range or hitting an enemy champion, dealing increased damage and stunning for 1.5 seconds instead. For the same duration, a frost storm is created around the location of the detonation that slows enemies within by 30% and grants sight of the area in a smaller radius.",
+            "description": "If the bola travels at least 425 units, it becomes empowered to detonate upon reaching maximum range or hitting an enemy champion, dealing increased magic damage and stunning for 1.5 seconds instead. For the same duration, a frost storm is created around the location of the detonation that slows enemies within by 30% and grants sight of the area in a smaller radius.",
             "leveling": [
               {
                 "attribute": "Increased Damage",
@@ -824,38 +824,8 @@
             ]
           },
           {
-            "description": "Afterwards, the storm shatters to deal magic damage to enemies hit and slow them by 80% for 1 second, as well as revealing them and granting sight of the area for 0.5 seconds.",
-            "leveling": [
-              {
-                "attribute": "Magic Damage",
-                "modifiers": [
-                  {
-                    "values": [
-                      200,
-                      300,
-                      400
-                    ],
-                    "units": [
-                      "",
-                      "",
-                      ""
-                    ]
-                  },
-                  {
-                    "values": [
-                      80,
-                      80,
-                      80
-                    ],
-                    "units": [
-                      "% AP",
-                      "% AP",
-                      "% AP"
-                    ]
-                  }
-                ]
-              }
-            ]
+            "description": "After 2 seconds, the storm shatters to deal the increased magic damage to enemies within and slow them by 80% for 1 second, as well as revealing them and granting sight of the area for 0.5 seconds.",
+            "leveling": []
           },
           {
             "description": "The enemy hit by the bola is not affected by the storm's effects.",
@@ -916,7 +886,7 @@
         "width": "240",
         "angle": null,
         "castTime": "0.25",
-        "effectRadius": null,
+        "effectRadius": "450 /  450 /  300",
         "targetRange": "1300"
       }
     ]

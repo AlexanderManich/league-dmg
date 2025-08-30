@@ -4,7 +4,7 @@
   "name": "Aurora",
   "title": "the Witch Between Worlds",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Aurora.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Aurora.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -227,7 +227,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Aurora/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Aurora's damaging basic attacks and abilities apply a stack of Spirit Abjuration to enemies for 4 seconds, refreshing on subsequent applications and stacking up to 3 times. The third stack against a target consumes them all to deal bonus magic damage equal to 2.5% (+ 2% per 100 AP) of the target's maximum health, capped at 100 : 180 (based on level) against monsters.",
+            "description": "Innate: Aurora's damaging basic attacks and abilities apply a stack of Spirit Abjuration to enemies for 4 seconds, refreshing on subsequent applications and stacking up to 3 times. The third stack against a target consumes them all to deal bonus magic damage equal to 2.5% (+ 2% per 100 AP) of the target's maximum health, capped at 100 : 270 (based on level) against monsters.",
             "leveling": []
           },
           {
@@ -247,7 +247,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "The spirits grant vision of a small area around themselves.",
-        "blurb": "Innate:  Aurora's basic attacks and damaging abilities inflict a stack of Spirit Abjuration, stacking up to 3 times.",
+        "blurb": "Innate:  Aurora's  basic attacks and damaging  abilities inflict a  stack of Spirit Abjuration, stacking up to 3 times.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -517,7 +517,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Twofold Hex can also be recast for 0.66 seconds after the 0.1-second delay. If the recast is used during this time window, Twofold Hex will be buffered to recast automatically as soon as the bolt missile from the first cast has fizzled from reaching maximum range, even if no targets are marked. This automatic recast can also be buffered during Twofold Hex's cast time.\n Spell shield can block the effects of the active and the recast.\nThe marked targets do not need to be visible in order for Aurora to recast Twofold Hex.\nThey do however need to be targetable; if all marked targets are  untargetable, Twofold Hex's recast is disabled.\nIf there were any enemies that were marked by Twofold Hex but untargetable when Aurora successfully recast Twofold Hex, then their mark will not be expunged at the time of recast and Aurora will automatically recast again at the end of the duration of Twofold Hex and expunge any remaining marks.\nOnce Aurora successfully recasts Twofold Hex, she will not be able to recast it again for the duration even if there are still marked enemies remaining.\nThis ability will cast from wherever the caster is at the end of the cast time.",
+        "notes": "Twofold Hex can also be recast for 0.66 seconds after the 0.1-second delay. If the recast is used during this time window, Twofold Hex will be buffered to recast automatically as soon as the bolt missile from the first cast has fizzled from reaching maximum range, even if no targets are marked. This automatic recast can also be buffered during Twofold Hex's cast time.\n Spell shield can block the effects of the active and the recast.\nThe marked targets do not need to be visible in order for Aurora to recast Twofold Hex.\nThey do however need to be targetable; if all marked targets are  untargetable, Twofold Hex's recast is disabled.\nOnce Aurora has successfully recast Twofold Hex, she will not be able to recast it again for the duration regardless of any number of marked enemies still remaining.\nIf all enemies marked by Twofold Hex are  untargetable when Aurora manually recasts Twofold Hex, the ability will be consumed but evidently without effect. It will however automatically recast again at the end of the marks' duration to expunge any remaining marks.(note)\nThis ability will cast from wherever the caster is at the end of the cast time.",
         "blurb": "Active:  Aurora fires a bolt of energy that deals magic damage to enemies hit and marks them for a short time. Twofold Hex can be recast while at least one target is marked.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -526,7 +526,7 @@
         "onTargetCdStatic": null,
         "innerRadius": null,
         "speed": "1600 / 2000",
-        "width": "210 / 90",
+        "width": "210 /  90",
         "angle": null,
         "castTime": "0.25 / None",
         "effectRadius": "Global",
@@ -908,7 +908,7 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Collision with the border is essentially moving within range of it while being targetable, including via normal movement, dash, or displacement.\nAurora and enemies can collide with the border any number of times, as much as the duration permits.\nEnemies can be applied the slow by colliding with the border only once after moving within collision radius of it. The slow may be applied again from collision only until after they have left the collision radius; it cannot be continuously applied while enemies remain within collision radius of the border.\n Untargetable units cannot collide with the border, including Aurora herself.\nThe in-game tooltip incorrectly lists the rift duration as 3 / 3.25 / 3.5 / 3.75 / 4 seconds.(bug)\nThis duration seems to include the time for the shockwave to fully expand. However, the rift and its borders will only form after the fact, so the actual duration of the rift is shorter.\nBetween Worlds'   untargetability from the rift dash does not  destroy in-flight  projectiles.\nBetween Worlds'  first cast is disabled while  grounded or  rooted.\nAurora can still dash from colliding with the border even if she is  immobilized or  grounded.\n Spell shield can block both the shockwave and border collision.\nA pair of portals signifying Aurora's nearest possible entry and its corresponding exit is visible to her at all times.\nThe following table refers for interactions while Aurora is dashing:\nThis lockout applies to both the initial dash and the dashes in the formed rift.\nThe lockout during the initial cast's dash persists for another 0.5 seconds after the dash ends.\nThe lockout during the rift dash persists for another 0.15 seconds after the dash ends.\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll items are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nDisabled\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath",
+        "notes": "Collision with the border is essentially moving within range of it while being targetable, including via normal movement, dash, or displacement.\nAurora and enemies can collide with the border any number of times, as much as the duration permits.\nEnemies can be applied the slow by colliding with the border only once after moving within collision radius of it. The slow may be applied again from collision only until after they have left the collision radius; it cannot be continuously applied while enemies remain within collision radius of the border.\n Untargetable units cannot collide with the border, including Aurora herself.\nThe in-game tooltip incorrectly lists the rift duration as 0.75 seconds longer than it actually is.(bug)\nIt is seemingly including the time required for the shockwave to fully expand. However, the rift and its borders will only form after the fact, so the actual duration of the rift is shorter.\nBetween Worlds'   untargetability from the rift dash does not  destroy in-flight  projectiles.\nBetween Worlds'  first cast is disabled while  grounded or  rooted.\nAurora can still dash from colliding with the border even if she is  immobilized or  grounded.\n Spell shield can block both the shockwave and border collision.\nA pair of portals signifying Aurora's nearest possible entry and its corresponding exit is visible to her at all times.\nThe following table refers for interactions while Aurora is dashing:\nThis lockout applies to both the initial dash and the dashes in the formed rift.\nThe lockout during the initial cast's dash persists for another 0.5 seconds after the dash ends.\nThe lockout during the rift dash persists for another 0.15 seconds after the dash ends.\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll items are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nDisabled\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath",
         "blurb": "Active:  Aurora becomes  unstoppable and  leaps, unleashing an expanding shockwave that deals magic damage to enemies hit and  slows them briefly, and gaining  Realm Hopper for a few seconds.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -927,7 +927,7 @@
   },
   "releaseDate": "2024-07-17",
   "releasePatch": "14.14",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 3150,
     "rp": 975,

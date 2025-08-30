@@ -4,7 +4,7 @@
   "name": "LeBlanc",
   "title": "the Deceiver",
   "fullName": "Emilia (Evaine) LeBlanc",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Leblanc.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Leblanc.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -1026,7 +1026,7 @@
   },
   "releaseDate": "2010-11-02",
   "releasePatch": "1.0.0.104",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -1178,8 +1178,8 @@
           "id": 7007,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/7/7007.png",
           "colors": [
-            "#2756CE",
-            "#2756CE"
+            "#54209B",
+            "#54209B"
           ],
           "descriptions": [
             {
@@ -1204,7 +1204,7 @@
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/7/7011.png",
           "colors": [
             "#73BFBE",
-            "#000000"
+            "#73BFBE"
           ],
           "descriptions": [
             {

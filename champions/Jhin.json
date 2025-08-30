@@ -4,7 +4,7 @@
   "name": "Jhin",
   "title": "the Virtuoso",
   "fullName": "Khada Jhin",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Jhin.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Jhin.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -230,7 +230,7 @@
             "leveling": []
           },
           {
-            "description": "Jhin's final round attack has an uncancellable windup, always critically strikes, including against structures, and deals bonus physical damage equal to 15 / 20 / 25% (based on level) of the target's missing health.",
+            "description": "Jhin's final round attack has an uncancellable windup, always critically strikes, including against structures, and deals bonus physical damage equal to 15% / 20% / 25% (based on level) of the target's missing health. The damage based on the target's health is capped at 800 against monsters.",
             "leveling": []
           },
           {
@@ -389,7 +389,7 @@
                 ]
               },
               {
-                "attribute": "Maximum Total Physical Damage",
+                "attribute": "Maximum Final Bounce Physical Damage",
                 "modifiers": [
                   {
                     "values": [
@@ -672,10 +672,10 @@
         "resource": "MANA",
         "damageType": "PHYSICAL_DAMAGE",
         "spellEffects": "Special",
-        "projectile": "YASUO",
+        "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Applies  spell damage to the enemy champion and  area damage to all other enemy units.\nThe Caught Out mark only appears if Deadly Flourish can potentially  root the target, and will not if the ability's cooldown is longer than 4 seconds or isn't ranked up.\nThis ability will cast from wherever the caster is at the start of the cast time.\nThe ability will not preserve the caster's facing direction when using  Flash and similar effects.\nDeadly Flourish is blocked by  Wind Wall but not  Blade Whirl.\nDeadly Flourish is special cased to be intercepted by the former because it looks like a blockable missile, even though it isn't functionally a missile.\nWhile  disguised as a non-champion,  Neeko cannot be affected by Deadly Flourish.(bug)",
+        "notes": "Applies  spell damage to the enemy champion and  area damage to all other enemy units.\nThe Caught Out mark only appears if Deadly Flourish can potentially  root the target, and will not if the ability's cooldown is longer than 4 seconds or isn't ranked up.\nThis ability will cast from wherever the caster is at the start of the cast time.\nThe ability will not preserve the caster's facing direction when using  Flash and similar effects.\nUniquely, Deadly Flourish is special-cased to be  intercepted by valid counters because it looks like a blockable missile, even though it functionally is not a missile.\nWhile  disguised as a non-champion,  Neeko cannot be affected by Deadly Flourish.(bug)",
         "blurb": "Passive: Enemy champions that trigger a  Lotus Trap, or take damage from  Jhin or his allies, are marked with  Caught Out for a few seconds.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1075,7 +1075,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Applies  spell damage to enemy champions and  area damage to other enemy units.\nEach cast counts as an ability activation for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nCurtain Call's shooting range is fixed in front of Jhin.\nThe opening sound effect and area of range are audible and visible to both teams.\nLeveling up the ability while channeling will change the final cooldown.\nJhin will turn to face in the target direction whenever he uses a recast.\nJhin gains a wider field of view during Curtain Call.\nThe reveal debuff is named  Caught Out.\nThis debuff is shared between  Captive Audience and Curtain Call.\nThis ability will cast from wherever the caster is at the end of the cast time.\nThe following table refers for interactions while Jhin is  channeling:\n\n\nType\n\nChannel\n\n\nAttacking\n\nInterrupts\n\n\nAbilities\n\nInterrupts\n\n\nMovement\n\nInterrupts\n\n\nItems\n\nUsable\n\n Shurelya's Battlesong  Youmuu's Ghostblade  Randuin's Omen\n\n\nDisabled\n\n Hextech Rocketbelt\n\n\nInterrupted by\n\nAll item-actives not specified above interrupt\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Hexflash\n\n\nInterrupted by\n\n Teleport  Recall\n\n\nInterrupted by\n\nDeath Cast-inhibiting effects\n\n\n\nType\n\nCast time\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\n Shurelya's Battlesong  Youmuu's Ghostblade  Randuin's Omen\n\n\nDisabled\n\nAll the other item-actives are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath, unless protected by  Resurrection",
-        "blurb": "blurb2",
+        "blurb": null,
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -1093,7 +1093,7 @@
   },
   "releaseDate": "2016-02-01",
   "releasePatch": "6.2",
-  "patchLastChanged": "25.06",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 1234,
     "rp": 880,
@@ -1855,8 +1855,8 @@
           "id": 202031,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/202/202031.png",
           "colors": [
-            "#C1F2D7",
-            "#C1F2D7"
+            "#C1F2FF",
+            "#C1F2FF"
           ],
           "descriptions": [
             {
@@ -2379,6 +2379,38 @@
         "Augusto Quirino",
         "Pandart Studio"
       ]
+    },
+    {
+      "name": "Arcana",
+      "id": 202055,
+      "isBase": false,
+      "availability": "Upcoming",
+      "formatName": "Arcana",
+      "lootEligible": true,
+      "cost": "Battle Pass",
+      "sale": 0,
+      "distribution": "2025, S3 Act 1 Premium Battle Pass reward (Level 24)",
+      "rarity": "Epic",
+      "chromas": [],
+      "lore": "As the fates of two worlds entwine, Jhin is disturbed by a symmetry he sees unfolding. One that could turn his Higher World into a tedious mirror of the Lower—unless he intervenes. He prowls the spaces between, piercing offending patterns with a bullet or a whisper. A new order must arise, shaped by sublime disharmony.",
+      "release": "0000-00-00",
+      "set": [
+        "Arcana"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jhin/skins/skin55/images/jhin_splash_centered_55.skins_jhin_skin55.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jhin/skins/skin55/images/jhin_splash_uncentered_55.skins_jhin_skin55.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jhin/skins/skin55/images/jhin_splash_tile_55.skins_jhin_skin55.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jhin/skins/skin55/jhinloadscreen_55.skins_jhin_skin55.jpg",
+      "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jhin/skins/skin55/jhinloadscreen_55_le.skins_jhin_skin55.jpg",
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": false,
+      "newQuotes": false,
+      "voiceActor": [
+        "Quinton Flynn"
+      ],
+      "splashArtist": []
     }
   ]
 }

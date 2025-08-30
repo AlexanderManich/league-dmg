@@ -4,7 +4,7 @@
   "name": "Renekton",
   "title": "the Butcher of the Sands",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Renekton.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Renekton.png",
   "resource": "FURY",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -226,7 +226,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Renekton/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Renekton's basic attacks generate 5 Fury on-hit. After 12 seconds of being out of combat, he loses 1 Fury every 0.25 seconds.",
+            "description": "Innate: Renekton's basic attacks against any enemy except structures generate 5 Fury on-hit. After 12 seconds of not generating any Fury, he loses 1 Fury every 0.25 seconds.",
             "leveling": []
           },
           {
@@ -250,7 +250,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Renekton can generate Fury by collecting  Honeyfruit and Health Relics (interacts with Reign of Anger's bonus generation).",
-        "blurb": "Innate:  Renekton's basic attacks and ability hits generate  Fury on-hit, which continually expires after a period without fighting. He generates bonus Fury while below half health.",
+        "blurb": "Innate:  Renekton's  basic attacks  on-hit and  ability hits generate  Fury, which continually expires after a period without fighting. He generates bonus Fury while below half health.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -545,7 +545,7 @@
             ]
           },
           {
-            "description": "Renekton generates 2.5 Fury for each non-champion hit and 10 Fury for each champion hit, with the Fury generated per cast capped at 30.",
+            "description": "Renekton generates 2.5 Fury for each non-champion hit and 10 Fury for each champion hit, up to 30 total per cast.",
             "leveling": []
           },
           {
@@ -553,7 +553,7 @@
             "leveling": []
           },
           {
-            "description": "Renekton cannot basic attack nor cast Slice, Dice, or Dominus for 0.25 seconds after Cull the Meek's activation.",
+            "description": "Renekton cannot basic attack nor cast Slice and Dice or Dominus for 0.25 seconds after Cull the Meek's activation.",
             "leveling": []
           }
         ],
@@ -610,7 +610,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Renekton/ability-icon/w",
         "effects": [
           {
-            "description": "Active: Renekton empowers his next basic attack within 7 seconds to have a 0.2-second cast time, gain 50 bonus range and strike the target twice, dealing modified physical damage and stunning them for 0.75 seconds. Each strike applies on-hit effects and generates Fury. Hitting an enemy champion generates 10 bonus Fury.",
+            "description": "Active: Renekton empowers his next basic attack within 7 seconds to have a 0.2-second cast time, have 175 range and strike the target twice, dealing modified physical damage and stunning them for 0.75 seconds. Each strike applies on-hit effects and generates Fury. Hitting an enemy champion generates 10 bonus Fury.",
             "leveling": [
               {
                 "attribute": "Total Physical Damage",
@@ -735,7 +735,7 @@
             ]
           },
           {
-            "description": "Ruthless Predator resets Renekton's basic attack timer. After Ruthless Predator's standard and empowered attack cast time, Renekton cannot move nor cast Cull the Meek, Slice, nor Dice for 0.528 seconds. Casting Dominus ends this lockout prematurely.",
+            "description": "Ruthless Predator resets Renekton's basic attack timer. After Ruthless Predator's standard and empowered attack cast time, Renekton cannot move nor cast Cull the Meek or Slice and Dice for 0.528 seconds. Casting Dominus ends this lockout prematurely.",
             "leveling": []
           }
         ],
@@ -788,11 +788,11 @@
     ],
     "E": [
       {
-        "name": "Slice",
+        "name": "Slice and Dice",
         "icon": "https://cdn.communitydragon.org/latest/champion/Renekton/ability-icon/e",
         "effects": [
           {
-            "description": "Active: Renekton dashes a fixed distance in the target direction, dealing physical damage to enemies he passes through.",
+            "description": "Active - Slice: Renekton dashes a fixed distance in the target direction, dealing physical damage to enemies he passes through.",
             "leveling": [
               {
                 "attribute": "Physical Damage",
@@ -834,62 +834,11 @@
             ]
           },
           {
-            "description": "If Renekton hits an enemy, he can cast Dice within the next 4 seconds.",
+            "description": "If Renekton hits an enemy, he can recast Slice and Dice within the next 4 seconds.",
             "leveling": []
-          }
-        ],
-        "cost": null,
-        "cooldown": {
-          "modifiers": [
-            {
-              "values": [
-                16,
-                14.5,
-                13,
-                11.5,
-                10
-              ],
-              "units": [
-                "",
-                "",
-                "",
-                "",
-                ""
-              ]
-            }
-          ],
-          "affectedByCdr": true
-        },
-        "targeting": "Direction",
-        "affects": "Enemies",
-        "spellshieldable": "True",
-        "resource": null,
-        "damageType": "PHYSICAL_DAMAGE",
-        "spellEffects": "spellaoe",
-        "projectile": null,
-        "onHitEffects": null,
-        "occurrence": null,
-        "notes": "No additional details.",
-        "blurb": "Active:  Renekton  dashes in the target direction, dealing physical damage to enemies he passes through.",
-        "missileSpeed": null,
-        "rechargeRate": null,
-        "collisionRadius": null,
-        "tetherRadius": null,
-        "onTargetCdStatic": null,
-        "innerRadius": null,
-        "speed": "760 + 100% movement speed",
-        "width": null,
-        "angle": null,
-        "castTime": "none",
-        "effectRadius": null,
-        "targetRange": null
-      },
-      {
-        "name": "Dice",
-        "icon": "https://cdn.communitydragon.org/latest/champion/Renekton/ability-icon/e",
-        "effects": [
+          },
           {
-            "description": "Active: Renekton dashes a fixed distance in the target direction, dealing the same physical damage to enemies he passes through.",
+            "description": "Recast - Dice: Renekton repeats the first cast's effects.",
             "leveling": [
               {
                 "attribute": "Total Physical Damage",
@@ -931,51 +880,14 @@
             ]
           },
           {
-            "description": "Both Slice and Dice generate 2 Fury for each non-champion hit, and 10 Fury for each champion hit, with the Fury generated per dash capped at 30.",
+            "description": "Both casts generate 2 Fury for each non-champion hit and 10 Fury for each champion hit, up to 30 total per cast.",
             "leveling": []
           },
           {
-            "description": "Reign of Anger Bonus: Dice deals bonus physical damage and inflicts armor reduction to enemies hit for 4 seconds.",
+            "description": "Reign of Anger Bonus: Dice, the recast, deals bonus physical damage and inflicts armor reduction to enemies hit for 4 seconds.",
             "leveling": [
               {
-                "attribute": "Bonus Physical Damage",
-                "modifiers": [
-                  {
-                    "values": [
-                      30,
-                      45,
-                      60,
-                      75,
-                      90
-                    ],
-                    "units": [
-                      "",
-                      "",
-                      "",
-                      "",
-                      ""
-                    ]
-                  },
-                  {
-                    "values": [
-                      45,
-                      45,
-                      45,
-                      45,
-                      45
-                    ],
-                    "units": [
-                      "% bonus AD",
-                      "% bonus AD",
-                      "% bonus AD",
-                      "% bonus AD",
-                      "% bonus AD"
-                    ]
-                  }
-                ]
-              },
-              {
-                "attribute": "Total Bonus Damage",
+                "attribute": "Enhanced Physical Damage",
                 "modifiers": [
                   {
                     "values": [
@@ -1012,7 +924,7 @@
                 ]
               },
               {
-                "attribute": "Total Physical Damage",
+                "attribute": "Total Enhanced Damage",
                 "modifiers": [
                   {
                     "values": [
@@ -1060,11 +972,11 @@
                       35
                     ],
                     "units": [
-                      "% of target's armor",
-                      "% of target's armor",
-                      "% of target's armor",
-                      "% of target's armor",
-                      "% of target's armor"
+                      "%",
+                      "%",
+                      "%",
+                      "%",
+                      "%"
                     ]
                   }
                 ]
@@ -1073,7 +985,27 @@
           }
         ],
         "cost": null,
-        "cooldown": null,
+        "cooldown": {
+          "modifiers": [
+            {
+              "values": [
+                16,
+                14.5,
+                13,
+                11.5,
+                10
+              ],
+              "units": [
+                "",
+                "",
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "affectedByCdr": true
+        },
         "targeting": "Direction",
         "affects": "Enemies",
         "spellshieldable": "True",
@@ -1084,17 +1016,17 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "No additional details.",
-        "blurb": "Active:  Renekton  dashes in the target direction, dealing physical damage to enemies he passes through.",
+        "blurb": "Active - Slice:  Renekton  dashes in the target direction, dealing physical damage to enemies he passes through.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
         "tetherRadius": null,
         "onTargetCdStatic": null,
         "innerRadius": null,
-        "speed": null,
+        "speed": "760 + 100% movement speed",
         "width": null,
         "angle": null,
-        "castTime": null,
+        "castTime": "none",
         "effectRadius": null,
         "targetRange": null
       }
@@ -1241,7 +1173,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Dominus' range increase does not stack with  Ruthless Predator.\nDominus'  cooldown is not refunded if Renekton  dies during the cast animation.\nDominus' bonus health gain does not interact with  Spirit Visage or  Grievous Wounds.\nRenekton retains Dominus' bonus health (if not over his normal maximum) once the duration ends.",
+        "notes": "Dominus'  cooldown is not refunded if Renekton  dies during the cast animation.\nDominus' bonus health gain does not interact with  Spirit Visage or  Grievous Wounds.\nRenekton retains Dominus' bonus health (if not over his normal maximum) once the duration ends.",
         "blurb": "Active:  Renekton empowers himself for some time, gaining Fury,  bonus health, bonus size,  bonus attack range, and increased area on  Cull the Meek.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -2400,21 +2332,21 @@
         },
         {
           "name": "Destined",
-          "id": 58046,
-          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/58/58046.png",
+          "id": 58047,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/58/58047.png",
           "colors": [
-            "#DED6B0",
-            "#DED6B0"
+            "#BF15C5",
+            "#0C2CBD"
           ],
           "descriptions": [
             {
-              "description": "This chroma was released as an exclusive to the Unlocked bundle in 2023.",
+              "description": "This chroma was released as a Loot exclusive in the Worlds 2023 event.",
               "region": "riot"
             }
           ],
           "rarities": [
             {
-              "rarity": 3,
+              "rarity": 2,
               "region": "riot"
             }
           ]
@@ -2463,21 +2395,21 @@
         },
         {
           "name": "Unlocked",
-          "id": 58047,
-          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/58/58047.png",
+          "id": 58046,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/58/58046.png",
           "colors": [
-            "#BF15C5",
-            "#0C2CBD"
+            "#DED6B0",
+            "#DED6B0"
           ],
           "descriptions": [
             {
-              "description": "This chroma was released as a Loot exclusive in the Worlds 2023 event.",
+              "description": "This chroma was released as an exclusive to the Unlocked bundle in 2023.",
               "region": "riot"
             }
           ],
           "rarities": [
             {
-              "rarity": 2,
+              "rarity": 3,
               "region": "riot"
             }
           ]

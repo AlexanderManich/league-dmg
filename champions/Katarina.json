@@ -4,7 +4,7 @@
   "name": "Katarina",
   "title": "the Sinister Blade",
   "fullName": "Katarina Du Couteau",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Katarina.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Katarina.png",
   "resource": "NONE",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -184,7 +184,7 @@
       "percentPerLevel": 0.0
     },
     "urfDamageDealt": {
-      "flat": 1.05,
+      "flat": 1.1,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -229,7 +229,7 @@
             "leveling": []
           },
           {
-            "description": "Innate - Sinister Steel: Whenever Katarina retrieves a Dagger, she slashes around herself to deal 68 : 240 (based on level) (+ 60% bonus AD) (+ 70 / 80 / 90 / 100% (based on level) AP) magic damage to nearby enemies, apply on-hit effects to enemy champions hit, and reduce Shunpo's current cooldown by 78 / 84 / 90 / 96% (based on level) of its total cooldown.",
+            "description": "Innate - Sinister Steel: Whenever Katarina retrieves a Dagger, she slashes around herself to deal 68 : 240 (based on level) (+ 60% bonus AD) (+ 70% / 80% / 90% / 100% (based on level) AP) magic damage to nearby enemies, apply on-hit effects to enemy champions hit, and reduce Shunpo's current cooldown by 78% / 84% / 90% / 96% (based on level) of its total cooldown.",
             "leveling": []
           },
           {
@@ -270,7 +270,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Katarina/ability-icon/q",
         "effects": [
           {
-            "description": "Active: Katarina throws a Dagger at the target enemy that deals magic damage and can bounce to up to two additional nearby enemies.",
+            "description": "Active: Katarina throws a Dagger at the target enemy that deals magic damage and can bounce to up to two additional visible nearby enemies.",
             "leveling": [
               {
                 "attribute": "Magic Damage",
@@ -312,11 +312,7 @@
             ]
           },
           {
-            "description": "The Dagger then lands onto the ground after 1 second, about 350 units opposite from where it struck the first target.",
-            "leveling": []
-          },
-          {
-            "description": "The target does not have to be visible for the Dagger to bounce to them.",
+            "description": "The Dagger lands 1.023 seconds after striking the first target, about 350 units opposite from their position when it struck them.",
             "leveling": []
           }
         ],
@@ -351,7 +347,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Bouncing Blade will not be destroyed in-flight if the target dies before reaching them but it will on  clones that expire.\nIf the Dagger's intended landing position is inside terrain it will instead land at the closest spot that isn't inside terrain.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
+        "notes": "Bouncing Blade will not be destroyed in-flight if the target dies before reaching them but it will on  clones that expire.\nIf the Dagger's intended landing position is inside terrain it will instead land at the closest spot that isn't inside terrain.\nValid targets are determined after each bounce.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
         "blurb": "Active:  Katarina throws a Dagger at the target enemy that can bounce to up to two additional nearby enemies, dealing magic damage.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -359,7 +355,7 @@
         "tetherRadius": null,
         "onTargetCdStatic": null,
         "innerRadius": null,
-        "speed": null,
+        "speed": "1600 / Travel distance ÷ 0.15 seconds",
         "width": null,
         "angle": null,
         "castTime": "0.25",
@@ -759,7 +755,7 @@
   },
   "releaseDate": "2009-09-19",
   "releasePatch": "0.9.25.21",
-  "patchLastChanged": "25.03",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -1050,8 +1046,8 @@
           "id": 55011,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/55/55011.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {

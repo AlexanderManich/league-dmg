@@ -4,7 +4,7 @@
   "name": "Lucian",
   "title": "the Purifier",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Lucian.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Lucian.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -225,7 +225,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Lucian/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: After casting an ability, Lucian's next basic attack within 3.5 seconds fires an additional shot on-attack after 0.25 seconds, which deals 50 / 55 / 60% (based on level) AD physical damage, increased to 100% AD against minions. He will shoot the same target, else another target within 50 units beyond his basic attack range automatically.",
+            "description": "Innate: After casting an ability, Lucian's next basic attack within 3.5 seconds fires an additional shot on-attack after 0.25 seconds, which deals 50% / 55% / 60% (based on level) AD physical damage, increased to 100% AD against minions. He will shoot the same target, else another target within 50 units beyond his basic attack range automatically.",
             "leveling": []
           },
           {
@@ -993,7 +993,7 @@
         "tetherRadius": null,
         "onTargetCdStatic": null,
         "innerRadius": null,
-        "speed": null,
+        "speed": "2800",
         "width": "220 (plus offset)",
         "angle": null,
         "castTime": "none",
@@ -1434,7 +1434,7 @@
           "id": 236051,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/236/236051.png",
           "colors": [
-            "#FF1502",
+            "#FF1515",
             "#E8CD6B"
           ],
           "descriptions": [

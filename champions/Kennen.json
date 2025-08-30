@@ -4,7 +4,7 @@
   "name": "Kennen",
   "title": "the Heart of the Tempest",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Kennen.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Kennen.png",
   "resource": "ENERGY",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -250,7 +250,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Kennen will still restore energy if the target dies from the third stack of Mark of the Storm.\nAfter  Slicing Maelstrom applies its third stack, the target gains a 6-second stack immunity against Slicing Maelstrom that refreshes on subsequent hits.",
-        "blurb": "Innate:  Kennen's abilities apply a stack of Mark of the Storm to enemies hit.",
+        "blurb": "Innate:  Kennen's  abilities apply a  stack of Mark of the Storm to enemies hit.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -539,8 +539,8 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The empowered basic attack applies bonus  spell damage, while the electrical surge deals  area damage.\nElectrical Surge's enhanced attack will be consumed and the bonus damage will not be applied if Kennen is  blinded.\nElectrical Surge's enhanced attack cannot be  dodged or  blocked.\nThe empowered attack will trigger but not be consumed nor apply its effects against structures and wards.",
-        "blurb": "Passive:  Kennen's basic attacks on-attack generate a stack of Electrical Surge, which stacks up to a cap. At max stacks, his next basic attack consumes them all to deal bonus magic damage and apply a stack of  Mark of the Storm.",
+        "notes": "The empowered basic attack applies bonus  spell damage, while the electrical surge deals  area damage.\nElectrical Surge's enhanced attack will be consumed and the bonus damage will not be applied if Kennen is  blinded.\nElectrical Surge's enhanced attack cannot be  dodged or  blocked.\nThe empowered attack will trigger but not be consumed nor apply its effects against  structures and  wards.",
+        "blurb": "Passive:  Kennen's basic attacks  on-attack generate a stack of Electrical Surge, which stacks up to a cap. At max stacks, his next basic attack consumes them all to deal bonus magic damage and apply a stack of  Mark of the Storm.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -736,7 +736,7 @@
         "width": null,
         "angle": null,
         "castTime": "none",
-        "effectRadius": null,
+        "effectRadius": "200",
         "targetRange": null
       }
     ],
@@ -886,7 +886,7 @@
   },
   "releaseDate": "2010-04-08",
   "releasePatch": "1.0.0.82",
-  "patchLastChanged": "14.13",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 2400,
     "rp": 880,
@@ -1600,8 +1600,8 @@
           "id": 85027,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/85/85027.png",
           "colors": [
-            "#DF9117",
-            "#DF9117"
+            "#FFEE59",
+            "#FFEE59"
           ],
           "descriptions": [
             {

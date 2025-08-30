@@ -4,7 +4,7 @@
   "name": "Dr. Mundo",
   "title": "the Madman of Zaun",
   "fullName": "'Doctor' Mundo",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/DrMundo.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/DrMundo.png",
   "resource": "HEALTH",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -299,7 +299,7 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Upon being triggered by a hostile  immobilizing effect, Goes Where He Pleases will also grant Dr. Mundo immunity to additional immobilizing effects from the same cast instance.\nAbilities where non-immobilizing effects and damage are nested into immobilizing ones will have them also prevented. Non-immobilizing effects and damage applied separately (the vast majority of cases) are not prevented.\n Spell shield and  Black Shield take priority over Goes Where He Pleases.\nGoes Where He Pleases will not trigger against nor resist  Rell's  Magnet Storm's  ongoing kinematic effect.\nIt will trigger against and prevent the ability's initial  displacement, but even in that case, not prevent the continous effect.\nThe canister, whether in flight and on the ground, will transition in and out of  Mordekaiser's  Realm of Death alongside Dr. Mundo.(note)\nThe canister cannot be interacted with while  untargetable.",
+        "notes": "Upon being triggered by a hostile  immobilizing effect, Goes Where He Pleases will also grant Dr. Mundo immunity to additional immobilizing effects from the same cast instance.\nAbilities where non-immobilizing effects and damage are nested into immobilizing ones will have them also prevented. Non-immobilizing effects and damage applied separately (the vast majority of cases) are not prevented.\n Spell shield and  Black Shield take priority over Goes Where He Pleases.\nThe canister, whether in flight and on the ground, will transition in and out of  Mordekaiser's  Realm of Death alongside Dr. Mundo.(note)\nThe canister cannot be interacted with while  untargetable.",
         "blurb": "Innate:  Dr. Mundo  regenerates an additional portion of his maximum health.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -624,7 +624,7 @@
         "speed": null,
         "width": null,
         "angle": null,
-        "castTime": "none",
+        "castTime": "None / None",
         "effectRadius": "325",
         "targetRange": null
       }
@@ -701,7 +701,7 @@
                 ]
               },
               {
-                "attribute": "Maximum Bonus Physical Damage",
+                "attribute": "Maximum Minion Physical Damage",
                 "modifiers": [
                   {
                     "values": [
@@ -741,7 +741,156 @@
           },
           {
             "description": "Blunt Force Trauma as well as the triggering attack's damage is increased to 140% against minions and 200% against monsters.",
-            "leveling": []
+            "leveling": [
+              {
+                "attribute": "Minimum Minion Physical Damage",
+                "modifiers": [
+                  {
+                    "values": [
+                      7,
+                      21,
+                      35,
+                      49,
+                      63
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      9.8,
+                      9.8,
+                      9.8,
+                      9.8,
+                      9.8
+                    ],
+                    "units": [
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Maximum Minion Physical Damage",
+                "modifiers": [
+                  {
+                    "values": [
+                      9.8,
+                      29.4,
+                      49,
+                      68.6,
+                      88.2
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      13.72,
+                      13.72,
+                      13.72,
+                      13.72,
+                      13.72
+                    ],
+                    "units": [
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Minimum Monster Physical Damage",
+                "modifiers": [
+                  {
+                    "values": [
+                      10,
+                      30,
+                      50,
+                      70,
+                      90
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      14,
+                      14,
+                      14,
+                      14,
+                      14
+                    ],
+                    "units": [
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Maximum Monster Physical Damage",
+                "modifiers": [
+                  {
+                    "values": [
+                      14,
+                      42,
+                      70,
+                      98,
+                      126
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      19.6,
+                      19.6,
+                      19.6,
+                      19.6,
+                      19.6
+                    ],
+                    "units": [
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health",
+                      "% bonus health"
+                    ]
+                  }
+                ]
+              }
+            ]
           },
           {
             "description": "Blunt Force Trauma resets Dr. Mundo's basic attack timer.",
@@ -798,7 +947,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Blunt Force Trauma's attack deals deals  basic damage but also triggers spell effects by also being tagged as  spell damage, while the target's body being shoved deals  area damage to enemies it passes through.\nThe basic attack itself is also considered a part of Blunt Force Trauma.\nBlunt Force Trauma's attack works against structures, consuming the buff and dealing its full damage.\nBlunt Force Trauma cannot knock back  wards, structures or epic  monsters it kills, nor champions that enter a  zombie state upon dying.\nTargets flung away are rendered  untargetable in the process.\nThe damage of the enemy's corpse colliding with enemies does not benefit from Blunt Force Trauma's attack  critically striking.",
+        "notes": "Blunt Force Trauma's attack deals  basic damage but also triggers spell effects by also being tagged as  spell damage, while the target's body being shoved deals  area damage to enemies it passes through.\nThe  basic attack itself is also considered a part of Blunt Force Trauma.\nBlunt Force Trauma's attack works against  structures, consuming the buff and dealing its full damage.\nBlunt Force Trauma cannot knock back  wards,  structures or epic  monsters it kills, nor champions that enter a  zombie state upon dying.\nTargets flung away are rendered  untargetable in the process.\nThe damage of the enemy's corpse colliding with enemies does not benefit from Blunt Force Trauma's attack  critically striking.",
         "blurb": "Passive:  Dr. Mundo gains  bonus attack damage based on his maximum health.",
         "missileSpeed": null,
         "rechargeRate": null,

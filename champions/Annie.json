@@ -4,7 +4,7 @@
   "name": "Annie",
   "title": "the Dark Child",
   "fullName": "Annie Hastur",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Annie.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Annie.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -178,7 +178,7 @@
       "percentPerLevel": 0.0
     },
     "urfDamageTaken": {
-      "flat": 1.05,
+      "flat": 1.1,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -196,7 +196,7 @@
       "percentPerLevel": 0.0
     },
     "urfShielding": {
-      "flat": 1.0,
+      "flat": 0.9,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -375,7 +375,7 @@
         "tetherRadius": null,
         "onTargetCdStatic": null,
         "innerRadius": null,
-        "speed": null,
+        "speed": "1400",
         "width": null,
         "angle": null,
         "castTime": "0.25",
@@ -780,7 +780,7 @@
         "speed": null,
         "width": null,
         "angle": null,
-        "castTime": "0.25",
+        "castTime": "0.25 / None",
         "effectRadius": "250 /  350",
         "targetRange": "600"
       }

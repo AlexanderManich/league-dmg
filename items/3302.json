@@ -15,7 +15,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3302_terminus.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3302_terminus.png",
   "simpleDescription": "Kill minions periodically to heal and grant gold to a nearby ally",
   "nicknames": [
     "bow",
@@ -212,7 +212,7 @@
       "unique": true,
       "mythic": false,
       "name": "Juxtaposition",
-      "effects": "Basic attacks {{tip|on-hit}} against champions alternate between ''Light'' and ''Dark'' hits, each one granting a bonus for 5 seconds that stacks up to 3 times. ''Light'' hits grant {{pp|6 to 8 for 3|1;11;14|type=level}} {{as|'''bonus''' armor}} and {{as|'''bonus''' magic resistance}} while ''Dark'' hits grant 10% {{as|armor penetration}} and {{as|magic penetration}}, for a total of {{pp|6*3 to 8*3}} '''bonus''' resistances and 30% resistances penetration at maximum stacks of each.",
+      "effects": "Basic attacks {{tip|on-hit}} against champions alternate between ''Light'' and ''Dark'' hits, each one granting a bonus for 5 seconds that stacks up to 3 times. ''Light'' hits grant {{pp|6 to 8 for 3|1;11;14|type=level}} {{as|'''bonus''' armor}} and {{as|'''bonus''' magic resistance}} while ''Dark'' hits grant 10% {{as|armor penetration}} and {{as|magic penetration}}, for a total of {{pp|6*3 to 8*3 for 3|1;11;14}} '''bonus''' resistances and 30% resistances penetration at maximum stacks of each.",
       "range": null,
       "cooldown": null,
       "stats": {

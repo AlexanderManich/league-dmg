@@ -4,7 +4,7 @@
   "name": "Jax",
   "title": "Grandmaster at Arms",
   "fullName": "Saijax Cail-Rynx Kohari Icath’un",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Jax.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Jax.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -251,7 +251,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Jax will start fishing while idle in the river if he is in-combat with only monsters (e.g. any of the three Epic monsters).(bug)\nJax catching a fish is a random event and will play a special animation.\nThe total number of fish caught during the game is displayed when fishing as  Grandmaster at Angling passive.",
-        "blurb": "Innate:  Jax's basic attacks generate stacks, up to a cap. Stacks expire one at a time.",
+        "blurb": "Innate:  Jax's  basic attacks generate  stacks, up to a cap. Stacks expire one at a time.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -490,7 +490,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": null,
+        "notes": "Empower is applied in a separate damage instance from Jax's basic attacks.\nThis causes effects like  Bone Plating to be applied twice.(note)",
         "blurb": "Active:  Jax empowers his next basic attack or  Leap Strike against an enemy to deal bonus magic damage.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -699,7 +699,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Jax/ability-icon/r",
         "effects": [
           {
-            "description": "Passive: Jax's basic attacks generate a stack of Grandmaster-At-Arms on-hit for 2.5 seconds, refreshing on subsequent hits and stacking up to 2 times. At 2 stacks, his next basic attack on-hit is empowered to have an uncancellable windup and consume all stacks to deal bonus magic damage, reduced to 50% against structures. While Grandmaster-At-Arms is active, the empowered attack triggers at 1 stack instead.",
+            "description": "Passive: Jax's basic attacks generate a stack of Grandmaster-at-Arms on-hit for 2.5 seconds, refreshing on subsequent hits and stacking up to 2 times. At 2 stacks, his next basic attack on-hit is empowered to have an uncancellable windup and consume all stacks to deal bonus magic damage, reduced to 50% against structures. While Grandmaster-at-Arms is active, the empowered attack triggers at 1 stack instead.",
             "leveling": [
               {
                 "attribute": "Bonus Magic Damage",
@@ -883,7 +883,7 @@
             ]
           },
           {
-            "description": "Jax can move during Grandmaster-At-Arms' cast time.",
+            "description": "Jax can move during Grandmaster-at-Arms' cast time.",
             "leveling": []
           }
         ],
@@ -930,7 +930,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "The attack bonus deals  proc damage. The swing deals  area damage.\nThe bonus resistances are represented by a glowing aura around Jax that grows with each enemy champion hit beyond the first.\nThe bonus magic damage can be  dodged and  blocked but it cannot  miss.\n Spell shield will only block the bonus damage from the third attack if it is  empowered.\nThe empowered attack will trigger but not be consumed nor apply its effects against wards.\nStacks will still be generated when attacking them.\n\nThis ability will cast from wherever the caster is at the end of the cast time.",
-        "blurb": "Passive:  Jax's basic attacks generate stacks. At max stacks, he consumes them to deal bonus magic damage.",
+        "blurb": "Passive:  Jax's  basic attacks generate  stacks. At max stacks, he consumes them to deal bonus magic damage.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,

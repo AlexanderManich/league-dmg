@@ -4,7 +4,7 @@
   "name": "Gnar",
   "title": "the Missing Link",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Gnar.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Gnar.png",
   "resource": "RAGE",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -253,7 +253,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The Rage generated upon dealing or receiving damage occurs over 2 seconds with 4 ticks every 0.5 seconds. It also does not stack but instead refreshes with subsequent applications (of dealing or receiving damage).\nThe bonus rage generation on basic attacks counts as an  on-hit effect, and is triggered by  Runaan's Hurricane and  Guinsoo's Rageblade.\nIn-game, the value on the Rage bar always displays rounded down to the nearest integer.\n Mega Gnar's gained health is not affected by healing modifiers such as  Grievous Wounds and those from items and runes.\nWhen returning to  Mini Gnar, Gnar will only retain his current health percentage, not current health total.\nGnar's abilities share  cooldowns across forms.\nThe final stats, after  Rage Gene being applied, can be seen on Mini Gnar's and Mega Gnar's respective data template, in the front page.\nMini Gnar gains 5.5% : 99% (based on level) bonus attack speed.\nThe Rage bar is white when under 60 range, yellow when equal to or above 60 rage, and red at 100 rage.",
+        "notes": "The Rage generated upon dealing or receiving damage occurs over 2 seconds with 4 ticks every 0.5 seconds. It also does not stack but instead refreshes with subsequent applications (of dealing or receiving damage).\nThe bonus rage generation on basic attacks counts as an  on-hit effect, and is triggered by  Runaan's Hurricane and  Guinsoo's Rageblade.\nIn-game, the value on the Rage bar always displays rounded down to the nearest integer.\n Mega Gnar's gained health is not affected by healing modifiers such as  Grievous Wounds and those from items and runes.\nWhen returning to  Mini Gnar, Gnar will only retain his current health percentage, not current health total.\nGnar's abilities share  cooldowns across forms.\nThe final stats, after  Rage Gene being applied, can be seen on Mini Gnar's and Mega Gnar's respective data template, in the front page.\nMini Gnar gains 5.5% : 99% (based on level) bonus attack speed.\nThe Rage bar is white when under 60 range, yellow when equal to or above 60 rage, and red at 100 rage.\nIf Gnar transforms into  Mega Gnar while on enemy's sight and later goes back to  Mini while on the fog of war, enemies will see  Mega Gnar's icon both in the scoreboard and minimap, even if they regain vision of Gnar. This will stay this way until Gnar's  Mega form ends while on enemy's sight.(bug)",
         "blurb": "Innate - Rage Gene:  Mini Gnar generates Rage while fighting. At maximum Rage, his next ability will be  Mega Gnar's as he transforms, losing Mini Gnar's passive effects in exchange for increased stats and new abilities.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -388,10 +388,10 @@
           "modifiers": [
             {
               "values": [
-                20,
-                17.5,
-                15,
-                12.5,
+                16,
+                14.5,
+                13,
+                11.5,
                 10
               ],
               "units": [
@@ -506,10 +506,10 @@
           "modifiers": [
             {
               "values": [
-                20,
-                17.5,
-                15,
-                12.5,
+                16,
+                14.5,
+                13,
+                11.5,
                 10
               ],
               "units": [
@@ -558,7 +558,7 @@
             "leveling": []
           },
           {
-            "description": "The third stack against a target consumes them all to deal bonus magic damage, capped at 300 against monsters, and grant Gnar 20 / 40 / 60 / 80% (based on GNAR!'s rank) bonus movement speed that decays over 3 seconds.",
+            "description": "The third stack against a target consumes them all to deal bonus magic damage, capped at 300 against monsters, and grant Gnar 20% / 40% / 60% / 80% (based on GNAR!'s rank) bonus movement speed that decays over 3 seconds.",
             "leveling": [
               {
                 "attribute": "Bonus Magic Damage",
@@ -632,7 +632,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "The bonus movement speed's duration refreshes whenever Gnar would receive it (by hitting a target three times again).",
-        "blurb": "Passive:  Mini Gnar's basic attacks and damaging abilities apply stacks. The third stack deals bonus magic damage based on the target's maximum health, and grants a burst of  movement speed to Gnar.",
+        "blurb": "Passive:  Mini Gnar's  basic attacks  on-hit and damaging  abilities apply  stacks. The third stack deals bonus magic damage based on the target's maximum health, and grants a burst of  movement speed to Gnar.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -1157,7 +1157,7 @@
   },
   "releaseDate": "2014-08-14",
   "releasePatch": "4.18",
-  "patchLastChanged": "14.18",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

@@ -36,7 +36,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/1036_class_t1_longsword.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/1036_class_t1_longsword.png",
   "simpleDescription": "Slightly increases Attack Damage",
   "nicknames": [],
   "passives": [],

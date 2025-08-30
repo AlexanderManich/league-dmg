@@ -4,7 +4,7 @@
   "name": "Camille",
   "title": "the Steel Shadow",
   "fullName": "Camille Ferros",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Camille.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Camille.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -218,7 +218,7 @@
     "mobility": 3,
     "utility": 1,
     "abilityReliance": 40,
-    "difficulty": 3
+    "difficulty": 2
   },
   "abilities": {
     "P": [
@@ -406,7 +406,7 @@
         "affects": "Self",
         "spellshieldable": "false",
         "resource": "MANA",
-        "damageType": "MIXED_DAMAGE",
+        "damageType": "OTHER_DAMAGE",
         "spellEffects": "spell",
         "projectile": null,
         "onHitEffects": null,
@@ -742,7 +742,7 @@
         "tetherRadius": null,
         "onTargetCdStatic": null,
         "innerRadius": null,
-        "speed": null,
+        "speed": "1400",
         "width": "100",
         "angle": null,
         "castTime": "none",
@@ -885,7 +885,7 @@
             ]
           },
           {
-            "description": "The target cannot escape the zone through any means. While within the zone, Camille's basic attacks deal bonus magic damage.",
+            "description": "The target cannot escape the zone through any means. While within the zone, Camille's basic attacks against the target deal bonus magic damage.",
             "leveling": [
               {
                 "attribute": "Bonus Magic Damage",

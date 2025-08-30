@@ -4,7 +4,7 @@
   "name": "Brand",
   "title": "the Burning Vengeance",
   "fullName": "Kegan Rodhe",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Brand.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Brand.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -232,7 +232,7 @@
             "leveling": []
           },
           {
-            "description": "Ablaze: While afflicted with Ablaze, the target is dealt magic damage equal to[ 2% of their maximum health over 4 seconds. ][ 0.167% of their maximum health every 0.25 seconds over 4 seconds. ]Each stack of Ablaze deals damage to the target individually and applies their damage ticks dependent on the time they were applied, even if the duration of all the stacks are refreshed. Ablaze deals 240% damage per tick to monsters; this damage is capped at[ 10 / 20 / 30 (based on Ablaze stacks) per tick against non-epic monsters and 20 / 40 / 60 (based on Ablaze stacks) per tick against epic monsters. ][ a total of 160 / 320 / 480 (based on Ablaze stacks) against non-epic monsters and 320 / 640 / 960 (based on Ablaze stacks) against epic monsters. ]",
+            "description": "Ablaze: While afflicted with Ablaze, the target is dealt magic damage equal to[ 2% of their maximum health over 4 seconds. ][ 0.167% of their maximum health every 0.25 seconds over 4 seconds. ]Each stack of Ablaze deals damage to the target individually and applies their damage ticks dependent on the time they were applied, even if the duration of all the stacks are refreshed. Ablaze deals 260% damage per tick to monsters; this damage is capped at[ 10 / 20 / 30 (based on Ablaze stacks) per tick against non-epic monsters and 20 / 40 / 60 (based on Ablaze stacks) per tick against epic monsters. ][ a total of 160 / 320 / 480 (based on Ablaze stacks) against non-epic monsters and 320 / 640 / 960 (based on Ablaze stacks) against epic monsters. ]",
             "leveling": []
           },
           {
@@ -259,8 +259,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Ablaze is a  debuff that persists through death.\nAblaze's damage cap against a  monster is applied after the increased monster damage.\nThe explosion is not considered a  tether effect and will not affect  untargetable targets, even if the explosion originated from them.\nGiven the behavior of the stacking mechanic, the damage over time will deal varying amounts of damage based on the time the stacks were applied:\nAt sub-optimal applied times, 2 stacks will deal a minimum of 6% maximum health damage over 4 seconds, but will deal 7% maximum health at optimal applied times.\nAgainst small-medium units 3 stacks will deal a minimum of 9% maximum health at sub-optimal times, but 11% maximum health at optimal times. If these stacks are further refreshed at optimal times they can deal up to 12% maximum health over 4 seconds.\nThe burn is  persistent damage and the explosion is  area damage.",
-        "blurb": "Innate:  Brand's abilities apply a stack of Ablaze to enemies hit. Subsequent abilities used against a target with Ablaze are empowered. Killing an enemy afflicted with Ablaze or with an ability restores  mana.",
+        "notes": "Ablaze is a  debuff that persists through  death.\nAblaze's damage cap against a  monster is applied after the increased monster damage.\nThe explosion is not considered a  tether effect and will not affect  untargetable targets, even if the explosion originated from them.\nGiven the behavior of the stacking mechanic, the damage over time will deal varying amounts of damage based on the time the stacks were applied:\nAt sub-optimal applied times, 2 stacks will deal a minimum of 6% maximum health damage over 4 seconds, but will deal 7% maximum health at optimal applied times.\nAgainst small-medium units 3 stacks will deal a minimum of 9% maximum health at sub-optimal times, but 11% maximum health at optimal times. If these stacks are further refreshed at optimal times they can deal up to 12% maximum health over 4 seconds.\nThe burn is  persistent damage and the explosion is  area damage.",
+        "blurb": "Innate:  Brand's abilities apply a  stack of Ablaze to enemies hit. Subsequent abilities used against a target with Ablaze are empowered. Killing an enemy afflicted with Ablaze or with an ability restores  mana.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -323,7 +323,7 @@
             ]
           },
           {
-            "description": "Ablaze Bonus: The target is stunned for 1.5 seconds.",
+            "description": "Ablaze Bonus: The target is stunned for 1.75 seconds.",
             "leveling": []
           }
         ],
@@ -659,7 +659,7 @@
         "tetherRadius": null,
         "onTargetCdStatic": null,
         "innerRadius": null,
-        "speed": null,
+        "speed": "900",
         "width": null,
         "angle": null,
         "castTime": "0.25",
@@ -786,9 +786,9 @@
           "modifiers": [
             {
               "values": [
-                110,
                 100,
-                90
+                90,
+                80
               ],
               "units": [
                 "",
@@ -827,7 +827,7 @@
   },
   "releaseDate": "2011-04-12",
   "releasePatch": "1.0.0.115",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 225,
     "rp": 260,

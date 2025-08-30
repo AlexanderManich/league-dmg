@@ -4,7 +4,7 @@
   "name": "Kalista",
   "title": "the Spear of Vengeance",
   "fullName": "Kalista vol Kalah Heigaari",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Kalista.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Kalista.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -48,7 +48,7 @@
     "attackDamage": {
       "flat": 57,
       "percent": 0.0,
-      "perLevel": 4,
+      "perLevel": 4.25,
       "percentPerLevel": 0.0
     },
     "movespeed": {
@@ -485,7 +485,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The damage is dealt on-attack of Kalista's basic attack if she applies the second mark. If the Oathsworn does so instead, the damage is dealt on-hit of their basic attack.\nSoul-Marked's bonus damage is credited to Kalista and will benefit from both her  magic penetration and spell effects.\nIf her  Oathsworn ally scores a kill using Soul-Marked's bonus damage they will get a message stating 'Kill Secured' in place of the usual gold pop-up (the gold itself is credited to Kalista).\nThe Sentinel's  sight reveal on enemy  champions is accredited for assists and potentially kills (if they die shortly after being spotted).\nIt does not reveal  stealthed targets.\nSentinel will cast from wherever Kalista is at the end of the cast time.\nPENDING FOR TEST: Soul Mark's interaction with parrying effects ( dodge,  block,  blind).\nPENDING FOR TEST: If Pierce kills the target by Soul-Mark's additional damage, it will/will not continue.",
+        "notes": "The damage is dealt  on-attack of Kalista's basic attack if she applies the second mark. If the Oathsworn does so instead, the damage is dealt on-hit of their basic attack.\nSoul-Marked's bonus damage is credited to Kalista and will benefit from both her  magic penetration and spell effects.\nIf her  Oathsworn ally scores a kill using Soul-Marked's bonus damage they will get a message stating 'Kill Secured' in place of the usual gold pop-up (the gold itself is credited to Kalista).\nThe Sentinel's  sight reveal on enemy  champions is accredited for assists and potentially kills (if they die shortly after being spotted).\nIt does not reveal  stealthed targets.\nSentinel will cast from wherever Kalista is at the end of the cast time.\nPENDING FOR TEST: Soul Mark's interaction with parrying effects ( dodge,  block,  blind).\nPENDING FOR TEST: If Pierce kills the target by Soul-Mark's additional damage, it will/will not continue.",
         "blurb": "Passive - Soul-Marked: While  Kalista and her  Oathsworn are  tethered, their basic attacks and  Pierce apply a Soul-Mark to their targets for a few seconds. If both Soul-Marks are applied to the same target, they take bonus magic damage.",
         "missileSpeed": null,
         "rechargeRate": [
@@ -517,7 +517,7 @@
             "leveling": []
           },
           {
-            "description": "Active: Kalista rips all lodged spears from nearby enemies, consuming all of their stacks to deal them physical damage and slow them for 2 seconds. Each additional spear on the target deals reduced damage. Rend deals 50% damage against epic monsters.",
+            "description": "Active: Kalista rips all lodged spears from nearby enemies, consuming all of their stacks to deal them physical damage and slow them for 2 seconds. Each additional spear on the target deals modified damage. Rend deals 50% damage against epic monsters.",
             "leveling": [
               {
                 "attribute": "Physical Damage",
@@ -556,11 +556,11 @@
                   },
                   {
                     "values": [
-                      20,
-                      20,
-                      20,
-                      20,
-                      20
+                      65,
+                      65,
+                      65,
+                      65,
+                      65
                     ],
                     "units": [
                       "% AP",
@@ -609,11 +609,11 @@
                   },
                   {
                     "values": [
-                      20,
-                      20,
-                      20,
-                      20,
-                      20
+                      50,
+                      50,
+                      50,
+                      50,
+                      50
                     ],
                     "units": [
                       "% AP",
@@ -745,8 +745,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Rend cannot activate on  untargetable enemies.\nRend applies its effects instantly on cast.\nThe cooldown will not reset if the target is protected by  resurrection effects.\nIf Rend is used against  Sion under the effects of  Glory in Death, the cooldown will reset even if it does not kill him.(bug)\nA stack is not applied if the attack is  dodged,  blocked or missed while Kalista is  blinded.\n Pierce does not apply a stack of Rend if blocked by  spell shield.\nWhile  berserk, Kalista's attacks will also apply Rend stacks on allies.\nKalista will be unable to cast Rend if there are no stacks on an enemy in range.\nRend cannot cast on allies, even if a valid enemy target exists. As such, any spears on allied units are purely cosmetic.\nRend has a lower cast range than effect range.\nRend at maximum stacks will deal a total of 2044 / 3066 / 4341 / 5869 / 7650 (+ 5914.3 / 7079.618 / 8186.493 / 9293.368 / 10400.243% AD) physical damage.",
-        "blurb": "Passive:  Kalista's basic attacks and  Pierce lodge a spear into their target, applying a stack of Rend for a few seconds.",
+        "notes": "Rend cannot activate on  untargetable enemies.\nRend applies its effects instantly on cast.\nThe cooldown will not reset if the target is protected by  resurrection effects.\nIf Rend is used against  Sion under the effects of  Glory in Death, the cooldown will reset even if it does not kill him.(bug)\nA stack is not applied if the attack is  dodged,  blocked or missed while Kalista is  blinded.\n Pierce does not apply a stack of Rend if blocked by  spell shield.\nWhile  berserk, Kalista's attacks will also apply Rend stacks on allies.\nKalista will be unable to cast Rend if there are no stacks on an enemy in range.\nRend cannot cast on allies, even if a valid enemy target exists. As such, any spears on allied units are purely cosmetic.\nRend has a lower cast range than effect range.\nRend at maximum stacks will deal a total of 1776 / 3557 / 5338 / 7119 / 8900 (+ 5130 / 6395 / 7660 / 8925 / 10190% AD) (+ 12715% AP) physical damage.",
+        "blurb": "Passive:  Kalista's  basic attacks  on-hit and  Pierce lodge a spear into their target, applying a  stack of Rend for a few seconds.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -862,7 +862,7 @@
   },
   "releaseDate": "2014-11-20",
   "releasePatch": "4.20",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 880,
@@ -952,8 +952,8 @@
           "id": 429004,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/429/429004.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {
@@ -1453,6 +1453,207 @@
         "Francis Tneh",
         "West Studio"
       ]
+    },
+    {
+      "name": "Dawnbringer",
+      "id": 429024,
+      "isBase": false,
+      "availability": "Available",
+      "formatName": "Dawnbringer",
+      "lootEligible": true,
+      "cost": 1350,
+      "sale": 0,
+      "distribution": null,
+      "rarity": "Epic",
+      "chromas": [
+        {
+          "name": "Catseye",
+          "id": 429026,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/429/429026.png",
+          "colors": [
+            "#FFEE59",
+            "#FFEE59"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Emerald",
+          "id": 429027,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/429/429027.png",
+          "colors": [
+            "#2DA130",
+            "#2DA130"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Obsidian",
+          "id": 429032,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/429/429032.png",
+          "colors": [
+            "#27211C",
+            "#27211C"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Pearl",
+          "id": 429031,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/429/429031.png",
+          "colors": [
+            "#ECF9F8",
+            "#ECF9F8"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Rose Quartz",
+          "id": 429030,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/429/429030.png",
+          "colors": [
+            "#E58BA5",
+            "#E58BA5"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "TENCENT"
+            }
+          ]
+        },
+        {
+          "name": "Ruby",
+          "id": 429025,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/429/429025.png",
+          "colors": [
+            "#D33528",
+            "#D33528"
+          ],
+          "descriptions": [
+            {
+              "description": "This chroma was released as a bundle exclusive in 2025.",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Tanzanite",
+          "id": 429028,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/429/429028.png",
+          "colors": [
+            "#54209B",
+            "#54209B"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Turquoise",
+          "id": 429029,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/429/429029.png",
+          "colors": [
+            "#73BFBE",
+            "#73BFBE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        }
+      ],
+      "lore": "An invocation of Kalista, the Oathsworn Arbiter: “I call upon dawn's shining spear! O Kalista, punish the broken vows of mortals and gods alike! Pierce the forked tongues of the oathbreakers. Cast their lies back to the darkness, forge anew the bond of honor between kindred warriors, and bless the children of order with light everlasting!",
+      "release": "2025-07-16",
+      "set": [
+        "Nightbringer and Dawnbringer"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/kalista/skins/skin24/images/kalista_splash_centered_24.skins_kalista_skin24.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/kalista/skins/skin24/images/kalista_splash_uncentered_24.skins_kalista_skin24.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/kalista/skins/skin24/images/kalista_splash_tile_24.skins_kalista_skin24.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/kalista/skins/skin24/kalistaloadscreen_24.skins_kalista_skin24.jpg",
+      "loadScreenVintagePath": null,
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": false,
+      "newQuotes": false,
+      "voiceActor": [
+        "Misty Lee"
+      ],
+      "splashArtist": []
     }
   ]
 }

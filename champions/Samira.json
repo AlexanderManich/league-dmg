@@ -4,7 +4,7 @@
   "name": "Samira",
   "title": "the Desert Rose",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Samira.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Samira.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -216,7 +216,7 @@
     "mobility": 3,
     "utility": 1,
     "abilityReliance": 0,
-    "difficulty": 2
+    "difficulty": 3
   },
   "abilities": {
     "P": [
@@ -229,7 +229,7 @@
             "leveling": []
           },
           {
-            "description": "Style: For each stack, Samira gains 2.75 / 3 / 3.25 / 3.5% (based on level) bonus movement speed, up to a maximum of 16.5 / 18 / 19.5 / 21% (based on level). At maximum stacks, Samira can cast Inferno Trigger.",
+            "description": "Style: For each stack, Samira gains 2.75% / 3% / 3.25% / 3.5% (based on level) bonus movement speed, up to a maximum of 16.5% / 18% / 19.5% / 21% (based on level). At maximum stacks, Samira can cast Inferno Trigger.",
             "leveling": []
           },
           {
@@ -256,8 +256,8 @@
         "projectile": "SPECIAL",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The stack count is represented by the grades       to the left of Samira's health bar, visible to the player only, as well as a stack counter under the health bar, visible to all players.\nThe empowered attack can trigger on  immobilizes from both ally and enemy sources.\nThose applied by the neutral team (e.g. 's initial knock back) can be targeted.\nIt cannot trigger against enemies knocked  airborne by a  Blast Cone triggered by anyone.(note)\nThe empowered attack's interaction with immunities to crowd control:\nIt will not trigger against  crowd control immune and  displacement immune targets.\nThe knock up will be resisted by  Riposte, but the ability does not trigger its on- immobilization effect.(note)\nThe empowered attack will not apply the knock up against  suspended enemies.\nThe empowered attack will only apply the knock up if the target is still  immobilized or  airborne upon being hit. It will not apply if they are no longer disabled when hit.\nThe empowered attack cannot be used against a target with a  spell shield.\nThe application of the knock up can occur on any of the missiles of the empowered attack if it had not already occurred on the first missile.\nA missile that is parried by  Riposte or is  dodged,  blocked, or missed while Samira is  blinded cannot apply the knock up.\nWhile  grounded or  rooted, Samira cannot  dash into range to use the empowered attack. She can only use it if her target is within her  attack range while under this condition.\nThe on-target cooldown will apply even if the empowered attack is parried.\nThe empowered attack rolls  critical strike for each shot of the flurry.\nThe bonus magic damage dealt with the blade is  default damage. The empowered attack is first 1 instance of  basic damage and then 5 instances of  default damage.\nThe attacks do not deal the bonus damage against structures.\nThe empowered attack is unaffected by  attack speed modifiers.\n Guinsoo's Rageblade's Phantom Hit and  Runaan's Hurricane's bolts will not apply the bonus magic damage, since it is a hit effect of specifically the melee attack casts.\nAttacks with the gun and blade do not count as different attacks for stacking Style.\nBasic attacks using the blade are still classified as  ranged.\nThe melee attack's range condition is unaffected by  attack range modifiers (e.g.  Rapid Firecannon).\nBlade range is calculated edge-to-edge just like basic attack ranges are, hence both Samira gaining bonus size or her target increases the total distance at which Samira can attack them with the blade.\nSince the  knock up requires an exterior source to  immobilize the enemy,  Aftershock will be swapped with  Grasp of the Undying for Samira at the start of the game.\nAbilities blocked by  spell shields will still grant Samira Style stacks.\nSamira still gains Style stacks from damaging attacks and abilities landed against  clones.",
-        "blurb": "Innate:  Samira's different basic attacks and damaging abilities against enemy  champions generate a Style stack, up to a cap.",
+        "notes": "The stack count is represented by the grades       to the left of Samira's health bar, visible to the player only, as well as a stack counter under the health bar, visible to all players.\nThe empowered attack can trigger on  immobilizes from both ally and enemy sources.\nThose applied by the neutral team (e.g.  Dragon's initial knock back) can be targeted.\nIt cannot trigger against enemies knocked  airborne by a  Blast Cone triggered by anyone.(note)\nThe empowered attack's interaction with immunities to crowd control:\nIt will not trigger against  crowd control immune and  displacement immune targets.\nThe knock up will be resisted by  Riposte, but the ability does not trigger its on- immobilization effect.(note)\nThe empowered attack will not apply the knock up against  suspended enemies.\nThe empowered attack will only apply the knock up if the target is still  immobilized or  airborne upon being hit. It will not apply if they are no longer disabled when hit.\nThe empowered attack cannot be used against a target with a  spell shield.\nThe application of the knock up can occur on any of the missiles of the empowered attack if it had not already occurred on the first missile.\nA missile that is parried by  Riposte or is  dodged,  blocked, or missed while Samira is  blinded cannot apply the knock up.\nWhile  grounded or  rooted, Samira cannot  dash into range to use the empowered attack. She can only use it if her target is within her  attack range while under this condition.\nThe on-target cooldown will apply even if the empowered attack is parried.\nThe empowered attack rolls  critical strike for each shot of the flurry.\nThe bonus magic damage dealt with the blade is  default damage. The empowered attack is first 1 instance of  basic damage and then 5 instances of  default damage.\nThe attacks do not deal the bonus damage against structures.\nThe empowered attack is unaffected by  attack speed modifiers.\n Guinsoo's Rageblade's Phantom Hit and  Runaan's Hurricane's bolts will not apply the bonus magic damage, since it is a hit effect of specifically the melee attack casts.\nAttacks with the gun and blade do not count as different attacks for stacking Style.\nBasic attacks using the blade are still classified as  ranged.\nThe melee attack's range condition is unaffected by  attack range modifiers (e.g.  Rapid Firecannon).\nBlade range is calculated edge-to-edge just like basic attack ranges are, hence both Samira gaining bonus size or her target increases the total distance at which Samira can attack them with the blade.\nSince the  knock up requires an exterior source to  immobilize the enemy,  Aftershock will be swapped with  Grasp of the Undying for Samira at the start of the game.\nAbilities blocked by  spell shields will still grant Samira Style stacks.\nSamira still gains Style stacks from damaging attacks and abilities landed against  clones.",
+        "blurb": "Innate:  Samira's different  basic attacks and damaging  abilities against enemy  champions generate a Style  stack, up to a cap.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -382,7 +382,7 @@
         "projectile": "SPECIAL",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Applies  spell damage on the shot and  area damage on the slash and explosives.\n Life steal will always benefit from the damage dealt at 80% effectiveness and does not take into account of the ability's spell effects, whereas on the other hand for  omnivamp does, and it will modify the  healing accordingly.\nFlair's shot against an enemy champion will aggro nearby enemy minions.\nFlair can be cast during  Wild Rush even if  Blade Whirl or  Inferno Trigger are active.\nThe slash and explosives roll their  critical strike against each target individually.\nThe shot and the slash do not count as different abilities for stacking  Style.\nSamira's next attack after using Flair will occasionally come out faster.(note)\nSamira can use  Wild Rush during Flair's cast time.\nThis ability will cast from wherever the caster is at the end of the cast time.\nFlair will fire or slash from wherever Samira is at the end of the cast time.\nSamira will always slash in her facing direction, and she will turn to face the target direction only once at the start of the cast time.\nFlair can be buffered 0.5 seconds before it comes off cooldown.\nOnly the shot will be destroyed by  projectile-intercepting effects.\nThe explosive placement is illustrated in  Wild Rush regardless of whether Flair is available.\nThe VFX always covers the the full dash's distance even if  Wild Rush is interrupted mid-dash.",
+        "notes": "Applies  spell damage on the shot and  area damage on the slash and explosives.\n Life steal will always benefit from the damage dealt at 80% effectiveness and does not take into account of the ability's spell effects, whereas on the other hand for  omnivamp does, and it will modify the  healing accordingly.\nFlair's shot against an enemy champion will aggro nearby enemy minions.\nFlair can be cast during  Wild Rush even if  Blade Whirl or  Inferno Trigger are active.\nThe slash and explosives roll their  critical strike against each target individually.\nThe shot and the slash do not count as different abilities for stacking  Style.\nSamira's next attack after using Flair will occasionally come out faster.(note)\nSamira can use  Wild Rush during Flair's cast time.\nThis ability will cast from wherever the caster is at the end of the cast time.\nFlair will fire or slash from wherever Samira is at the end of the cast time.\nSamira will always slash in her facing direction, and she will turn to face the target direction only once at the start of the cast time.\nOnly the shot will be destroyed by  projectile-intercepting effects.\nThe explosive placement is illustrated in  Wild Rush regardless of whether Flair is available.\nThe VFX always covers the the full dash's distance even if  Wild Rush is interrupted mid-dash.",
         "blurb": "Active:  Samira fires a shot in the target direction that deals physical damage to the first enemy hit.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -392,7 +392,7 @@
         "innerRadius": null,
         "speed": "2600",
         "width": "120 / 130",
-        "angle": null,
+        "angle": "100",
         "castTime": "0.25",
         "effectRadius": null,
         "targetRange": "340"
@@ -541,7 +541,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Spell shield will block the damage from one slash.\nWhile the ability has a cast time - the cast time has no effect on the ability's usability. All effects begin immediately and Samira can move throughout.\nBlade Whirl can be buffered 0.5 seconds before it comes off cooldown.\nBoth slashes count as the same ability for stacking  Style.\nThe effect ending early includes the second slash not being performed, if applicable.\nEntering  stasis will also end Blade Whirl early.\nOther item actives and channeling  Teleport or  Recall will not end the effect early.\nSamira can ignore the lockout for  Flair and basic attacks if she uses  Wild Rush and queues up  Flair and/or a basic attack at the start of it.(bug)",
+        "notes": "Spell shield will block the damage from one slash.\nWhile the ability has a cast time - the cast time has no effect on the ability's usability. All effects begin immediately and Samira can move throughout.\nBoth slashes count as the same ability for stacking  Style.\nThe effect ending early includes the second slash not being performed, if applicable.\nEntering  stasis will also end Blade Whirl early.\nOther item actives and channeling  Teleport or  Recall will not end the effect early.\nSamira can ignore the lockout for  Flair and basic attacks if she uses  Wild Rush and queues up  Flair and/or a basic attack at the start of it.(bug)",
         "blurb": "Active:  Samira briefly spins her blade twice, dealing physical damage to nearby enemies each time. During this time, she destroys all incoming enemy  projectiles.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -684,7 +684,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Samira gains the attack speed buff at the start of the dash.\nWild Rush does not deal its damage to turrets.\nWild Rush prioritizes targeting champions over turrets.\nWild Rush can be buffered 0.5 seconds before it comes off cooldown.\n Inferno Trigger will be buffered to cast at the end of the dash if  Flair was cast during the dash.\nCasting  Flash during Wild Rush will interrupt the dash but deal damage to nearby enemies at the location.\nIf  Flair was cast during this time, an explosive will also be placed at that location.\nWild Rush will also reset if Samira kills or gets assist credit on a  clone that dies (to hostiles).(note)",
+        "notes": "Samira gains the attack speed buff at the start of the dash.\nWild Rush does not deal its damage to turrets.\nWild Rush prioritizes targeting champions over turrets.\n Inferno Trigger will be buffered to cast at the end of the dash if  Flair was cast during the dash.\nCasting  Flash during Wild Rush will interrupt the dash but deal damage to nearby enemies at the location.\nIf  Flair was cast during this time, an explosive will also be placed at that location.\nWild Rush will also reset if Samira kills or gets assist credit on a  clone that dies (to hostiles).(note)",
         "blurb": "Active:  Samira  dashes at the target enemy or enemy structure, dealing magic damage to enemies she passes through. She also gains  bonus attack speed for a short time.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -877,7 +877,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Samira's facing direction remains as it had been or, if she is moving, towards that direction during Inferno Trigger.\nThe  movement speed reduction stacks additively with other movement speed bonuses.\nIt is a negative bonus, not a  slow, and is thus not reduced by  slow resist.\nInferno Trigger's area of effect is fixed around Samira.\n Spell shield will block the damage of one shot.\nInferno Trigger will not end if there are no enemies that remain in range.\nInferno Trigger can be buffered 0.5 seconds before it becomes unsealed or off cooldown.\nThe bottom of the player's screen will have a fiery visual effect while Samira is at S rank and Inferno Trigger has at least one rank.\nSince  Inferno Trigger's cooldown is static,  Ultimate Hunter will be swapped with  Treasure Hunter for Samira at the start of the game.",
+        "notes": "Samira's facing direction remains as it had been or, if she is moving, towards that direction during Inferno Trigger.\nThe  movement speed reduction stacks additively with other movement speed bonuses.\nIt is a negative bonus, not a  slow, and is thus not reduced by  slow resist.\nInferno Trigger's area of effect is fixed around Samira.\n Spell shield will block the damage of one shot.\nInferno Trigger will not end if there are no enemies that remain in range.\nThe bottom of the player's screen will have a fiery visual effect while Samira is at S rank and Inferno Trigger has at least one rank.\nSince  Inferno Trigger's cooldown is static,  Ultimate Hunter will be swapped with  Treasure Hunter for Samira at the start of the game.",
         "blurb": "Active:  Samira unleashes a torrent of shots, reducing her  movement speed and rapidly firing shots that deal physical damage to nearby enemies.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -896,7 +896,7 @@
   },
   "releaseDate": "2020-09-21",
   "releasePatch": "10.19",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -1668,8 +1668,8 @@
       "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/samira/skins/skin33/samiraloadscreen_33.skins_samira_care_skin33.jpg",
       "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/samira/skins/skin33/samiraloadscreen_33_le.skins_samira_care_skin33.jpg",
       "newEffects": true,
-      "newAnimations": true,
-      "newRecall": true,
+      "newAnimations": false,
+      "newRecall": false,
       "newVoice": false,
       "newQuotes": false,
       "voiceActor": [

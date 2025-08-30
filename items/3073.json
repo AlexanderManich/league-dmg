@@ -16,7 +16,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3073_hexaegis.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3073_hexaegis.png",
   "simpleDescription": "Increases maximum Mana as Mana is spent",
   "nicknames": [],
   "passives": [
@@ -210,7 +210,7 @@
       "unique": true,
       "mythic": false,
       "name": "Overdrive",
-      "effects": "Upon casting your ultimate ability, enter ''Overdrive'' to gain {{as|30% '''bonus''' attack speed}} and {{as|15% '''bonus''' movement speed}} for 8 seconds (30 second cooldown, starts on ultimate cast).",
+      "effects": "Upon casting your ultimate ability, enter ''Overdrive'' to gain {{as|50% '''bonus''' attack speed}} and {{as|20% '''bonus''' movement speed}} for 8 seconds (30 second cooldown, starts on ultimate cast).",
       "range": null,
       "cooldown": null,
       "stats": {
@@ -352,7 +352,7 @@
         },
         "movespeed": {
           "flat": 0.0,
-          "percent": 15.0,
+          "percent": 20.0,
           "perLevel": 0.0,
           "percentPerLevel": 0.0,
           "percentBase": 0.0,

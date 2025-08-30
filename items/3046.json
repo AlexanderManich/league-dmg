@@ -16,7 +16,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3046_marksman_t3_phantomdancer.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3046_marksman_t3_phantomdancer.png",
   "simpleDescription": "Move faster while attacking enemies and gain a shield when on low health.",
   "nicknames": [
     "pd"
@@ -244,7 +244,7 @@
       "percentBonus": 0.0
     },
     "attackSpeed": {
-      "flat": 60.0,
+      "flat": 65.0,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0,
@@ -349,7 +349,7 @@
     },
     "movespeed": {
       "flat": 0.0,
-      "percent": 8.0,
+      "percent": 10.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0,
       "percentBase": 0.0,

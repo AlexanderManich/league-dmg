@@ -4,7 +4,7 @@
   "name": "Nocturne",
   "title": "the Eternal Nightmare",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Nocturne.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Nocturne.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -36,7 +36,7 @@
     "armor": {
       "flat": 38,
       "percent": 0.0,
-      "perLevel": 4.7,
+      "perLevel": 4.2,
       "percentPerLevel": 0.0
     },
     "magicResistance": {
@@ -335,11 +335,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      20,
-                      30,
-                      40,
-                      50,
-                      60
+                      15,
+                      25,
+                      35,
+                      45,
+                      55
                     ],
                     "units": [
                       "",
@@ -854,7 +854,7 @@
   },
   "releaseDate": "2011-03-15",
   "releasePatch": "1.0.0.113",
-  "patchLastChanged": "25.10",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -1111,8 +1111,8 @@
           "id": 56010,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/56/56010.png",
           "colors": [
-            "#2377FF",
-            "#2377FF"
+            "#2756CE",
+            "#2756CE"
           ],
           "descriptions": [
             {

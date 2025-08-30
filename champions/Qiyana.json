@@ -4,7 +4,7 @@
   "name": "Qiyana",
   "title": "Empress of the Elements",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Qiyana.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Qiyana.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -225,7 +225,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Qiyana/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Qiyana's basic attacks and basic abilities deal 15 : 83 (based on level) (+ 30% bonus AD) (+ 30% AP) additional physical damage. This effect cannot occur on the same target more than once every few seconds.",
+            "description": "Innate: Qiyana's basic attacks and basic abilities deal 15 : 83 (based on level) (+ 30% bonus AD) (+ 30% AP) bonus physical damage. This effect cannot occur on the same target more than once every few seconds.",
             "leveling": []
           },
           {
@@ -244,8 +244,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Royal Privilege's trigger from a basic attack can be  blocked (bonus damage is negated and the on-target cooldown does not apply).\nRoyal Privilege will not apply a cooldown to targets that are hit with an  Elemental Wrath that has a different  Element than the  Element Qiyana currently holds.\nThis does not occur if a new  Elemental Wrath with a different  Element is cast before the first one lands.\nThe effect will not trigger against structures nor wards.\nPENDING FOR TEST:: Royal Privilege's interaction with parrying effects ( dodge,  blind).",
-        "blurb": "Innate:  Qiyana's basic attacks and basic abilities deal additional physical damage.",
+        "notes": "Royal Privilege's trigger from a basic attack can be  blocked (bonus damage is negated and the on-target cooldown does not apply).\nRoyal Privilege will not apply a cooldown to targets that are hit with an  Elemental Wrath that has a different  Element than the  Element Qiyana currently holds.\nThis does not occur if a new  Elemental Wrath with a different  Element is cast before the first one lands.\nThe effect will not trigger against  structures nor  wards.\nPENDING FOR TEST:: Royal Privilege's interaction with parrying effects ( dodge,  blind).\nRoyal Privilege is applied in a separate damage instance from Qiyana's basic attacks and abilities.\nThis causes effects like  Bone Plating and  Black Cleaver's Carve to be applied twice.(note)",
+        "blurb": "Innate:  Qiyana's  basic attacks and  basic abilities deal bonus physical damage.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -273,11 +273,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      60,
-                      90,
-                      120,
-                      150,
-                      180
+                      70,
+                      100,
+                      130,
+                      160,
+                      190
                     ],
                     "units": [
                       "",
@@ -310,11 +310,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      45,
-                      67.5,
-                      90,
-                      112.5,
-                      135
+                      52.5,
+                      75,
+                      97.5,
+                      120,
+                      142.5
                     ],
                     "units": [
                       "",
@@ -434,11 +434,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      60,
-                      90,
-                      120,
-                      150,
-                      180
+                      70,
+                      100,
+                      130,
+                      160,
+                      190
                     ],
                     "units": [
                       "",
@@ -471,11 +471,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      45,
                       67.5,
-                      90,
-                      112.5,
-                      135
+                      86.25,
+                      105,
+                      123.75,
+                      142.5
                     ],
                     "units": [
                       "",
@@ -521,11 +521,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      96,
-                      144,
-                      192,
-                      240,
-                      288
+                      112,
+                      160,
+                      208,
+                      256,
+                      304
                     ],
                     "units": [
                       "",
@@ -558,11 +558,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      81,
-                      121.5,
-                      162,
-                      202.5,
-                      243
+                      94.5,
+                      135,
+                      175.5,
+                      216,
+                      256.5
                     ],
                     "units": [
                       "",
@@ -633,11 +633,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      5,
-                      10,
                       15,
                       20,
-                      25
+                      25,
+                      30,
+                      35
                     ],
                     "units": [
                       "%",
@@ -1072,7 +1072,7 @@
   },
   "releaseDate": "2019-06-28",
   "releasePatch": "9.13",
-  "patchLastChanged": "14.21",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

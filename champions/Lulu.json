@@ -4,7 +4,7 @@
   "name": "Lulu",
   "title": "the Fae Sorceress",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Lulu.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Lulu.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -735,11 +735,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      80,
-                      120,
-                      160,
-                      200,
-                      240
+                      70,
+                      110,
+                      150,
+                      190,
+                      230
                     ],
                     "units": [
                       "",
@@ -777,11 +777,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      80,
-                      120,
-                      160,
-                      200,
-                      240
+                      70,
+                      110,
+                      150,
+                      190,
+                      230
                     ],
                     "units": [
                       "",
@@ -793,11 +793,11 @@
                   },
                   {
                     "values": [
-                      55,
-                      55,
-                      55,
-                      55,
-                      55
+                      50,
+                      50,
+                      50,
+                      50,
+                      50
                     ],
                     "units": [
                       "% AP",
@@ -836,10 +836,10 @@
           "modifiers": [
             {
               "values": [
-                8,
-                8,
-                8,
-                8,
+                10,
+                9.5,
+                9,
+                8.5,
                 8
               ],
               "units": [
@@ -996,7 +996,7 @@
   },
   "releaseDate": "2012-03-20",
   "releasePatch": "1.0.0.136",
-  "patchLastChanged": "25.10",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 880,
@@ -2359,6 +2359,38 @@
       "splashArtist": [
         "Fortune 'Fortuneee' K"
       ]
+    },
+    {
+      "name": "Arcana",
+      "id": 117055,
+      "isBase": false,
+      "availability": "Upcoming",
+      "formatName": "Arcana",
+      "lootEligible": true,
+      "cost": "Battle Pass",
+      "sale": 0,
+      "distribution": "2025, S3 Act 1 Premium Battle Pass reward (Level 8)",
+      "rarity": "Epic",
+      "chromas": [],
+      "lore": "The jester-witch Lulu watches the people below with giddy excitement, eager to see how they receive the whimsical, magical surprises she rains down from on high. Though some suspect the recent disruptions in the Pattern are her doing, those who know Lulu also know that she would never use her art to destroy.",
+      "release": "0000-00-00",
+      "set": [
+        "Arcana"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/lulu/skins/skin55/images/lulu_splash_centered_55.skins_lulu_skin55.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/lulu/skins/skin55/images/lulu_splash_uncentered_55.skins_lulu_skin55.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/lulu/skins/skin55/images/lulu_splash_tile_55.skins_lulu_skin55.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/lulu/skins/skin55/lululoadscreen_55.skins_lulu_skin55.jpg",
+      "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/lulu/skins/skin55/lululoadscreen_55_le.skins_lulu_skin55.jpg",
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": false,
+      "newQuotes": false,
+      "voiceActor": [
+        "Faye Mata"
+      ],
+      "splashArtist": []
     }
   ]
 }

@@ -4,7 +4,7 @@
   "name": "Skarner",
   "title": "the Primordial Sovereign",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Skarner.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Skarner.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -184,7 +184,7 @@
       "percentPerLevel": 0.0
     },
     "urfDamageDealt": {
-      "flat": 1.0,
+      "flat": 1.1,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -196,7 +196,7 @@
       "percentPerLevel": 0.0
     },
     "urfShielding": {
-      "flat": 1.0,
+      "flat": 0.9,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -244,7 +244,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Basic attacks that are  dodged by the target or missed while Skarner is  blinded do not apply stacks of Quake.  Blocked attacks will still apply stacks.\n Spell shield prevents Quaking's application from  Upheaval and  Impale only.",
-        "blurb": "Innate:  Skarner's basic attacks,  Shattered Earth,  Upheaval, and  Impale apply a stack of Quaking to enemies hit for 4 seconds, refreshing on subsequent applications and stacking up to 3 times. Enemies afflicted with 3 stacks take magic damage based on their maximum health.",
+        "blurb": "Innate:  Skarner's  basic attacks  on-hit,  Shattered Earth,  Upheaval, and  Impale apply a  stack of Quaking to enemies hit for 4 seconds, refreshing on subsequent applications and stacking up to 3 times. Enemies afflicted with 3 stacks take magic damage based on their maximum health.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -1110,7 +1110,7 @@
       "availability": "Available",
       "formatName": "Earthrune",
       "lootEligible": true,
-      "cost": 520,
+      "cost": 750,
       "sale": 0,
       "distribution": null,
       "rarity": "NoRarity",

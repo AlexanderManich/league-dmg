@@ -4,7 +4,7 @@
   "name": "Lee Sin",
   "title": "the Blind Monk",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/LeeSin.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/LeeSin.png",
   "resource": "ENERGY",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -46,7 +46,7 @@
       "percentPerLevel": 0.0
     },
     "attackDamage": {
-      "flat": 69,
+      "flat": 66,
       "percent": 0.0,
       "perLevel": 3.7,
       "percentPerLevel": 0.0
@@ -1040,7 +1040,7 @@
   },
   "releaseDate": "2011-04-01",
   "releasePatch": "1.0.0.114",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 675,
     "rp": 585,

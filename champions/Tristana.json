@@ -4,7 +4,7 @@
   "name": "Tristana",
   "title": "the Yordle Gunner",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Tristana.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Tristana.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -242,7 +242,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "No additional details.",
-        "blurb": "Innate: Based on level,  Tristana gains  bonus range on her basic attacks,  Explosive Charge and  Buster Shot.",
+        "blurb": "Innate: Based on level,  Tristana gains  bonus range on her  basic attacks,  Explosive Charge and  Buster Shot.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -599,7 +599,7 @@
             ]
           },
           {
-            "description": "Tristana's basic attacks on-hit and abilities against the target increase Explosive Charge's damage by 25%, stacking up to 4 times for a maximum 100% increase, upon which the charge also detonates instantly. The charge's total damage is additionally increased by 0% : 75% (based on critical strike chance) [[Infinity Edge|]] (+ 0% : 40% (based on critical strike chance).",
+            "description": "Tristana's basic attacks on-hit and abilities against the target increase Explosive Charge's damage by 25%, stacking up to 4 times for a maximum 100% increase, upon which the charge also detonates instantly. The charge's total damage is additionally increased by 0% : 75% (based on critical strike chance) (+ 0% : 40% (based on critical strike chance).",
             "leveling": [
               {
                 "attribute": "Bonus Damage Per Stack",
@@ -817,7 +817,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Explosive Charge's cast time is always 100% of the caster's attack windup time.\nAt base attack speed, Tristana's attack windup is 0.225625 seconds.\nAn easy formula to calculate the cast time is [ 0.14801 seconds divided by total attack speed ].\nReducing Tristana's attack speed via  attack speed reductions also increases Explosive Charge's cast time by the same fraction.\nIt is calculated from Tristana's total attack speed after cap (2.5) and floor (0.2), making the maximum possible cast time 0.759 seconds.\nTristana will be automatically ordered to basic attack the target after the cast time.\nExplosive Charge's initial application deals 0 physical damage, triggering  turret aggro.\nIt also triggers a stack of effects such as  Electrocute.\nAll explosions by Explosive Charge's passive count as the same cast instance. Every cast of the active is a separate cast instance:\nHitting a champion with the passive by killing a nearby unit, casting the active on them (see note above) and landing a basic attack against them triggers  Electrocute.\nHitting a champion with the passive by killing a nearby unit, casting the active on them and hitting them again with the Passive by killing another nearby unit does not trigger  Electrocute.\n Dodge,  block and  blind all prevent Explosive Charge's stack application via basic attacks.\nExplosive Charge's detonation will deal damage to the primary target even if they have become  untargetable.\nExplosive Charge's stacks from basic attacks are applied as an on-hit effect and will therefore interact with  Guinsoo's Rageblade's Phantom Hit and  Runaan's Hurricane's bolts.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
+        "notes": "Explosive Charge's cast time is always 100% of the caster's attack windup time.\nAt base attack speed, Tristana's attack windup is 0.225625 seconds.\nAn easy formula to calculate the cast time is [ 0.14801 seconds divided by total attack speed ].\nReducing Tristana's attack speed via  attack speed reductions also increases Explosive Charge's cast time by the same fraction.\nIt is calculated from Tristana's total attack speed after cap (3.003) and floor (0.2), making the maximum possible cast time 0.759 seconds.\nTristana will be automatically ordered to basic attack the target after the cast time.\nExplosive Charge's initial application deals 0 physical damage, triggering  turret aggro.\nIt also triggers a  stack of effects such as  Electrocute.\nAll explosions by Explosive Charge's passive count as the same cast instance. Every cast of the active is a separate cast instance:\nHitting a champion with the passive by killing a nearby unit, casting the active on them (see note above) and landing a basic attack against them triggers  Electrocute.\nHitting a champion with the passive by killing a nearby unit, casting the active on them and hitting them again with the Passive by killing another nearby unit does not trigger  Electrocute.\n Dodge,  block and  blind all prevent Explosive Charge's stack application via basic attacks.\nExplosive Charge's detonation will deal damage to the primary target even if they have become  untargetable.\nExplosive Charge's stacks from basic attacks are applied as an  on-hit effect and will therefore interact with  Guinsoo's Rageblade's Phantom Hit and  Runaan's Hurricane's bolts.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
         "blurb": "Passive: Enemies explode when killed by  Tristana's basic attacks, dealing magic damage to nearby enemies.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -2520,8 +2520,8 @@
           "id": 18063,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/18/18063.png",
           "colors": [
-            "#DF9117",
-            "#DF9117"
+            "#FFEE59",
+            "#FFEE59"
           ],
           "descriptions": [
             {

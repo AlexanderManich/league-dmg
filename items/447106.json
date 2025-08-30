@@ -12,7 +12,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/7106_dragonheart.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/7106_dragonheart.png",
   "simpleDescription": null,
   "nicknames": [],
   "passives": [
@@ -20,7 +20,7 @@
       "unique": true,
       "mythic": false,
       "name": "Inner Flame",
-      "effects": "Every 2 rounds, gain a random {{bi|Dragon Soul}}. Additionally, increase your '''total''' {{as|attack damage}}, {{as|ability power}}, {{as|attack speed}}, {{as|'''maximum''' health}}, {{as|armor}}, {{as|magic resistance}}, and {{as|ability haste}} by 4% for each {{bi|Dragon Soul}} you possess, up to 30% at maximum souls.<br><br>Once you have obtained all 6 {{bi|Dragon Soul|Dragon Souls}}, you also gain the {{bi|Aspect of the Dragon}} buff permanently at the next round interval. This buff counts as a soul for this effect, for a total stat increase of 35%.",
+      "effects": "Every 2 rounds, gain a random {{bi|Dragon Soul}}. Additionally, increase your '''total''' {{as|attack damage}}, {{as|ability power}}, {{as|attack speed}}, {{as|'''maximum''' health}}, {{as|armor}}, {{as|magic resistance}}, and {{as|ability haste}} by 4% for each {{bi|Dragon Soul}} you possess, up to {{ap|4*6}}% at maximum souls.<br><br>Once you have obtained all 6 {{bi|Dragon Soul|Dragon Souls}}, you also gain the {{bi|Aspect of the Dragon}} buff permanently at the next phase. ''Aspect of the Dragon'' counts as an extra Soul for this effect, for a total stat increase of {{ap|4*7}}%.",
       "range": null,
       "cooldown": null,
       "stats": {

@@ -4,7 +4,7 @@
   "name": "Varus",
   "title": "the Arrow of Retribution",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Varus.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Varus.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -226,7 +226,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Varus/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: When Varus kills an enemy, he gains 10 / 15 / 20% (based on level) bonus attack speed as well as bonus attack damage and ability power equal to 10% bonus attack speed for 5 / 7 / 9 / 11 (based on level) seconds.",
+            "description": "Innate: When Varus kills an enemy, he gains 10% / 15% / 20% (based on level) bonus attack speed as well as bonus attack damage and ability power equal to 10% bonus attack speed for 5 / 7 / 9 / 11 (based on level) seconds.",
             "leveling": []
           },
           {
@@ -286,11 +286,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      60,
-                      106.67,
-                      153.33,
-                      200,
-                      246.67
+                      53.33,
+                      100,
+                      146.67,
+                      193.33,
+                      240
                     ],
                     "units": [
                       "",
@@ -323,11 +323,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      90,
-                      160,
-                      230,
-                      300,
-                      370
+                      80,
+                      150,
+                      220,
+                      290,
+                      360
                     ],
                     "units": [
                       "",
@@ -360,11 +360,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      19.8,
-                      35.2,
-                      50.6,
-                      66,
-                      81.4
+                      17.6,
+                      33,
+                      48.4,
+                      63.8,
+                      79.2
                     ],
                     "units": [
                       "",
@@ -397,11 +397,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      29.7,
-                      52.8,
-                      75.9,
-                      99,
-                      122.1
+                      26.4,
+                      49.5,
+                      72.6,
+                      95.7,
+                      118.8
                     ],
                     "units": [
                       "",
@@ -512,10 +512,10 @@
                   {
                     "values": [
                       6,
-                      12,
-                      18,
-                      24,
-                      30
+                      14,
+                      22,
+                      30,
+                      38
                     ],
                     "units": [
                       "",
@@ -789,8 +789,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The monster damage cap is also increased by 0% : 50% (based on  Piercing Arrow's charge time) if the stacks were consumed with  Piercing Arrow.\n Spell shield will not block the  on-hit damage but will block the consumption damage if the target is hit by his abilities.\nBlighted Quiver's active damage is dealt after the damage of  Piercing Arrow.\nBlighted Quiver does not count as an ability activation for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nThe attacks do not affect structures nor wards.\nPENDING FOR TEST:: Blighted Quiver's on-hit interaction with parrying effects ( dodge,  block,  blind).",
-        "blurb": "Passive:  Varus' basic attacks deal bonus magic damage and apply a stack of Blight, up to 3. His abilities detonate all Blight stacks on enemies hit to apply new effects.",
+        "notes": "The monster damage cap is also increased by 0% : 50% (based on  Piercing Arrow's charge time) if the stacks were consumed with  Piercing Arrow.\n Spell shield will not block the  on-hit damage but will block the consumption damage if the target is hit by his abilities.\nBlighted Quiver's active damage is dealt after the damage of  Piercing Arrow.\nBlighted Quiver does not count as an ability activation for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nThe attacks do not affect  structures nor  wards.\nPENDING FOR TEST:: Blighted Quiver's on-hit interaction with parrying effects ( dodge,  block,  blind).",
+        "blurb": "Passive:  Varus'  basic attacks deal bonus magic damage and apply a  stack of Blight, up to 3. His  abilities detonate all Blight stacks on enemies hit to apply new effects.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -819,10 +819,10 @@
                   {
                     "values": [
                       60,
-                      100,
-                      140,
-                      180,
-                      220
+                      90,
+                      120,
+                      150,
+                      180
                     ],
                     "units": [
                       "",
@@ -834,11 +834,11 @@
                   },
                   {
                     "values": [
-                      100,
-                      100,
-                      100,
-                      100,
-                      100
+                      90,
+                      90,
+                      90,
+                      90,
+                      90
                     ],
                     "units": [
                       "% bonus AD",
@@ -1035,7 +1035,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The tendril seeks and registers valid targets every 0.264 seconds.\nEnemy champions can be targeted again by the corruption's tether if they were not infected the previous time, even if they were targeted and exited its range.\nA tendril that roots into the ground will only seek nearby enemy champions that were already in the area.\nChain of Corruption will not infect  crowd control immune targets or those protected by  spell shields (but will still seek them).\nVarus will turn to face the target direction at the start of the cast.\nThe tendril cannot seek enemy champions that are  untargetable, and will also stop seeking a target if it becomes untargetable (fails to apply its effects if they remain in the area).\nThis ability will cast from wherever the caster is at the end of the cast time.\nConsuming the Blight's stacks applied by Chain of Corruption will deal bonus magic damage based on  Blighted Quiver's rank. If the ability hasn't been ranked yet, the three Blight stacks will still be applied but they will be considered to be at rank 0, dealing 1.25% (+ 2% per 100 AP) of the target's maximum health per stack.",
+        "notes": "The tendril seeks and registers valid targets every 0.264 seconds.\nEnemy champions can be targeted again by the corruption's tether if they were not infected the previous time, even if they were targeted and exited its range.\nA tendril that roots into the ground will only seek nearby enemy champions that were already in the area.\nChain of Corruption will not infect  crowd control immune targets or those protected by  spell shields (but will still seek them).\nVarus will turn to face the target direction at the start of the cast.\nThe tendril cannot seek enemy champions that are  untargetable, and will also stop seeking a target if it becomes untargetable (fails to apply its effects if they remain in the area).\nThis ability will cast from wherever the caster is at the end of the cast time.\nChain of Corruption can generate  Blight stacks for Varus to detonate with any ability, even if Blighted Quiver has not been learned. The base detonation damage per Blight stack scales with Blighted Quiver's rank, which has a value at rank 0 of 2.5% of the target's maximum health per stack detonated.",
         "blurb": "Active:  Varus unleashes a tendril in the target direction that infects the first enemy champion hit, dealing magic damage and  rooting them for a short time. They are also  revealed and rapidly inflicted with  Blight stacks.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1054,7 +1054,7 @@
   },
   "releaseDate": "2012-05-08",
   "releasePatch": "1.0.0.139",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 880,
@@ -1614,8 +1614,8 @@
           "id": 110020,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/110/110020.png",
           "colors": [
-            "#E58BA5",
-            "#E58BA5"
+            "#9C68D7",
+            "#9C68D7"
           ],
           "descriptions": [
             {

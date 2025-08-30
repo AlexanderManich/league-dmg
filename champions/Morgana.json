@@ -4,7 +4,7 @@
   "name": "Morgana",
   "title": "the Fallen",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Morgana.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Morgana.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -402,18 +402,18 @@
             "leveling": []
           },
           {
-            "description": "Active: Morgana torments the soil at the target location, causing the area to become desecrated for 5 seconds. Enemies within take magic damage on-cast and every 0.5 seconds, increased by 0% : 170% (based on target's missing health). Tormented Shadow deals 170% damage against monsters.",
+            "description": "Active: Morgana torments the soil at the target location, causing the area to become desecrated for 5 seconds. Enemies within take magic damage on-cast and every 0.5 seconds, increased by 0% : 100% (based on target's missing health). Tormented Shadow deals 170% damage against monsters.",
             "leveling": [
               {
                 "attribute": "Minimum Damage Per Tick",
                 "modifiers": [
                   {
                     "values": [
-                      6,
-                      11.5,
-                      17,
-                      22.5,
-                      28
+                      7,
+                      14,
+                      21,
+                      28,
+                      35
                     ],
                     "units": [
                       "",
@@ -425,11 +425,11 @@
                   },
                   {
                     "values": [
-                      8.5,
-                      8.5,
-                      8.5,
-                      8.5,
-                      8.5
+                      10,
+                      10,
+                      10,
+                      10,
+                      10
                     ],
                     "units": [
                       "% AP",
@@ -446,11 +446,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      16.2,
-                      31.05,
-                      45.9,
-                      60.75,
-                      75.6
+                      14,
+                      28,
+                      42,
+                      56,
+                      70
                     ],
                     "units": [
                       "",
@@ -462,11 +462,11 @@
                   },
                   {
                     "values": [
-                      22.95,
-                      22.95,
-                      22.95,
-                      22.95,
-                      22.95
+                      20,
+                      20,
+                      20,
+                      20,
+                      20
                     ],
                     "units": [
                       "% AP",
@@ -483,11 +483,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      60,
-                      115,
-                      170,
-                      225,
-                      280
+                      70,
+                      140,
+                      210,
+                      280,
+                      350
                     ],
                     "units": [
                       "",
@@ -499,11 +499,11 @@
                   },
                   {
                     "values": [
-                      85,
-                      85,
-                      85,
-                      85,
-                      85
+                      100,
+                      100,
+                      100,
+                      100,
+                      100
                     ],
                     "units": [
                       "% AP",
@@ -520,11 +520,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      162,
-                      310.5,
-                      459,
-                      607.5,
-                      756
+                      140,
+                      280,
+                      420,
+                      560,
+                      700
                     ],
                     "units": [
                       "",
@@ -536,11 +536,11 @@
                   },
                   {
                     "values": [
-                      229.5,
-                      229.5,
-                      229.5,
-                      229.5,
-                      229.5
+                      200,
+                      200,
+                      200,
+                      200,
+                      200
                     ],
                     "units": [
                       "% AP",
@@ -908,7 +908,7 @@
   },
   "releaseDate": "2009-02-21",
   "releasePatch": "Alpha Week 2",
-  "patchLastChanged": "25.09",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 675,
     "rp": 585,
@@ -2800,7 +2800,7 @@
       "name": "Spirit Blossom",
       "id": 25080,
       "isBase": false,
-      "availability": "Upcoming",
+      "availability": "Available",
       "formatName": "Spirit Blossom",
       "lootEligible": false,
       "cost": "Sanctum",
@@ -2811,7 +2811,7 @@
         null
       ],
       "lore": "Twins, born of branch and bloom, guarded mortals from afar. But one sister yearned to feel as mortals do, and from this hunger made masked, demonic children—becoming the Grovemother. She traded places with a queen of nearby lands… but her children followed, bringing ruin and death. Now imprisoned in her grove, she still longs for the fullness of emotion.",
-      "release": "0000-00-00",
+      "release": "2025-06-25",
       "set": [
         "Spirit Blossom"
       ],

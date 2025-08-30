@@ -4,7 +4,7 @@
   "name": "Ahri",
   "title": "the Nine-Tailed Fox",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Ahri.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Ahri.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -246,7 +246,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "No additional details.",
-        "blurb": "Innate:  Ahri generates a stack of Essence Fragment from killing  minions and  monsters. At max stacks, she consumes them to  heal herself.",
+        "blurb": "Innate:  Ahri generates a  stack of Essence Fragment from killing  minions and  monsters. At max stacks, she consumes them to  heal herself.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -395,7 +395,7 @@
         "affects": "Enemies",
         "spellshieldable": "Special",
         "resource": "MANA",
-        "damageType": "MIXED_DAMAGE",
+        "damageType": "OTHER_DAMAGE",
         "spellEffects": "Area of effect",
         "projectile": "TRUE",
         "onHitEffects": null,
@@ -935,7 +935,7 @@
   },
   "releaseDate": "2011-12-14",
   "releasePatch": "1.0.0.131",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -3049,6 +3049,201 @@
       "splashArtist": [
         "Jennifer Wuestling",
         "Julia Yurtsev",
+        "Terence 'Terrylefruit' Cantal"
+      ]
+    },
+    {
+      "name": "Spirit Blossom Springs",
+      "id": 103088,
+      "isBase": false,
+      "availability": "Available",
+      "formatName": "Spirit Blossom Springs",
+      "lootEligible": true,
+      "cost": 1820,
+      "sale": 0,
+      "distribution": null,
+      "rarity": "Legendary",
+      "chromas": [
+        {
+          "name": "Catseye",
+          "id": 103092,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/103/103092.png",
+          "colors": [
+            "#FFEE59",
+            "#FFEE59"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Pearl",
+          "id": 103095,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/103/103095.png",
+          "colors": [
+            "#ECF9F8",
+            "#ECF9F8"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "TENCENT"
+            }
+          ]
+        },
+        {
+          "name": "Ruby",
+          "id": 103090,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/103/103090.png",
+          "colors": [
+            "#D33528",
+            "#D33528"
+          ],
+          "descriptions": [
+            {
+              "description": "This chroma was released as a bundle exclusive in 2025.",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Sapphire",
+          "id": 103094,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/103/103094.png",
+          "colors": [
+            "#2756CE",
+            "#2756CE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Tanzanite",
+          "id": 103093,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/103/103093.png",
+          "colors": [
+            "#54209B",
+            "#54209B"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Turquoise",
+          "id": 103091,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/103/103091.png",
+          "colors": [
+            "#73BFBE",
+            "#73BFBE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        }
+      ],
+      "lore": "Owner and proprietor of the Spirit Blossom Springs bathhouse, Ahri has turned her favorite mountain into a hidden oasis. Wielding a keen understanding of the power of rest, she indulges her appetite for life's richest flavors—one memory at a time. Only one with a sharp yet kindhearted wit could handle her guests' spirited dispositions.",
+      "release": "2025-07-30",
+      "set": [
+        "Spirit Blossom Springs"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin88/images/ahri_splash_centered_88.skins_ahri_skin88.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin88/images/ahri_splash_uncentered_88.skins_ahri_skin88.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin88/images/ahri_splash_tile_88.skins_ahri_skin88.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin88/ahriloadscreen_88.skins_ahri_skin88.jpg",
+      "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin88/ahriloadscreen_88_le.skins_ahri_skin88.jpg",
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": true,
+      "newQuotes": false,
+      "voiceActor": [
+        "Laura Post"
+      ],
+      "splashArtist": [
+        "Roanna Peroz"
+      ]
+    },
+    {
+      "name": "After Hours Spirit Blossom Springs",
+      "id": 103089,
+      "isBase": false,
+      "availability": "Rare",
+      "formatName": "After Hours Spirit Blossom Springs",
+      "lootEligible": true,
+      "cost": "Special",
+      "sale": 0,
+      "distribution": "0.5% drop rate from the Sanctum or opening 40 Ancient Sparks",
+      "rarity": "Mythic",
+      "chromas": [],
+      "lore": "Sunlight turns the magical steam of Spirit Blossom Springs into a warm, inviting embrace—but moonlight stirs the steam into an exhilarating flurry of energy. During evening hours, Ahri sets the mood by showing off her wry and fun-loving side, encouraging guests to abandon their egos and let loose. One night away from life's obligations won't hurt anyone.",
+      "release": "2025-07-30",
+      "set": [
+        "Spirit Blossom Springs"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin89/images/ahri_splash_centered_89.skins_ahri_skin89.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin89/images/ahri_splash_uncentered_89.skins_ahri_skin89.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin89/images/ahri_splash_tile_89.skins_ahri_skin89.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin89/ahriloadscreen_89.skins_ahri_skin89.jpg",
+      "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ahri/skins/skin89/ahriloadscreen_89_le.skins_ahri_skin89.jpg",
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": true,
+      "newQuotes": false,
+      "voiceActor": [
+        "Laura Post"
+      ],
+      "splashArtist": [
         "Terence 'Terrylefruit' Cantal"
       ]
     }

@@ -4,7 +4,7 @@
   "name": "Rengar",
   "title": "the Pridestalker",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Rengar.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Rengar.png",
   "resource": "FEROCITY",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -227,7 +227,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Rengar/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Rengar generates 1 Ferocity upon casting a basic ability or using Savagery's first attack. At 4 Ferocity, his next basic ability consumes them all to become empowered with an additional effect and grant him an additional cast along with 30 / 40 / 50% (based on level) bonus movement speed for 1.5 seconds. All Ferocity is lost after 10 seconds of being out of combat.Reaching 4 Ferocity with Savagery or Bola Strike locks the empowered version of the ability from being cast for 0.1 seconds. Similarly, consuming all Ferocity with an empowered ability locks the unempowered version of the ability from being cast for 0.1 seconds if it is not already on cooldown, increased to 0.25 seconds for Battle Roar.",
+            "description": "Innate: Rengar generates 1 Ferocity upon casting a basic ability or using Savagery's first attack. At 4 Ferocity, his next basic ability consumes them all to become empowered with an additional effect and grant him an additional cast along with 30% / 40% / 50% (based on level) bonus movement speed for 1.5 seconds. All Ferocity is lost after 10 seconds of not dealing or taking damage, excluding damage dealt by damage over time or proc effects.Reaching 4 Ferocity with Savagery or Bola Strike locks the empowered version of the ability from being cast for 0.1 seconds. Similarly, consuming all Ferocity with an empowered ability locks the unempowered version of the ability from being cast for 0.1 seconds if it is not already on cooldown, increased to 0.25 seconds for Battle Roar.",
             "leveling": []
           },
           {
@@ -675,7 +675,7 @@
             ]
           },
           {
-            "description": "Attacking or casting abilities, other than Savagery, ends Thrill of the Hunt immediately.",
+            "description": "Attacking or casting abilities other than Savagery ends Thrill of the Hunt immediately.",
             "leveling": []
           }
         ],
@@ -706,7 +706,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Thrill of the Hunt's duration starts on-cast.\nThe armor reduction applies after the attack.\nThe  true sight reveal on the target stays until the leap finishes.\nRengar discerns a distinct  heart beat instead of the usual  true sight indicator. This indicator will be removed when out of range, but the target will remain revealed.\nUsing a basic attack breaks the stealth at the end of the attack windup.\nThrill of the Hunt has an indicator that appears above the target(s) when Rengar is nearby. Some skins have a unique indicator.\n\n\n\n\n Headhunter\n\n\n\n\n\n\n Night Hunter\n\n\n\n\n\n\n Mecha\n\n\n\n\n\n\n Pretty Kitty\n\n\n\n\n\n\n Guardian of the Sands\n\n\n\n\n\n\n Sentinel\n\n\n\n\n\n\n Street Demons",
+        "notes": "Thrill of the Hunt's duration starts on-cast.\nThe armor reduction applies after the attack.\nIf the attack out of Thrill of the Hunt is prevented or blocked (e.g. by  knocking down Rengar when  leaping) then the effect will not be applied.\nThe  true sight reveal on the target stays until the leap finishes.\nRengar discerns a distinct  heart beat instead of the usual  true sight indicator. This indicator will be removed when out of range, but the target will remain revealed.\nUsing a basic attack breaks the stealth at the end of the attack windup.\nThrill of the Hunt has an indicator that appears above the target(s) when Rengar is nearby. Some skins have a unique indicator.\n\n\n\n Headhunter\n\n\n\n Night Hunter\n\n\n\n Mecha\n\n\n\n Pretty Kitty\n\n\n\n Guardian of the Sands\n\n\n\n Sentinel\n\n\n\n Street Demons",
         "blurb": "Passive:  Rengar also gains  Unseen Predator while  camouflaged.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -725,7 +725,7 @@
   },
   "releaseDate": "2012-08-21",
   "releasePatch": "1.0.0.145",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

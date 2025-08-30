@@ -4,7 +4,7 @@
   "name": "Lissandra",
   "title": "the Ice Witch",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Lissandra.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Lissandra.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -526,7 +526,7 @@
         "width": null,
         "angle": null,
         "castTime": "none",
-        "effectRadius": "450",
+        "effectRadius": "275",
         "targetRange": null
       }
     ],

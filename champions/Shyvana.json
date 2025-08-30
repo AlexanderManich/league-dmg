@@ -4,7 +4,7 @@
   "name": "Shyvana",
   "title": "the Half-Dragon",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Shyvana.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Shyvana.png",
   "resource": "FURY",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -378,7 +378,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Applies  spell damage and procs  basic damage required effects.\nDragon Form's Twin Bite only applies the attack to enemies that would be hit by the second strike.\nIn Dragon Form, both strikes belong to the same cast instance. In Human Form, they belong in separate ones.\nSince the second strike applies after the ability goes on cooldown, it will reduce its own cooldown.\nUnlike most on-hit effects, the one reducing the cooldown of Twin Bite also triggers against  structures.\nIn Dragon Form, Twin Bite consumes an additional stack of  Hail of Blades. (bug)",
+        "notes": "Applies  spell damage and procs  basic damage required effects.\nPENDING FOR TEST: Dragon Form's Twin Bite can attack  stealthed units in the area.\nDragon Form's Twin Bite only applies the attack to enemies that would be hit by the second strike.\nIn Dragon Form, both strikes belong to the same cast instance. In Human Form, they belong in separate ones.\nSince the second strike applies after the ability goes on cooldown, it will reduce its own cooldown.\nUnlike most on-hit effects, the one reducing the cooldown of Twin Bite also triggers against  structures.\nIn Dragon Form, Twin Bite consumes an additional stack of  Hail of Blades. (bug)",
         "blurb": "Active:  Shyvana's next basic attack within a few seconds will cause her to quickly strike again, dealing bonus physical damage.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1163,8 +1163,8 @@
           "id": 102007,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/102/102007.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {

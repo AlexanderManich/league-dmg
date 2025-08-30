@@ -4,7 +4,7 @@
   "name": "Nautilus",
   "title": "the Titan of the Depths",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Nautilus.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Nautilus.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -371,7 +371,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Dredge Line turns Nautilus' facing direction accordingly upon hitting a valid target.\nDredge Line can interact with player-generated terrain.\nNautilus will  dash all the way to the target's location if Dredge Line executed them or they negated the  displacement.\nDredge Line will not interrupt any movement commands Nautilus was issued pre-cast so long as their directions somewhat correlate (this is intentional to smooth out traveling/escaping).\n Spell shield will block the ability but Nautilus will still dash partway to the target.\nThe anchor projectile will stop if Nautilus dies while the projectile is traveling. Enemies hit will still be dealt damage. The  drag and  root are not applied if Nautilus did not initiate the dash.\nThis ability will cast from wherever the caster is at the start of the cast time.\nThe following table refers for interactions during Dredge Line's cast time.\n\n\nType\n\nCast time\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\n Shurelya's Battlesong  Youmuu's Ghostblade  Randuin's Omen\n\n\nDisabled\n\nAll the other item-actives are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath, unless protected by  Resurrection",
+        "notes": "Dredge Line has two hitboxes. The outer hitbox, shown by a visual effect on the ground, will hit champions edge-to-edge. The inner hitbox, shown by the anchor, can hit terrain. Near thinner walls, this can cause the ability to hit a champion on the other side.\nDredge Line turns Nautilus' facing direction accordingly upon hitting a valid target.\nDredge Line can interact with player-generated terrain.\nNautilus will  dash all the way to the target's location if Dredge Line executed them or they negated the  displacement.\nDredge Line will not interrupt any movement commands Nautilus was issued pre-cast so long as their directions somewhat correlate (this is intentional to smooth out traveling/escaping).\n Spell shield will block the ability but Nautilus will still dash partway to the target.\nThe anchor projectile will stop if Nautilus dies while the projectile is traveling. Enemies hit will still be dealt damage. The  drag and  root are not applied if Nautilus did not initiate the dash.\n Displacement immunity will not resist the application of the  stun.\nThis ability will cast from wherever the caster is at the start of the cast time.\nThe following table refers for interactions during Dredge Line's cast time.\n\n\nType\n\nCast time\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\n Shurelya's Battlesong  Youmuu's Ghostblade  Randuin's Omen\n\n\nDisabled\n\nAll the other item-actives are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath, unless protected by  Resurrection",
         "blurb": null,
         "missileSpeed": null,
         "rechargeRate": null,
@@ -532,7 +532,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Pain of Wrath's first damage instance is tagged as  spell damage, while the second damage instance is tagged as  persistent damage.\nPain of Wrath damage over time debuff replaces itself when reapplied to the target, restarting its tick timer. This will prevent the second instance of damage from the previous debuff.\nPain of Wrath will be applied by Nautilus's basic attack if he is affected by Titan's Wrath at the start of the attack windup, even if Titan's Wrath expires during the windup.\nPain of Wrath will not be applied if the basic attack is  dodged or  blocked, but will be applied if it is  missed.\n Spell shield will block the ability (but only a single application).",
-        "blurb": "Active:  Nautilus  shields himself for a few seconds. While the shield holds, his basic attacks apply Pain of Wrath to the target and surrounding enemies.",
+        "blurb": "Active:  Nautilus  shields himself for a few seconds. While the shield holds, his  basic attacks apply Pain of Wrath to the target and surrounding enemies.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -690,92 +690,18 @@
             ]
           },
           {
-            "description": "Riptide deals 150% damage against monsters.",
+            "description": "The first hit against monsters deals bonus magic damage.",
             "leveling": [
               {
-                "attribute": "Monster Damage",
+                "attribute": "Monster Bonus Damage",
                 "modifiers": [
                   {
                     "values": [
-                      82.5,
-                      135,
-                      187.5,
-                      240,
-                      292.5
-                    ],
-                    "units": [
-                      "",
-                      "",
-                      "",
-                      "",
-                      ""
-                    ]
-                  },
-                  {
-                    "values": [
-                      75,
-                      75,
-                      75,
-                      75,
-                      75
-                    ],
-                    "units": [
-                      "% AP",
-                      "% AP",
-                      "% AP",
-                      "% AP",
-                      "% AP"
-                    ]
-                  }
-                ]
-              },
-              {
-                "attribute": "Reduced Monster Damage",
-                "modifiers": [
-                  {
-                    "values": [
-                      41.25,
-                      67.5,
-                      93.75,
-                      120,
-                      146.25
-                    ],
-                    "units": [
-                      "",
-                      "",
-                      "",
-                      "",
-                      ""
-                    ]
-                  },
-                  {
-                    "values": [
-                      37.5,
-                      37.5,
-                      37.5,
-                      37.5,
-                      37.5
-                    ],
-                    "units": [
-                      "% AP",
-                      "% AP",
-                      "% AP",
-                      "% AP",
-                      "% AP"
-                    ]
-                  }
-                ]
-              },
-              {
-                "attribute": "Maximum Total Monster Damage",
-                "modifiers": [
-                  {
-                    "values": [
+                      125,
                       165,
-                      270,
-                      375,
-                      480,
-                      585
+                      205,
+                      245,
+                      285
                     ],
                     "units": [
                       "",
@@ -787,11 +713,11 @@
                   },
                   {
                     "values": [
-                      150,
-                      150,
-                      150,
-                      150,
-                      150
+                      50,
+                      50,
+                      50,
+                      50,
+                      50
                     ],
                     "units": [
                       "% AP",
@@ -1022,7 +948,7 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Depth Charge starts in an offset from whichever direction Nautilus is facing at the end of the cast time.\nSince  Dredge Line's causes Nautilus to change his facing direction upon hitting a valid target, Depth Charge's starting point can be changed with a quick  Dredge Line + Depth Charge combo.\nEnemies a certain distance away from the charge / eruption are instead  knocked back.\nDepth Charge's final eruption will occur prematurely if the primary target moves more than 3000 units away from it.\nDepth Charge will not stop chasing if the target dies or becomes untargetable.\n Dredge Line will not override Depth Charge's  knock up.\nNautilus will  reveal himself during the cast time.\n Displacement immunity will not resist the application of the  stun.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
+        "notes": "Depth Charge starts in an offset from whichever direction Nautilus is facing at the end of the cast time.\nSince  Dredge Line's causes Nautilus to change his facing direction upon hitting a valid target, Depth Charge's starting point can be changed with a quick  Dredge Line + Depth Charge combo.\nEnemies a certain distance away from the charge / eruption are instead  knocked back.\nDepth Charge's final eruption will occur prematurely if the primary target moves more than 3000 units away from it.\nDepth Charge will not stop chasing if the target dies or becomes untargetable.\n Dredge Line will not override Depth Charge's  knock up.\n Displacement immunity will not resist the application of the  stun.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
         "blurb": "Active:  Nautilus sends a Depth Charge that chases the target enemy champion. It creates eruptions in its wake that deal magic damage to enemies hit, as well as briefly  knocking up and  stunning them.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1041,7 +967,7 @@
   },
   "releaseDate": "2012-02-14",
   "releasePatch": "1.0.0.134",
-  "patchLastChanged": "25.04",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

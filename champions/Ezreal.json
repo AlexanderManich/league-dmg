@@ -4,7 +4,7 @@
   "name": "Ezreal",
   "title": "the Prodigal Explorer",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Ezreal.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Ezreal.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -216,7 +216,7 @@
     "mobility": 3,
     "utility": 1,
     "abilityReliance": 45,
-    "difficulty": 1
+    "difficulty": 2
   },
   "abilities": {
     "P": [
@@ -245,7 +245,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Rising Spell Force will stack even if the abilities hit were blocked by  spell shields.",
-        "blurb": "Innate:  Ezreal's abilities generate stacks of Rising Spell Force for each enemy hit, up to a cap.",
+        "blurb": "Innate:  Ezreal's abilities generate  stacks of Rising Spell Force for each enemy hit, up to a cap.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -676,7 +676,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Ezreal/ability-icon/r",
         "effects": [
           {
-            "description": "Active: Ezreal fires an arc of energy in the target direction that briefly grants sight of its surroundings and deals magic damage to enemies hit.",
+            "description": "Active: Ezreal fires a powerful arc of energy in the target direction that briefly grants sight of its surroundings and deals magic damage to enemies hit.",
             "leveling": [
               {
                 "attribute": "Magic Damage",
@@ -811,7 +811,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Trueshot Barrage's projectile has an  icon on the mini-map while it is in flight. It can be seen by only Ezreal and his allies.\nThis ability will cast from wherever the caster is at the start of the cast time.",
-        "blurb": "Active:  Ezreal winds up to fire a powerful bolt of energy that deals magic damage to enemies hit.",
+        "blurb": "Active:  Ezreal fires a powerful arc of energy that deals magic damage to enemies hit.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,

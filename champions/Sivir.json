@@ -4,7 +4,7 @@
   "name": "Sivir",
   "title": "the Battle Mistress",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Sivir.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Sivir.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -620,7 +620,7 @@
             "leveling": []
           },
           {
-            "description": "Ricochet resets Sivir's basic attack timer. The target does not have to be visible to be bounced to.",
+            "description": "Gaining Ricochet's attack speed buff resets Sivir's basic attack timer. The target does not have to be visible to be bounced to.",
             "leveling": []
           }
         ],
@@ -674,7 +674,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Ricochet-enhanced basic attacks can bounce from structures onto secondary targets but not from nearby units onto structures.\nPENDING FOR TEST:: Ricochet's  interactions with  dodging,  blocking, and  blinding effects.\nRicochet do not apply to additional targets with  Runaan's Hurricane.",
+        "notes": "Ricochet-enhanced basic attacks can bounce from structures onto secondary targets but not from nearby units onto structures.\nPENDING FOR TEST:: Ricochet's  interactions with  dodging,  blocking, and  blinding effects.\nRicochet do not apply to additional targets with  Runaan's Hurricane.\nSivir's attack timer will only reset from casting Ricochet if the attack speed buff was not already active on her. Refreshing the buff will not grant an attack reset.(bug)",
         "blurb": "Active:  Sivir gains  bonus attack speed for a few seconds. During this time, her basic attacks create projectiles that repeatedly bounce to nearby surrounding enemies, dealing physical damage.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -769,7 +769,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Spell Shield will heal and activate  Fleet of Foot if any effect is blocked. This includes effects such as champion abilities, item effects, 's basic attacks, as well as the abilities of  Baron Nashor and  Rift Herald.\nSpell Shield will still block abilities that have already been applied to Sivir if the delayed effects of that ability is area of effect (e.g.  Blaze's explosion,  Chum the Waters, and  Time Bomb).",
+        "notes": "Spell Shield will heal and activate  Fleet of Foot if any effect is blocked. This includes effects such as champion abilities, item effects,  Dragon's basic attacks, as well as the abilities of  Baron Nashor and  Rift Herald.\nSpell Shield will still block abilities that have already been applied to Sivir if the delayed effects of that ability is area of effect (e.g.  Blaze's explosion,  Chum the Waters, and  Time Bomb).",
         "blurb": "Active:  Sivir briefly gains a  spell shield.",
         "missileSpeed": null,
         "rechargeRate": null,

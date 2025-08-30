@@ -4,9 +4,9 @@
   "name": "Jayce",
   "title": "the Defender of Tomorrow",
   "fullName": "Jayce Talis",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Jayce.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Jayce.png",
   "resource": "MANA",
-  "attackType": "MELEE",
+  "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
   "stats": {
     "health": {
@@ -218,7 +218,7 @@
     "mobility": 2,
     "utility": 2,
     "abilityReliance": 45,
-    "difficulty": 2
+    "difficulty": 3
   },
   "abilities": {
     "P": [
@@ -1131,7 +1131,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Jayce/ability-icon/r",
         "effects": [
           {
-            "description": "Active: Jayce transforms into Cannon Stance, receiving access to its abilities, becoming ranged with 500 attack range, and empowering his next basic attack to reduce the target's armor and magic resistance by 10 / 15 / 20 / 25% (based on level) for 5 seconds.",
+            "description": "Active: Jayce transforms into Cannon Stance, receiving access to its abilities, becoming ranged with 500 attack range, and empowering his next basic attack to reduce the target's armor and magic resistance by 10% / 15% / 20% / 25% (based on level) for 5 seconds.",
             "leveling": []
           },
           {
@@ -1252,7 +1252,7 @@
   },
   "releaseDate": "2012-07-07",
   "releasePatch": "1.0.0.142",
-  "patchLastChanged": "25.04",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

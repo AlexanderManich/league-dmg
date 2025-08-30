@@ -4,7 +4,7 @@
   "name": "Milio",
   "title": "The Gentle Flame",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Milio.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Milio.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -226,7 +226,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Milio/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Milio's ability hits on himself and allied champions grant an enchantment for 4 seconds, which causes the next basic attack or ability hit against enemies to deal 7 / 11 / 15% (based on level) of enchanted target's AD bonus magic damage and apply a burn that deals[ 10 : 50 (based on level) (+ 20% of Milio's AP) magic damage over 1.5 seconds. ][ 1.67 : 8.33 (based on level) (+ 3.33% of Milio's AP) magic damage every 0.25 seconds over 1.5 seconds. ]",
+            "description": "Innate: Milio's ability hits on himself and allied champions grant an enchantment for 4 seconds, which causes the next basic attack or ability hit against enemies to deal 7% / 11% / 15% (based on level) of enchanted target's AD bonus magic damage and apply a burn that deals[ 10 : 50 (based on level) (+ 20% of Milio's AP) magic damage over 1.5 seconds. ][ 1.67 : 8.33 (based on level) (+ 3.33% of Milio's AP) magic damage every 0.25 seconds over 1.5 seconds. ]",
             "leveling": []
           }
         ],
@@ -413,7 +413,7 @@
         "onTargetCdStatic": null,
         "innerRadius": null,
         "speed": "1200",
-        "width": "60",
+        "width": "120",
         "angle": null,
         "castTime": "none",
         "effectRadius": "100 /  250 / 275 / 190",
@@ -858,7 +858,7 @@
   },
   "releaseDate": "2023-03-23",
   "releasePatch": "13.6",
-  "patchLastChanged": "14.14",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

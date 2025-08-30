@@ -4,7 +4,7 @@
   "name": "Orianna",
   "title": "the Lady of Clockwork",
   "fullName": "Orianna Reveck",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Orianna.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Orianna.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -217,7 +217,7 @@
     "mobility": 1,
     "utility": 2,
     "abilityReliance": 90,
-    "difficulty": 2
+    "difficulty": 3
   },
   "abilities": {
     "P": [
@@ -249,8 +249,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Clockwork Winding's stack count can be seen in Orianna's buff bar.\nThe Ball will not incur its global cooldown from a  Command: Protect cast that is used on a target already attached to it.\nThe attacks do not deal the bonus damage against structures.\n Runaan's Hurricane's extra bolts will cause Clockwork Winding to reset its stacks, as she hits targets other than her latest one on-hit.(bug)",
-        "blurb": "Innate:  Orianna is accompanied by  The Ball, which she commands with her abilities. The Ball attaches to Orianna when she approaches it, and snaps back to her when she moves too far away. The Ball incurs a  brief cooldown on Orianna's abilities whenever it moves.",
+        "notes": "Clockwork Winding's stack count can be seen in Orianna's buff bar.\nThe Ball will not incur its global cooldown from a  Command: Protect cast that is used on a target already attached to it.\nThe attacks do not deal the bonus damage against  structures.\n Runaan's Hurricane's extra bolts will cause Clockwork Winding to reset its stacks, as she hits targets other than her latest one  on-hit.(note)",
+        "blurb": "Innate:  Orianna is accompanied by  The Ball, which she commands with her  abilities. The Ball attaches to Orianna when she approaches it, and snaps back to her when she moves too far away. The Ball incurs a  brief cooldown on Orianna's abilities whenever it moves.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -1696,8 +1696,8 @@
           "id": 61037,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/61/61037.png",
           "colors": [
-            "#C1F2D7",
-            "#C1F2D7"
+            "#C1F2FF",
+            "#C1F2FF"
           ],
           "descriptions": [
             {

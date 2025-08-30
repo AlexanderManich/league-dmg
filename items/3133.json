@@ -35,7 +35,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3133_fighter_t2_caulfieldswarhammer.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3133_fighter_t2_caulfieldswarhammer.png",
   "simpleDescription": "Attack Damage and Cooldown Reduction",
   "nicknames": [],
   "passives": [],

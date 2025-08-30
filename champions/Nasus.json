@@ -4,7 +4,7 @@
   "name": "Nasus",
   "title": "the Curator of the Sands",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Nasus.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Nasus.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -226,7 +226,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Nasus/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Nasus gains 12 / 18 / 24% (based on level) life steal.",
+            "description": "Innate: Nasus gains 12% / 18% / 24% (based on level) life steal.",
             "leveling": []
           }
         ],
@@ -1292,8 +1292,8 @@
           "id": 75013,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/75/75013.png",
           "colors": [
-            "#9F4A25",
-            "#9F4A25"
+            "#5F432B",
+            "#5F432B"
           ],
           "descriptions": [
             {

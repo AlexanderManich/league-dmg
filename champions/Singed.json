@@ -4,7 +4,7 @@
   "name": "Singed",
   "title": "the Mad Chemist",
   "fullName": "Corin Reveck",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Singed.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Singed.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -136,7 +136,7 @@
       "percentPerLevel": 0.0
     },
     "aramDamageDealt": {
-      "flat": 0.95,
+      "flat": 1,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -250,7 +250,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "No additional details.",
-        "blurb": "Innate: Whenever  Singed moves near a  champion, he gains  bonus movement speed for a short time, which refreshes on subsequent passes and stacks up to a cap.",
+        "blurb": "Innate: Whenever  Singed moves near a  champion, he gains  bonus movement speed for a short time, which refreshes on subsequent passes and  stacks up to a cap.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -408,7 +408,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Toggle abilities do not count as ability activations for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nThe clouds check for enemy targets in the area immediately upon being spawned. After a 0.25-0.5 second delay, they check every 0.25 seconds again until they fade.\nTargets already with the DoT can have the debuff refreshed only every 0.5 seconds.\nDue to the inconsistent offset between the first and future ticks is it possible for a static target to miss out on one refresh of the debuff, equal to 3 ticks of damage.\nIf Singed has moved less than 90 units since spawning the last poison cloud, it will spawn 35 units in front of him. They also only spawn every 1 second in this case.\nWhen Singed is moving faster than that, the poison clouds spawn more frequently and on top of himself.",
+        "notes": "Toggled abilities do not count as ability activations for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nThe clouds immediately inflict the debuff on enemy targets in their spawn area.\nWhile active after spawning, they check for valid targets who remain or re-enter a cloud every 0.25 seconds. Valid targets already afflicted with the poison will have their debuff's duration refreshed immediately and at the same cadence.\nIf Singed has moved fewer than 90 units since spawning the last poison cloud, it will spawn 35 units in front of him. They also only spawn every 1 second in this case.\nWhen Singed is moving faster than that, the poison clouds spawn more frequently and on top of himself.",
         "blurb": "Toggle:  Singed continually creates a toxic cloud that shortly lingers in his wake, which continually inflicts  poison to enemies within.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -805,7 +805,7 @@
   },
   "releaseDate": "2009-04-18",
   "releasePatch": "April 18, 2009 Patch",
-  "patchLastChanged": "25.08",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 260,
@@ -1384,8 +1384,8 @@
           "id": 27021,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/27/27021.png",
           "colors": [
-            "#DF9117",
-            "#DF9117"
+            "#FFEE59",
+            "#FFEE59"
           ],
           "descriptions": [
             {

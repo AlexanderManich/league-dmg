@@ -4,7 +4,7 @@
   "name": "Aurelion Sol",
   "title": "The Star Forger",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/AurelionSol.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/AurelionSol.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -216,7 +216,7 @@
     "mobility": 2,
     "utility": 1,
     "abilityReliance": 100,
-    "difficulty": 3
+    "difficulty": 2
   },
   "abilities": {
     "P": [
@@ -613,7 +613,7 @@
         "speed": "335 + 100% movement speed / 167.5 + 50% movement speed",
         "width": null,
         "angle": null,
-        "castTime": "0.4",
+        "castTime": "0.4 / None",
         "effectRadius": null,
         "targetRange": "1500 (+ 7.5  ×  Stardust)"
       }

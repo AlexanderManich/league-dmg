@@ -4,7 +4,7 @@
   "name": "Miss Fortune",
   "title": "the Bounty Hunter",
   "fullName": "Sarah Fortune",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/MissFortune.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/MissFortune.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -1081,8 +1081,8 @@
           "id": 21011,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/21/21011.png",
           "colors": [
-            "#592AB5",
-            "#6FCAD4"
+            "#9C68D7",
+            "#9C68D7"
           ],
           "descriptions": [
             {
@@ -1106,8 +1106,8 @@
           "id": 21010,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/21/21010.png",
           "colors": [
-            "#AAFFFF",
-            "#FF55FF"
+            "#6ABBEE",
+            "#6ABBEE"
           ],
           "descriptions": [
             {
@@ -1131,8 +1131,8 @@
           "id": 21012,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/21/21012.png",
           "colors": [
-            "#BC7E11",
-            "#2298CA"
+            "#DF9117",
+            "#DF9117"
           ],
           "descriptions": [
             {
@@ -1181,8 +1181,8 @@
           "id": 21013,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/21/21013.png",
           "colors": [
-            "#BDDF5D",
-            "#CA37BE"
+            "#B6E084",
+            "#B6E084"
           ],
           "descriptions": [
             {
@@ -1206,8 +1206,8 @@
           "id": 21014,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/21/21014.png",
           "colors": [
-            "#B51717",
-            "#222DC8"
+            "#D33528",
+            "#D33528"
           ],
           "descriptions": [
             {
@@ -1743,8 +1743,8 @@
           "id": 21039,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/21/21039.png",
           "colors": [
-            "#2B7CFF",
-            "#FF930E"
+            "#F6A630",
+            "#1C61B4"
           ],
           "descriptions": [
             {
@@ -1916,8 +1916,8 @@
           "id": 21043,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/21/21043.png",
           "colors": [
-            "#DF9117",
-            "#DF9117"
+            "#FFEE59",
+            "#FFEE59"
           ],
           "descriptions": [
             {

@@ -4,7 +4,7 @@
   "name": "Twisted Fate",
   "title": "the Card Master",
   "fullName": "Tobias Felix",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/TwistedFate.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/TwistedFate.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -276,11 +276,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      70,
-                      115,
-                      160,
-                      205,
-                      250
+                      60,
+                      105,
+                      150,
+                      195,
+                      240
                     ],
                     "units": [
                       "",
@@ -814,8 +814,8 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Stacked Deck can be  dodged and/or missed if Twisted Fate is  blinded (the on-hit effect is not consumed in either case) but cannot be  blocked (the enhanced attack is consumed and the bonus damage is still applied).\nAs of patch V14.2, Twisted Fate is intended to gain maximum stacks of Stacked Deck upon learning the ability, but currently does not.(bug)\nThe empowered attack will trigger against structures but not wards.",
-        "blurb": "Passive:  Twisted Fate gains  bonus attack speed. His basic attacks  on-hit generate stacks of Stacked Deck, which stacks up to a cap.",
+        "notes": "Stacked Deck can be  dodged and/or missed if Twisted Fate is  blinded (the on-hit effect is not consumed in either case) but cannot be  blocked (the enhanced attack is consumed and the bonus damage is still applied).\nAs of patch V14.2, Twisted Fate is intended to gain maximum stacks of Stacked Deck upon learning the ability, but currently does not.(bug)\nThe empowered attack will trigger against  structures but not  wards.",
+        "blurb": "Passive:  Twisted Fate gains  bonus attack speed. His  basic attacks  on-hit generate  stacks of Stacked Deck, which stacks up to a cap.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -882,9 +882,9 @@
           "modifiers": [
             {
               "values": [
-                160,
-                130,
-                100
+                170,
+                140,
+                110
               ],
               "units": [
                 "",
@@ -923,7 +923,7 @@
   },
   "releaseDate": "2009-02-21",
   "releasePatch": "Alpha Week 2",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 2400,
     "rp": 585,
@@ -2264,7 +2264,7 @@
           ]
         }
       ],
-      "lore": "Victorious Twisted Fate was earned by players who accumulated enough split points in Ranked. The commotion in the high roller room seemed to be a celebration, until a man flew out the door onto a card table. Sticking out of his far-too-ritzy suit is a joker card—its wide smile only matched by the man who deployed it.",
+      "lore": "Victorious Twisted Fate was earned by players who accumulated enough split points in Ranked. There is no game of chance—be it cards, dice, or coins—that Twisted Fate can't turn in his favor. Despite that, what excites him now isn't victory, but the comeback—seeing how far he can push his luck before facing the consequences.",
       "release": "2025-04-30",
       "set": [
         "Victorious"
@@ -2283,7 +2283,7 @@
         "Owen Thomas"
       ],
       "splashArtist": [
-        "N/A"
+        "Pandart Studio"
       ]
     }
   ]

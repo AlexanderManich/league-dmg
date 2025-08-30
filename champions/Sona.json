@@ -4,7 +4,7 @@
   "name": "Sona",
   "title": "Maven of the Strings",
   "fullName": "Sona Buvelle",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Sona.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Sona.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -253,8 +253,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Power Chord stacks are represented by a counter under Sona's health bar, visible to the player only. It will light up when the empowered effect is available.\nWhen Power Chord is ready, Sona gains a ring around her. This ring will have a different color depending on the last ability used ( blue,  green or  purple).\nThe effect does not change if abilities are used while the projectile is in motion.\nThe triggering attack will apply other on-hit effects and can  critically strike as normal.\nSona retains Power Chord's stacks when entering  resurrection.\nThe empowered attack will trigger but not be consumed nor apply its effects against wards and jungle plants.",
-        "blurb": "Innate - Accelerando:  Sona gains a permanent stack of Accelerando each time she hits an enemy champion with  Hymn of Valor and each time she mitigates sufficient damage or heals damaged allies with  Aria of Perseverance. If she has max stacks, she instead  reduces the cooldown of  Crescendo each time.",
+        "notes": "Power Chord stacks are represented by a counter under Sona's health bar, visible to the player only. It will light up when the empowered effect is available.\nWhen Power Chord is ready, Sona gains a ring around her. This ring will have a different color depending on the last ability used ( blue,  green or  purple).\nThe effect does not change if abilities are used while the projectile is in motion.\nThe triggering attack will apply other  on-hit effects and can  critically strike as normal.\nSona retains Power Chord's stacks when entering  resurrection.\nThe empowered attack will trigger but not be consumed nor apply its effects against  wards and jungle plants.",
+        "blurb": "Innate - Accelerando:  Sona gains a permanent  stack of Accelerando each time she hits an enemy champion with  Hymn of Valor and each time she mitigates sufficient damage or heals damaged allies with  Aria of Perseverance. If she has max stacks, she instead  reduces the cooldown of  Crescendo each time.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -756,7 +756,7 @@
   },
   "releaseDate": "2010-09-21",
   "releasePatch": "1.0.0.101",
-  "patchLastChanged": "25.08",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 225,
     "rp": 260,
@@ -912,8 +912,8 @@
           "id": 37008,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/37/37008.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {
@@ -2352,6 +2352,209 @@
       "splashArtist": [
         "Santiago Parra",
         "Pandart Studio"
+      ]
+    },
+    {
+      "name": "Spirit Blossom Springs",
+      "id": 37066,
+      "isBase": false,
+      "availability": "Available",
+      "formatName": "Spirit Blossom Springs",
+      "lootEligible": true,
+      "cost": 1350,
+      "sale": 0,
+      "distribution": null,
+      "rarity": "Epic",
+      "chromas": [
+        {
+          "name": "Catseye",
+          "id": 37068,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/37/37068.png",
+          "colors": [
+            "#FFEE59",
+            "#FFEE59"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Emerald",
+          "id": 37069,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/37/37069.png",
+          "colors": [
+            "#2DA130",
+            "#2DA130"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Obsidian",
+          "id": 37073,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/37/37073.png",
+          "colors": [
+            "#27211C",
+            "#27211C"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Pearl",
+          "id": 37072,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/37/37072.png",
+          "colors": [
+            "#ECF9F8",
+            "#ECF9F8"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "TENCENT"
+            }
+          ]
+        },
+        {
+          "name": "Rose Quartz",
+          "id": 37074,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/37/37074.png",
+          "colors": [
+            "#E58BA5",
+            "#E58BA5"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "TENCENT"
+            }
+          ]
+        },
+        {
+          "name": "Ruby",
+          "id": 37067,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/37/37067.png",
+          "colors": [
+            "#D33528",
+            "#D33528"
+          ],
+          "descriptions": [
+            {
+              "description": "This chroma was released as a bundle exclusive in 2025.",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Tanzanite",
+          "id": 37071,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/37/37071.png",
+          "colors": [
+            "#54209B",
+            "#54209B"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Turquoise",
+          "id": 37070,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/37/37070.png",
+          "colors": [
+            "#73BFBE",
+            "#73BFBE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        }
+      ],
+      "lore": "Sona sets the soothing tone for the Kanmei Experience at Spirit Blossom Springs. Her enchanting melodies combined with the sauna's gentle steam can relax any muscle or mind. Her daytime soundbaths never fail to draw a crowd, but it is her exclusive evening shows where her musical prowess can truly be seen—if one is ready, that is.",
+      "release": "2025-07-30",
+      "set": [
+        "Spirit Blossom Springs"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/sona/skins/skin66/images/sona_splash_centered_66.skins_sona_skin66.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/sona/skins/skin66/images/sona_splash_uncentered_66.skins_sona_skin66.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/sona/skins/skin66/images/sona_splash_tile_66.skins_sona_skin66.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/sona/skins/skin66/sonaloadscreen_66.skins_sona_skin66.jpg",
+      "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/sona/skins/skin66/sonaloadscreen_66_le.skins_sona_skin66.jpg",
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": false,
+      "newQuotes": false,
+      "voiceActor": [
+        "Erin Fitzgerald"
+      ],
+      "splashArtist": [
+        "Alsie Lau"
       ]
     }
   ]

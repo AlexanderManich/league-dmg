@@ -4,7 +4,7 @@
   "name": "Fiora",
   "title": "the Grand Duelist",
   "fullName": "Fiora Laurent",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Fiora.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Fiora.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -230,7 +230,7 @@
             "leveling": []
           },
           {
-            "description": "Dealing damage in the direction of a Vital will trigger it to deal bonus true damage equal to 3% (+ 4% per 100 bonus AD) of target's maximum health, heal Fiora for 35 : 100 (based on level), and grant her 20 / 30 / 40 / 50% (based on Grand Challenge's Rank) bonus movement speed that decays over 1.85 seconds.",
+            "description": "Dealing damage in the direction of a Vital will trigger it to deal bonus true damage equal to 3% (+ 4% per 100 bonus AD) of target's maximum health, heal Fiora for 35 : 100 (based on level), and grant her 20% / 30% / 40% / 50% (based on Grand Challenge's Rank) bonus movement speed that decays over 1.85 seconds.",
             "leveling": []
           }
         ],
@@ -367,7 +367,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Lunge's dash speed is modified by her bonus movement speed at the time of cast:\n1100 + 350% bonus movement speed, capped at 1600 maximum dash speed if bonus movement speed is positive.\n1100 + 300% bonus movement speed, capped at 850 minimum dash speed if bonus movement speed is negative.\nFiora does not stab if the  dash is  interrupted.\n Flash gets sealed during the dash so Fiora cannot interrupt herself with it. This also means she cannot buffer Flash during the dash for it to be cast right afterward, however.\nFiora can cast  Hextech Rocketbelt during the dash, potentially interrupting it based on the timing, preventing the stab if it does.\nThe dash can pass through walls.\nThe dash has no forgiveness mechanic to clear distant or wider walls with. Any wall wider than 400 units is not crossable.\nThe stab searches for targets in its radius and prioritizes in order of:\nNearest enemy champion affected by  Grand Challenge with a Vital facing Fiora.\nNearest enemy champion Vital facing Fiora.\nNearest enemy champion affected by  Grand Challenge\nEnemy champion with the lowest percent health out of all champions <20% remaining health.\nNearest enemy champion, minion, or monster within 60% of the radius ( 252) with current health below Lunge's raw damage.\nNearest enemy champion in the radius check.\nNearest champion in a  rectangular check with 160 width and 450 units length backwards from Fiora's current facting direction, ignoring the normal radius check.\nTurning Fiora's facing direction during the dash (e.g. by casting  Riposte) can create some very long range hits opposite to her new facing direction, especially against targets with a large gameplay radius.(bug)\nNearest enemy minion with current health below Lunge's raw damage.\nAny nearest enemy minion or monster.\nStructures.\nVisible wards.\nLunge will not attempt to strike jungle plants.\nLunge deals  basic damage, but also triggers spell effects by also being tagged as  spell damage.\nLunge cannot  critically strike.\nLunge won't deal damage, if the spell is  dodged or  blocked, but will deal damage if Fiora is  blinded.\nLunge does not apply on-attack effects apart from certain exceptions.\nIt does apply  Energized as if it was an  on-hit effect.\nIt does not stack  Guinsoo's Rageblade nor trigger Phantom Hit.",
+        "notes": "Lunge's dash speed is modified by her bonus movement speed at the time of cast:\n1100 + 350% bonus movement speed, capped at 1600 maximum dash speed if bonus movement speed is positive.\n1100 + 300% bonus movement speed, capped at 850 minimum dash speed if bonus movement speed is negative.\nFiora does not stab if the  dash is  interrupted.\n Flash gets sealed during the dash so Fiora cannot interrupt herself with it. This also means she cannot buffer Flash during the dash for it to be cast right afterward, however.\nFiora can cast  Hextech Rocketbelt during the dash, potentially interrupting it based on the timing, preventing the stab if it does.\nThe dash can pass through walls.\nThe dash has no forgiveness mechanic to clear distant or wider walls with. Any wall wider than 400 units is not crossable.\nThe stab searches for targets in its radius and prioritizes in order of:\nNearest enemy champion affected by  Grand Challenge with a Vital facing Fiora.\nNearest enemy champion Vital facing Fiora.\nNearest enemy champion affected by  Grand Challenge\nEnemy champion with the lowest percent health out of all champions <20% remaining health.\nNearest enemy champion, minion, or monster within 60% of the radius ( 252) with current health below Lunge's raw damage.\nNearest enemy champion in the radius check.\nNearest champion in a  rectangular check with 160 width and 450 units length backwards from Fiora's current facting direction, ignoring the normal radius check.\nTurning Fiora's facing direction during the dash (e.g. by casting  Riposte) can create some very long range hits opposite to her new facing direction, especially against targets with a large gameplay radius.(bug)\nNearest enemy minion with current health below Lunge's raw damage.\nAny nearest enemy minion or monster.\nStructures.\nVisible wards.\nLunge will not attempt to strike jungle plants.\nLunge deals  basic damage, but also triggers spell effects by also being tagged as  spell damage.\nLunge cannot  critically strike.\nLunge won't deal damage, if the spell is  dodged or  blocked, but will deal damage if Fiora is  blinded.\nLunge does not apply  on-attack effects apart from certain exceptions.\nIt does apply  Energized as if it was an  on-hit effect.\nIt does not stack  Guinsoo's Rageblade nor trigger Phantom Hit.",
         "blurb": "Active:  Fiora  dashes in the target direction and then stabs a nearby enemy, dealing physical damage and applying  on-hit effects.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -389,7 +389,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Fiora/ability-icon/w",
         "effects": [
           {
-            "description": "Active: Fiora enters a defensive stance for 0.75 seconds, becoming unable to act, preventing all incoming non- turret damage, and gaining debuff immunity and crowd control immunity.",
+            "description": "Active: Fiora enters a defensive stance for 0.75 seconds, during which she is unable to act, prevents all incoming non- turret damage, and gains debuff immunity and crowd control immunity.",
             "leveling": []
           },
           {
@@ -489,7 +489,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Riposte is not  invulnerability but instead reduces any damage to her by 100% late into the damage event. Because of this, it interacts differently with effects triggered from damage:\n Life steal and  Healing based on damage dealt (Vamp) will still have effect even if the damage is ultimately ignored by Riposte.\n Shields will absorb damage before Riposte takes effect.\nFiora cannot be  executed by  Pyke's  Death from Below during Riposte but she can by  Aspect of the Dragon.\nRiposte will not negate allied  crowd control.\nRiposte will not negate  nearsight.\n Immobilizing effects include those from  Blast Cone (only if triggered by an enemy) and  epic monsters.\nDebuff immunity includes summoner spells, such as  Exhaust and  Ignite, as well as damage over time and other effects.\nRiposte is and is not prioritized over certain effects:\nRiposte will block effects before  spell shields.\n Black Shield will negate  crowd control before Riposte.\nRiposte will not be able to apply its  stun, as it requires Riposte to negate the  immobilize and not any other external source to do so.\n Spell shield will also prevent Vitals from being triggered by Riposte.\nThe shock missile will be fired from wherever Fiora is after the first 0.5 seconds of Riposte.\nIn the last 0.25 seconds of Riposte's duration, Fiora cannot be targeted by unit-targeted effects from champions (including allies) nor can she be clicked on by any player (becomes unclickable with LMB and RMB).\nThe following table refers for interactions while Fiora is performing Riposte:\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll items are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nDisabled\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath",
+        "notes": "Riposte is not  invulnerability but instead reduces any damage to her by 100% late into the damage event. Because of this, it interacts differently with effects triggered from damage:\n Life steal and  Healing based on damage dealt (Vamp) will still have effect even if the damage is ultimately ignored by Riposte.\n Shields will absorb damage before Riposte takes effect.\nFiora cannot be  executed by  Pyke's  Death from Below during Riposte, but she may by  Aspect of the Dragon.\nRiposte will not negate  nearsight.\n Immobilizing effects include those from  Blast Cone (only if triggered by an enemy) and  epic monsters.\n(Non-crowd-control) debuff immunity encompasses debuffs from summoner spells such as  Exhaust's damage reduction and all of  Ignite's effects, as well as damage over time and other effects.\nIn the last 0.25 seconds of Riposte's duration, Fiora cannot be selected. This is distinct from  untargetability and there are no known interactions beyond this.\nRiposte's effect prioritization is as follows:\nRiposte will negate effects before  spell shields.\n Black Shield will negate  crowd control before Riposte.\nBeing hit by a crowd control while affected by Black Shield means Riposte will not trigger its  stun empowerment condition, as it itself must negate the  immobilize and not any other external source.\n Spell shield will also prevent Vitals from being triggered by Riposte's shock.\nThe shock missile will be fired from wherever Fiora is after the first 0.5 seconds of Riposte.\nThe following table refers for interactions while Fiora is performing Riposte:\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll items are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nDisabled\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath",
         "blurb": "Active:  Fiora briefly parries all incoming damage, debuffs, and  disables, then stabs in a direction, dealing magic damage to enemies hit.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -669,10 +669,39 @@
             "leveling": []
           },
           {
-            "description": "If Fiora triggers at least one Vital before the target dies, or triggers all four, she creates a Victory Zone at their location for 2 : 5 (based on Vitals hit) seconds, which heals Fiora and all allies within the area every second.",
+            "description": "If Fiora triggers at least one Vital before the target dies, or triggers all four, she creates a Victory Zone at their location for 5 seconds, which heals Fiora and all allies within the area every 0.25 seconds.",
             "leveling": [
               {
                 "attribute": "Heal per Tick",
+                "modifiers": [
+                  {
+                    "values": [
+                      18.75,
+                      25,
+                      31.25
+                    ],
+                    "units": [
+                      "",
+                      "",
+                      ""
+                    ]
+                  },
+                  {
+                    "values": [
+                      15,
+                      15,
+                      15
+                    ],
+                    "units": [
+                      "% bonus AD",
+                      "% bonus AD",
+                      "% bonus AD"
+                    ]
+                  }
+                ]
+              },
+              {
+                "attribute": "Heal per Second",
                 "modifiers": [
                   {
                     "values": [
@@ -797,7 +826,7 @@
   },
   "releaseDate": "2012-02-29",
   "releasePatch": "1.0.0.135",
-  "patchLastChanged": "25.06",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 880,
@@ -2992,6 +3021,228 @@
         "Jiunn Kuo",
         "Kudos Productions"
       ]
+    },
+    {
+      "name": "Victorious",
+      "id": 114098,
+      "isBase": false,
+      "availability": "Limited",
+      "formatName": "Victorious",
+      "lootEligible": false,
+      "cost": "Special",
+      "sale": 0,
+      "distribution": "Reward for earning split points in Season 2025 - Split 2.",
+      "rarity": "NoRarity",
+      "chromas": [
+        {
+          "name": "Bronze",
+          "id": 114099,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/114/114099.png",
+          "colors": [
+            "#764D43",
+            "#764D43"
+          ],
+          "descriptions": [
+            {
+              "description": "This Chroma was awarded to players who win at least 15 ranked games and reached Bronze rank is any Summoner's Rift ranked queue in 2025 - Season 2",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Challenger",
+          "id": 114107,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/114/114107.png",
+          "colors": [
+            "#1D62C8",
+            "#1D62C8"
+          ],
+          "descriptions": [
+            {
+              "description": "This Chroma was awarded to players who win at least 15 ranked games and reached Challenger rank is any Summoner's Rift ranked queue in 2025 - Season 2",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 7,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Diamond",
+          "id": 114104,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/114/114104.png",
+          "colors": [
+            "#26854C",
+            "#26854C"
+          ],
+          "descriptions": [
+            {
+              "description": "This Chroma was awarded to players who win at least 15 ranked games and reached Diamond rank is any Summoner's Rift ranked queue in 2025 - Season 2",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 4,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Emerald",
+          "id": 114103,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/114/114103.png",
+          "colors": [
+            "#26854C",
+            "#26854C"
+          ],
+          "descriptions": [
+            {
+              "description": "This Chroma was awarded to players who win at least 15 ranked games and reached Emerald rank is any Summoner's Rift ranked queue in 2025 - Season 2",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 3,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Gold",
+          "id": 114101,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/114/114101.png",
+          "colors": [
+            "#D9C445",
+            "#D9C445"
+          ],
+          "descriptions": [
+            {
+              "description": "This Chroma was awarded to players who win at least 15 ranked games and reached Gold rank is any Summoner's Rift ranked queue in 2025 - Season 2",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Grandmaster",
+          "id": 114106,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/114/114106.png",
+          "colors": [
+            "#B31316",
+            "#B31316"
+          ],
+          "descriptions": [
+            {
+              "description": "This Chroma was awarded to players who win at least 15 ranked games and reached Grandmaster rank is any Summoner's Rift ranked queue in 2025 - Season 2",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 6,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Master",
+          "id": 114105,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/114/114105.png",
+          "colors": [
+            "#9D228D",
+            "#9D228D"
+          ],
+          "descriptions": [
+            {
+              "description": "This Chroma was awarded to players who win at least 15 ranked games and reached Master rank is any Summoner's Rift ranked queue in 2025 - Season 2",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 5,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Platinum",
+          "id": 114102,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/114/114102.png",
+          "colors": [
+            "#55CDE5",
+            "#55CDE5"
+          ],
+          "descriptions": [
+            {
+              "description": "This Chroma was awarded to players who win at least 15 ranked games and reached Platinum rank is any Summoner's Rift ranked queue in 2025 - Season 2",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 2,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Silver",
+          "id": 114100,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/114/114100.png",
+          "colors": [
+            "#AAB5BA",
+            "#AAB5BA"
+          ],
+          "descriptions": [
+            {
+              "description": "This Chroma was awarded to players who win at least 15 ranked games and reached Silver rank is any Summoner's Rift ranked queue in 2025 - Season 2",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        }
+      ],
+      "lore": "Victorious Fiora was earned by players who accumulated enough split points in Ranked. With ruthless cunning, Fiora has cemented the Laurents as the dominant noble house in the kingdom. No one dares impugn their honor, lest they inevitably find themselves on the receiving end of a rapier as sharp as her mind.",
+      "release": "2025-08-13",
+      "set": [
+        "Victorious"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/fiora/skins/skin98/images/fiora_splash_centered_98.skins_fiora_skin98.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/fiora/skins/skin98/images/fiora_splash_uncentered_98.skins_fiora_skin98.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/fiora/skins/skin98/images/fiora_splash_tile_98.skins_fiora_skin98.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/fiora/skins/skin98/fioraloadscreen_98.skins_fiora_skin98.jpg",
+      "loadScreenVintagePath": null,
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": false,
+      "newQuotes": false,
+      "voiceActor": [
+        "Karen Strassman"
+      ],
+      "splashArtist": []
     }
   ]
 }

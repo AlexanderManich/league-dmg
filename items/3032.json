@@ -16,7 +16,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3032_yuntalwildarrows.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3032_yuntalwildarrows.png",
   "simpleDescription": null,
   "nicknames": [
     "arrow",
@@ -27,7 +27,7 @@
       "unique": true,
       "mythic": false,
       "name": "Practice Makes Lethal",
-      "effects": "Basic attacks [[on-attack]] grant {{as|{{rd|{{fd|0.4}}%|{{fd|0.2}}%}} critical strike chance}} permanently, stacking up to {{rd|63|125}} times (capped at {{as|25% critical strike chance}}).",
+      "effects": "Basic attacks {{tip|on-attack}} grant {{as|{{rd|{{fd|0.4}}%|{{fd|0.2}}%}} critical strike chance}} permanently, stacking up to {{rd|63|125}} times (capped at {{as|25% critical strike chance}}).",
       "range": null,
       "cooldown": null,
       "stats": {
@@ -213,7 +213,7 @@
       "unique": true,
       "mythic": false,
       "name": "Flurry",
-      "effects": "Using a basic attack against an enemy champion grants you {{as|30% '''bonus''' attack speed}} for 6 seconds (30 second cooldown, reduced by 1 second on-attack and 2 seconds if the attack {{tip|critical strike|critically strikes}}).",
+      "effects": "Launching a basic attack against an enemy champion grants you {{as|30% '''bonus''' attack speed}} for 6 seconds (30 second cooldown, reduced by 1 second {{tip|on-hit}} and 2 seconds if the attack {{tip|critical strike|critically strikes}}).",
       "range": null,
       "cooldown": null,
       "stats": {
@@ -583,8 +583,7 @@
     },
     "purchasable": true,
     "tags": [
-      "MARKSMAN",
-      "ARMOR_PEN"
+      "MARKSMAN"
     ]
   },
   "iconOverlay": false

@@ -12,7 +12,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/7112_flesheater.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/7112_flesheater.png",
   "simpleDescription": null,
   "nicknames": [],
   "passives": [
@@ -536,7 +536,7 @@
       "percentBonus": 0.0
     },
     "abilityHaste": {
-      "flat": 0.0,
+      "flat": 20.0,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0,

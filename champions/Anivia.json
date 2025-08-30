@@ -4,7 +4,7 @@
   "name": "Anivia",
   "title": "the Cryophoenix",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Anivia.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Anivia.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -217,7 +217,7 @@
     "mobility": 1,
     "utility": 2,
     "abilityReliance": 100,
-    "difficulty": 3
+    "difficulty": 2
   },
   "abilities": {
     "P": [
@@ -992,7 +992,7 @@
   },
   "releaseDate": "2009-07-10",
   "releasePatch": "July 10, 2009 Patch",
-  "patchLastChanged": "14.22",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 1575,
     "rp": 790,

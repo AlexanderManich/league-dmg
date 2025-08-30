@@ -4,7 +4,7 @@
   "name": "Evelynn",
   "title": "Agony's Embrace",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Evelynn.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Evelynn.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -1136,7 +1136,7 @@
   },
   "releaseDate": "2009-05-01",
   "releasePatch": "May 1, 2009 Patch",
-  "patchLastChanged": "25.03",
+  "patchLastChanged": "25.14",
   "price": {
     "blueEssence": 675,
     "rp": 585,
@@ -2707,7 +2707,7 @@
       "name": "Nightbringer",
       "id": 28064,
       "isBase": false,
-      "availability": "Upcoming",
+      "availability": "Rare",
       "formatName": "Nightbringer",
       "lootEligible": true,
       "cost": "Battle Pass",
@@ -2716,7 +2716,7 @@
       "rarity": "Epic",
       "chromas": [],
       "lore": "A whispered temptation, a tip over the precipice, a dizzying descent into depravity… Chaos is not merely the providence of carnage and rage. Blood doesn't care if it is spilled from the edge of a broadsword or the delicate slice of a lasher—Evelynn knows that sometimes, for foes as powerful as the Dawnbringers, a gentle touch is required.",
-      "release": "0000-00-00",
+      "release": "2025-06-25",
       "set": [
         "Nightbringer and Dawnbringer"
       ],
@@ -2726,14 +2726,17 @@
       "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/evelynn/skins/skin64/evelynnloadscreen_64.skins_evelynn_skin64.jpg",
       "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/evelynn/skins/skin64/evelynnloadscreen_64_le.skins_evelynn_skin64.jpg",
       "newEffects": true,
-      "newAnimations": true,
-      "newRecall": true,
+      "newAnimations": false,
+      "newRecall": false,
       "newVoice": false,
       "newQuotes": false,
       "voiceActor": [
         "Mara Junot"
       ],
-      "splashArtist": []
+      "splashArtist": [
+        "Su Fu",
+        "Kudos Productions"
+      ]
     }
   ]
 }

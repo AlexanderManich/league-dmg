@@ -4,7 +4,7 @@
   "name": "Alistar",
   "title": "the Minotaur",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Alistar.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Alistar.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -34,7 +34,7 @@
       "percentPerLevel": 0.0
     },
     "armor": {
-      "flat": 47,
+      "flat": 40,
       "percent": 0.0,
       "perLevel": 4.7,
       "percentPerLevel": 0.0
@@ -266,7 +266,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "If Alistar is at 7 stacks when Triumphant Roar comes off cooldown, he will roar as soon as it elapses.\nAlistar does not gain stacks for unsuccessfully trying to apply  crowd control, for instance against a  crowd control immune target.\nAlistar will still gain a stack for unsuccessfully trying to knock back a champion protected by a  spell shield with  Headbutt.(bug)\nHealing occurs simultaneously for Alistar and his allies.\nThere is a VFX projectile (700 missile speed) that cannot be destroyed by  Wind Wall and is unrelated to the actual heal.\nAlistar loses all Triumph stacks upon dying.",
-        "blurb": "Innate:  Alistar generates stacks of Triumph from  stunning or  displacing enemy champions or when a nearby enemy  dies.",
+        "blurb": "Innate:  Alistar generates  stacks of Triumph from  stunning or  displacing enemy champions or when a nearby enemy  dies.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -734,7 +734,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "True damage cannot be reduced by any means and will deal full damage to Alistar during Unbreakable Will.\nUnbreakable Will's modifier to incoming damage stacks additively with  Vladimir's  Hemoplague for a total reduction of 45/55/65%.*",
+        "notes": "True damage cannot be reduced by any means and will deal full damage to Alistar during Unbreakable Will.\nUnbreakable Will's modifier to incoming damage stacks additively with  Vladimir's  Hemoplague for a total reduction of 45/55/65%.(note)",
         "blurb": "Active:  Alistar lets out a wild roar,  cleansing all  crowd control effects and gaining damage reduction for a few seconds.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -753,7 +753,7 @@
   },
   "releaseDate": "2009-02-21",
   "releasePatch": "Alpha Week 2",
-  "patchLastChanged": "14.16",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 675,
     "rp": 585,
@@ -1726,6 +1726,207 @@
       "splashArtist": [
         "Alex 'alexplank' Flores"
       ]
+    },
+    {
+      "name": "Elderwood",
+      "id": 12040,
+      "isBase": false,
+      "availability": "Upcoming",
+      "formatName": "Elderwood",
+      "lootEligible": true,
+      "cost": 1350,
+      "sale": 0,
+      "distribution": null,
+      "rarity": "Epic",
+      "chromas": [
+        {
+          "name": "Amethyst",
+          "id": 12044,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/12/12044.png",
+          "colors": [
+            "#9C68D7",
+            "#9C68D7"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Catseye",
+          "id": 12042,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/12/12042.png",
+          "colors": [
+            "#FFEE59",
+            "#FFEE59"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Emerald",
+          "id": 12043,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/12/12043.png",
+          "colors": [
+            "#2DA130",
+            "#2DA130"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Obsidian",
+          "id": 12048,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/12/12048.png",
+          "colors": [
+            "#27211C",
+            "#27211C"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Pearl",
+          "id": 12047,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/12/12047.png",
+          "colors": [
+            "#ECF9F8",
+            "#ECF9F8"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Rose Quartz",
+          "id": 12046,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/12/12046.png",
+          "colors": [
+            "#E58BA5",
+            "#E58BA5"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "TENCENT"
+            }
+          ]
+        },
+        {
+          "name": "Ruby",
+          "id": 12041,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/12/12041.png",
+          "colors": [
+            "#D33528",
+            "#D33528"
+          ],
+          "descriptions": [
+            {
+              "description": "This chroma was released as a bundle exclusive in 2025.",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Sapphire",
+          "id": 12045,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/12/12045.png",
+          "colors": [
+            "#2756CE",
+            "#2756CE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        }
+      ],
+      "lore": "“Far beneath the deepest roots, the binding shackles break. Two horns then pierce the woodland night—the mighty auroch wakes. His hide is wrought in earth and moss, his hooves are granite made. And though the wise do fear his might, his gentleness yet reigns.” :Ballad of the Forest:shaker",
+      "release": "0000-00-00",
+      "set": [
+        "Elderwood"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/alistar/skins/skin40/images/alistar_splash_centered_40.skins_alistar_skin40.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/alistar/skins/skin40/images/alistar_splash_uncentered_40.skins_alistar_skin40.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/alistar/skins/skin40/images/alistar_splash_tile_40.skins_alistar_skin40.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/alistar/skins/skin40/alistarloadscreen_40.skins_alistar_skin40.jpg",
+      "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/alistar/skins/skin40/alistarloadscreen_40_le.skins_alistar_skin40.jpg",
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": false,
+      "newQuotes": false,
+      "voiceActor": [
+        "Harlan Hogan"
+      ],
+      "splashArtist": []
     }
   ]
 }

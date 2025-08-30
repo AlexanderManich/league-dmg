@@ -16,7 +16,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3153_fighter_t3_bladeoftheruinedking.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3153_fighter_t3_bladeoftheruinedking.png",
   "simpleDescription": "Deals damage based on target's Health, can steal Move Speed",
   "nicknames": [
     "brk",
@@ -29,7 +29,7 @@
       "unique": true,
       "mythic": false,
       "name": "Mist's Edge",
-      "effects": "Basic attacks deal {{as|'''bonus''' physical damage}} [[on-hit]] equal to {{as|{{rd|8%|5%}} of the target's '''current''' health}}, with a '''maximum''' of 100 against {{tip|minions}} and {{tip|monsters}}.",
+      "effects": "Basic attacks deal {{as|'''bonus''' physical damage}} [[on-hit]] equal to {{as|{{rd|9%|6%}} of the target's '''current''' health}}, with a '''maximum''' of 100 against {{tip|minions}} and {{tip|monsters}}.",
       "range": null,
       "cooldown": null,
       "stats": {

@@ -4,7 +4,7 @@
   "name": "Garen",
   "title": "The Might of Demacia",
   "fullName": "Garen Crownguard",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Garen.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Garen.png",
   "resource": "NONE",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -370,7 +370,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The enhanced attack will apply other on-hit effects and can  critically strike as normal (the bonus damage does not).\nThe bonus damage will also apply  life steal.\nThe bonus damage is applied to structures.\nDecisive Strike locks Garen out of using basic attacks for a short period of time. This is shortened with  attack speed.\nThe enhanced attack will still complete and hit the target even if they become  untargetable during the attack's windup.\nDecisive Strike will not prevent the reapplication of  slows (e.g. the persistent slow from  Pillar of Ice will be immediately reapplied after removal if Garen is still within its area of effect).\n Spell shield will only negate the  silence.\nDecisive Strike's  lunge can pass very thin terrain and will otherwise not be able to. In any case, Garen will still hit his target.",
+        "notes": "The enhanced attack will apply other  on-hit effects and can  critically strike as normal (the bonus damage does not).\nThe bonus damage will also apply  life steal.\nThe bonus damage is applied to  structures.\nDecisive Strike locks Garen out of using basic attacks for a short period of time. This is shortened with  attack speed.\nThe enhanced attack will still complete and hit the target even if they become  untargetable during the attack's windup.\nDecisive Strike will not prevent the reapplication of  slows (e.g. the persistent slow from  Pillar of Ice will be immediately reapplied after removal if Garen is still within its area of effect).\n Spell shield will only negate the  silence.\nDecisive Strike's  lunge can pass very thin terrain and will otherwise not be able to. In any case, Garen will still hit his target.",
         "blurb": "Active:  Garen gains  bonus movement speed and  cleanses from  slows.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -494,7 +494,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Courage's bonus resistances are only gained when it is ranked up at least once, but Courage's passive is retroactive for units killed before it was learned.\nCourage's bonus resistances can be obtained by any of Garen's damage sources (basic attacks, abilities, summoner spells, runes, item actives).\nThis does not include last hits transferred to Garen artificially.\nThe kills on these enemy unit types count towards Courage's bonus resistances:\n Champions (Only kills, Assists don't grant the bonus resistances)\nAll  minions and  monsters\nChampion summoned units (e.g.  Noxious Trap,  Powder Keg,  Dark Procession)\nAll  pets and  clones.\nThe bonus is equal for all these units; Large units do not grant a larger bonus.\nThe kills on these enemy unit types do not count towards Courage's bonus resistances:\n Wards.\n Turrets (including  Sun Disk) and other structures\nJungle plants.\nUnits destroyed by 'trampling' such as  Zyra's  seeds,  Zac's  goo or  Rek'Sai's  tunnels.\nCourage will only grant bonus resistances from units killed by Garen himself.  Eye of the Herald does not count.\nThe  Tenacity increase  stacks additively with the tenacity reduction from  Brittle, but multiplicatively with other sources.",
+        "notes": "Courage's bonus resistances are only gained when it is ranked up at least once, but Courage's passive is retroactive for units killed before it was learned.\nCourage's bonus resistances can be obtained by any of Garen's damage sources (basic attacks, abilities, summoner spells, runes, item actives).\nThis does not include last hits transferred to Garen artificially.\nThe kills on these enemy unit types count towards Courage stacks:\n Champions (Only kills, assists don't grant stacks)\nAll  minions and  monsters\nChampion summoned units (e.g.  Noxious Trap,  Powder Keg,  Dark Procession)\nAll  pets and  clones.\nThe bonus is equal for all these units; large units do not grant a larger bonus.\nThe kills on these enemy unit types do not count towards Courage stacks:\n Wards.\n Turrets (including  Sun Disk) and other  structures\nJungle plants.\nUnits destroyed by 'trampling' such as  Zyra's  seeds,  Zac's  goo or  Rek'Sai's  tunnels.\nCourage will only grant bonus resistances from units killed by Garen himself.  Eye of the Herald does not count.\nThe  Tenacity increase  stacks additively with the tenacity reduction from  Brittle, but multiplicatively with other sources.",
         "blurb": "Passive:  Garen permanently gains bonus  armor and  magic resist by killing enemies, up to a cap. Upon reaching the cap, he gains another permanent boost to these defenses.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1100,8 +1100,8 @@
           "id": 86012,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/86/86012.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {
@@ -1913,6 +1913,207 @@
         "David Villegas",
         "West Studio"
       ]
+    },
+    {
+      "name": "Visions of the Fallen",
+      "id": 86046,
+      "isBase": false,
+      "availability": "Upcoming",
+      "formatName": "Visions of the Fallen",
+      "lootEligible": true,
+      "cost": 1350,
+      "sale": 0,
+      "distribution": null,
+      "rarity": "Epic",
+      "chromas": [
+        {
+          "name": "Citrine",
+          "id": 86054,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/86/86054.png",
+          "colors": [
+            "#DF9117",
+            "#DF9117"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Emerald",
+          "id": 86048,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/86/86048.png",
+          "colors": [
+            "#2DA130",
+            "#2DA130"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Obsidian",
+          "id": 86053,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/86/86053.png",
+          "colors": [
+            "#27211C",
+            "#27211C"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Pearl",
+          "id": 86051,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/86/86051.png",
+          "colors": [
+            "#ECF9F8",
+            "#ECF9F8"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Rose Quartz",
+          "id": 86052,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/86/86052.png",
+          "colors": [
+            "#E58BA5",
+            "#E58BA5"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "TENCENT"
+            }
+          ]
+        },
+        {
+          "name": "Ruby",
+          "id": 86047,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/86/86047.png",
+          "colors": [
+            "#D33528",
+            "#D33528"
+          ],
+          "descriptions": [
+            {
+              "description": "This chroma was released as a bundle exclusive in 2025.",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Sapphire",
+          "id": 86050,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/86/86050.png",
+          "colors": [
+            "#2756CE",
+            "#2756CE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Tanzanite",
+          "id": 86049,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/86/86049.png",
+          "colors": [
+            "#54209B",
+            "#54209B"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        }
+      ],
+      "lore": "<i>How quickly he rode out, this gleaming captain of empty promises, to face the doom of his people. And “Justice!” he screamed, as his stolen flesh betrayed the very notion of the word, laying his warriors all to waste.</i>",
+      "release": "0000-00-00",
+      "set": [
+        "Visions of the Fallen"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/garen/skins/skin46/images/garen_splash_centered_46.skins_garen_skin46.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/garen/skins/skin46/images/garen_splash_uncentered_46.skins_garen_skin46.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/garen/skins/skin46/images/garen_splash_tile_46.skins_garen_skin46.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/garen/skins/skin46/garenloadscreen_46.skins_garen_skin46.jpg",
+      "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/garen/skins/skin46/garenloadscreen_46_le.skins_garen_skin46.jpg",
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": false,
+      "newQuotes": false,
+      "voiceActor": [
+        "Jamieson Price"
+      ],
+      "splashArtist": []
     }
   ]
 }

@@ -12,7 +12,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/447118_pyromancerscloak.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/447118_pyromancerscloak.png",
   "simpleDescription": null,
   "nicknames": [],
   "passives": [
@@ -20,7 +20,7 @@
       "unique": true,
       "mythic": false,
       "name": "Spark",
-      "effects": "Basic attacks and ability hits against enemies inflicts them with a {{as|Burn}} that deals{{ft|{{as|{{pp|200 to 450}} magic damage}} over 3 seconds.|{{as|{{pp|200/12 to 450/12}} magic damage}} every {{fd|0.25}} seconds over 3 seconds.}}",
+      "effects": "Basic attacks and ability hits against enemies inflicts them with a {{as|Burn}} that deals{{ft|{{as|{{pp|100 to 350}} magic damage}} over 3 seconds.|{{as|{{pp|200/12 to 450/12}} magic damage}} every {{fd|0.25}} seconds over 3 seconds.}}",
       "range": null,
       "cooldown": "5",
       "stats": {

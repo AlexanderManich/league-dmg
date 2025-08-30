@@ -4,7 +4,7 @@
   "name": "Twitch",
   "title": "the Plague Rat",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Twitch.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Twitch.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -245,8 +245,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The first 5 stacks on a target are indicated each by a small mark around them, while a target affected by the maximum stacks of 6 is indicated by a single large mark above them instead.\nDeadly Venom does not affect structures.\nBeing applied on-hit, Deadly Venom stacks will still be applied if the attack was  parried or  blocked, but not if  dodged and/or missed if Twitch is  blinded.",
-        "blurb": "Innate:  Twitch's basic attacks apply stacks of Deadly Venom for a few seconds, which stacks up to a cap.",
+        "notes": "The first 5 stacks on a target are indicated each by a small mark around them, while a target affected by the maximum stacks of 6 is indicated by a single large mark above them instead.\nDeadly Venom does not affect  structures.\nBeing applied on-hit, Deadly Venom stacks will still be applied if the attack was  parried or  blocked, but not if  dodged and/or missed if Twitch is  blinded.",
+        "blurb": "Innate:  Twitch's  basic attacks  on-hit apply  stacks of Deadly Venom for a few seconds, which stacks up to a cap.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -507,7 +507,7 @@
         "width": null,
         "angle": null,
         "castTime": "0.25",
-        "effectRadius": null,
+        "effectRadius": "300",
         "targetRange": "950"
       }
     ],
@@ -854,7 +854,7 @@
   },
   "releaseDate": "2009-05-01",
   "releasePatch": "May 1, 2009 Patch",
-  "patchLastChanged": "25.11",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -2297,8 +2297,8 @@
       "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/twitch/skins/skin64/twitchloadscreen_64.skins_twitch_skin64.jpg",
       "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/twitch/skins/skin64/twitchloadscreen_64_le.skins_twitch_skin64.jpg",
       "newEffects": true,
-      "newAnimations": true,
-      "newRecall": true,
+      "newAnimations": false,
+      "newRecall": false,
       "newVoice": false,
       "newQuotes": false,
       "voiceActor": [

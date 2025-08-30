@@ -4,7 +4,7 @@
   "name": "Ivern",
   "title": "the Green Father",
   "fullName": "Ivern Bramblefoot",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Ivern.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Ivern.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -217,7 +217,7 @@
     "mobility": 2,
     "utility": 3,
     "abilityReliance": 10,
-    "difficulty": 3
+    "difficulty": 2
   },
   "abilities": {
     "P": [
@@ -253,7 +253,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Freeing a  Krugs camp will only give the  gold and experience of 1  Ancient Krug, 2  Krugs, and 3  Mini Krugs, for a total of 95 : 128.25 (based on monster's level) experience and  85.\nThe entire  Krugs camp is usually a total of 1  Ancient Krug, 3  Krugs, and 6  Mini Krugs, for a total of 153 : 206.55 (based on monster's level) and  131.\nIvern must be within  275 units of the large monster of the targeted camp to start channeling or collect a grove. The large monsters also must be  visible.\nIf Ivern cannot afford the cost to place a grove, Friend of the Forest is placed on a cooldown equal to the number of seconds it takes for his  health regeneration and/or  mana regeneration to restore him to the amount of health and/or mana needed to afford the cost.\nThe cooldown will update based on Ivern's current health and mana regeneration, as well as his current health and mana.\nFriend of the Forest can be used while Ivern or the camp is in combat and, once the grove is placed,  Smite can be used to instantly claim the camp.  Interrupting Ivern's channel is the only way to contest jungle camps, short of killing the camp during the channel time.\nFreeing a grove causes the monsters within the camp to be dealt 5000 true damage in the  internalraw damage source type by Ivern, despite his inability to damage them.\nFriend of the Forest will leave Ivern at 1 health if cast with exactly the required amount. Friend of the Forest cannot be cast with less, unlike other abilities with health costs.\nThe following table refers for interactions while Ivern is  channeling:\nIvern is unable to act during the first 0.15 and last 0.5 seconds of the channel.\nNon-epic monsters can attack Ivern if his allies enter combat with the monster and he manages to recieve aggro.(bug)\nIvern can be attacked by  Voidmites without being able to damage them back.(note)\n\n\nType\n\nChannel\n\n\nAttacking\n\nInterrupts\n\n\nAbilities\n\nInterrupts\n\n\nMovement\n\nInterrupts\n\n\nItems\n\nUsable\n\n Shurelya's Battlesong  Youmuu's Ghostblade  Randuin's Omen\n\n\nDisabled\n\n Hextech Rocketbelt\n\n\nInterrupted by\n\nAll item-actives not specified above interrupt\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\nN/A\n\n\nInterrupted by\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nDamaging effectsDeath Cast-inhibiting effects",
+        "notes": "Freeing the  Krug camp will only grant the  gold and  experience of 1  Ancient Krug, 2  Krugs, and 3  Mini Krugs.\nIvern must be within  275 units of the large monster of the targeted camp to start channeling or collect a grove. The large monsters also must be  visible.\nIf Ivern cannot afford the cost to place a grove, Friend of the Forest is placed on a cooldown equal to the number of seconds it takes for his  health regeneration and/or  mana regeneration to restore him to the amount of health and/or mana needed to afford the cost.\nThe cooldown will update based on Ivern's current health and mana regeneration, as well as his current health and mana.\nFriend of the Forest can be used while Ivern or the camp is in combat and, once the grove is placed,  Smite can be used to instantly claim the camp.  Interrupting Ivern's channel is the only way to contest jungle camps, short of killing the camp during the channel time.\nFreeing a grove causes the monsters within the camp to be dealt 5000 true damage in the  internalraw damage source type by Ivern, despite his inability to damage them.\nFriend of the Forest will leave Ivern at 1 health if cast with exactly the required amount. Friend of the Forest cannot be cast with less, unlike other abilities with health costs.\nThe following table refers for interactions while Ivern is  channeling:\nIvern is unable to act during the first 0.15 and last 0.5 seconds of the channel.\nNon-epic monsters can attack Ivern if his allies enter combat with the monster and he manages to recieve aggro.(bug)\nIvern can be attacked by  Voidmites without being able to damage them back.(note)\n\n\nType\n\nChannel\n\n\nAttacking\n\nInterrupts\n\n\nAbilities\n\nInterrupts\n\n\nMovement\n\nInterrupts\n\n\nItems\n\nUsable\n\n Shurelya's Battlesong  Youmuu's Ghostblade  Randuin's Omen\n\n\nDisabled\n\n Hextech Rocketbelt\n\n\nInterrupted by\n\nAll item-actives not specified above interrupt\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\nN/A\n\n\nInterrupted by\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nDamaging effectsDeath Cast-inhibiting effects",
         "blurb": null,
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1393,8 +1393,8 @@
           "id": 427022,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/427/427022.png",
           "colors": [
-            "#DF9117",
-            "#DF9117"
+            "#FFEE59",
+            "#FFEE59"
           ],
           "descriptions": [
             {
@@ -1561,8 +1561,8 @@
       "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ivern/skins/skin30/ivernloadscreen_30.skins_ivern_skin30.jpg",
       "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/ivern/skins/skin30/ivernloadscreen_30_le.skins_ivern_skin30.jpg",
       "newEffects": true,
-      "newAnimations": true,
-      "newRecall": true,
+      "newAnimations": false,
+      "newRecall": false,
       "newVoice": false,
       "newQuotes": false,
       "voiceActor": [

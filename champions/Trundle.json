@@ -4,7 +4,7 @@
   "name": "Trundle",
   "title": "the Troll King",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Trundle.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Trundle.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -437,10 +437,10 @@
                   {
                     "values": [
                       30,
-                      50,
-                      70,
-                      90,
-                      110
+                      45,
+                      60,
+                      75,
+                      90
                     ],
                     "units": [
                       "%",
@@ -500,11 +500,11 @@
           "modifiers": [
             {
               "values": [
+                18,
+                17,
                 16,
                 15,
-                14,
-                13,
-                12
+                14
               ],
               "units": [
                 "",
@@ -526,7 +526,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "If Frozen Domain is attempted to be cast beyond 750 units away, it'll cast at the maximum range instead.",
+        "notes": "No additional details.",
         "blurb": "Active:  Trundle coats the target location in ice for a period. While he is within the area, he gains  bonus attack speed,  bonus movement speed, and increased  healing from all sources.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -789,8 +789,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The total value of armor and magic resist stolen and damage dealt is determined at the time of cast. The stolen stats do not update dynamically relative to the target's stats at any point during the effect, as the steal is applied to the current value of armor and magic resistance.\nTrundle gains 11.7 extra range on his basic attacks (relative to his and enemy center) as a consequence of his increased size.\nSo do his enemies.\nHe gains 3.78 to 6.255 range against the target he subjugated, depending on their base size, and so does the target against him.\nThe debuff on the target also persists through death.\nTrundle will lose the buff if the target loses the debuff, for example if it enters  resurrection.(note)\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
-        "blurb": "Active:  Trundle drains the life force of the target enemy champion, dealing magic damage based on their maximum health and  healing for the same amount. He also steals a portion of their  armor and  magic resist, and increases in size while reducing their size.",
+        "notes": "The total value of armor and magic resist stolen and damage dealt is determined at the time of cast. The stolen stats do not update dynamically relative to the target's stats at any point during the effect, as the steal is applied to the current value of armor and magic resistance.\nTrundle gains 11.7 extra  range on his  basic attacks (relative to his and enemy center) as a consequence of his increased  size.\nSo do his enemies.\nHe gains 3.78 to 6.255 range against the target he subjugated, depending on their base size, and so does the target against him.\nThe debuff on the target also persists through death.\nTrundle will lose the buff if the target loses the debuff, for example if it enters  resurrection.(note)\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
+        "blurb": "Active:  Trundle drains the life force of the target enemy champion, dealing magic damage based on their maximum health and  healing for the same amount. He also steals a portion of their  armor and  magic resist, and increases in  size while reducing their  size.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -808,7 +808,7 @@
   },
   "releaseDate": "2010-12-01",
   "releasePatch": "1.0.0.106",
-  "patchLastChanged": "25.07",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -1320,8 +1320,8 @@
           "id": 48014,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/48/48014.png",
           "colors": [
-            "#2756CE",
-            "#2756CE"
+            "#73BFBE",
+            "#73BFBE"
           ],
           "descriptions": [
             {

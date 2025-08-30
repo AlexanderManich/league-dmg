@@ -4,7 +4,7 @@
   "name": "Amumu",
   "title": "the Sad Mummy",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Amumu.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Amumu.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -664,8 +664,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "A basic attack's  basic damage and each on-hit effect are all separate damage instances, and may be reduced each if they deal physical damage.\nTantrum's cooldown reduction will trigger multiple times for effects such as  Double Strike and  Guinsoo's Rageblade's Phantom Hit.\nThe cooldown will be reduced, even if the incoming attack is  blocked.\nThe cooldown will not be reduced, if the incoming attack misses due to the enemy being  blinded.\nThis ability will cast from wherever the caster is at the end of the cast time.",
-        "blurb": "Passive:  Amumu gains damage reduction against physical damage.  Tantrum's cooldown is reduced whenever he is hit by a basic attack.",
+        "notes": "A  basic attack's  basic damage and each on-hit effect are all separate damage instances, and may be reduced each if they deal physical damage.\nTantrum's cooldown reduction will trigger multiple times for effects such as  Double Strike and  Guinsoo's Rageblade's Phantom Hit.\nThe cooldown will be reduced, even if the incoming attack is  blocked.\nThe cooldown will not be reduced, if the incoming attack misses due to the enemy being  blinded.\nThis ability will cast from wherever the caster is at the end of the cast time.",
+        "blurb": "Passive:  Amumu gains damage reduction against physical damage.  Tantrum's cooldown is reduced whenever he is hit by a  basic attack.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -781,7 +781,7 @@
   },
   "releaseDate": "2009-06-26",
   "releasePatch": "June 26, 2009 Patch",
-  "patchLastChanged": "14.9",
+  "patchLastChanged": "14.19",
   "price": {
     "blueEssence": 225,
     "rp": 260,
@@ -1170,7 +1170,7 @@
           "id": 32013,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/32/32013.png",
           "colors": [
-            "#C1F2E1",
+            "#C1F2FF",
             "#C1F2FF"
           ],
           "descriptions": [

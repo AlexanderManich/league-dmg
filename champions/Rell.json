@@ -4,7 +4,7 @@
   "name": "Rell",
   "title": "the Iron Maiden",
   "fullName": "Rell Canwell",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Rell.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Rell.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -422,11 +422,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      25,
-                      50,
-                      75,
-                      100,
-                      125
+                      20,
+                      40,
+                      60,
+                      80,
+                      100
                     ],
                     "units": [
                       "",
@@ -438,18 +438,18 @@
                   },
                   {
                     "values": [
-                      13,
-                      13,
-                      13,
-                      13,
-                      13
+                      11,
+                      11,
+                      11,
+                      11,
+                      11
                     ],
                     "units": [
-                      "% of maximum health",
-                      "% of maximum health",
-                      "% of maximum health",
-                      "% of maximum health",
-                      "% of maximum health"
+                      "% maximum health",
+                      "% maximum health",
+                      "% maximum health",
+                      "% maximum health",
+                      "% maximum health"
                     ]
                   }
                 ]
@@ -925,7 +925,7 @@
   },
   "releaseDate": "2020-12-10",
   "releasePatch": "10.25",
-  "patchLastChanged": "25.03",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

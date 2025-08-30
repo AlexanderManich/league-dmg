@@ -4,7 +4,7 @@
   "name": "Tahm Kench",
   "title": "The River King",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/TahmKench.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/TahmKench.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -247,7 +247,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "The passive bonus damage applies to turrets.",
-        "blurb": "Innate:  Tahm Kench's basic attacks and  Tongue Lash deal bonus magic damage based on his bonus health, and apply a stack of An Acquired Taste against  champions that stacks up to a cap.",
+        "blurb": "Innate:  Tahm Kench's  basic attacks and  Tongue Lash deal bonus magic damage based on his bonus health, and apply a  stack of An Acquired Taste against  champions that stacks up to a cap.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -291,18 +291,44 @@
                   },
                   {
                     "values": [
-                      0,
-                      0,
-                      0,
-                      0,
-                      0
+                      6.0,
+                      8.470588235294118,
+                      10.941176470588236,
+                      13.411764705882353,
+                      15.882352941176471,
+                      18.352941176470587,
+                      20.823529411764707,
+                      23.294117647058826,
+                      25.764705882352942,
+                      28.235294117647058,
+                      30.705882352941178,
+                      33.1764705882353,
+                      35.64705882352941,
+                      38.11764705882353,
+                      40.58823529411765,
+                      43.05882352941177,
+                      45.529411764705884,
+                      48.0
                     ],
                     "units": [
-                      "[ [[Tahm Kench#An Acquired Taste|]] 6 : 48 (based on level)   ]",
-                      "[ [[Tahm Kench#An Acquired Taste|]] 6 : 48 (based on level)   ]",
-                      "[ [[Tahm Kench#An Acquired Taste|]] 6 : 48 (based on level)   ]",
-                      "[ [[Tahm Kench#An Acquired Taste|]] 6 : 48 (based on level)   ]",
-                      "[ [[Tahm Kench#An Acquired Taste|]] 6 : 48 (based on level)   ]"
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      "",
+                      ""
                     ]
                   },
                   {
@@ -597,7 +623,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Tahm Kench is  vanished (but does not become untargetable) during the 0.15 seconds delay.\nThe following table refers for interactions while Tahm Kench is  channeling:\n\n\nType\n\nChannel\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\n Shurelya's Battlesong  Youmuu's Ghostblade  Randuin's Omen\n\n\nDisabled\n\nAll the other item-actives are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Teleport  Recall  Hexflash\n\n\nInterrupted by\n\n Flash\n\n\nInterrupted by\n\nDeath Grounding effects Immobilizing effects Cast-inhibiting effects\n\nThe following table refers for interactions while Tahm Kench is unable to act:\n\n\nType\n\nChannel\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll items are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nDisabled\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath",
-        "blurb": "blurb2",
+        "blurb": null,
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -818,7 +844,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Devour's initial pull is a non- airborne displacement that displaces the target toward Tahm Kench over the ability's cast time.\nThis is also the same displacement that is used for when Devour is cast with  Tongue Lash, though with a greater pull distance as well as faster pull speed to account for Devour's short cast time.\nThe target will  blink to Tahm Kench's location at the end of this displacement, including if it is interrupted.\nAgainst enemies, Devour's pull from abducting the target depends on the application of the  suppression; if the suppression is not applied, neither is the pull. Similarly, if the suppression is removed, the displacement from the pull is stopped.\nThe attachment also depends upon the occurrence of the pull; if the target is not pulled, they are not attached to Tahm Kench and the swallow fails, cancelling the ability entirely.\nIf the target resists the suppression by being  immune to crowd control,  displacement immune, or having a  spell shield, Tahm Kench will not pull the target towards him.\nIf the target removes the suppression by any means, including with an applicable  cleanse effect or  dispel, one of two of the following interactions will occur based on the timing of the removal:\nIf the suppression was removed during Devour's cast time, the target will stop the displacement from the pull instantly and prevent themselves from being attached to Tahm Kench after the cast time.\nIf the suppression was removed while the target is attached to Tahm Kench (in other words, inside of his belly), the target will detach themselves from him instantly without Tahm Kench performing  Regurgitate.\nThe  untargetability and  displacement immunity is granted to the target during Devour's cast time as well. Enemies are granted these effects while they are suppressed; they are removed when the suppression is.\nDevour's suppression against enemies is removed if Tahm Kench dies, enters  resurrection, or transitions in or out of the  Realm of Death.\nEnemies will be dealt  Regurgitate's damage regardless of Tahm Kench casting the ability if Devour's suppression ends by any means other than transitioning out of  Realm of Death(bug) or  dismounting(bug) (including during Devour's cast time).\nIf the target transitions into the  Realm of Death or enters  resurrection, Tahm Kench will  Regurgitate them automatically.\nThis only occurs for the former if Tahm Kench is in a different dimension from the target.\nDevour cannot be used on allies that are  channeling or using an ability that preloads UnstoppableForceMarker.\nThe  self-slow is affected by  slow resist.\nTahm Kench cannot use gates during Devour.\nAllies can see if this spell is ready next to Tahm Kench's health bar.\nThe swallowed target is not considered to be  vanished. They are instead hidden below the visible map plane, to maintain ongoing effects such as  Senna's  Curse of the Black Mist.\nDuring Devour's attachment and  Regurgitate's displacement, the swallowed target's camera is locked and centered on their champion.\nThis does not affect Tahm Kench.\nThe following table refers for interactions while the target is unable to act:\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nIf an ally, forces Tahm Kench to use  Regurgitate unless movement commands are otherwise restricted. If an enemy, movement commands are disabled.\n\n\nItems\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll items are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nDisabled\n\n\nSpells\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll summoner spells are disabled\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath\n\n\n\nType\n\nCast time\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll items are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nDisabled\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath, unless protected by  Resurrection",
+        "notes": "Devour's initial pull is a non- airborne displacement that displaces the target toward Tahm Kench over the ability's cast time.\nThis is also the same displacement that is used for when Devour is cast with  Tongue Lash, though with a greater pull distance as well as faster pull speed to account for Devour's short cast time.\nThe target will  blink to Tahm Kench's location at the end of this displacement, including if it is interrupted.\nAgainst enemies, Devour's pull from abducting the target depends on the application of the  suppression; if the suppression is not applied, neither is the pull. Similarly, if the suppression is removed, the displacement from the pull is stopped.\nThe attachment also depends upon the occurrence of the pull; if the target is not pulled, they are not attached to Tahm Kench and the swallow fails, cancelling the ability entirely.\nIf the target resists the suppression by being  immune to crowd control,  displacement immune, or having a  spell shield, Tahm Kench will not pull the target towards him.\nIf the target removes the suppression by any means, including with an applicable  cleanse effect or  dispel, one of two of the following interactions will occur based on the timing of the removal:\nIf the suppression was removed during Devour's cast time, the target will stop the displacement from the pull instantly and prevent themselves from being attached to Tahm Kench after the cast time.\nIf the suppression was removed while the target is attached to Tahm Kench (in other words, inside of his belly), the target will detach themselves from him instantly without Tahm Kench performing  Regurgitate.\nThe  untargetability and  displacement immunity is granted to the target during Devour's cast time as well. Enemies are granted these effects while they are suppressed; they are removed when the suppression is.\nDevour's suppression against enemies is removed if Tahm Kench dies, enters  resurrection, or transitions in or out of the  Realm of Death.\nEnemies will be dealt  Regurgitate's damage regardless of Tahm Kench casting the ability if Devour's suppression ends by any means other than transitioning out of  Realm of Death(bug) or  dismounting(bug) (including during Devour's cast time).\nIf the target transitions into the  Realm of Death or enters  resurrection, Tahm Kench will  Regurgitate them automatically.\nThis only occurs for the former if Tahm Kench is in a different dimension from the target.\nDevour cannot be used on allies that are  channeling or using an ability that preloads UnstoppableForceMarker.\nThe  self-slow is affected by  slow resist.\nTahm Kench cannot use  gates during Devour.\nAllies can see if this spell is ready next to Tahm Kench's health bar.\nThe swallowed target is not considered to be  vanished. They are instead hidden below the visible map plane, to maintain ongoing effects such as  Senna's  Curse of the Black Mist.\nDuring Devour's attachment and  Regurgitate's displacement, the swallowed target's camera is locked and centered on their champion.\nThis does not affect Tahm Kench.\nThe following table refers for interactions while the target is unable to act:\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nIf an ally, forces Tahm Kench to use  Regurgitate unless movement commands are otherwise restricted. If an enemy, movement commands are disabled.\n\n\nItems\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll items are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nDisabled\n\n\nSpells\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll summoner spells are disabled\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath\n\n\n\nType\n\nCast time\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\nN/A\n\n\nDisabled\n\nAll items are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nDisabled\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath, unless protected by  Resurrection",
         "blurb": null,
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1642,8 +1668,8 @@
           "id": 223033,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/223/223033.png",
           "colors": [
-            "#85827F",
-            "#85827F"
+            "#27211C",
+            "#27211C"
           ],
           "descriptions": [
             {
@@ -1663,8 +1689,8 @@
           "id": 223038,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/223/223038.png",
           "colors": [
-            "#9C68D7",
-            "#9C68D7"
+            "#ECF9F8",
+            "#ECF9F8"
           ],
           "descriptions": [
             {

@@ -4,7 +4,7 @@
   "name": "Braum",
   "title": "the Heart of the Freljord",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Braum.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Braum.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -34,9 +34,9 @@
       "percentPerLevel": 0.0
     },
     "armor": {
-      "flat": 47,
+      "flat": 35,
       "percent": 0.0,
-      "perLevel": 5.2,
+      "perLevel": 5,
       "percentPerLevel": 0.0
     },
     "magicResistance": {
@@ -250,7 +250,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Concussive Blows won't be applied if the attack is  dodged or  blocked or if the attack  misses.",
-        "blurb": "Innate:  Braum's basic attacks and  Winter's Bite apply a stack of Concussive Blows. Once the first stack is applied, allied champion  basic attacks can also stack Concussive Blows.",
+        "blurb": "Innate:  Braum's  basic attacks and  Winter's Bite apply a  stack of Concussive Blows. Once the first stack is applied, allied champion  basic attacks can also stack Concussive Blows.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -881,7 +881,7 @@
   },
   "releaseDate": "2014-05-12",
   "releasePatch": "4.7",
-  "patchLastChanged": "14.20",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -961,7 +961,7 @@
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/201/201006.png",
           "colors": [
             "#FFEE59",
-            "#FFEF59"
+            "#FFEE59"
           ],
           "descriptions": [
             {

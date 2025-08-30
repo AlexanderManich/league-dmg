@@ -4,7 +4,7 @@
   "name": "Malzahar",
   "title": "the Prophet of the Void",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Malzahar.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Malzahar.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -699,8 +699,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Malzahar loses all stacks upon death.\nZz'Rot Swarm stacks are gained per cast and not per ability activation. For example, if  Malefic Visions is cast and the ability cancels under certain circumstances, a Zz'Rot Swarm stack will still be granted despite the ability's failure to complete.",
-        "blurb": "Passive:  Malzahar generates a stack of Zz'Rot Swarm when he casts another ability, up to a maximum.",
+        "notes": "Malzahar loses all  stacks upon  death.\nZz'Rot Swarm stacks are gained per cast and not per ability activation. For example, if  Malefic Visions is cast and the ability cancels under certain circumstances, a Zz'Rot Swarm stack will still be granted despite the ability's failure to complete.",
+        "blurb": "Passive:  Malzahar generates a stack of Zz'Rot Swarm when he casts another  ability, up to a maximum.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -2111,8 +2111,8 @@
           "id": 90048,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/90/90048.png",
           "colors": [
-            "#000000",
-            "#000000"
+            "#E14940",
+            "#83E584"
           ],
           "descriptions": [
             {

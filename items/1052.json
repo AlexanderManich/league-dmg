@@ -34,7 +34,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/1052_mage_t2_amptome.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/1052_mage_t2_amptome.png",
   "simpleDescription": "Slightly increases Ability Power",
   "nicknames": [
     "amptome",

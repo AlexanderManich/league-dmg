@@ -4,7 +4,7 @@
   "name": "Nidalee",
   "title": "the Bestial Huntress",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Nidalee.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Nidalee.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -184,7 +184,7 @@
       "percentPerLevel": 0.0
     },
     "urfDamageDealt": {
-      "flat": 1.05,
+      "flat": 1.1,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -271,7 +271,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Nidalee/ability-icon/q",
         "effects": [
           {
-            "description": "Active: Nidalee hurls a javelin in the target direction that deals magic damage to the first enemy hit, increased by 0% : 200% (based on distance traveled).",
+            "description": "Active: Nidalee hurls a javelin in the target direction that deals magic damage to the first enemy hit, increased by 0% : 225% (based on distance traveled).",
             "leveling": [
               {
                 "attribute": "Minimum Magic Damage",
@@ -307,11 +307,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      210,
-                      270,
-                      330,
-                      390,
-                      450
+                      227.5,
+                      292.5,
+                      357.5,
+                      422.5,
+                      487.5
                     ],
                     "units": [
                       "",
@@ -323,7 +323,7 @@
                   },
                   {
                     "values": [
-                      150
+                      162.5
                     ],
                     "units": [
                       "% AP"
@@ -1204,7 +1204,7 @@
   },
   "releaseDate": "2009-12-17",
   "releasePatch": "1.0.0.63",
-  "patchLastChanged": "25.12",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -2627,7 +2627,7 @@
       "name": "Spirit Blossom",
       "id": 76058,
       "isBase": false,
-      "availability": "Upcoming",
+      "availability": "Available",
       "formatName": "Spirit Blossom",
       "lootEligible": true,
       "cost": 1350,
@@ -2826,7 +2826,7 @@
         }
       ],
       "lore": "The Tale of the Wise Cat is told in many ways across Ionia, but all begin the same: “There once was a cat who lived far beyond her years...” Though age brought power, allowing her to shift form between feline and mortal, her questions only deepened. She searched for answers, unaware that the wisdom she yearned for had always lived within.",
-      "release": "0000-00-00",
+      "release": "2025-06-25",
       "set": [
         "Spirit Blossom"
       ],

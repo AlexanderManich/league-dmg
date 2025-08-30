@@ -12,7 +12,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3054_silversteeltalons.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/3054_silversteeltalons.png",
   "simpleDescription": null,
   "nicknames": [],
   "passives": [
@@ -343,7 +343,7 @@
     },
     "movespeed": {
       "flat": 0.0,
-      "percent": 10.0,
+      "percent": 5.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0,
       "percentBase": 0.0,

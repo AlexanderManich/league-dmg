@@ -4,7 +4,7 @@
   "name": "Blitzcrank",
   "title": "the Great Steam Golem",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Blitzcrank.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Blitzcrank.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -578,7 +578,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Power Fist deals  basic damage, but also triggers spell effects by also being tagged as  spell damage.\nThis includes the basic attack itself.\nThe  knockup is applied even if the attack is  dodged or  missed.\nIt is not applied if it is  blocked.\n Spell shield prevents the  knockup but not the damage.\nThe enhanced attack will still complete and hit the target even if they become  untargetable during the attack's windup.\nThe target is displaced a short distance during the  knockup in a random direction.",
+        "notes": "Power Fist deals  basic damage, but also triggers spell effects by also being tagged as  spell damage.\nThis includes the  basic attack itself.\nThe  knockup is applied even if the attack is  dodged or  missed.\nIt is not applied if it is  blocked.\n Spell shield prevents the  knockup but not the damage.\nThe enhanced attack will still complete and hit the target even if they become  untargetable during the attack's windup.\nThe target is displaced a short distance during the  knockup in a random direction.",
         "blurb": "Active:  Blitzcrank charges up a fist to make the next  basic attack deal double damage and  knock up the target into the air.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -723,7 +723,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Blitzcrank's attacks do not have to deal damage to apply the mark.\nThe mark will be consumed even if the target becomes  untargetable.\nThe lightning bolts deal  spell damage while the static field applies  area damage.\nEven if Static Field is blocked by a  spell shield, it will still destroy any existing damage  shields on the target.\nThe visual effects will appear from wherever Blitzcrank is at the end of the cast time.(bug)\n\nThis ability will cast from wherever the caster is at the start of the cast time.",
-        "blurb": "Passive: While Static Field is ready,  Blitzcrank's basic attacks apply a stack of Static Field.",
+        "blurb": "Passive: While Static Field is ready,  Blitzcrank's basic attacks apply a  stack of Static Field.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -1038,7 +1038,9 @@
       "voiceActor": [
         "Duncan Watt"
       ],
-      "splashArtist": []
+      "splashArtist": [
+        "Concept Art House"
+      ]
     },
     {
       "name": "Riot",
@@ -1113,7 +1115,7 @@
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/53/53014.png",
           "colors": [
             "#DF9117",
-            "#E99117"
+            "#DF9117"
           ],
           "descriptions": [
             {

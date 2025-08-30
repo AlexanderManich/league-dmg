@@ -16,7 +16,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/4401_tank_t3_forceofnature.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/4401_tank_t3_forceofnature.png",
   "simpleDescription": "Move Speed, Magic Resist, and max Health Regeneration",
   "nicknames": [
     "fon"

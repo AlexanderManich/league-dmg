@@ -4,7 +4,7 @@
   "name": "Ryze",
   "title": "the Rune Mage",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Ryze.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Ryze.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -217,7 +217,7 @@
     "mobility": 2,
     "utility": 2,
     "abilityReliance": 100,
-    "difficulty": 2
+    "difficulty": 3
   },
   "abilities": {
     "P": [
@@ -351,7 +351,7 @@
             ]
           },
           {
-            "description": "Flux Bonus: Overload deals 25 / 50 / 75 / 100% (based on Realm Warp's Rank) increased damage and spreads to surrounding Fluxed enemies.",
+            "description": "Flux Bonus: Overload deals 25% / 50% / 75% / 100% (based on Realm Warp's Rank) increased damage and spreads to surrounding Fluxed enemies.",
             "leveling": []
           }
         ],
@@ -406,7 +406,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Overload can be buffered 0.5 seconds before it comes off cooldown.\nOverload can be buffered while casting either  Spell Flux or  Rune Prison to cast immediately after the previous spell's cast time.\nApplies  spell damage to the primary target and  area damage to secondary targets affected by  Flux.\nThis ability will cast from wherever the caster is at the start of the cast time.",
-        "blurb": "Passive:  Ryze's other basic ability casts  reset Overload's cooldown and generate a  Rune stack, stacking up to 2 times.",
+        "blurb": "Passive:  Ryze's other  basic ability casts  reset Overload's cooldown and generate a  Rune stack, stacking up to 2 times.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -434,11 +434,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      70,
-                      100,
-                      130,
-                      160,
-                      190
+                      60,
+                      90,
+                      120,
+                      150,
+                      180
                     ],
                     "units": [
                       "",
@@ -493,11 +493,11 @@
           "modifiers": [
             {
               "values": [
-                40,
-                55,
+                50,
+                60,
                 70,
-                85,
-                100
+                80,
+                90
               ],
               "units": [
                 "",
@@ -786,7 +786,7 @@
   },
   "releaseDate": "2009-02-21",
   "releasePatch": "Alpha Week 2",
-  "patchLastChanged": "25.11",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 2400,
     "rp": 260,

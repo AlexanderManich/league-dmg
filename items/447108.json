@@ -12,7 +12,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/7108_runecarver.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/7108_runecarver.png",
   "simpleDescription": null,
   "nicknames": [],
   "passives": [
@@ -715,7 +715,7 @@
     },
     "movespeed": {
       "flat": 0.0,
-      "percent": 8.0,
+      "percent": 4.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0,
       "percentBase": 0.0,

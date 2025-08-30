@@ -4,7 +4,7 @@
   "name": "Vayne",
   "title": "the Night Hunter",
   "fullName": "Shauna Vayne",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Vayne.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Vayne.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -136,7 +136,7 @@
       "percentPerLevel": 0.0
     },
     "aramDamageDealt": {
-      "flat": 1.05,
+      "flat": 1,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -443,8 +443,8 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Stacks are not removed if Vayne switches to attacking a target immune to Silver Bolts ( structures,  wards).\nSilver Bolts do not apply to additional targets with  Runaan's Hurricane.\nThe stacks can be consumed even if the target is in  stasis.\nThe attacks do not affect structures nor wards.",
-        "blurb": "Passive:  Vayne's basic attacks and  Condemn will apply a stack of Silver Bolts, which expires upon attacking a new enemy.",
+        "notes": "Stacks are not removed if Vayne switches to attacking a target immune to Silver Bolts ( structures,  wards).\nSilver Bolts do not apply to additional targets with  Runaan's Hurricane.\nThe stacks can be consumed even if the target is in  stasis.",
+        "blurb": "Passive:  Vayne's  basic attacks  on-hit and  Condemn will apply a  stack of Silver Bolts, which expires upon attacking a new enemy.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -784,7 +784,7 @@
   },
   "releaseDate": "2011-05-10",
   "releasePatch": "1.0.0.118",
-  "patchLastChanged": "14.22",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -1769,8 +1769,8 @@
           "id": 67043,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/67/67043.png",
           "colors": [
-            "#2B7CFF",
-            "#FF930E"
+            "#F6A630",
+            "#1C61B4"
           ],
           "descriptions": [
             {
@@ -2426,7 +2426,7 @@
           ],
           "descriptions": [
             {
-              "description": "This chroma was released as an exclusive reward for players who completed the 2025 Hall of Legends Battle Pass honoring Uzi.",
+              "description": "This chroma was released as an exclusive reward for players who obtained the 2025 Hall of Legends Signature Immortalized Legend Collection honoring Uzi.",
               "region": "riot"
             }
           ],

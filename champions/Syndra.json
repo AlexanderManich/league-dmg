@@ -4,7 +4,7 @@
   "name": "Syndra",
   "title": "the Dark Sovereign",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Syndra.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Syndra.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -216,7 +216,7 @@
     "mobility": 1,
     "utility": 1,
     "abilityReliance": 100,
-    "difficulty": 2
+    "difficulty": 3
   },
   "abilities": {
     "P": [
@@ -225,7 +225,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Syndra/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Syndra collects Splinters of Wrath that enhance each of her abilities based on the number of them collected, stacking up to 120 times. She gains Splinters of Wrath from the following:\nDealing two instances of ability damage to an enemy champion within 4 seconds grants 1 / 2 / 3 (based on level) Splinters. This cannot occur on the same target more than once every 8 seconds.\nRanking up an ability with any skill points beyond level 1 grants 5 Splinters, up to 85.\nKilling a large minion grants 1 Splinter.",
+            "description": "Innate: Syndra collects Splinters of Wrath that enhance each of her abilities based on the number of them collected, stacking up to 120 times. She gains Splinters of Wrath from the following:\nPeriodically dealing two instances of ability damage to an enemy champion within 4 seconds grants 1 / 2 / 3 (based on level) Splinters .\nRanking up an ability with any skill points beyond level 1 grants 5 Splinters, up to 85.\nKilling a large minion grants 1 Splinter.",
             "leveling": []
           },
           {
@@ -242,7 +242,23 @@
           }
         ],
         "cost": null,
-        "cooldown": null,
+        "cooldown": {
+          "modifiers": [
+            {
+              "values": [
+                8,
+                8,
+                8
+              ],
+              "units": [
+                "",
+                "",
+                ""
+              ]
+            }
+          ],
+          "affectedByCdr": false
+        },
         "targeting": "Passive",
         "affects": "Self",
         "spellshieldable": null,
@@ -253,7 +269,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Syndra's abilities gain additional visual effects when they reach their Splinter of Wrath thresholds. Her spells will also gain a red colored tint outlining the VFX.\n Dark Sphere will cause fractures to appear in the earth when it is used.",
-        "blurb": "Innate:  Syndra collects Splinters of Wrath that enhance her abilities based on the number of them collected, up to a maximum amount. She can collect them from dealing damage to enemy  champions, ranking up her abilities, and killing large  minions.",
+        "blurb": "Innate:  Syndra collects Splinters of Wrath that enhance her  abilities based on the number of them collected, up to a maximum amount. She can collect them from dealing damage to enemy  champions, ranking up her abilities, and killing large  minions.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -2629,7 +2645,7 @@
       "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/syndra/skins/skin65/images/syndra_splash_centered_65.skins_syndra_skin65.jpg",
       "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/syndra/skins/skin65/images/syndra_splash_uncentered_65.skins_syndra_skin65.jpg",
       "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/syndra/skins/skin65/images/syndra_splash_tile_65.skins_syndra_skin65.jpg",
-      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/syndra/skins/skin65/syndraloadscreen_65.skins_syndra_skin65.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/syndra/skins/skin65/syndraloadscreen_65_2.skins_syndra_skin65.jpg",
       "loadScreenVintagePath": null,
       "newEffects": true,
       "newAnimations": true,

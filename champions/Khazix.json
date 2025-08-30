@@ -4,7 +4,7 @@
   "name": "Kha'Zix",
   "title": "the Voidreaver",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Khazix.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Khazix.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -394,7 +394,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "A team's allies are  champions,  pets,  minions and outer  turrets.\n Monsters are considered allies for other monsters.\n Wards do not prevent Isolation.\nA number of targetable champion summoned units are specifically tagged to not be a valid ally of a potentially Isolated target. These units are:\n Gangplank's  Powder Keg\n Illaoi's  Prophet of an Elder God\n Jhin's  Captive Audience\n Nidalee's  Bushwhack\n Rek'Sai's  Tunnel\n Senna's  Absolution's Mist Wraiths\n Teemo's  Noxious Trap\n Viego's  Sovereign's Domination's Mist Wraiths\n Yorick's  Dark Procession\nIsolated targets are marked by an  indicator to Kha'Zix when visible and within 2500 units of him. However, Isolation bonuses are evaluated when the relevant spells hit and thus enemies do not need to show the indicator for them to receive the effects.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
+        "notes": "A team's allies are  champions,  pets,  minions and outer  turrets.\n Monsters are considered allies for other monsters.\n Wards do not prevent Isolation.\nA number of targetable champion summoned units are specifically tagged to not be a valid ally of a potentially Isolated target. These units are:\n Gangplank's  Powder Keg\n Illaoi's  Prophet of an Elder God\n Jhin's  Captive Audience\n Nidalee's  Bushwhack\n Rek'Sai's  Tunnel\n Senna's  Absolution's Mist Wraiths\n Teemo's  Noxious Trap\n Viego's  Sovereign's Domination's Mist Wraiths\n Yorick's  Dark Procession\nIsolation effects are registered at the following timings for each ability:\nFor  Evolved Reaper Claws, the start of cast.\nFor  Evolved Spike Racks, when the enemy is hit.\nFor Taste Their Fear, the end of cast.(bug) This means that if the target is no longer Isolated when the ability hits them, Taste Their Fear will not apply the respective bonuses.\nIsolated targets are marked by an  indicator, shown to Kha'Zix, when visible and within 2500 units of him. This indicator is independent of the actual effects and its timing may not be fully accurate.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
         "blurb": "Passive:  Kha'Zix considers any enemy unit to be Isolated if they are not nearby to one of their allies. His abilities have special interactions against Isolated targets.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1244,8 +1244,8 @@
           "id": 121012,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/121/121012.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {

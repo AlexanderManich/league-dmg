@@ -12,7 +12,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/4017_hellfirehatchet.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/4017_hellfirehatchet.png",
   "simpleDescription": null,
   "nicknames": [],
   "passives": [
@@ -22,7 +22,7 @@
       "name": "Char",
       "effects": "Your next ability hit applies a {{as|Burn}} that deals {{ft|{{pp|5 to (2*5) for 11|0 to 2000|key=%|type='''maximum''' health difference|showtype=false|round=3|color=health}} {{as|(+ {{pp|2/10 to (2*2)/10 for 11|0 to 2000|key=%|type='''maximum''' health difference|showtype=false|round=3}} per 1 Lethality)|lethality}} {{as|(based on '''maximum''' health difference)|hp}} {{as|of the target's '''current''' health}} {{as|physical damage}} seconds over 4 seconds.|{{pp|5/8 to (2*5/8) for 11|0 to 2000|key=%|type='''maximum''' health difference|showtype=false|round=3|color=health}} {{as|(+ {{pp|0.2/8 to (2*0.2)/8 for 11|0 to 2000|key=%|type='''maximum''' health difference|showtype=false|round=3}} per 1 Lethality)|lethality}} {{as|(based on '''maximum''' health difference)|hp}} {{as|of the target's '''current''' health}} {{as|physical damage}} every {{fd|0.5}} over 4 seconds.}}",
       "range": null,
-      "cooldown": "15",
+      "cooldown": 15,
       "stats": {
         "abilityPower": {
           "flat": 0.0,

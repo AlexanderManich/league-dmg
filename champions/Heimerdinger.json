@@ -4,7 +4,7 @@
   "name": "Heimerdinger",
   "title": "the Revered Inventor",
   "fullName": "Cecil B. Heimerdinger",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Heimerdinger.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Heimerdinger.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -244,7 +244,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "No additional details.",
-        "blurb": "Innate:  Heimerdinger gains  bonus movement speed while near allied  towers and  [[Heimerdinger#H-28G Evolution Turret|]] turrets he deploys.",
+        "blurb": "Innate:  Heimerdinger gains  bonus movement speed while near allied  towers and  turrets he deploys.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -394,7 +394,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Heimerdinger/ability-icon/w",
         "effects": [
           {
-            "description": "Active: Heimerdinger launches a wave of 5 rockets that converge upon the target location and fan beyond it up to a maximum range, with each one dealing magic damage to the first enemy it hits. Every rocket hitting an enemy champion grants 20% beam charge to all [[Heimerdinger#H-28G Evolution Turret|]] turrets within 1000 range, up to a maximum of 100% beam charge when hitting 5 rockets on an enemy champion.",
+            "description": "Active: Heimerdinger launches a wave of 5 rockets that converge upon the target location and fan beyond it up to a maximum range, with each one dealing magic damage to the first enemy it hits. Every rocket hitting an enemy champion grants 20% beam charge to all turrets within 1000 range, up to a maximum of 100% beam charge when hitting 5 rockets on an enemy champion.",
             "leveling": [
               {
                 "attribute": "Initial Rocket Magic Damage",
@@ -886,7 +886,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Heimerdinger/ability-icon/e",
         "effects": [
           {
-            "description": "Active: Heimerdinger hurls a grenade at the target location that detonates upon impact, dealing magic damage to nearby enemies and slowing them by 35% for 2 seconds. If the grenade hits an enemy champion, all [[Heimerdinger#H-28G Evolution Turret|]] turrets within 1000 range of the impact gain 100% beam charge.",
+            "description": "Active: Heimerdinger hurls a grenade at the target location that detonates upon impact, dealing magic damage to nearby enemies and slowing them by 35% for 2 seconds. If the grenade hits an enemy champion, all turrets within 1000 range of the impact gain 100% beam charge.",
             "leveling": [
               {
                 "attribute": "Magic Damage",
@@ -1134,7 +1134,7 @@
   },
   "releaseDate": "2009-10-10",
   "releasePatch": "0.9.25.34",
-  "patchLastChanged": "25.03",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 1575,
     "rp": 790,

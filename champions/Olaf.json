@@ -4,7 +4,7 @@
   "name": "Olaf",
   "title": "the Berserker",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Olaf.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Olaf.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -389,7 +389,7 @@
             ]
           },
           {
-            "description": "The axe remains in place for a duration equal to Undertow's cooldown, granting sight of its surroundings for 0.5 seconds. Olaf can pick up the axe to reduce Undertow's current cooldown to 2.5 seconds, which resets the cooldown if that has already elapsed.",
+            "description": "The axe remains in place for a duration equal to Undertow's cooldown, granting sight of its surroundings for 0.5 seconds. Olaf can pick up the axe to reduce Undertow's current cooldown to 2.5 : 0 (based on seconds elapsed since axe landed).",
             "leveling": []
           },
           {
@@ -537,7 +537,7 @@
             ]
           },
           {
-            "description": "Tough It Out resets Olaf's basic attack timer.",
+            "description": "Gaining Tough It Out's attack speed buff resets Olaf's basic attack timer.",
             "leveling": []
           }
         ],
@@ -591,7 +591,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "No additional details.",
+        "notes": "Olaf's attack timer will only reset from casting Tough It Out if the attack speed buff was not already active on him. Refreshing the buff will not grant an attack reset.(bug)",
         "blurb": "Active:  Olaf gains tremendous  bonus attack speed for a few seconds, and  shields himself based on his missing health for a short time.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -729,7 +729,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The health cost is equal to 30% of the total damage dealt by the ability.\nReckless Swing can be cast even if Olaf doesn't have the sufficient amount of health to pay for the health cost.\nAs with all abilities with health costs, Reckless Swing will not reduce Olaf's health below 1.\nReckless Swing's health refund is considered a  heal therefore it is affected by healing modifiers.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
+        "notes": "The health cost is equal to 30% of the total damage dealt by the ability.\nReckless Swing can be cast even if Olaf doesn't have the sufficient amount of health to pay for the health cost.\nAs with all abilities with health costs, Reckless Swing will not reduce Olaf's health below 1.\nReckless Swing's health refund is considered a  heal therefore it is affected by healing modifiers.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).\nOlaf will also not receive the benefits from killing an enemy if this canceling takes place very shortly before the attack hits the invalidated target, but Reckless Swing's effect will be consumed.(bug)",
         "blurb": "Active:  Olaf consumes  health to strike thunder onto the target enemy, dealing true damage. If this kills the target, Olaf  heals the  health cost.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -870,7 +870,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Ragnarok removes the underlying  stun from  airborne effects, but not the forced displacement, which requires him to use a  blink or  dash ability to override it.\nRagnarok does not negate any debuffs other than  crowd control from being applied unless absolutely necessary.\nThe bonus attack damage updates dynamically over the duration; Increases or reductions in attack damage after the effect has been applied will still be amplified.\nThe 25% attack damage scaling amplifies the flat attack damage bonus as well.\nRagnarok will not expire during  Reckless Swing's cast time.\nRagnarok will not resist the displacement caused by the 10 additional  Blast Cones spawned by  Infernal Rift if they're triggered by Olaf.(bug)\nRagnarok's duration will not be increased if the basic attack is  dodged.\nRagnarok's duration will be increased if the basic attack is  blocked.",
+        "notes": "Ragnarok removes the underlying  stun from  airborne effects, but not the forced displacement, which requires him to use a  blink or  dash ability to override it.\nRagnarok does not negate any debuffs other than  crowd control from being applied unless absolutely necessary.\nThe bonus attack damage updates dynamically over the duration; Increases or reductions in attack damage after the effect has been applied will still be amplified.\nThe 25% attack damage scaling amplifies the flat attack damage bonus as well.\nRagnarok will not expire during  Reckless Swing's cast time.\nRagnarok's duration will not be increased if the basic attack is  dodged.\nRagnarok's duration will be increased if the basic attack is  blocked.",
         "blurb": "Passive:  Olaf gains  bonus armor and  bonus magic resist.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -889,7 +889,7 @@
   },
   "releaseDate": "2010-06-09",
   "releasePatch": "1.0.0.87",
-  "patchLastChanged": "25.07",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 1575,
     "rp": 790,

@@ -4,7 +4,7 @@
   "name": "Teemo",
   "title": "the Swift Scout",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Teemo.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Teemo.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -160,7 +160,7 @@
       "percentPerLevel": 0.0
     },
     "aramAbilityHaste": {
-      "flat": -10,
+      "flat": -15,
       "percent": 0.0,
       "perLevel": 0.0,
       "percentPerLevel": 0.0
@@ -232,7 +232,7 @@
             "leveling": []
           },
           {
-            "description": "Innate - Element of Surprise: When Teemo breaks the stealth, he gains 20 / 40 / 60 / 80% (based on level) bonus attack speed for 5 seconds.",
+            "description": "Innate - Element of Surprise: When Teemo breaks the stealth, he gains 20% / 40% / 60% / 80% (based on level) bonus attack speed for 5 seconds.",
             "leveling": []
           }
         ],
@@ -247,7 +247,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "If Teemo triggers Element of Surprise twice in less than 5 seconds he will only refresh the bonus attack speed's duration (it will not stack with itself).\n Charm,  Flee, and  Taunt will force him out of  stealth.\nIf Teemo is in a  brush while stealthed, only  Taunt will break it.\nGuerilla Warfare's stealth is special-cased to be interrupted whenever Teemo moves from his location by any means (whether by  dashing,  blinking, being  displaced, or simply moving), thus, performing actions that do not normally break stealth which also involve movement will cause the  invisibility to break. Notably,  Flash and  Teleport. If Teemo is in a  brush the aforementioned spells do not end the stealth so long as his exact destination is still inside brush.\nStarting  Teleport's channel will not break Guerilla Warfare, only the  blink upon completing the channel will (with the exception stated above).\nGuerilla Warfare will not activate while  Recalling.\nUsing a basic attack breaks the stealth at the end of the attack windup.",
+        "notes": "If Teemo triggers Element of Surprise twice in less than 5 seconds he will only refresh the bonus attack speed's duration (it will not  stack with itself).\n Charm,  Flee, and  Taunt will force him out of  stealth.\nIf Teemo is in a  brush while stealthed, only  taunt will break it.\nGuerilla Warfare's stealth is special-cased to be interrupted whenever Teemo moves from his location by any means (whether by  dashing,  blinking, being  displaced, or simply moving), thus, performing actions that do not normally  break stealth which also involve movement will cause the  invisibility to break. Notably,  Flash and  Teleport. If Teemo is in a  brush the aforementioned spells do not end the stealth so long as his exact destination is still inside brush.\nStarting  Teleport's channel will not break Guerilla Warfare, only the  blink upon completing the channel will (with the exception stated above).\nGuerilla Warfare will not activate while  Recalling.\nUsing a basic attack breaks the stealth at the end of the attack windup.",
         "blurb": "Innate:  Teemo becomes  invisible after a brief moment remaining idle without taking damage, and will maintain so long as he remains idle or not  displaced.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -408,7 +408,7 @@
         "projectile": "TRUE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Blinding Dart will not make abilities that can trigger on-hit effects ( Parrrley,  Mystic Shot) miss.\nWhen blinded, enemies have a green tint on their screen.\nBecause Blinding Dart uses  center range, it has 45 to 70 more range than his basic attacks, which use  edge range, against other  champions.\nThis bonus becomes lower if Teemo or his target have size bonuses.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
+        "notes": "Blinding Dart will not make abilities that can trigger on-hit effects ( Parrrley,  Mystic Shot) miss.\nWhen blinded, enemies have a green tint on their screen.\nBecause Blinding Dart uses  center range, it has 45 to 70 more range than his  basic attacks, which use  edge range, against other  champions.\nThis bonus becomes lower if Teemo or his target have size bonuses.\nIf the target becomes  untargetable,  dies, or is too far away or no longer in  sight during the cast time, this ability will cancel but does not go on  cooldown nor pay its cost (if applicable).",
         "blurb": "Active:  Teemo shoots a dart at the target enemy that deals magic damage and  blinds them for a short time.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1244,8 +1244,8 @@
           "id": 17013,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17013.png",
           "colors": [
-            "#5F52BD",
-            "#5F52BD"
+            "#9C68D7",
+            "#9C68D7"
           ],
           "descriptions": [
             {
@@ -1265,8 +1265,8 @@
           "id": 17009,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17009.png",
           "colors": [
-            "#73C2DA",
-            "#73C2DA"
+            "#6ABBEE",
+            "#6ABBEE"
           ],
           "descriptions": [
             {
@@ -1286,8 +1286,8 @@
           "id": 17010,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17010.png",
           "colors": [
-            "#FF95EC",
-            "#FF95EC"
+            "#E58BA5",
+            "#E58BA5"
           ],
           "descriptions": [
             {
@@ -1332,8 +1332,8 @@
           "id": 17012,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17012.png",
           "colors": [
-            "#96F4B9",
-            "#96F4B9"
+            "#73BFBE",
+            "#73BFBE"
           ],
           "descriptions": [
             {
@@ -1601,14 +1601,14 @@
           ],
           "descriptions": [
             {
-              "description": "",
-              "region": ""
+              "description": null,
+              "region": null
             }
           ],
           "rarities": [
             {
-              "rarity": 0,
-              "region": ""
+              "rarity": null,
+              "region": null
             }
           ]
         },
@@ -1643,14 +1643,14 @@
           ],
           "descriptions": [
             {
-              "description": "",
-              "region": ""
+              "description": null,
+              "region": null
             }
           ],
           "rarities": [
             {
-              "rarity": 0,
-              "region": ""
+              "rarity": null,
+              "region": null
             }
           ]
         },
@@ -2413,6 +2413,209 @@
       ],
       "splashArtist": [
         "Horace 'Hozure' Hsu"
+      ]
+    },
+    {
+      "name": "Spirit Blossom Springs",
+      "id": 17054,
+      "isBase": false,
+      "availability": "Available",
+      "formatName": "Spirit Blossom Springs",
+      "lootEligible": true,
+      "cost": 1350,
+      "sale": 0,
+      "distribution": null,
+      "rarity": "Epic",
+      "chromas": [
+        {
+          "name": "Catseye",
+          "id": 17056,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17056.png",
+          "colors": [
+            "#FFEE59",
+            "#FFEE59"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Emerald",
+          "id": 17057,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17057.png",
+          "colors": [
+            "#2DA130",
+            "#2DA130"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Obsidian",
+          "id": 17062,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17062.png",
+          "colors": [
+            "#27211C",
+            "#27211C"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Pearl",
+          "id": 17061,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17061.png",
+          "colors": [
+            "#ECF9F8",
+            "#ECF9F8"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Rose Quartz",
+          "id": 17059,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17059.png",
+          "colors": [
+            "#E58BA5",
+            "#E58BA5"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "TENCENT"
+            }
+          ]
+        },
+        {
+          "name": "Ruby",
+          "id": 17055,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17055.png",
+          "colors": [
+            "#D33528",
+            "#D33528"
+          ],
+          "descriptions": [
+            {
+              "description": "This chroma was released as a bundle exclusive in 2025.",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Tanzanite",
+          "id": 17060,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17060.png",
+          "colors": [
+            "#54209B",
+            "#54209B"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Turquoise",
+          "id": 17058,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/17/17058.png",
+          "colors": [
+            "#73BFBE",
+            "#73BFBE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        }
+      ],
+      "lore": "Even the calming nature of Spirit Blossom Springs cannot quiet the mischievous energy of Teemo. From missing towels to surprise meat buns hidden under the pillows, the bathhouse is never wanting for surprises with him around. But in the end, Teemo's smile may be the most magical part of the Springs. What else would explain the lack of complaints?",
+      "release": "2025-07-30",
+      "set": [
+        "Spirit Blossom Springs"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/skin54/images/teemo_splash_centered_54.skins_teemo_skin54.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/skin54/images/teemo_splash_uncentered_54.skins_teemo_skin54.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/skin54/images/teemo_splash_tile_54.skins_teemo_skin54.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/skin54/teemoloadscreen_54.skins_teemo_skin54.jpg",
+      "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/teemo/skins/skin54/teemoloadscreen_54_le.skins_teemo_skin54.jpg",
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": false,
+      "newQuotes": false,
+      "voiceActor": [
+        "Melissa Hutchison"
+      ],
+      "splashArtist": [
+        "Fortune 'Fortuneee' K"
       ]
     }
   ]

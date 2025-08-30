@@ -17,7 +17,7 @@
   "removed": false,
   "requiredChampion": "",
   "requiredAlly": "",
-  "icon": "https://raw.communitydragon.org/15.13/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/4003_assassin_t2_lifeline.png",
+  "icon": "https://raw.communitydragon.org/15.16/plugins/rcp-be-lol-game-data/global/default/assets/items/icons2d/4003_assassin_t2_lifeline.png",
   "simpleDescription": "Marks the ground, and returns you there after a few moments",
   "nicknames": [],
   "passives": [],
@@ -25,7 +25,7 @@
     {
       "unique": true,
       "name": "Soul Anchor",
-      "effects": "Mark your current location. After 4 seconds, you automatically {{tip|blink}} to the marked location. ''Soul Anchor'' may be recast within its duration to manually blink to the marked location (45 second cooldown, starts after the blink).",
+      "effects": "Mark your current location. After 4 seconds, you automatically {{tip|blink}} to the marked location after a {{fd|0.5}}-second delay. ''Soul Anchor'' may be recast within its duration to manually blink to the marked location after the same delay (45 second cooldown, starts after the blink).",
       "range": null,
       "cooldown": 45.0
     }

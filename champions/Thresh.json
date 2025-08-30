@@ -4,7 +4,7 @@
   "name": "Thresh",
   "title": "the Chain Warden",
   "fullName": "Erlok Grael",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Thresh.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Thresh.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -715,7 +715,7 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Flay's effects start at the start of the cast time. Thresh can cast other spells once the cast time completes, but remains unable to attack and move and use mobility spells (such as  Flash) until the chain completed its way entirely.\nApplies  area damage on the ability and deals  proc damage on the enhanced basic attack.\nThe knockback's  airborne debuff is set to last longer than the forced movement, but gets removed as soon as the forced movement from Flay ends or is overridden by another.\nFlay's passive's buff icon changes colors depending on charge level. At 100%, Thresh's scythe will glow green and a sound effect will play.\n\n\n\n\n0 - 50%\n\n\n\n\n\n\n50 - 75%\n\n\n\n\n\n\n75% - 100%\n\n\n\n\n\n\n100%\n\n\n\n\n Runaan's Hurricane's Wind's Fury will apply Flay's passive to each enemy hit, with the secondary targets taking minimum damage (charge resets upon hitting the primary target).\nThe enhanced attack applies other on-hit effects and can  critically strike as normal (the bonus damage cannot).\nFlay's passive enhanced attack can be  dodged (the enhanced attack is not consumed and the charge is not reset) and  blocked (the enhanced attack is consumed and the charge is reset).\nThe empowered attack will not trigger against structures nor wards.\nPENDING FOR TEST:: Enhanced attack's interactions with  blinding effects (regarding both bonus damage and charge reset).\n\n\nType\n\nCast time\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\n Shurelya's Battlesong  Youmuu's Ghostblade  Randuin's Omen\n\n\nDisabled\n\nAll the other item-actives are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath, unless protected by  Resurrection",
+        "notes": "Flay's effects start at the start of the cast time. Thresh can cast other spells once the cast time completes, but remains unable to attack and move and use mobility spells (such as  Flash) until the chain completed its way entirely.\nApplies  area damage on the ability and deals  proc damage on the enhanced basic attack.\nThe knockback's  airborne debuff is set to last longer than the forced movement, but gets removed as soon as the forced movement from Flay ends or is overridden by another.\nFlay's passive's buff icon changes colors depending on charge level. At 100%, Thresh's scythe will glow green and a sound effect will play.\n\n\n\n0 - 50%\n\n\n\n50 - 75%\n\n\n\n75% - 100%\n\n\n\n100%\n\n\n Runaan's Hurricane's Wind's Fury will apply Flay's passive to each enemy hit, with the secondary targets taking minimum damage (charge resets upon hitting the primary target).\nThe enhanced attack applies other on-hit effects and can  critically strike as normal (the bonus damage cannot).\nFlay's passive enhanced attack can be  dodged (the enhanced attack is not consumed and the charge is not reset) and  blocked (the enhanced attack is consumed and the charge is reset).\nThe empowered attack will not trigger against structures nor wards.\nPENDING FOR TEST:: Enhanced attack's interactions with  blinding effects (regarding both bonus damage and charge reset).\n\n\nType\n\nCast time\n\n\nAttacking\n\nDisabled\n\n\nAbilities\n\nDisabled\n\n\nMovement\n\nDisabled\n\n\nItems\n\nUsable\n\n Shurelya's Battlesong  Youmuu's Ghostblade  Randuin's Omen\n\n\nDisabled\n\nAll the other item-actives are disabled\n\n\nInterrupted by\n\nN/A\n\n\nConsumables\n\nUsable\n\n\nSpells\n\nUsable\n\n Barrier  Clarity  Cleanse  Exhaust  Ghost  Heal  Ignite  Smite\n\n\nDisabled\n\n Flash  Teleport  Recall  Hexflash\n\n\nInterrupted by\n\nN/A\n\n\nInterrupted by\n\nDeath, unless protected by  Resurrection",
         "blurb": null,
         "missileSpeed": null,
         "rechargeRate": null,
@@ -818,7 +818,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "This ability will cast from wherever the caster is at the start of the cast time.\nThe Box always uses quick cast, regardless of player settings.\nThe Box always faces the same direction Thresh is facing on cast, placing a corner directly in front of him.\nThe cast indicator displays the opposite of the true behavior.\nIf The Box hits multiple champions with different walls on cast, only one of the walls will deal damage and apply the extended slow duration. This wall is chosen by starting at the wall in front of and to the right of Thresh's facing direction on cast, and progressing clockwise.\nThe corners of The Box are placed 400 units around Thresh.\nEach wall is 470.228 units long.\nEach wall passes 323.607 units from the center of The Box at the closest approach (ignoring its width).\nAs a regular pentagon, The Box has an angle of 72° between each corner.",
-        "blurb": "Active:  Thresh erects a pentagon of spectral walls around him that each last a few seconds. A wall will break upon enemy champion contact, dealing magic damage and  slowing them for a short time.",
+        "blurb": "Active:  Thresh erects a pentagon of spectral walls around him that each last a few seconds. A wall will break upon enemy champion contact, dealing magic damage and  slowing them for a short time. Subsequent wall breaks will not deal damage but still  slow enemies briefly.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -928,8 +928,8 @@
           "id": 412012,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/412/412012.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {

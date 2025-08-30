@@ -4,7 +4,7 @@
   "name": "Jarvan IV",
   "title": "the Exemplar of Demacia",
   "fullName": "Jarvan Lightshield IV",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/JarvanIV.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/JarvanIV.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -36,7 +36,7 @@
     "armor": {
       "flat": 36,
       "percent": 0.0,
-      "perLevel": 5.2,
+      "perLevel": 4.6,
       "percentPerLevel": 0.0
     },
     "magicResistance": {
@@ -797,7 +797,7 @@
   },
   "releaseDate": "2011-03-01",
   "releasePatch": "1.0.0.112",
-  "patchLastChanged": "25.06",
+  "patchLastChanged": "25.16",
   "price": {
     "blueEssence": 1575,
     "rp": 790,
@@ -2099,6 +2099,63 @@
       ],
       "splashArtist": [
         "Marie Magny",
+        "West Studio"
+      ]
+    },
+    {
+      "name": "Prestige Visions of the Fallen",
+      "id": 59054,
+      "isBase": false,
+      "availability": "Upcoming",
+      "formatName": "Prestige Visions of the Fallen",
+      "lootEligible": true,
+      "cost": "Battle Pass",
+      "sale": 0,
+      "distribution": "2025, S3 Act 1 Premium Battle Pass reward (Level 48)",
+      "rarity": "Mythic",
+      "chromas": [
+        {
+          "name": "Vivid",
+          "id": 59055,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/59/59055.png",
+          "colors": [
+            "#297DFF",
+            "#D9D1FE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 5,
+              "region": "riot"
+            }
+          ]
+        }
+      ],
+      "lore": "<i>Choking on the exquisite stench of burnt steel and broken stone, this mortal princeling defied us to his last breath. Now, with the royal line ended and a kingdom razed by his own vengeful hand, the great war can begin anew.</i>",
+      "release": "0000-00-00",
+      "set": [
+        "Visions of the Fallen"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jarvaniv/skins/skin54/images/jarvaniv_splash_centered_54.skins_jarvaniv_skin54.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jarvaniv/skins/skin54/images/jarvaniv_splash_uncentered_54.skins_jarvaniv_skin54.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jarvaniv/skins/skin54/images/jarvaniv_splash_tile_54.skins_jarvaniv_skin54.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jarvaniv/skins/skin54/jarvanivloadscreen_54.skins_jarvaniv_skin54.jpg",
+      "loadScreenVintagePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/jarvaniv/skins/skin54/jarvanivloadscreen_54_le.skins_jarvaniv_skin54.jpg",
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": false,
+      "newQuotes": false,
+      "voiceActor": [
+        "Kyle Hebert"
+      ],
+      "splashArtist": [
+        "Huyy Nguyen",
         "West Studio"
       ]
     }

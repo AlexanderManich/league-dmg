@@ -4,7 +4,7 @@
   "name": "Lillia",
   "title": "the Bashful Bloom",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Lillia.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Lillia.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -478,13 +478,13 @@
         "affects": "Self, Enemies",
         "spellshieldable": "true",
         "resource": "MANA",
-        "damageType": "MIXED_DAMAGE",
+        "damageType": "OTHER_DAMAGE",
         "spellEffects": "aoe",
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Spell shield will not prevent Lillia from gaining a Prance stack.\nFor the purpose of aim-assist, Lillia's  attack range is reduced[ to 275 ][ by 50 ]during Blooming Blows's cast time.",
-        "blurb": "Passive: Whenever  Lillia's abilities hit at least one enemy, she generates a stack of Prance, up to a cap.",
+        "blurb": "Passive: Whenever  Lillia's  abilities hit at least one enemy, she generates a  stack of Prance, up to a cap.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -952,7 +952,7 @@
   },
   "releaseDate": "2020-07-22",
   "releasePatch": "10.15",
-  "patchLastChanged": "25.07",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 2400,
     "rp": 880,
@@ -1806,6 +1806,209 @@
       "splashArtist": [
         "Francis Tneh",
         "West Studio"
+      ]
+    },
+    {
+      "name": "Bowling League",
+      "id": 876037,
+      "isBase": false,
+      "availability": "Available",
+      "formatName": "Bowling League",
+      "lootEligible": true,
+      "cost": 1350,
+      "sale": 0,
+      "distribution": null,
+      "rarity": "Epic",
+      "chromas": [
+        {
+          "name": "Amethyst",
+          "id": 876045,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/876/876045.png",
+          "colors": [
+            "#9C68D7",
+            "#9C68D7"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Catseye",
+          "id": 876039,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/876/876039.png",
+          "colors": [
+            "#FFEE59",
+            "#FFEE59"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Emerald",
+          "id": 876041,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/876/876041.png",
+          "colors": [
+            "#2DA130",
+            "#2DA130"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Obsidian",
+          "id": 876043,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/876/876043.png",
+          "colors": [
+            "#27211C",
+            "#27211C"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Pearl",
+          "id": 876042,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/876/876042.png",
+          "colors": [
+            "#ECF9F8",
+            "#ECF9F8"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        },
+        {
+          "name": "Rose Quartz",
+          "id": 876040,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/876/876040.png",
+          "colors": [
+            "#E58BA5",
+            "#E58BA5"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "TENCENT"
+            }
+          ]
+        },
+        {
+          "name": "Ruby",
+          "id": 876038,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/876/876038.png",
+          "colors": [
+            "#D33528",
+            "#D33528"
+          ],
+          "descriptions": [
+            {
+              "description": "This chroma was released as a bundle exclusive in 2025.",
+              "region": "riot"
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": 1,
+              "region": "riot"
+            }
+          ]
+        },
+        {
+          "name": "Sapphire",
+          "id": 876044,
+          "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/876/876044.png",
+          "colors": [
+            "#2756CE",
+            "#2756CE"
+          ],
+          "descriptions": [
+            {
+              "description": null,
+              "region": null
+            }
+          ],
+          "rarities": [
+            {
+              "rarity": null,
+              "region": null
+            }
+          ]
+        }
+      ],
+      "lore": "Lillia dreams of being the best bowler in the league. Problem is, nothing jolts her nerves more than the thunderous sounds of a ball striking pins. Now she employs a new strategy: rolling the ball as gently as possible, and apologizing to any pin that gets hit. First place, here she comes!",
+      "release": "2025-08-13",
+      "set": [
+        "Day Job"
+      ],
+      "splashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/lillia/skins/skin37/images/lillia_splash_centered_37.skins_lillia_skin37.jpg",
+      "uncenteredSplashPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/lillia/skins/skin37/images/lillia_splash_uncentered_37.skins_lillia_skin37.jpg",
+      "tilePath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/lillia/skins/skin37/images/lillia_splash_tile_37.skins_lillia_skin37.jpg",
+      "loadScreenPath": "https://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/assets/characters/lillia/skins/skin37/lillialoadscreen_37.skins_lillia_skin37.jpg",
+      "loadScreenVintagePath": null,
+      "newEffects": true,
+      "newAnimations": true,
+      "newRecall": true,
+      "newVoice": true,
+      "newQuotes": false,
+      "voiceActor": [
+        "Holly Earl"
+      ],
+      "splashArtist": [
+        "Fortune 'Fortuneee' K"
       ]
     }
   ]

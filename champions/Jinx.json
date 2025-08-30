@@ -4,7 +4,7 @@
   "name": "Jinx",
   "title": "the Loose Cannon",
   "fullName": "Powder",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Jinx.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Jinx.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -421,7 +421,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Toggle abilities do not count as ability activations for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nJinx's first attack after switching to  Fishbones can be triggered after 0.4 seconds, instead of using the attack timer.\nDespite Jinx starting the game using  Pow-Pow she doesn't receive any bonus attack speed until Switcheroo! has been learned.\n Fishbones splash damage affects structures (minions will target Jinx) but does not affect targets if Jinx's attacks are  blocked,  dodged, or  missed.\nWith  Runaan's Hurricane  Pow-Pow generates one stack per enemy hit.\nEach of  Runaan's Hurricane's additional bolts apply  Fishbones' splash damage, which stacks with each other.\nBoth weapons deal  basic damage to their primary target (this includes the increased damage of  Fishbones), which applies  life steal based on the damage dealt (post-mitigation) as usual.\nThe splash damage of  Fishbones is based on the pre-mitigation damage done to the primary target (which includes critical strikes), and is not considered modified physical damage. It deals  default damage: It doesn't apply  life steal or on-hit effects.\n Fishbones damage: 110% AD (100% + 10%).\n Fishbones critical strike damage: 192.5% AD ((100% + 10%) × 1.75).\n Fishbones critical strike damage with  Infinity Edge: 236.5% AD ((100% + 10%) × 2.15).\n Fishbones  bolt damage: 60.5% AD ((100% + 10%) ×  0.55).\n Fishbones  bolt critical strike damage: 105.875% AD ((100% + 10%) ×  0.55 × 1.75).\n Fishbones  bolt critical strike damage with  Infinity Edge: 130.075% AD ((100% + 10%) ×  0.55 × 2.15).\n Fishbones potential damage on stacked enemies with  Runaan's Hurricane: 231% AD (110% + 60,5% + 60,5%).\n Fishbones potential critical strike damage on stacked enemies with  Runaan's Hurricane: 404.25% AD ((110% + 60,5% + 60,5%) × 1.75).\n Fishbones potential critical strike damage on stacked enemies with  Runaan's Hurricane and  Infinity Edge: 496.65% AD ((110% + 60,5% + 60,5%) × 2.15).",
+        "notes": "Toggle abilities do not count as ability activations for the purposes of on-cast effects such as  Spellblade and triggering  Force Pulse's passive.\nDespite Jinx starting the game using  Pow-Pow she doesn't receive any bonus attack speed until Switcheroo! has been learned.\n Fishbones splash damage affects structures (minions will target Jinx) but does not affect targets if Jinx's attacks are  blocked,  dodged, or  missed.\nWith  Runaan's Hurricane  Pow-Pow generates one stack per enemy hit.\nEach of  Runaan's Hurricane's additional bolts apply  Fishbones' splash damage, which stacks with each other.\nBoth weapons deal  basic damage to their primary target (this includes the increased damage of  Fishbones), which applies  life steal based on the damage dealt (post-mitigation) as usual.\nThe splash damage of  Fishbones is based on the pre-mitigation damage done to the primary target (which includes critical strikes), and is not considered modified physical damage. It deals  default damage: It doesn't apply  life steal or  on-hit effects.\n Fishbones damage: 110% AD (100% + 10%).\n Fishbones critical strike damage: 192.5% AD ((100% + 10%) × 1.75).\n Fishbones critical strike damage with  Infinity Edge: 236.5% AD ((100% + 10%) × 2.15).\n Fishbones  bolt damage: 60.5% AD ((100% + 10%) ×  0.55).\n Fishbones  bolt critical strike damage: 105.875% AD ((100% + 10%) ×  0.55 × 1.75).\n Fishbones  bolt critical strike damage with  Infinity Edge: 130.075% AD ((100% + 10%) ×  0.55 × 2.15).\n Fishbones potential damage on stacked enemies with  Runaan's Hurricane: 231% AD (110% + 60,5% + 60,5%).\n Fishbones potential critical strike damage on stacked enemies with  Runaan's Hurricane: 404.25% AD ((110% + 60,5% + 60,5%) × 1.75).\n Fishbones potential critical strike damage on stacked enemies with  Runaan's Hurricane and  Infinity Edge: 496.65% AD ((110% + 60,5% + 60,5%) × 2.15).",
         "blurb": "Toggle:  Jinx switches between Pow-Pow, her minigun, and Fishbones, her rocket launcher.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -2009,8 +2009,8 @@
           "id": 222049,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/222/222049.png",
           "colors": [
-            "#2B7CFF",
-            "#FF930E"
+            "#F6A630",
+            "#1C61B4"
           ],
           "descriptions": [
             {
@@ -2475,7 +2475,7 @@
       "name": "Arcane Fractured",
       "id": 222060,
       "isBase": false,
-      "availability": "Rare",
+      "availability": "Limited",
       "formatName": "Arcane Fractured",
       "lootEligible": false,
       "cost": "Sanctum",

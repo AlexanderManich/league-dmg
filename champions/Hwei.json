@@ -4,7 +4,7 @@
   "name": "Hwei",
   "title": "the Visionary",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Hwei.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Hwei.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -567,7 +567,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Hwei/ability-icon/q",
         "effects": [
           {
-            "description": "Active - QE: Hwei marks a blazing path in the target direction. After 0.6 seconds, the path erupts into volcanic explosions every 0.2 seconds from the point of cast. Each explosion creates a shockwave that deals magic damage to nearby enemies.",
+            "description": "Active - QE: Hwei marks a blazing path in the target direction. After 0.6 seconds, the path erupts into volcanic explosions every 0.2 seconds from the point of cast, for a total of 7 explosions. Each explosion creates a shockwave that deals magic damage to nearby enemies.",
             "leveling": [
               {
                 "attribute": "Magic Damage",
@@ -1546,7 +1546,7 @@
         "onTargetCdStatic": null,
         "innerRadius": null,
         "speed": "1300",
-        "width": "70",
+        "width": "140",
         "angle": null,
         "castTime": "0.25",
         "effectRadius": null,
@@ -1981,7 +1981,7 @@
   },
   "releaseDate": "2023-12-05",
   "releasePatch": "13.24",
-  "patchLastChanged": "25.10",
+  "patchLastChanged": "25.13",
   "price": {
     "blueEssence": 2400,
     "rp": 880,
@@ -2250,7 +2250,7 @@
       "name": "Spirit Blossom",
       "id": 910011,
       "isBase": false,
-      "availability": "Upcoming",
+      "availability": "Available",
       "formatName": "Spirit Blossom",
       "lootEligible": true,
       "cost": 1350,
@@ -2449,7 +2449,7 @@
         }
       ],
       "lore": "It is said, the Artist roams—obsessed with the soul's liminal space, where light and dark collide. He wields kanmei and akana essence to reveal the heart of those he paints. Chancing upon a divine temple, he painted its guardian Archer. But the portrait twisted into pure rage—a lesson to be true to oneself, lest the Artist expose what lies beneath.",
-      "release": "0000-00-00",
+      "release": "2025-06-25",
       "set": [
         "Spirit Blossom"
       ],

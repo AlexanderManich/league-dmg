@@ -4,7 +4,7 @@
   "name": "Quinn",
   "title": "Demacia's Wings",
   "fullName": "Quinn and Valor",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Quinn.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Quinn.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "PHYSICAL_DAMAGE",
@@ -294,11 +294,11 @@
                 "modifiers": [
                   {
                     "values": [
-                      20,
-                      40,
-                      60,
-                      80,
-                      100
+                      65,
+                      100,
+                      135,
+                      170,
+                      205
                     ],
                     "units": [
                       "",
@@ -317,11 +317,11 @@
                       120
                     ],
                     "units": [
-                      "% AD",
-                      "% AD",
-                      "% AD",
-                      "% AD",
-                      "% AD"
+                      "% bonus AD",
+                      "% bonus AD",
+                      "% bonus AD",
+                      "% bonus AD",
+                      "% bonus AD"
                     ]
                   },
                   {
@@ -503,7 +503,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Heightened Senses will grant assist credit if a previously-unseen enemy champion is killed within 10 seconds of being revealed by the ability.",
+        "notes": "Quinn marks enemy champions who were previously unseen but were revealed Heightened Senses in order to gain assist credit, lasting for the standard credit timer.",
         "blurb": "Passive: Attacking a  Vulnerable target or consuming a mark grants  Quinn  bonus attack speed and  bonus movement speed for a short time.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -777,7 +777,7 @@
   },
   "releaseDate": "2013-03-01",
   "releasePatch": "3.03",
-  "patchLastChanged": "25.03",
+  "patchLastChanged": "25.15",
   "price": {
     "blueEssence": 2400,
     "rp": 880,

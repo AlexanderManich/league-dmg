@@ -4,7 +4,7 @@
   "name": "Swain",
   "title": "the Noxian Grand General",
   "fullName": "Jericho Swain",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Swain.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Swain.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -228,7 +228,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Swain/ability-icon/p",
         "effects": [
           {
-            "description": "Innate: Enemy champions that die will leave behind a Soul Fragment for 16 seconds, which can be collected by Swain after 1 second. Swain's ravens collect nearby Soul Fragments, as well as with Vision of Empire and Nevermove.\nSoul Fragment: For each stack, Swain gains 15 bonus health permanently. Upon collection, he will heal for 3% : 6% (based on level) of his maximum health.",
+            "description": "Innate: Enemy champions that die will leave behind a Soul Fragment for 16 seconds. Swain's ravens will collect nearby dropped Soul Fragments, as well as rip the Soul Fragments out of champions hit by Vision of Empire or Nevermove's recast. Once a raven has collected a Soul Fragment, it will fly towards Swain to grant it to him, while also granting sight of its surroundings during the travel.\nSoul Fragment: For each stack, Swain gains 15 bonus health permanently. Upon claiming the fragment, he will heal for 3% : 6% (based on level) of his maximum health.",
             "leveling": []
           }
         ],
@@ -243,7 +243,7 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "The ravens will only be seen by enemies if they have  vision of Swain.",
+        "notes": "Dropped Soul Fragments can be collected after a 1-second delay.\nThe ravens will only be seen by enemies if they have  vision of Swain.",
         "blurb": "Innate: Enemy champions that  die will leave behind a Soul Fragment for some time.  Swain will collect nearby Soul Fragments, as well as with  Vision of Empire and  Nevermove.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -255,7 +255,7 @@
         "width": null,
         "angle": null,
         "castTime": null,
-        "effectRadius": "1100",
+        "effectRadius": "1100 /  250",
         "targetRange": null
       }
     ],
@@ -925,7 +925,7 @@
         "projectile": "FALSE",
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Demonflare will not automatically cast at the end of Demonic Ascension if it occurs due to Swain's death.\nFile:Swain - R",
+        "notes": "Demonflare will not automatically cast at the end of Demonic Ascension if it occurs due to Swain's death.",
         "blurb": "Active:  Swain frees the demon within, gaining Demonic Ascension and generating Demonic Energy. Demonic Ascension is maintained with Demonic Energy that gradually decays over time.",
         "missileSpeed": null,
         "rechargeRate": null,

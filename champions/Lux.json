@@ -4,7 +4,7 @@
   "name": "Lux",
   "title": "the Lady of Luminosity",
   "fullName": "Luxanna Crownguard",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Lux.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Lux.png",
   "resource": "MANA",
   "attackType": "RANGED",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -682,7 +682,7 @@
         "icon": "https://cdn.communitydragon.org/latest/champion/Lux/ability-icon/r",
         "effects": [
           {
-            "description": "Active: Lux fires a massive light beam in a line in the target direction that deals magic damage to enemies hit and reveals them for 1.5 seconds, as well as granting sight of the surrounding area.",
+            "description": "Active: Lux fires a massive light beam in a line in the target direction that deals magic damage to enemies hit and reveals them for 1.5 seconds, as well as grants sight of the surrounding area.",
             "leveling": [
               {
                 "attribute": "Magic Damage",

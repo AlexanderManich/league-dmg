@@ -4,7 +4,7 @@
   "name": "Ekko",
   "title": "the Boy Who Shattered Time",
   "fullName": "",
-  "icon": "http://ddragon.leagueoflegends.com/cdn/15.12.1/img/champion/Ekko.png",
+  "icon": "http://ddragon.leagueoflegends.com/cdn/15.16.1/img/champion/Ekko.png",
   "resource": "MANA",
   "attackType": "MELEE",
   "adaptiveType": "MAGIC_DAMAGE",
@@ -217,7 +217,7 @@
     "mobility": 3,
     "utility": 1,
     "abilityReliance": 75,
-    "difficulty": 3
+    "difficulty": 2
   },
   "abilities": {
     "P": [
@@ -234,7 +234,7 @@
             "leveling": []
           },
           {
-            "description": "Innate - Stolen Time: Triggering Resonance against a champion grants Ekko 50 / 60 / 70 / 80% (based on level) bonus movement speed for 2 / 2.5 / 3 (based on level) seconds.",
+            "description": "Innate - Stolen Time: Triggering Resonance against a champion grants Ekko 50% / 60% / 70% / 80% (based on level) bonus movement speed for 2 / 2.5 / 3 (based on level) seconds.",
             "leveling": []
           }
         ],
@@ -250,7 +250,7 @@
         "onHitEffects": null,
         "occurrence": null,
         "notes": "Ekko's basic attacks have different animations based on how many stacks his target has. His attack pattern is as follows:\nDownwards → Upwards → Sideways\nIf the target has already been affected by Resonance, Ekko's basic attack animations will kick or attack the target sideways.\nResonance stacks will not be applied nor consumed if the basic attack is  dodged or  blocked or if the attack  misses.",
-        "blurb": "Innate:  Ekko's basic attacks and damaging abilities apply stacks, the third stack deals bonus magic damage. If the target was a  champion, this grants  bonus movement speed to Ekko.",
+        "blurb": "Innate:  Ekko's  basic attacks  on-hit and damaging  abilities apply  stacks, the third stack deals bonus magic damage. If the target was a  champion, this grants  bonus movement speed to Ekko.",
         "missileSpeed": null,
         "rechargeRate": null,
         "collisionRadius": null,
@@ -863,7 +863,7 @@
         "projectile": null,
         "onHitEffects": null,
         "occurrence": null,
-        "notes": "Ekko will attempt to basic attack the closest target after appearing at the cast location, but can do so quicker if he manually attack commands after the dash, except if  Phase Dive is primed.\nThe afterimage's location will explode even if Ekko's  dash is interrupted.\nA link can also be seen between the afterimage and Ekko that traces along his path.\nThe link follows the same visibility rules as the afterimage.\nUpon activation, Ekko travels full distance through the link, and thus will detonate  Parallel Convergence that the link passes through.\n [[Quicksilver Sash|]] Quicksilver incurs a 1-second  cooldown upon casting Chronobreak.",
+        "notes": "Ekko will attempt to basic attack the closest target after appearing at the cast location, but can do so quicker if he manually attack commands after the dash, except if  Phase Dive is primed.\nThe afterimage's location will explode even if Ekko's  dash is interrupted.\nA link can also be seen between the afterimage and Ekko that traces along his path.\nThe link follows the same visibility rules as the afterimage.\nUpon activation, Ekko travels full distance through the link, and thus will detonate  Parallel Convergence that the link passes through.\n Quicksilver incurs a 1-second  cooldown upon casting Chronobreak.",
         "blurb": "Passive:  Ekko reveals a time-delayed afterimage of himself that tracks where he was 4 seconds ago.",
         "missileSpeed": null,
         "rechargeRate": null,
@@ -1266,8 +1266,8 @@
           "id": 245018,
           "chromaPath": "http://raw.communitydragon.org/pbe/plugins/rcp-be-lol-game-data/global/default/v1/champion-chroma-images/245/245018.png",
           "colors": [
-            "#FFEE59",
-            "#FFEE59"
+            "#FFC948",
+            "#FFC948"
           ],
           "descriptions": [
             {
