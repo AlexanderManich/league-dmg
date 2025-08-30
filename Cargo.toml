@@ -1,8 +1,8 @@
 [workspace]
 members = [
     "lib",
-    "web",
     "cli",
-    "web/frontend"
+    "web",
 ]
+
 resolver = "2"

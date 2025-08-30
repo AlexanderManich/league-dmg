@@ -8,8 +8,8 @@ use strum_macros::EnumIter;
 use crate::champions_t::{AbilityRaw, ChampionKind, ChampionRaw, Effect, Leveling, StatsRaw};
 use crate::items::{read_item_data, ItemKind};
 
-use plotters::prelude::*;
-use plotters::style::PaletteColor;
+// use plotters::prelude::*;
+// use plotters::style::PaletteColor;
 use serde::{Deserialize, Serialize}; // Add this at the top
 
 #[derive(Debug, Copy, Clone)]
@@ -1148,59 +1148,59 @@ fn apply_damage_mitigation(damage_value: f32, resistance_value: f32) -> f32 {
     damage_value * modifier
 }
 
-pub fn plot_damage_vs_resistance(
-    resistance_values: &[f32],
-    damage_values: &[Vec<f32>],
-    config_names: &[Config], // <-- Add this parameter
-    output_path: &str,
-) -> Result<(), Box<dyn std::error::Error>> {
-    let root = BitMapBackend::new(output_path, (800, 600)).into_drawing_area();
-    root.fill(&WHITE)?;
+// pub fn plot_damage_vs_resistance(
+//     resistance_values: &[f32],
+//     damage_values: &[Vec<f32>],
+//     config_names: &[Config], // <-- Add this parameter
+//     output_path: &str,
+// ) -> Result<(), Box<dyn std::error::Error>> {
+//     let root = BitMapBackend::new(output_path, (800, 600)).into_drawing_area();
+//     root.fill(&WHITE)?;
 
-    let max_resistance = *resistance_values.last().unwrap_or(&200.0);
-    let max_damage = damage_values
-        .iter()
-        .flat_map(|series| series.iter())
-        .cloned()
-        .fold(f32::MIN, f32::max);
+//     let max_resistance = *resistance_values.last().unwrap_or(&200.0);
+//     let max_damage = damage_values
+//         .iter()
+//         .flat_map(|series| series.iter())
+//         .cloned()
+//         .fold(f32::MIN, f32::max);
 
-    let mut chart = ChartBuilder::on(&root)
-        .caption("Damage vs Resistance", ("sans-serif", 30))
-        .margin(40)
-        .x_label_area_size(40)
-        .y_label_area_size(60)
-        .build_cartesian_2d(0f32..max_resistance, 0f32..max_damage)?;
+//     let mut chart = ChartBuilder::on(&root)
+//         .caption("Damage vs Resistance", ("sans-serif", 30))
+//         .margin(40)
+//         .x_label_area_size(40)
+//         .y_label_area_size(60)
+//         .build_cartesian_2d(0f32..max_resistance, 0f32..max_damage)?;
 
-    chart
-        .configure_mesh()
-        .x_desc("Resistance")
-        .y_desc("Damage")
-        .draw()?;
+//     chart
+//         .configure_mesh()
+//         .x_desc("Resistance")
+//         .y_desc("Damage")
+//         .draw()?;
 
-    for (i, series) in damage_values.iter().enumerate() {
-        let color = PaletteColor::<Palette99>::pick(i).mix(0.8);
-        chart
-            .draw_series(LineSeries::new(
-                resistance_values
-                    .iter()
-                    .zip(series.iter())
-                    .map(|(&x, &y)| (x, y)),
-                &color,
-            ))?
-            .label(&config_names[i].name)
-            .legend(move |(x, y)| PathElement::new([(x, y), (x + 20, y)], color));
-    }
+//     for (i, series) in damage_values.iter().enumerate() {
+//         let color = PaletteColor::<Palette99>::pick(i).mix(0.8);
+//         chart
+//             .draw_series(LineSeries::new(
+//                 resistance_values
+//                     .iter()
+//                     .zip(series.iter())
+//                     .map(|(&x, &y)| (x, y)),
+//                 &color,
+//             ))?
+//             .label(&config_names[i].name)
+//             .legend(move |(x, y)| PathElement::new([(x, y), (x + 20, y)], color));
+//     }
 
-    chart
-        .configure_series_labels()
-        .background_style(WHITE.mix(0.8))
-        .border_style(BLACK)
-        .draw()?;
+//     chart
+//         .configure_series_labels()
+//         .background_style(WHITE.mix(0.8))
+//         .border_style(BLACK)
+//         .draw()?;
 
-    println!("Graph saved to damage_vs_mr.png");
+//     println!("Graph saved to damage_vs_mr.png");
 
-    Ok(())
-}
+//     Ok(())
+// }
 
 pub fn create_item_configs(champion: &Champion, item_sets: Vec<Vec<ItemKind>>) -> Vec<Config> {
     let common = common_items(&item_sets);

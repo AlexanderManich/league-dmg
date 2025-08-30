@@ -50,12 +50,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         StatType::Armor,
     );
 
-    plot_damage_vs_resistance(
-        &mr_values,
-        &damage_values,
-        &configs,
-        "graphs/damage_vs_mr.png",
-    )?;
+    // plot_damage_vs_resistance(
+    //     &mr_values,
+    //     &damage_values,
+    //     &configs,
+    //     "graphs/damage_vs_mr.png",
+    // )?;
 
     print_breakpoints(&mr_values, &damage_values, &configs);
     print_average_percentage_difference(&mr_values, &damage_values, &configs);
